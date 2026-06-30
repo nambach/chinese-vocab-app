@@ -3,7 +3,13 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-export default defineConfig({
+// Project is served from https://nambach.github.io/chinese-vocab-app/ on GitHub
+// Pages, so production assets must be referenced under that base path.
+export default defineConfig(({ command }) => {
+  const base = command === 'build' ? '/chinese-vocab-app/' : '/'
+
+  return {
+  base,
   plugins: [
     react(),
     tailwindcss(),
@@ -18,7 +24,8 @@ export default defineConfig({
         background_color: '#f0fdfa',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
+        scope: base,
+        start_url: base,
         icons: [
           {
             src: 'favicon.svg',
@@ -30,4 +37,5 @@ export default defineConfig({
       },
     }),
   ],
+  }
 })
