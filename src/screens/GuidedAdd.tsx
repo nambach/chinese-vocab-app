@@ -21,13 +21,22 @@ export function GuidedAdd({ catalogId }: GuidedAddProps) {
     )
   }
 
-  function saveWord(stayOnScreen: boolean) {
+  const isDraftComplete = Boolean(
+    draft.hanzi.trim() && draft.pinyin.trim() && draft.meaning.trim(),
+  )
+
+  function saveAndContinue() {
+    if (!isDraftComplete) return
     addWord(catalogId, draft)
     setAddedCount((count) => count + 1)
     setDraft(emptyWordDraft())
-    if (!stayOnScreen) {
-      setView({ name: 'catalog', catalogId })
+  }
+
+  function finish() {
+    if (isDraftComplete) {
+      addWord(catalogId, draft)
     }
+    setView({ name: 'catalog', catalogId })
   }
 
   return (
@@ -39,12 +48,12 @@ export function GuidedAdd({ catalogId }: GuidedAddProps) {
       <WordCard
         value={draft}
         onChange={setDraft}
-        onSave={() => saveWord(true)}
+        onSave={saveAndContinue}
         saveLabel="Lưu & tiếp"
         toneNumberInput={state.settings.toneNumberInput}
       />
 
-      <BigButton variant="secondary" onClick={() => saveWord(false)}>
+      <BigButton variant="secondary" onClick={finish}>
         Xong
       </BigButton>
     </ScreenShell>
