@@ -1,0 +1,52 @@
+import { useState } from 'react'
+import { emptyWordDraft, WordCard } from '../components/WordCard'
+import { BigButton, Card, ScreenShell } from '../components/ui'
+import { useApp, useCatalog } from '../context/AppContext'
+
+type GuidedAddProps = {
+  catalogId: string
+}
+
+export function GuidedAdd({ catalogId }: GuidedAddProps) {
+  const { setView, addWord, state } = useApp()
+  const catalog = useCatalog(catalogId)
+  const [draft, setDraft] = useState(emptyWordDraft())
+  const [addedCount, setAddedCount] = useState(0)
+
+  if (!catalog) {
+    return (
+      <ScreenShell title="Không tìm thấy" onBack={() => setView({ name: 'home' })}>
+        <Card className="text-center text-teal-700">Bộ sưu tập không tồn tại.</Card>
+      </ScreenShell>
+    )
+  }
+
+  function saveWord(stayOnScreen: boolean) {
+    addWord(catalogId, draft)
+    setAddedCount((count) => count + 1)
+    setDraft(emptyWordDraft())
+    if (!stayOnScreen) {
+      setView({ name: 'catalog', catalogId })
+    }
+  }
+
+  return (
+    <ScreenShell
+      title="Thêm từ"
+      subtitle={`${catalog.name} · đã thêm ${addedCount} từ trong phiên này`}
+      onBack={() => setView({ name: 'catalog', catalogId })}
+    >
+      <WordCard
+        value={draft}
+        onChange={setDraft}
+        onSave={() => saveWord(true)}
+        saveLabel="Lưu & tiếp"
+        toneNumberInput={state.settings.toneNumberInput}
+      />
+
+      <BigButton variant="secondary" onClick={() => saveWord(false)}>
+        Xong
+      </BigButton>
+    </ScreenShell>
+  )
+}
