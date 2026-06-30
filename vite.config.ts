@@ -17,7 +17,7 @@ export default defineConfig(({ command }) => {
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Học từ vựng Trung',
+        name: 'Học từ vựng tiếng Trung',
         short_name: 'Trung-VN',
         description: 'Luyện từ vựng tiếng Trung — lưu trữ cục bộ',
         theme_color: '#0f766e',
