@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/chinese-vocab-app/sw.js', { scope: '/chinese-vocab-app/' })})}
