@@ -67,7 +67,13 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
   }, [session?.finishedAt, sessionId, setView])
 
   const exitView: () => void = () =>
-    setView(session?.catalogId ? { name: 'catalog', catalogId: session.catalogId } : { name: 'home' })
+    setView(
+      session?.combineQueue
+        ? { name: 'combinePractice' }
+        : session?.catalogId
+          ? { name: 'catalog', catalogId: session.catalogId }
+          : { name: 'home' },
+    )
 
   if (!session || !direction) {
     return (

@@ -74,9 +74,16 @@ export type WordDraft = {
   meaning: string
 }
 
+export type CombineQueue = {
+  catalogIds: string[]
+  index: number
+}
+
 export type QuickSuite = {
   title: string
   words: Word[]
+  source?: 'quick' | 'combine'
+  combineQueue?: CombineQueue
 }
 
 export type PracticeSetupDraft = PracticeConfig

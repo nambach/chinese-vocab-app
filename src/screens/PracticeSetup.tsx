@@ -1,19 +1,61 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { QUIZ_DIRECTIONS } from '../practice/directions'
 import { ORDER_STRATEGIES } from '../practice/orderStrategies'
 import { TIMER_STRATEGIES } from '../practice/timerStrategies'
 import { BigButton, Card, ScreenShell, Select } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
+import type { CombineQueue, Word } from '../models/types'
 import type { PracticeConfig } from '../practice/session'
 
 type PracticeSetupProps = {
   catalogId?: string
 }
 
+type SetupSource = {
+  title: string
+  words: Word[]
+  catalogId?: string
+  combineQueue?: CombineQueue
+  fromCombine?: boolean
+}
+
 export function PracticeSetup({ catalogId }: PracticeSetupProps) {
   const { state, setView, goBack, startPractice, patchSettings, quickSuite } = useApp()
   const catalog = useCatalog(catalogId ?? '')
   const [config, setConfig] = useState<PracticeConfig>(() => state.settings.practiceConfig)
+
+  const source = useMemo((): SetupSource | null => {
+    if (quickSuite?.source === 'combine' && quickSuite.combineQueue) {
+      const { catalogIds, index } = quickSuite.combineQueue
+      const activeCatalogId = catalogIds[index]
+      const activeCatalog = state.catalogs.find((item) => item.id === activeCatalogId)
+      if (!activeCatalog) return null
+
+      return {
+        title: activeCatalog.name,
+        words: activeCatalog.words,
+        catalogId: activeCatalog.id,
+        combineQueue: quickSuite.combineQueue,
+        fromCombine: true,
+      }
+    }
+
+    if (catalogId) {
+      return catalog
+        ? { title: catalog.name, words: catalog.words, catalogId }
+        : null
+    }
+
+    if (quickSuite) {
+      return {
+        title: quickSuite.title,
+        words: quickSuite.words,
+        catalogId: undefined,
+      }
+    }
+
+    return null
+  }, [catalog, catalogId, quickSuite, state.catalogs])
 
   function updateConfig(updater: (current: PracticeConfig) => PracticeConfig) {
     setConfig((current) => {
@@ -23,16 +65,14 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
     })
   }
 
-  const source = catalogId
-    ? catalog
-      ? { title: catalog.name, words: catalog.words, catalogId }
-      : null
-    : quickSuite
-      ? { title: quickSuite.title, words: quickSuite.words, catalogId: undefined }
-      : null
-
   const backView = () =>
-    goBack(catalogId ? { name: 'catalog', catalogId } : { name: 'quickPractice' })
+    goBack(
+      source?.fromCombine
+        ? { name: 'combinePractice' }
+        : catalogId
+          ? { name: 'catalog', catalogId }
+          : { name: 'quickPractice' },
+    )
 
   if (!source) {
     return (
@@ -43,6 +83,10 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
   }
 
   const activeSource = source
+  const combineProgress =
+    activeSource.combineQueue && activeSource.combineQueue.catalogIds.length > 1
+      ? ` · Bài ${activeSource.combineQueue.index + 1}/${activeSource.combineQueue.catalogIds.length}`
+      : ''
 
   function handleStart() {
     patchSettings({ practiceConfig: config })
@@ -52,6 +96,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
       words: activeSource.words,
       config,
       catalogId: activeSource.catalogId,
+      combineQueue: activeSource.combineQueue,
     })
     if (!sessionId) return
     setView({ name: 'practicePlay', sessionId })
@@ -60,7 +105,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
   return (
     <ScreenShell
       title="Luyện tập"
-      subtitle={`${activeSource.title} · ${activeSource.words.length} từ`}
+      subtitle={`${activeSource.title} · ${activeSource.words.length} từ${combineProgress}`}
       onBack={backView}
     >
       <Card className="grid gap-4 md:grid-cols-2">

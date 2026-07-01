@@ -8,11 +8,24 @@ type ResultsProps = {
 }
 
 export function Results({ sessionId }: ResultsProps) {
-  const { setView, getSession, startPractice, recordPracticeResult } = useApp()
+  const { state, setView, getSession, startPractice, recordPracticeResult } = useApp()
   const session = getSession(sessionId)
   const recordedRef = useRef(false)
 
   const wrongWords = useMemo(() => (session ? getWrongWords(session) : []), [session])
+
+  const nextCombineCatalog = useMemo(() => {
+    if (!session?.combineQueue) return undefined
+    const nextIndex = session.combineQueue.index + 1
+    if (nextIndex >= session.combineQueue.catalogIds.length) return undefined
+    const nextCatalogId = session.combineQueue.catalogIds[nextIndex]
+    return state.catalogs.find((catalog) => catalog.id === nextCatalogId)
+  }, [session, state.catalogs])
+
+  const combineProgress =
+    session?.combineQueue && session.combineQueue.catalogIds.length > 1
+      ? ` · Bài ${session.combineQueue.index + 1}/${session.combineQueue.catalogIds.length}`
+      : ''
 
   useEffect(() => {
     if (recordedRef.current || !session || !session.finishedAt || !session.catalogId) return
@@ -41,10 +54,32 @@ export function Results({ sessionId }: ResultsProps) {
 
   function exit() {
     setView(
-      activeSession.catalogId
-        ? { name: 'catalog', catalogId: activeSession.catalogId }
-        : { name: 'home' },
+      activeSession.combineQueue
+        ? { name: 'combinePractice' }
+        : activeSession.catalogId
+          ? { name: 'catalog', catalogId: activeSession.catalogId }
+          : { name: 'home' },
     )
+  }
+
+  function continueCombine() {
+    const queue = activeSession.combineQueue
+    if (!queue || !nextCombineCatalog) {
+      exit()
+      return
+    }
+
+    const nextIndex = queue.index + 1
+    const nextSessionId = startPractice({
+      title: nextCombineCatalog.name,
+      words: nextCombineCatalog.words,
+      config: activeSession.config,
+      catalogId: nextCombineCatalog.id,
+      combineQueue: { ...queue, index: nextIndex },
+    })
+    if (nextSessionId) {
+      setView({ name: 'practicePlay', sessionId: nextSessionId })
+    }
   }
 
   function retryWrongOnly() {
@@ -53,6 +88,7 @@ export function Results({ sessionId }: ResultsProps) {
       words: getWrongWords(activeSession),
       config: activeSession.config,
       catalogId: activeSession.catalogId,
+      combineQueue: activeSession.combineQueue,
     })
     if (nextSessionId) {
       setView({ name: 'practicePlay', sessionId: nextSessionId })
@@ -65,6 +101,7 @@ export function Results({ sessionId }: ResultsProps) {
       words: activeSession.words,
       config: activeSession.config,
       catalogId: activeSession.catalogId,
+      combineQueue: activeSession.combineQueue,
     })
     if (nextSessionId) {
       setView({ name: 'practicePlay', sessionId: nextSessionId })
@@ -74,9 +111,9 @@ export function Results({ sessionId }: ResultsProps) {
   return (
     <ScreenShell
       title="Kết quả"
-      subtitle={activeSession.title}
+      subtitle={`${activeSession.title}${combineProgress}`}
       onBack={exit}
-      backLabel="Xong"
+      backLabel={nextCombineCatalog ? 'Dừng' : 'Xong'}
     >
       <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
         <Card className="text-center lg:py-8">
@@ -107,8 +144,15 @@ export function Results({ sessionId }: ResultsProps) {
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
+        {nextCombineCatalog ? (
+          <BigButton onClick={continueCombine}>
+            Bài tiếp theo: {nextCombineCatalog.name}
+          </BigButton>
+        ) : null}
         {wrongWords.length > 0 ? (
-          <BigButton onClick={retryWrongOnly}>Luyện lại từ sai</BigButton>
+          <BigButton onClick={retryWrongOnly} variant={nextCombineCatalog ? 'secondary' : 'primary'}>
+            Luyện lại từ sai
+          </BigButton>
         ) : null}
         <BigButton variant="secondary" onClick={retryAll}>
           Luyện lại từ đầu

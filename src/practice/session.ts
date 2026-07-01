@@ -5,7 +5,7 @@ import {
   getTimerStrategy,
   type TimerStrategyId,
 } from './timerStrategies'
-import type { Word } from '../models/types'
+import type { CombineQueue, Word } from '../models/types'
 
 export type PracticeConfig = {
   directionId: QuizDirectionId
@@ -25,6 +25,7 @@ export type PracticeSessionSnapshot = {
   id: string
   title: string
   catalogId?: string
+  combineQueue?: CombineQueue
   config: PracticeConfig
   words: Word[]
   currentIndex: number
@@ -42,6 +43,7 @@ export type PracticeSessionInput = {
   words: Word[]
   config: PracticeConfig
   catalogId?: string
+  combineQueue?: CombineQueue
 }
 
 export function createPracticeSession(
@@ -59,6 +61,7 @@ export function createPracticeSession(
     id: sessionId,
     title: input.title,
     catalogId: input.catalogId,
+    combineQueue: input.combineQueue,
     config: input.config,
     words: orderStrategy.orderWords(input.words),
     currentIndex: 0,

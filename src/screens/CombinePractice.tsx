@@ -33,19 +33,24 @@ export function CombinePractice() {
 
   function start() {
     if (!canStart) return
-    const words = selectedCatalogs.flatMap((catalog) => catalog.words)
-    const title =
-      selectedCatalogs.length === 1
-        ? selectedCatalogs[0].name
-        : `${selectedCatalogs.length} bài đã chọn`
-    setQuickSuite({ title, words })
+    const catalogIds = selectedCatalogs.map((catalog) => catalog.id)
+    const first = selectedCatalogs[0]
+    setQuickSuite({
+      title:
+        selectedCatalogs.length === 1
+          ? first.name
+          : `${selectedCatalogs.length} bài đã chọn`,
+      words: first.words,
+      source: 'combine',
+      combineQueue: { catalogIds, index: 0 },
+    })
     setView({ name: 'practiceSetup' })
   }
 
   return (
     <ScreenShell
       title="Luyện tập nhiều bài"
-      subtitle="Chọn các bộ sưu tập để luyện chung một lượt"
+      subtitle="Chọn các bộ sưu tập để luyện lần lượt từng bài"
       onBack={() => goBack({ name: 'home' })}
       backLabel="Trang chủ"
       footer={
