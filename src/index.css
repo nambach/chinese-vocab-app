@@ -36,6 +36,23 @@ button {
   cursor: pointer;
 }
 
+/* iOS Safari auto-zooms focused inputs below 16px. */
+@media (max-width: 767px), (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

@@ -76,12 +76,20 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, [state])
 
   useEffect(() => {
+    const syncViewFromUrl = () => {
+      setViewState(parseHash(window.location.hash))
+    }
+
     if (!window.location.hash) {
       window.history.replaceState(null, '', serializeView({ name: 'home' }))
     }
-    const onHashChange = () => setViewState(parseHash(window.location.hash))
-    window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
+
+    window.addEventListener('hashchange', syncViewFromUrl)
+    window.addEventListener('popstate', syncViewFromUrl)
+    return () => {
+      window.removeEventListener('hashchange', syncViewFromUrl)
+      window.removeEventListener('popstate', syncViewFromUrl)
+    }
   }, [])
 
   useEffect(() => {
@@ -90,16 +98,22 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const setView = useCallback((next: View, opts?: { replace?: boolean }) => {
     const hash = serializeView(next)
-    if (opts?.replace) {
-      window.history.replaceState(null, '', hash)
-      setViewState(next)
+    const currentHash = window.location.hash
+
+    // Update React state immediately. iOS Safari often skips hashchange when
+    // location.hash is set programmatically, so we must not rely on that event.
+    setViewState(next)
+
+    if (hash === currentHash || (hash === '#/' && !currentHash)) {
       return
     }
-    if (hash === window.location.hash || (hash === '#/' && !window.location.hash)) {
-      setViewState(next)
-    } else {
-      window.location.hash = hash
+
+    if (opts?.replace) {
+      window.history.replaceState(null, '', hash)
+      return
     }
+
+    window.history.pushState(null, '', hash)
   }, [])
 
   const goBack = useCallback(

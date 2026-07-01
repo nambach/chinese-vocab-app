@@ -1,4 +1,5 @@
-import { useRef, useState, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { KeyboardAvoidingView } from './KeyboardAvoidingView'
 
 export type MenuItem = {
   label: string
@@ -14,6 +15,8 @@ type ScreenShellProps = {
   menuItems?: MenuItem[]
   children: ReactNode
   footer?: ReactNode
+  /** Pin the shell to the visual viewport on touch devices (keyboard-safe layout). */
+  keyboardAvoiding?: boolean
 }
 
 function HeaderMenu({ items }: { items: MenuItem[] }) {
@@ -75,12 +78,36 @@ export function ScreenShell({
   menuItems,
   children,
   footer,
+  keyboardAvoiding = false,
 }: ScreenShellProps) {
   const hasMenu = Boolean(menuItems && menuItems.length > 0)
+  const headerRef = useRef<HTMLElement>(null)
 
-  return (
-    <div className="flex min-h-dvh flex-col bg-teal-50">
-      <header className="border-b border-teal-100 bg-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
+  useLayoutEffect(() => {
+    const header = headerRef.current
+    if (!header) return undefined
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        '--screen-header-height',
+        `${header.getBoundingClientRect().height}px`,
+      )
+    }
+
+    updateHeaderHeight()
+    const observer = new ResizeObserver(updateHeaderHeight)
+    observer.observe(header)
+    return () => observer.disconnect()
+  }, [subtitle, title, hasMenu])
+
+  const shell = (
+    <div
+      className={`flex flex-col bg-teal-50 ${keyboardAvoiding ? 'h-full min-h-0' : 'min-h-dvh'}`}
+    >
+      <header
+        ref={headerRef}
+        className="shrink-0 border-b border-teal-100 bg-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]"
+      >
         <div className="flex min-h-11 items-center gap-2">
           {onBack ? (
             <div className="flex w-11 shrink-0 justify-start">
@@ -119,15 +146,27 @@ export function ScreenShell({
         ) : null}
       </header>
 
-      <main className="flex flex-1 flex-col gap-4 px-4 py-6">{children}</main>
+      <main
+        className={`flex flex-col gap-4 px-4 py-6 ${
+          keyboardAvoiding ? 'min-h-0 flex-1 overflow-hidden' : 'flex-1'
+        }`}
+      >
+        {children}
+      </main>
 
       {footer ? (
-        <footer className="border-t border-teal-100 bg-white px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <footer className="shrink-0 border-t border-teal-100 bg-white px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
           {footer}
         </footer>
       ) : null}
     </div>
   )
+
+  if (keyboardAvoiding) {
+    return <KeyboardAvoidingView className="bg-teal-50">{shell}</KeyboardAvoidingView>
+  }
+
+  return shell
 }
 
 type BigButtonProps = {

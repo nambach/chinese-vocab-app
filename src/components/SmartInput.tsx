@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { convertToneNumbers } from '../lib/pinyin'
+import { useIsMobile } from '../lib/useVisualViewport'
 
 type SmartInputProps = {
   value: string
@@ -11,6 +12,8 @@ type SmartInputProps = {
   lang?: string
   autoFocus?: boolean
   onSubmit?: () => void
+  onFocus?: () => void
+  onBlur?: () => void
   className?: string
   hint?: string
 }
@@ -25,10 +28,14 @@ export function SmartInput({
   lang,
   autoFocus,
   onSubmit,
+  onFocus,
+  onBlur,
   className = '',
   hint,
 }: SmartInputProps) {
   const [enabled, setEnabled] = useState(pinyin && toneNumberInput)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     setEnabled(pinyin && toneNumberInput)
@@ -39,6 +46,27 @@ export function SmartInput({
   function handleChange(nextValue: string) {
     onChange(toneActive ? convertToneNumbers(nextValue) : nextValue)
   }
+
+  function insertAtCursor(text: string) {
+    const input = inputRef.current
+    if (!input) {
+      handleChange(value + text)
+      return
+    }
+
+    const start = input.selectionStart ?? value.length
+    const end = input.selectionEnd ?? value.length
+    const nextValue = value.slice(0, start) + text + value.slice(end)
+    handleChange(nextValue)
+
+    requestAnimationFrame(() => {
+      input.focus()
+      const cursor = start + text.length
+      input.setSelectionRange(cursor, cursor)
+    })
+  }
+
+  const toneKeys = ['1', '2', '3', '4', '5'] as const
 
   return (
     <label className={`flex flex-col gap-2 ${className}`}>
@@ -57,15 +85,20 @@ export function SmartInput({
         ) : null}
       </div>
       <input
+        ref={inputRef}
         value={value}
         onChange={(event) => handleChange(event.target.value)}
         placeholder={placeholder}
-        lang={lang}
+        lang={pinyin ? 'en' : lang}
+        inputMode={pinyin ? 'text' : undefined}
         autoFocus={autoFocus}
         autoCapitalize="off"
         autoCorrect="off"
+        autoComplete="off"
         spellCheck={false}
         enterKeyHint={onSubmit ? 'done' : undefined}
+        onFocus={() => onFocus?.()}
+        onBlur={() => onBlur?.()}
         onKeyDown={(event) => {
           if (event.key === 'Enter' && onSubmit) {
             event.preventDefault()
@@ -74,8 +107,35 @@ export function SmartInput({
         }}
         className="w-full rounded-2xl border border-teal-200 bg-teal-50 px-4 py-4 text-xl text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
       />
+      {toneActive && isMobile ? (
+        <div className="flex gap-2" role="group" aria-label="Số thanh điệu">
+          {toneKeys.map((tone) => (
+            <button
+              key={tone}
+              type="button"
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => insertAtCursor(tone)}
+              className="min-w-0 flex-1 rounded-xl bg-white py-2.5 text-lg font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
+            >
+              {tone}
+            </button>
+          ))}
+          <button
+            type="button"
+            onMouseDown={(event) => event.preventDefault()}
+            onClick={() => insertAtCursor('v')}
+            className="min-w-0 flex-1 rounded-xl bg-white py-2.5 text-lg font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
+          >
+            v
+          </button>
+        </div>
+      ) : null}
       {toneActive ? (
-        <span className="text-xs text-teal-600">Gõ thanh điệu bằng số (ni3 → nǐ) · Gõ v → ü</span>
+        <span className="text-xs text-teal-600">
+          {isMobile
+            ? 'Gõ chữ trên bàn phím, chạm số để thêm thanh điệu (ni3 → nǐ) · v → ü'
+            : 'Gõ thanh điệu bằng số (ni3 → nǐ) · Gõ v → ü'}
+        </span>
       ) : hint ? (
         <span className="text-xs text-teal-600">{hint}</span>
       ) : null}

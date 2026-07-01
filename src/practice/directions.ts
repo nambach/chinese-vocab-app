@@ -43,6 +43,7 @@ export const QUIZ_DIRECTIONS: QuizDirection[] = [
     promptField: 'hanzi',
     answerField: 'pinyin',
     answerLabel: 'Nhập pinyin',
+    inputLang: 'en',
     checkAnswer: (word, answer) => pinyinMatches(answer, word.pinyin),
   },
   {
