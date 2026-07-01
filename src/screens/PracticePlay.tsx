@@ -210,16 +210,16 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
             <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden">
               {promptCard}
             </div>
-            <div className="shrink-0 space-y-3">
+            <div className="shrink-0 space-y-2 overflow-y-auto">
               {answerInput}
-              {submitButton}
+              {!keyboardOpen ? submitButton : null}
             </div>
           </>
         ) : (
           <>
             {promptCard}
             {answerInput}
-            {isTouch ? submitButton : null}
+            {isTouch && !session.showingFeedback ? submitButton : null}
           </>
         )}
 

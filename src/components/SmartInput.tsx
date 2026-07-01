@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { convertToneNumbers } from '../lib/pinyin'
-import { useIsMobile } from '../lib/useVisualViewport'
+import { useIsMobile, useVisualViewport } from '../lib/useVisualViewport'
 
 type SmartInputProps = {
   value: string
@@ -36,6 +36,7 @@ export function SmartInput({
   const [enabled, setEnabled] = useState(pinyin && toneNumberInput)
   const inputRef = useRef<HTMLInputElement>(null)
   const isMobile = useIsMobile()
+  const { keyboardOpen } = useVisualViewport()
 
   useEffect(() => {
     setEnabled(pinyin && toneNumberInput)
@@ -67,9 +68,34 @@ export function SmartInput({
   }
 
   const toneKeys = ['1', '2', '3', '4', '5'] as const
+  const showToneKeys = toneActive && isMobile
+
+  const toneKeyRow = showToneKeys ? (
+    <div className="flex gap-1.5" role="group" aria-label="Số thanh điệu">
+      {toneKeys.map((tone) => (
+        <button
+          key={tone}
+          type="button"
+          onMouseDown={(event) => event.preventDefault()}
+          onClick={() => insertAtCursor(tone)}
+          className="min-w-0 flex-1 rounded-lg bg-white py-2 text-base font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
+        >
+          {tone}
+        </button>
+      ))}
+      <button
+        type="button"
+        onMouseDown={(event) => event.preventDefault()}
+        onClick={() => insertAtCursor('v')}
+        className="min-w-0 flex-1 rounded-lg bg-white py-2 text-base font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
+      >
+        v
+      </button>
+    </div>
+  ) : null
 
   return (
-    <label className={`flex flex-col gap-2 ${className}`}>
+    <label className={`flex shrink-0 flex-col gap-2 ${className}`}>
       <div className="flex items-center justify-between gap-3">
         <span className="text-sm font-medium text-teal-800">{label}</span>
         {pinyin ? (
@@ -84,6 +110,7 @@ export function SmartInput({
           </button>
         ) : null}
       </div>
+      {toneKeyRow}
       <input
         ref={inputRef}
         value={value}
@@ -105,32 +132,9 @@ export function SmartInput({
             onSubmit()
           }
         }}
-        className="w-full rounded-2xl border border-teal-200 bg-teal-50 px-4 py-4 text-xl text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+        className="w-full shrink-0 rounded-2xl border border-teal-200 bg-teal-50 px-4 py-3 text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
       />
-      {toneActive && isMobile ? (
-        <div className="flex gap-2" role="group" aria-label="Số thanh điệu">
-          {toneKeys.map((tone) => (
-            <button
-              key={tone}
-              type="button"
-              onMouseDown={(event) => event.preventDefault()}
-              onClick={() => insertAtCursor(tone)}
-              className="min-w-0 flex-1 rounded-xl bg-white py-2.5 text-lg font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
-            >
-              {tone}
-            </button>
-          ))}
-          <button
-            type="button"
-            onMouseDown={(event) => event.preventDefault()}
-            onClick={() => insertAtCursor('v')}
-            className="min-w-0 flex-1 rounded-xl bg-white py-2.5 text-lg font-semibold text-teal-900 ring-1 ring-teal-200 active:bg-teal-100"
-          >
-            v
-          </button>
-        </div>
-      ) : null}
-      {toneActive ? (
+      {toneActive && !keyboardOpen ? (
         <span className="text-xs text-teal-600">
           {isMobile
             ? 'Gõ chữ trên bàn phím, chạm số để thêm thanh điệu (ni3 → nǐ) · v → ü'
