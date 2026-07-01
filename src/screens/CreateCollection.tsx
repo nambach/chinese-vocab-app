@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { IMPORT_FORMAT_GUIDE_BODY, parseCatalogText } from '../lib/txt'
+import {
+  extractLeadingTitle,
+  IMPORT_FORMAT_GUIDE_BODY,
+  parseCatalogText,
+} from '../lib/txt'
 import { BigButton, Card, LineNumberedTextarea, ScreenShell } from '../components/ui'
 
 export function CreateCollection() {
@@ -11,6 +15,16 @@ export function CreateCollection() {
   const parsed = useMemo(() => parseCatalogText(text), [text])
   const effectiveName = name.trim()
   const canCreate = effectiveName.length > 0
+
+  function handleTextChange(next: string) {
+    const { title, body } = extractLeadingTitle(next)
+    if (title !== undefined) {
+      setName(title)
+      setText(body)
+      return
+    }
+    setText(next)
+  }
 
   function create() {
     if (!canCreate) return
@@ -53,19 +67,19 @@ export function CreateCollection() {
         <span className="text-sm font-medium text-teal-800">Bộ từ vựng</span>
         <LineNumberedTextarea
           value={text}
-          onChange={setText}
+          onChange={handleTextChange}
           placeholder={IMPORT_FORMAT_GUIDE_BODY}
           rows={8}
           errorLines={new Set(parsed.errorLines)}
         />
         <p className="text-sm text-teal-700">
-          Dán bộ từ vựng bạn vừa copy vào ô trên, hoặc{' '}
+          Dán nội dung đã copy, hoặc{' '}
           <button
             type="button"
             onClick={startGuidedAdd}
             className="font-medium text-teal-800 underline underline-offset-2 active:text-teal-950"
           >
-            nhập mới từng từ
+            nhập từng từ
           </button>
           .
         </p>
@@ -74,7 +88,7 @@ export function CreateCollection() {
       {text.trim() ? (
         <Card>
           <p className="text-sm text-teal-800">
-            Đã nhận {parsed.words.length} từ
+            {parsed.words.length} từ
             {parsed.errors.length > 0 ? ` · ${parsed.errors.length} dòng lỗi` : ''}
           </p>
         </Card>

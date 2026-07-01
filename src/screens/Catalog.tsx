@@ -159,13 +159,10 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
           <BigButton onClick={() => setCopiedOpen(false)}>Đã hiểu</BigButton>
         }
       >
-        <p>Để dùng trên thiết bị khác:</p>
-        <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm">
-          <li>Mở web trên thiết bị đó.</li>
-          <li>Bấm <span className="font-semibold">“Luyện tập ngay”</span>.</li>
-          <li>Dán nội dung vừa sao chép vào ô văn bản.</li>
-          <li>Bấm luyện tập, hoặc “Lưu để dùng sau”.</li>
-        </ol>
+        <p className="text-sm">
+          Dán vào <span className="font-semibold">Luyện tập ngay</span> hoặc{' '}
+          <span className="font-semibold">Tạo bộ sưu tập</span> trên thiết bị khác.
+        </p>
       </Dialog>
     </ScreenShell>
   )

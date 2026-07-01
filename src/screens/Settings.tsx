@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext'
-import { IMPORT_FORMAT_GUIDE } from '../lib/txt'
+import { IMPORT_FORMAT_GUIDE_BODY } from '../lib/txt'
 import { Card, ScreenShell } from '../components/ui'
 
 export function Settings() {
@@ -31,11 +31,9 @@ export function Settings() {
 
       <Card>
         <h2 className="text-sm font-semibold text-teal-900">Định dạng file nhập</h2>
-        <p className="mt-2 text-xs text-teal-600">
-          Mỗi dòng một từ, ngăn cách bằng dấu | theo thứ tự: Hán tự, pinyin, nghĩa.
-        </p>
+        <p className="mt-2 text-xs text-teal-600">Mỗi dòng: Hán tự | pinyin | nghĩa</p>
         <pre className="mt-3 overflow-x-auto whitespace-pre-wrap rounded-2xl bg-teal-50 p-4 text-xs text-teal-800">
-          {IMPORT_FORMAT_GUIDE}
+          {IMPORT_FORMAT_GUIDE_BODY}
         </pre>
       </Card>
     </ScreenShell>

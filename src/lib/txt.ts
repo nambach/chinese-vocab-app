@@ -36,7 +36,10 @@ export function parseCatalogText(text: string): ParsedImport {
 
     if (line.startsWith('#')) {
       if (!name) {
-        name = line.replace(/^#\s*/, '').trim()
+        const parsedName = line.replace(/^#\s*/, '').trim()
+        if (parsedName) {
+          name = parsedName
+        }
       }
       continue
     }
@@ -96,5 +99,23 @@ export const IMPORT_FORMAT_GUIDE_BODY = `你好 | nǐ hǎo | xin chào
 谢谢 | xiè xiè | cảm ơn
 学习 | xue2 xi2 | học tập, học hành`
 
-export const IMPORT_FORMAT_GUIDE = `# Tên bộ sưu tập
-${IMPORT_FORMAT_GUIDE_BODY}`
+export function extractLeadingTitle(text: string): { title?: string; body: string } {
+  const lines = text.split(/\r?\n/)
+
+  for (let i = 0; i < lines.length; i++) {
+    const trimmed = lines[i].trim()
+    if (!trimmed) continue
+
+    if (trimmed.startsWith('#')) {
+      const title = trimmed.replace(/^#\s*/, '').trim()
+      const body = lines
+        .slice(i + 1)
+        .join('\n')
+        .replace(/^\n+/, '')
+      return { title: title || undefined, body }
+    }
+    break
+  }
+
+  return { body: text }
+}
