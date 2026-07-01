@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useApp, useCatalog } from '../context/AppContext'
 import { downloadTextFile, exportCatalogToText } from '../lib/txt'
+import { getPracticeHistory } from '../data/store'
 import {
   formatResultDate,
   resultDirectionLabel,
@@ -14,7 +15,7 @@ type CatalogScreenProps = {
 }
 
 export function CatalogScreen({ catalogId }: CatalogScreenProps) {
-  const { setView, removeCatalog } = useApp()
+  const { setView, goBack, removeCatalog } = useApp()
   const catalog = useCatalog(catalogId)
   const [shareOpen, setShareOpen] = useState(false)
   const [copiedOpen, setCopiedOpen] = useState(false)
@@ -28,6 +29,8 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
   }
 
   const currentCatalog = catalog
+  const practiceHistory = getPracticeHistory(currentCatalog)
+  const lastResult = currentCatalog.lastResult
 
   function handleDownload() {
     downloadTextFile(`${currentCatalog.name}.txt`, exportCatalogToText(currentCatalog))
@@ -45,7 +48,6 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
   }
 
   const menuItems: MenuItem[] = [
-    { label: 'Cài đặt', onClick: () => setView({ name: 'settings' }) },
     {
       label: 'Xóa bộ sưu tập',
       danger: true,
@@ -61,8 +63,8 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
     <ScreenShell
       title={currentCatalog.name}
       subtitle={`${currentCatalog.words.length} từ`}
-      onBack={() => setView({ name: 'home' })}
-      backLabel="← Trang chủ"
+      onBack={() => goBack({ name: 'home' })}
+      backLabel="Trang chủ"
       menuItems={menuItems}
     >
       <div className="grid gap-3">
@@ -85,32 +87,40 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
         </BigButton>
       </div>
 
-      {currentCatalog.lastResult ? (
-        <Card>
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="text-sm font-semibold text-teal-900">Kết quả lần trước</h2>
-            <span className="text-xs text-teal-600">
-              {formatResultDate(currentCatalog.lastResult.finishedAt)}
-            </span>
-          </div>
-          <div className="mt-3 flex items-end gap-3">
-            <div className="text-3xl font-bold text-teal-900">
-              {resultPercent(currentCatalog.lastResult)}%
+      {lastResult ? (
+        <button
+          type="button"
+          onClick={() => setView({ name: 'practiceHistory', catalogId })}
+          className="w-full text-left"
+        >
+          <Card className="transition active:scale-[0.99]">
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-sm font-semibold text-teal-900">Kết quả lần trước</h2>
+              <span className="text-xs font-medium text-teal-600">
+                {practiceHistory.length > 1
+                  ? `Xem ${practiceHistory.length} lần →`
+                  : `${formatResultDate(lastResult.finishedAt)} →`}
+              </span>
             </div>
-            <div className="pb-1 text-teal-700">
-              {currentCatalog.lastResult.correct}/{currentCatalog.lastResult.total} đúng
+            <div className="mt-3 flex items-end gap-3">
+              <div className="text-3xl font-bold text-teal-900">
+                {resultPercent(lastResult)}%
+              </div>
+              <div className="pb-1 text-teal-700">
+                {lastResult.correct}/{lastResult.total} đúng
+              </div>
             </div>
-          </div>
-          <div className="mt-2 h-2 overflow-hidden rounded-full bg-teal-100">
-            <div
-              className="h-full rounded-full bg-teal-600"
-              style={{ width: `${resultPercent(currentCatalog.lastResult)}%` }}
-            />
-          </div>
-          <p className="mt-3 text-xs text-teal-600">
-            {resultDirectionLabel(currentCatalog.lastResult)} · {resultDurationLabel(currentCatalog.lastResult)}
-          </p>
-        </Card>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-teal-100">
+              <div
+                className="h-full rounded-full bg-teal-600"
+                style={{ width: `${resultPercent(lastResult)}%` }}
+              />
+            </div>
+            <p className="mt-3 text-xs text-teal-600">
+              {resultDirectionLabel(lastResult)} · {resultDurationLabel(lastResult)}
+            </p>
+          </Card>
+        </button>
       ) : null}
 
       {currentCatalog.words.length === 0 ? (

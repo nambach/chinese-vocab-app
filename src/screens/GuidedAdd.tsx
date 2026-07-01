@@ -8,7 +8,7 @@ type GuidedAddProps = {
 }
 
 export function GuidedAdd({ catalogId }: GuidedAddProps) {
-  const { setView, addWord, state } = useApp()
+  const { setView, goBack, addWord, state } = useApp()
   const catalog = useCatalog(catalogId)
   const [draft, setDraft] = useState(emptyWordDraft())
   const [addedCount, setAddedCount] = useState(0)
@@ -43,7 +43,8 @@ export function GuidedAdd({ catalogId }: GuidedAddProps) {
     <ScreenShell
       title="Thêm từ"
       subtitle={`${catalog.name} · đã thêm ${addedCount} từ trong phiên này`}
-      onBack={() => setView({ name: 'catalog', catalogId })}
+      onBack={() => goBack({ name: 'catalog', catalogId })}
+      backLabel={catalog.name}
     >
       <WordCard
         value={draft}

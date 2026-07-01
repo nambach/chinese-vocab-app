@@ -3,13 +3,13 @@ import { IMPORT_FORMAT_GUIDE } from '../lib/txt'
 import { Card, ScreenShell } from '../components/ui'
 
 export function Settings() {
-  const { state, setView, patchSettings } = useApp()
+  const { state, goBack, patchSettings } = useApp()
 
   return (
     <ScreenShell
       title="Cài đặt"
-      onBack={() => setView({ name: 'home' })}
-      backLabel="← Trang chủ"
+      onBack={() => goBack({ name: 'home' })}
+      backLabel="Trang chủ"
     >
       <Card>
         <h2 className="text-sm font-semibold text-teal-900">Nhập liệu</h2>

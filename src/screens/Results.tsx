@@ -76,7 +76,7 @@ export function Results({ sessionId }: ResultsProps) {
       title="Kết quả"
       subtitle={activeSession.title}
       onBack={exit}
-      backLabel="← Xong"
+      backLabel="Xong"
     >
       <Card className="text-center">
         <div className="text-5xl font-bold text-teal-900">

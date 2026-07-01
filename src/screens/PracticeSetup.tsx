@@ -11,7 +11,7 @@ type PracticeSetupProps = {
 }
 
 export function PracticeSetup({ catalogId }: PracticeSetupProps) {
-  const { setView, startPractice, defaultPracticeConfig, quickSuite } = useApp()
+  const { setView, goBack, startPractice, defaultPracticeConfig, quickSuite } = useApp()
   const catalog = useCatalog(catalogId ?? '')
   const [config, setConfig] = useState<PracticeConfig>(defaultPracticeConfig())
 
@@ -24,7 +24,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
       : null
 
   const backView = () =>
-    setView(catalogId ? { name: 'catalog', catalogId } : { name: 'quickPractice' })
+    goBack(catalogId ? { name: 'catalog', catalogId } : { name: 'quickPractice' })
 
   if (!source) {
     return (

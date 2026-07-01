@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { createWord } from '../data/store'
 import { IMPORT_FORMAT_GUIDE, parseCatalogText } from '../lib/txt'
-import { BigButton, Card, ScreenShell } from '../components/ui'
+import { BigButton, Card, LineNumberedTextarea, ScreenShell } from '../components/ui'
 
 export function QuickPractice() {
-  const { setView, setQuickSuite, createCollection } = useApp()
+  const { setView, goBack, setQuickSuite, createCollection } = useApp()
   const [text, setText] = useState('')
 
   const parsed = useMemo(() => parseCatalogText(text), [text])
@@ -30,8 +30,8 @@ export function QuickPractice() {
     <ScreenShell
       title="Luyện tập ngay"
       subtitle="Dán bộ từ vựng vào ô bên dưới"
-      onBack={() => setView({ name: 'home' })}
-      backLabel="← Trang chủ"
+      onBack={() => goBack({ name: 'home' })}
+      backLabel="Trang chủ"
       footer={
         <div className="grid gap-3">
           <BigButton onClick={practiceNow} disabled={!hasWords}>
@@ -43,13 +43,13 @@ export function QuickPractice() {
         </div>
       }
     >
-      <textarea
+      <LineNumberedTextarea
         value={text}
-        onChange={(event) => setText(event.target.value)}
+        onChange={setText}
         placeholder={IMPORT_FORMAT_GUIDE}
         rows={10}
         autoFocus
-        className="w-full rounded-2xl border border-teal-200 bg-white px-4 py-3 font-mono text-sm text-teal-950 outline-none focus:border-teal-500"
+        errorLines={new Set(parsed.errorLines)}
       />
 
       {text.trim() ? (

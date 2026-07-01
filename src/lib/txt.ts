@@ -6,6 +6,7 @@ export type ParsedImport = {
   name?: string
   words: Omit<Word, 'id'>[]
   errors: string[]
+  errorLines: number[]
 }
 
 function splitLine(line: string): string[] | null {
@@ -26,6 +27,7 @@ export function parseCatalogText(text: string): ParsedImport {
   const lines = text.split(/\r?\n/)
   const words: Omit<Word, 'id'>[] = []
   const errors: string[] = []
+  const errorLines: number[] = []
   let name: string | undefined
 
   for (const [index, rawLine] of lines.entries()) {
@@ -42,6 +44,7 @@ export function parseCatalogText(text: string): ParsedImport {
     const parts = splitLine(line)
     if (!parts || parts.length < 3) {
       errors.push(`Dòng ${index + 1}: không đúng định dạng`)
+      errorLines.push(index + 1)
       continue
     }
 
@@ -51,13 +54,14 @@ export function parseCatalogText(text: string): ParsedImport {
 
     if (!hanzi || !pinyin || !meaning) {
       errors.push(`Dòng ${index + 1}: thiếu dữ liệu`)
+      errorLines.push(index + 1)
       continue
     }
 
     words.push({ hanzi, pinyin, meaning })
   }
 
-  return { name, words, errors }
+  return { name, words, errors, errorLines }
 }
 
 export function importCatalogFromText(
@@ -88,7 +92,9 @@ export function downloadTextFile(filename: string, content: string): void {
   URL.revokeObjectURL(url)
 }
 
-export const IMPORT_FORMAT_GUIDE = `# Tên bộ sưu tập
-你好 | nǐ hǎo | xin chào
+export const IMPORT_FORMAT_GUIDE_BODY = `你好 | nǐ hǎo | xin chào
 谢谢 | xiè xiè | cảm ơn
-学习 | ni2 xi2 | học tập`
+学习 | xue2 xi2 | học tập, học hành`
+
+export const IMPORT_FORMAT_GUIDE = `# Tên bộ sưu tập
+${IMPORT_FORMAT_GUIDE_BODY}`

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import {
   addWordToCatalog,
   createCatalog,
@@ -15,6 +15,8 @@ import {
   upsertCatalog,
 } from '../data/store'
 import { importCatalogFromText } from '../lib/txt'
+import { parseHash, serializeView } from '../lib/router'
+import { trackPageView } from '../lib/analytics'
 import {
   createPracticeSession,
   defaultPracticeConfig,
@@ -39,7 +41,8 @@ type AppContextValue = {
   sessions: Record<string, PracticeSessionSnapshot>
   quickSuite: QuickSuite | null
   setQuickSuite: (suite: QuickSuite | null) => void
-  setView: (view: View) => void
+  setView: (view: View, opts?: { replace?: boolean }) => void
+  goBack: (fallback: View) => void
   addCatalog: (name: string) => Catalog
   createCollection: (name: string, words: WordDraft[]) => Catalog
   importCatalog: (text: string, fallbackName?: string) => { catalog: Catalog; errors: string[] }
@@ -50,7 +53,7 @@ type AppContextValue = {
   removeWord: (catalogId: string, wordId: string) => void
   moveWord: (catalogId: string, wordId: string, direction: 'up' | 'down') => void
   patchSettings: (patch: Partial<Settings>) => void
-  recordPracticeResult: (catalogId: string, result: PracticeResult) => void
+  recordPracticeResult: (catalogId: string, result: Omit<PracticeResult, 'id'>) => void
   startPractice: (input: PracticeSessionInput) => string | null
   getSession: (sessionId: string) => PracticeSessionSnapshot | undefined
   updateSession: (
@@ -64,13 +67,47 @@ const AppContext = createContext<AppContextValue | null>(null)
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<AppState>(() => loadState())
-  const [view, setView] = useState<View>({ name: 'home' })
+  const [view, setViewState] = useState<View>(() => parseHash(window.location.hash))
   const [sessions, setSessions] = useState<Record<string, PracticeSessionSnapshot>>({})
   const [quickSuite, setQuickSuite] = useState<QuickSuite | null>(null)
 
   useEffect(() => {
     saveState(state)
   }, [state])
+
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.history.replaceState(null, '', serializeView({ name: 'home' }))
+    }
+    const onHashChange = () => setViewState(parseHash(window.location.hash))
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  useEffect(() => {
+    trackPageView(window.location.hash || '#/')
+  }, [view])
+
+  const setView = useCallback((next: View, opts?: { replace?: boolean }) => {
+    const hash = serializeView(next)
+    if (opts?.replace) {
+      window.history.replaceState(null, '', hash)
+      setViewState(next)
+      return
+    }
+    if (hash === window.location.hash || (hash === '#/' && !window.location.hash)) {
+      setViewState(next)
+    } else {
+      window.location.hash = hash
+    }
+  }, [])
+
+  const goBack = useCallback(
+    (fallback: View) => {
+      setView(fallback)
+    },
+    [setView],
+  )
 
   const value = useMemo<AppContextValue>(
     () => ({
@@ -80,6 +117,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       quickSuite,
       setQuickSuite,
       setView,
+      goBack,
       addCatalog: (name) => {
         const catalog = createCatalog(name)
         setState((current) => upsertCatalog(current, catalog))
@@ -103,20 +141,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       },
       removeCatalog: (catalogId) => {
         setState((current) => deleteCatalog(current, catalogId))
-        setView((current) => {
-          if (
-            (current.name === 'catalog' ||
-              current.name === 'guidedAdd' ||
-              current.name === 'manageWords' ||
-              current.name === 'editWord' ||
-              current.name === 'practiceSetup') &&
-            'catalogId' in current &&
-            current.catalogId === catalogId
-          ) {
-            return { name: 'home' }
-          }
-          return current
-        })
+        if ('catalogId' in view && view.catalogId === catalogId) {
+          setView({ name: 'home' })
+        }
       },
       addWord: (catalogId, draft) => {
         setState((current) => addWordToCatalog(current, catalogId, draft))
@@ -154,7 +181,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       },
       defaultPracticeConfig,
     }),
-    [state, view, sessions, quickSuite],
+    [state, view, sessions, quickSuite, setView, goBack],
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

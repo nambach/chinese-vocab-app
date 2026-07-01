@@ -12,6 +12,7 @@ type SmartInputProps = {
   autoFocus?: boolean
   onSubmit?: () => void
   className?: string
+  hint?: string
 }
 
 export function SmartInput({
@@ -25,6 +26,7 @@ export function SmartInput({
   autoFocus,
   onSubmit,
   className = '',
+  hint,
 }: SmartInputProps) {
   const [enabled, setEnabled] = useState(pinyin && toneNumberInput)
 
@@ -74,6 +76,8 @@ export function SmartInput({
       />
       {toneActive ? (
         <span className="text-xs text-teal-600">Gõ thanh điệu bằng số (ni3 → nǐ) · Gõ v → ü</span>
+      ) : hint ? (
+        <span className="text-xs text-teal-600">{hint}</span>
       ) : null}
     </label>
   )

@@ -1,15 +1,15 @@
 import { useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { IMPORT_FORMAT_GUIDE, parseCatalogText } from '../lib/txt'
-import { BigButton, Card, ScreenShell } from '../components/ui'
+import { IMPORT_FORMAT_GUIDE_BODY, parseCatalogText } from '../lib/txt'
+import { BigButton, Card, LineNumberedTextarea, ScreenShell } from '../components/ui'
 
 export function CreateCollection() {
-  const { setView, createCollection } = useApp()
+  const { setView, goBack, createCollection } = useApp()
   const [name, setName] = useState('')
   const [text, setText] = useState('')
 
   const parsed = useMemo(() => parseCatalogText(text), [text])
-  const effectiveName = name.trim() || parsed.name || ''
+  const effectiveName = name.trim()
   const canCreate = effectiveName.length > 0
 
   function create() {
@@ -18,11 +18,20 @@ export function CreateCollection() {
     setView({ name: 'catalog', catalogId: catalog.id })
   }
 
+  function startGuidedAdd() {
+    if (!canCreate) {
+      window.alert('Vui lòng nhập tên bộ sưu tập trước.')
+      return
+    }
+    const catalog = createCollection(effectiveName, parsed.words)
+    setView({ name: 'guidedAdd', catalogId: catalog.id })
+  }
+
   return (
     <ScreenShell
       title="Tạo bộ sưu tập"
-      onBack={() => setView({ name: 'home' })}
-      backLabel="← Trang chủ"
+      onBack={() => goBack({ name: 'home' })}
+      backLabel="Trang chủ"
       footer={
         <BigButton onClick={create} disabled={!canCreate}>
           Tạo bộ sưu tập
@@ -40,16 +49,27 @@ export function CreateCollection() {
         />
       </label>
 
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-medium text-teal-800">Dán từ vựng (không bắt buộc)</span>
-        <textarea
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium text-teal-800">Bộ từ vựng</span>
+        <LineNumberedTextarea
           value={text}
-          onChange={(event) => setText(event.target.value)}
-          placeholder={IMPORT_FORMAT_GUIDE}
+          onChange={setText}
+          placeholder={IMPORT_FORMAT_GUIDE_BODY}
           rows={8}
-          className="w-full rounded-2xl border border-teal-200 bg-white px-4 py-3 font-mono text-sm text-teal-950 outline-none focus:border-teal-500"
+          errorLines={new Set(parsed.errorLines)}
         />
-      </label>
+        <p className="text-sm text-teal-700">
+          Dán bộ từ vựng bạn vừa copy vào ô trên, hoặc{' '}
+          <button
+            type="button"
+            onClick={startGuidedAdd}
+            className="font-medium text-teal-800 underline underline-offset-2 active:text-teal-950"
+          >
+            nhập mới từng từ
+          </button>
+          .
+        </p>
+      </div>
 
       {text.trim() ? (
         <Card>
@@ -58,11 +78,7 @@ export function CreateCollection() {
             {parsed.errors.length > 0 ? ` · ${parsed.errors.length} dòng lỗi` : ''}
           </p>
         </Card>
-      ) : (
-        <p className="px-1 text-xs text-teal-600">
-          Để trống ô từ vựng nếu bạn muốn tự thêm từng từ sau khi tạo.
-        </p>
-      )}
+      ) : null}
     </ScreenShell>
   )
 }

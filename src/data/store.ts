@@ -10,13 +10,36 @@ import {
   type Word,
 } from '../models/types'
 
+const MAX_PRACTICE_HISTORY = 50
+
+function normalizePracticeResult(result: PracticeResult): PracticeResult {
+  return {
+    ...result,
+    id: result.id || createId(),
+  }
+}
+
+function normalizeCatalog(catalog: Catalog): Catalog {
+  const history =
+    catalog.practiceHistory?.map(normalizePracticeResult) ??
+    (catalog.lastResult ? [normalizePracticeResult(catalog.lastResult)] : [])
+  const lastResult = history[0] ?? catalog.lastResult
+  return { ...catalog, practiceHistory: history, lastResult }
+}
 function migrate(state: AppState): AppState {
   if (state.version === SCHEMA_VERSION) {
-    return state
+    return {
+      ...state,
+      catalogs: state.catalogs.map(normalizeCatalog),
+    }
   }
 
   // Future migrations go here.
-  return { ...state, version: SCHEMA_VERSION }
+  return {
+    ...state,
+    version: SCHEMA_VERSION,
+    catalogs: state.catalogs.map(normalizeCatalog),
+  }
 }
 
 function parseStored(raw: string | null): AppState {
@@ -190,12 +213,19 @@ export function reorderWordsInCatalog(
 export function setCatalogLastResult(
   state: AppState,
   catalogId: string,
-  result: PracticeResult,
+  result: Omit<PracticeResult, 'id'>,
 ): AppState {
   const catalog = getCatalog(state, catalogId)
   if (!catalog) return state
 
-  return upsertCatalog(state, { ...catalog, lastResult: result })
+  const entry = normalizePracticeResult({ ...result, id: createId() })
+  const history = [entry, ...(catalog.practiceHistory ?? [])].slice(0, MAX_PRACTICE_HISTORY)
+
+  return upsertCatalog(state, { ...catalog, lastResult: entry, practiceHistory: history })
+}
+
+export function getPracticeHistory(catalog: Catalog): PracticeResult[] {
+  return catalog.practiceHistory ?? (catalog.lastResult ? [catalog.lastResult] : [])
 }
 
 export function moveWordInCatalog(

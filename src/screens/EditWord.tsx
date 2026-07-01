@@ -9,7 +9,7 @@ type EditWordProps = {
 }
 
 export function EditWord({ catalogId, wordId }: EditWordProps) {
-  const { setView, updateWord, state } = useApp()
+  const { setView, goBack, updateWord, state } = useApp()
   const catalog = useCatalog(catalogId)
   const word = catalog?.words.find((item) => item.id === wordId)
 
@@ -37,7 +37,8 @@ export function EditWord({ catalogId, wordId }: EditWordProps) {
     <ScreenShell
       title="Sửa từ"
       subtitle={catalog.name}
-      onBack={() => setView({ name: 'manageWords', catalogId })}
+      onBack={() => goBack({ name: 'manageWords', catalogId })}
+      backLabel="Danh sách từ"
     >
       <WordCard
         key={word.id}

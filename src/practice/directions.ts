@@ -19,13 +19,21 @@ function normalizeText(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, ' ')
 }
 
-function meaningMatches(userAnswer: string, expected: string): boolean {
-  const normalizedAnswer = normalizeText(userAnswer)
-  return expected
-    .split(/[/,]/)
+function splitMeanings(value: string): string[] {
+  return value
+    .split(/[/,|]/)
     .map((part) => normalizeText(part))
     .filter(Boolean)
-    .some((part) => part === normalizedAnswer)
+}
+
+// Several accepted meanings, separated by "," when stored.
+// The learner may answer with any subset — each meaning they enter must match
+// one accepted option, but they do not need to enter every meaning.
+function meaningMatches(userAnswer: string, expected: string): boolean {
+  const accepted = new Set(splitMeanings(expected))
+  const provided = splitMeanings(userAnswer)
+  if (provided.length === 0) return false
+  return provided.every((part) => accepted.has(part))
 }
 
 export const QUIZ_DIRECTIONS: QuizDirection[] = [

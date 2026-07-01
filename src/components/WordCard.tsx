@@ -48,7 +48,8 @@ export function WordCard({
         label="Nghĩa tiếng Việt"
         value={value.meaning}
         onChange={(meaning) => onChange({ ...value, meaning })}
-        placeholder="xin chào"
+        placeholder="xin chào, chào bạn"
+        hint="Nhiều nghĩa cách nhau bằng dấu phẩy"
       />
 
       <div className="grid gap-3">

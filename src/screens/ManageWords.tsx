@@ -7,7 +7,7 @@ type ManageWordsProps = {
 }
 
 export function ManageWords({ catalogId }: ManageWordsProps) {
-  const { setView, removeWord, moveWord } = useApp()
+  const { setView, goBack, removeWord, moveWord } = useApp()
   const catalog = useCatalog(catalogId)
 
   if (!catalog) {
@@ -22,7 +22,8 @@ export function ManageWords({ catalogId }: ManageWordsProps) {
     <ScreenShell
       title="Quản lý từ"
       subtitle={`${catalog.name} · ${catalog.words.length} từ`}
-      onBack={() => setView({ name: 'catalog', catalogId })}
+      onBack={() => goBack({ name: 'catalog', catalogId })}
+      backLabel={catalog.name}
     >
       <WordList
         words={catalog.words}

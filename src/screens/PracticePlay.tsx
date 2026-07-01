@@ -59,7 +59,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
 
   useEffect(() => {
     if (session?.finishedAt) {
-      setView({ name: 'results', sessionId })
+      setView({ name: 'results', sessionId }, { replace: true })
     }
   }, [session?.finishedAt, sessionId, setView])
 
@@ -118,7 +118,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
           exitView()
         }
       }}
-      backLabel="← Thoát"
+      backLabel="Thoát"
       footer={
         <BigButton onClick={handleSubmit}>
           {session.showingFeedback ? 'Tiếp theo' : 'Kiểm tra'}
@@ -169,6 +169,11 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
           label={direction.answerLabel}
           value={answer}
           onChange={setAnswer}
+          placeholder={
+            direction.answerField === 'meaning'
+              ? 'Một hoặc vài nghĩa, cách nhau dấu phẩy'
+              : undefined
+          }
           pinyin={isPinyinAnswer}
           toneNumberInput={state.settings.toneNumberInput}
           lang={direction.inputLang}
@@ -178,21 +183,31 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
       ) : (
         <Card
           className={`text-center ${
-            lastAttempt?.correct ? 'bg-emerald-50 ring-emerald-200' : 'bg-red-50 ring-red-200'
+            lastAttempt?.correct
+              ? 'bg-emerald-50 ring-emerald-200'
+              : 'bg-red-50 ring-red-200'
           }`}
         >
-          <div className="text-3xl">{lastAttempt?.correct ? '✓' : '✗'}</div>
-          <p className="mt-2 text-lg font-semibold text-teal-950">
+          <div
+            className={`text-3xl ${lastAttempt?.correct ? 'text-emerald-600' : 'text-red-600'}`}
+          >
+            {lastAttempt?.correct ? '✓' : '✗'}
+          </div>
+          <p
+            className={`mt-2 text-lg font-semibold ${
+              lastAttempt?.correct ? 'text-emerald-800' : 'text-red-800'
+            }`}
+          >
             {lastAttempt?.correct ? 'Đúng rồi!' : 'Chưa đúng'}
           </p>
           {!lastAttempt?.correct ? (
-            <div className="mt-3 space-y-1 text-teal-800">
+            <div className="mt-3 space-y-1 text-red-700">
               {lastAttempt?.timedOut ? <p>Hết thời gian</p> : null}
               <p>
-                Đáp án: <span className="font-semibold">{correctAnswer}</span>
+                Đáp án: <span className="font-semibold text-red-900">{correctAnswer}</span>
               </p>
               {lastAttempt?.userAnswer ? (
-                <p className="text-sm">Bạn nhập: {lastAttempt.userAnswer}</p>
+                <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
               ) : null}
             </div>
           ) : null}

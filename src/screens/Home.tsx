@@ -18,6 +18,15 @@ export function Home() {
         Luyện tập ngay
       </BigButton>
 
+      {catalogs.length >= 2 ? (
+        <BigButton
+          variant="secondary"
+          onClick={() => setView({ name: 'combinePractice' })}
+        >
+          Luyện tập nhiều bài
+        </BigButton>
+      ) : null}
+
       {catalogs.length > 0 ? (
         <div className="flex flex-col gap-3">
           <h2 className="px-1 text-sm font-semibold text-teal-700">Bộ sưu tập đã lưu</h2>

@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 
 export type MenuItem = {
   label: string
@@ -71,30 +71,52 @@ export function ScreenShell({
   title,
   subtitle,
   onBack,
-  backLabel = '← Quay lại',
+  backLabel = 'Quay lại',
   menuItems,
   children,
   footer,
 }: ScreenShellProps) {
+  const hasMenu = Boolean(menuItems && menuItems.length > 0)
+
   return (
     <div className="flex min-h-dvh flex-col bg-teal-50">
-      <header className="border-b border-teal-100 bg-white px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))]">
-        {onBack ? (
-          <button
-            type="button"
-            onClick={onBack}
-            className="mb-2 text-sm font-medium text-teal-700"
-          >
-            {backLabel}
-          </button>
-        ) : null}
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h1 className="text-2xl font-bold text-teal-900">{title}</h1>
-            {subtitle ? <p className="mt-1 text-sm text-teal-700">{subtitle}</p> : null}
+      <header className="border-b border-teal-100 bg-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
+        <div className="flex min-h-11 items-center gap-2">
+          {onBack ? (
+            <div className="flex w-11 shrink-0 justify-start">
+              <button
+                type="button"
+                onClick={onBack}
+                aria-label={backLabel}
+                className="-ml-2 flex h-11 w-11 items-center justify-center rounded-2xl text-teal-800 active:bg-teal-50"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M15 6l-6 6 6 6"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          ) : null}
+
+          <div className={`min-w-0 flex-1 ${onBack ? 'text-center' : 'text-left'}`}>
+            <h1 className="truncate text-lg font-bold leading-tight text-teal-900">{title}</h1>
           </div>
-          {menuItems && menuItems.length > 0 ? <HeaderMenu items={menuItems} /> : null}
+
+          <div className={`flex shrink-0 justify-end ${hasMenu ? 'w-11' : ''}`}>
+            {hasMenu ? <HeaderMenu items={menuItems!} /> : null}
+          </div>
         </div>
+
+        {subtitle ? (
+          <p className={`mt-0.5 truncate text-sm text-teal-700 ${onBack ? 'text-center' : 'text-left'}`}>
+            {subtitle}
+          </p>
+        ) : null}
       </header>
 
       <main className="flex flex-1 flex-col gap-4 px-4 py-6">{children}</main>
@@ -248,6 +270,64 @@ export function Dialog({
         <div className="mt-3 text-teal-800">{children}</div>
         {footer ? <div className="mt-5">{footer}</div> : null}
       </div>
+    </div>
+  )
+}
+
+type LineNumberedTextareaProps = {
+  value: string
+  onChange: (value: string) => void
+  placeholder?: string
+  rows?: number
+  autoFocus?: boolean
+  errorLines?: Set<number>
+}
+
+export function LineNumberedTextarea({
+  value,
+  onChange,
+  placeholder,
+  rows = 10,
+  autoFocus,
+  errorLines,
+}: LineNumberedTextareaProps) {
+  const gutterRef = useRef<HTMLDivElement>(null)
+  const lineCount = Math.max(1, value.split('\n').length)
+  const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1)
+
+  return (
+    <div className="flex overflow-hidden rounded-2xl border border-teal-200 bg-white font-mono text-sm focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-200">
+      <div
+        ref={gutterRef}
+        aria-hidden="true"
+        className="select-none overflow-hidden bg-teal-50 py-3 pl-3 pr-2 text-right leading-6 text-teal-400"
+      >
+        {lineNumbers.map((n) => (
+          <div
+            key={n}
+            className={errorLines?.has(n) ? 'font-semibold text-red-500' : undefined}
+          >
+            {n}
+          </div>
+        ))}
+      </div>
+      <textarea
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        onScroll={(event) => {
+          if (gutterRef.current) {
+            gutterRef.current.scrollTop = event.currentTarget.scrollTop
+          }
+        }}
+        placeholder={placeholder}
+        rows={rows}
+        autoFocus={autoFocus}
+        wrap="off"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck={false}
+        className="flex-1 resize-none overflow-auto whitespace-pre bg-white px-3 py-3 leading-6 text-teal-950 outline-none"
+      />
     </div>
   )
 }

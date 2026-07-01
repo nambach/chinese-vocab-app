@@ -1,10 +1,12 @@
 import { AppProvider, useApp } from './context/AppContext'
 import { CatalogScreen } from './screens/Catalog'
+import { CombinePractice } from './screens/CombinePractice'
 import { CreateCollection } from './screens/CreateCollection'
 import { EditWord } from './screens/EditWord'
 import { GuidedAdd } from './screens/GuidedAdd'
 import { Home } from './screens/Home'
 import { ManageWords } from './screens/ManageWords'
+import { PracticeHistory } from './screens/PracticeHistory'
 import { PracticePlay } from './screens/PracticePlay'
 import { PracticeSetup } from './screens/PracticeSetup'
 import { QuickPractice } from './screens/QuickPractice'
@@ -19,10 +21,14 @@ function Router() {
       return <Settings />
     case 'quickPractice':
       return <QuickPractice />
+    case 'combinePractice':
+      return <CombinePractice />
     case 'createCollection':
       return <CreateCollection />
     case 'catalog':
       return <CatalogScreen catalogId={view.catalogId} />
+    case 'practiceHistory':
+      return <PracticeHistory catalogId={view.catalogId} />
     case 'guidedAdd':
       return <GuidedAdd catalogId={view.catalogId} />
     case 'manageWords':

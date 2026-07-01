@@ -19,7 +19,15 @@ export function formatResultDate(timestamp: number): string {
   return new Date(timestamp).toLocaleString('vi-VN', {
     day: '2-digit',
     month: '2-digit',
+    year: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
   })
+}
+
+export function resultScoreTone(result: PracticeResult): 'good' | 'ok' | 'low' {
+  const percent = resultPercent(result)
+  if (percent >= 80) return 'good'
+  if (percent >= 50) return 'ok'
+  return 'low'
 }

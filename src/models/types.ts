@@ -12,6 +12,7 @@ export type Word = {
 }
 
 export type PracticeResult = {
+  id: string
   directionId: QuizDirectionId
   correct: number
   total: number
@@ -26,6 +27,7 @@ export type Catalog = {
   createdAt: number
   updatedAt: number
   lastResult?: PracticeResult
+  practiceHistory?: PracticeResult[]
 }
 
 export type Settings = {
@@ -52,8 +54,10 @@ export type View =
   | { name: 'home' }
   | { name: 'settings' }
   | { name: 'quickPractice' }
+  | { name: 'combinePractice' }
   | { name: 'createCollection' }
   | { name: 'catalog'; catalogId: string }
+  | { name: 'practiceHistory'; catalogId: string }
   | { name: 'guidedAdd'; catalogId: string }
   | { name: 'manageWords'; catalogId: string }
   | { name: 'editWord'; catalogId: string; wordId: string }
