@@ -50,7 +50,11 @@ function Router() {
 export default function App() {
   return (
     <AppProvider>
-      <Router />
+      <div className="min-h-dvh bg-teal-100 md:flex md:justify-center md:px-4 md:py-6 lg:px-8 lg:py-8">
+        <div className="flex min-h-dvh w-full flex-col md:min-h-[calc(100dvh-3rem)] md:max-w-2xl md:overflow-hidden md:rounded-3xl md:shadow-xl md:ring-1 md:ring-teal-200/80 lg:max-w-4xl">
+          <Router />
+        </div>
+      </div>
     </AppProvider>
   )
 }

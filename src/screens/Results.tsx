@@ -78,31 +78,35 @@ export function Results({ sessionId }: ResultsProps) {
       onBack={exit}
       backLabel="Xong"
     >
-      <Card className="text-center">
-        <div className="text-5xl font-bold text-teal-900">
-          {score.correct}/{score.total}
-        </div>
-        <p className="mt-2 text-teal-700">Thời gian: {duration}</p>
-      </Card>
-
-      {wrongWords.length > 0 ? (
-        <Card>
-          <h2 className="text-sm font-semibold text-teal-900">Từ chưa đúng</h2>
-          <ul className="mt-3 space-y-3">
-            {wrongWords.map((word) => (
-              <li key={word.id} className="border-b border-teal-50 pb-3 last:border-none last:pb-0">
-                <div className="text-xl font-semibold">{word.hanzi}</div>
-                <div className="text-teal-800">{word.pinyin}</div>
-                <div className="text-sm text-teal-700">{word.meaning}</div>
-              </li>
-            ))}
-          </ul>
+      <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Card className="text-center lg:py-8">
+          <div className="text-5xl font-bold text-teal-900 md:text-6xl">
+            {score.correct}/{score.total}
+          </div>
+          <p className="mt-2 text-teal-700">Thời gian: {duration}</p>
         </Card>
-      ) : (
-        <Card className="text-center text-teal-700">Tuyệt vời! Bạn trả lời đúng hết.</Card>
-      )}
 
-      <div className="grid gap-3">
+        {wrongWords.length > 0 ? (
+          <Card>
+            <h2 className="text-sm font-semibold text-teal-900 md:text-base">Từ chưa đúng</h2>
+            <ul className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-1">
+              {wrongWords.map((word) => (
+                <li key={word.id} className="border-b border-teal-50 pb-3 last:border-none last:pb-0">
+                  <div className="text-xl font-semibold">{word.hanzi}</div>
+                  <div className="text-teal-800">{word.pinyin}</div>
+                  <div className="text-sm text-teal-700">{word.meaning}</div>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ) : (
+          <Card className="flex items-center justify-center text-center text-teal-700 lg:min-h-[12rem]">
+            Tuyệt vời! Bạn trả lời đúng hết.
+          </Card>
+        )}
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
         {wrongWords.length > 0 ? (
           <BigButton onClick={retryWrongOnly}>Luyện lại từ sai</BigButton>
         ) : null}

@@ -63,7 +63,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
       subtitle={`${activeSource.title} · ${activeSource.words.length} từ`}
       onBack={backView}
     >
-      <Card className="space-y-4">
+      <Card className="grid gap-4 md:grid-cols-2">
         <Select
           label="Loại dịch"
           value={config.directionId}
@@ -109,7 +109,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
         />
 
         {config.timerId !== 'untimed' ? (
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-2 md:col-span-2 md:max-w-xs">
             <span className="text-sm font-medium text-teal-800">Giây</span>
             <input
               type="number"

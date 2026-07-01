@@ -102,11 +102,11 @@ export function ScreenShell({
 
   const shell = (
     <div
-      className={`flex flex-col bg-teal-50 ${keyboardAvoiding ? 'h-full min-h-0' : 'min-h-dvh'}`}
+      className={`flex flex-col bg-teal-50 ${keyboardAvoiding ? 'h-full min-h-0' : 'min-h-dvh md:min-h-full'}`}
     >
       <header
         ref={headerRef}
-        className="shrink-0 border-b border-teal-100 bg-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]"
+        className="shrink-0 border-b border-teal-100 bg-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] md:px-8 md:pb-4 md:pt-4"
       >
         <div className="flex min-h-11 items-center gap-2">
           {onBack ? (
@@ -131,7 +131,9 @@ export function ScreenShell({
           ) : null}
 
           <div className={`min-w-0 flex-1 ${onBack ? 'text-center' : 'text-left'}`}>
-            <h1 className="truncate text-lg font-bold leading-tight text-teal-900">{title}</h1>
+            <h1 className="truncate text-lg font-bold leading-tight text-teal-900 md:text-xl">
+              {title}
+            </h1>
           </div>
 
           <div className={`flex shrink-0 justify-end ${hasMenu ? 'w-11' : ''}`}>
@@ -147,7 +149,7 @@ export function ScreenShell({
       </header>
 
       <main
-        className={`flex flex-col gap-4 px-4 py-6 ${
+        className={`flex flex-col gap-4 px-4 py-6 md:gap-5 md:px-8 md:py-8 ${
           keyboardAvoiding ? 'min-h-0 flex-1 overflow-hidden' : 'flex-1'
         }`}
       >
@@ -155,7 +157,7 @@ export function ScreenShell({
       </main>
 
       {footer ? (
-        <footer className="shrink-0 border-t border-teal-100 bg-white px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <footer className="shrink-0 border-t border-teal-100 bg-white px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:px-8 md:py-5">
           {footer}
         </footer>
       ) : null}
@@ -275,9 +277,9 @@ export function BottomDrawer({
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-40 flex flex-col justify-end">
+    <div className="fixed inset-0 z-40 flex flex-col justify-end md:items-center md:justify-center md:p-6">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
-      <div className="relative z-50 rounded-t-3xl bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-xl">
+      <div className="relative z-50 w-full rounded-t-3xl bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-xl md:max-w-lg md:rounded-3xl md:p-6">
         <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-teal-200" />
         {title ? <h2 className="mb-4 text-lg font-semibold text-teal-900">{title}</h2> : null}
         {children}
@@ -302,9 +304,9 @@ export function Dialog({
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
-      <div className="relative z-50 w-full max-w-sm rounded-3xl bg-white p-6 shadow-xl">
+      <div className="relative z-50 w-full max-w-sm rounded-3xl bg-white p-6 shadow-xl md:max-w-md md:p-8">
         {title ? <h2 className="text-lg font-semibold text-teal-900">{title}</h2> : null}
         <div className="mt-3 text-teal-800">{children}</div>
         {footer ? <div className="mt-5">{footer}</div> : null}

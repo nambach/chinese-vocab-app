@@ -57,7 +57,7 @@ export function CombinePractice() {
       {catalogs.length === 0 ? (
         <Card className="text-center text-teal-700">Chưa có bộ sưu tập nào được lưu.</Card>
       ) : (
-        <ul className="flex flex-col gap-3">
+        <ul className="grid gap-3 md:grid-cols-2">
           {catalogs.map((catalog) => {
             const isSelected = selected.has(catalog.id)
             return (

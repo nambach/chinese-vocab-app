@@ -9,7 +9,8 @@
     "build:local": "tsc -b && vite build --mode devtest",
     "preview": "vite preview --host",
     "preview:local": "npm run build:local && vite preview --host",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "test": "vitest run"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -23,6 +24,7 @@
     "tailwindcss": "^4.1.11",
     "typescript": "~5.8.3",
     "vite": "^7.0.4",
-    "vite-plugin-pwa": "^1.0.1"
+    "vite-plugin-pwa": "^1.0.1",
+    "vitest": "^4.1.9"
   }
 }

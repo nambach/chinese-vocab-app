@@ -44,7 +44,7 @@ export function WordList({ words, onEdit, onDelete, onMove }: WordListProps) {
         className="w-full rounded-2xl border border-teal-200 bg-white px-4 py-3 text-base outline-none focus:border-teal-500"
       />
 
-      <ul className="flex flex-col gap-3">
+      <ul className="grid gap-3 lg:grid-cols-2">
         {filteredWords.map((word) => {
           const index = words.findIndex((item) => item.id === word.id)
           return (

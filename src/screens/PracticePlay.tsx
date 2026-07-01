@@ -115,7 +115,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
   const promptCard = (
     <Card
       className={`flex flex-col items-center justify-center text-center ${
-        compact ? 'min-h-0 p-4' : 'min-h-[220px]'
+        compact ? 'min-h-0 p-4' : 'min-h-[220px] lg:min-h-[280px]'
       }`}
     >
       <p className="text-sm font-medium uppercase tracking-wide text-teal-600">
@@ -126,10 +126,10 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
           direction.promptField === 'hanzi'
             ? compact
               ? 'text-4xl'
-              : 'text-5xl'
+              : 'text-5xl lg:text-6xl'
             : compact
               ? 'text-2xl'
-              : 'text-3xl'
+              : 'text-3xl lg:text-4xl'
         }`}
       >
         {prompt}
@@ -216,11 +216,13 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
             </div>
           </>
         ) : (
-          <>
-            {promptCard}
-            {answerInput}
-            {isTouch && !session.showingFeedback ? submitButton : null}
-          </>
+          <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-6">
+            <div>{promptCard}</div>
+            <div className="space-y-4">
+              {answerInput}
+              {isTouch && !session.showingFeedback ? submitButton : null}
+            </div>
+          </div>
         )}
 
         {session.showingFeedback ? (

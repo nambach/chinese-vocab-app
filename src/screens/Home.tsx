@@ -14,23 +14,26 @@ export function Home() {
 
   return (
     <ScreenShell title="Học từ vựng tiếng Trung" menuItems={menuItems}>
-      <BigButton onClick={() => setView({ name: 'quickPractice' })} className="py-6 text-xl">
-        Luyện tập ngay
-      </BigButton>
-
-      {catalogs.length >= 2 ? (
-        <BigButton
-          variant="secondary"
-          onClick={() => setView({ name: 'combinePractice' })}
-        >
-          Luyện tập nhiều bài
+      <div className="grid gap-3 md:grid-cols-2">
+        <BigButton onClick={() => setView({ name: 'quickPractice' })} className="py-6 text-xl md:col-span-2">
+          Luyện tập ngay
         </BigButton>
-      ) : null}
+
+        {catalogs.length >= 2 ? (
+          <BigButton
+            variant="secondary"
+            onClick={() => setView({ name: 'combinePractice' })}
+            className="md:col-span-2"
+          >
+            Luyện tập nhiều bài
+          </BigButton>
+        ) : null}
+      </div>
 
       {catalogs.length > 0 ? (
         <div className="flex flex-col gap-3">
-          <h2 className="px-1 text-sm font-semibold text-teal-700">Bộ sưu tập đã lưu</h2>
-          <ul className="flex flex-col gap-3">
+          <h2 className="px-1 text-sm font-semibold text-teal-700 md:text-base">Bộ sưu tập đã lưu</h2>
+          <ul className="grid gap-3 md:grid-cols-2">
             {catalogs.map((catalog) => (
               <li key={catalog.id}>
                 <Card className="p-4">
