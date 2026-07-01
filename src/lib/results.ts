@@ -1,4 +1,4 @@
-import { getDirection } from '../practice/directions'
+import { findDirection } from '../practice/directions'
 import { formatDuration } from '../practice/session'
 import type { PracticeResult } from '../models/types'
 
@@ -8,7 +8,7 @@ export function resultPercent(result: PracticeResult): number {
 }
 
 export function resultDirectionLabel(result: PracticeResult): string {
-  return getDirection(result.directionId).label
+  return findDirection(result.directionId)?.label ?? 'Luyện tập'
 }
 
 export function resultDurationLabel(result: PracticeResult): string {

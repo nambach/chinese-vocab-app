@@ -51,11 +51,13 @@ export const defaultAppState = (): AppState => ({
 export type View =
   | { name: 'home' }
   | { name: 'settings' }
+  | { name: 'quickPractice' }
+  | { name: 'createCollection' }
   | { name: 'catalog'; catalogId: string }
   | { name: 'guidedAdd'; catalogId: string }
   | { name: 'manageWords'; catalogId: string }
   | { name: 'editWord'; catalogId: string; wordId: string }
-  | { name: 'practiceSetup'; catalogId: string }
+  | { name: 'practiceSetup'; catalogId?: string }
   | { name: 'practicePlay'; sessionId: string }
   | { name: 'results'; sessionId: string }
 
@@ -63,6 +65,11 @@ export type WordDraft = {
   hanzi: string
   pinyin: string
   meaning: string
+}
+
+export type QuickSuite = {
+  title: string
+  words: Word[]
 }
 
 export type PracticeSetupDraft = PracticeConfig

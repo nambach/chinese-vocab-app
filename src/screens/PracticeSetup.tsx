@@ -2,29 +2,47 @@ import { useState } from 'react'
 import { QUIZ_DIRECTIONS } from '../practice/directions'
 import { ORDER_STRATEGIES } from '../practice/orderStrategies'
 import { TIMER_STRATEGIES } from '../practice/timerStrategies'
-import { BigButton, Card, OptionButton, ScreenShell } from '../components/ui'
+import { BigButton, Card, ScreenShell, Select } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
 import type { PracticeConfig } from '../practice/session'
 
 type PracticeSetupProps = {
-  catalogId: string
+  catalogId?: string
 }
 
 export function PracticeSetup({ catalogId }: PracticeSetupProps) {
-  const { setView, startPractice, defaultPracticeConfig } = useApp()
-  const catalog = useCatalog(catalogId)
+  const { setView, startPractice, defaultPracticeConfig, quickSuite } = useApp()
+  const catalog = useCatalog(catalogId ?? '')
   const [config, setConfig] = useState<PracticeConfig>(defaultPracticeConfig())
 
-  if (!catalog) {
+  const source = catalogId
+    ? catalog
+      ? { title: catalog.name, words: catalog.words, catalogId }
+      : null
+    : quickSuite
+      ? { title: quickSuite.title, words: quickSuite.words, catalogId: undefined }
+      : null
+
+  const backView = () =>
+    setView(catalogId ? { name: 'catalog', catalogId } : { name: 'quickPractice' })
+
+  if (!source) {
     return (
       <ScreenShell title="Không tìm thấy" onBack={() => setView({ name: 'home' })}>
-        <Card className="text-center text-teal-700">Bộ sưu tập không tồn tại.</Card>
+        <Card className="text-center text-teal-700">Không có dữ liệu để luyện tập.</Card>
       </ScreenShell>
     )
   }
 
+  const activeSource = source
+
   function handleStart() {
-    const sessionId = startPractice(catalogId, config)
+    const sessionId = startPractice({
+      title: activeSource.title,
+      words: activeSource.words,
+      config,
+      catalogId: activeSource.catalogId,
+    })
     if (!sessionId) return
     setView({ name: 'practicePlay', sessionId })
   }
@@ -32,60 +50,53 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
   return (
     <ScreenShell
       title="Luyện tập"
-      subtitle={`${catalog.name} · ${catalog.words.length} từ`}
-      onBack={() => setView({ name: 'catalog', catalogId })}
+      subtitle={`${activeSource.title} · ${activeSource.words.length} từ`}
+      onBack={backView}
     >
-      <Card className="space-y-3">
-        <h2 className="text-sm font-semibold text-teal-900">Loại dịch</h2>
-        <div className="grid gap-2">
-          {QUIZ_DIRECTIONS.map((direction) => (
-            <OptionButton
-              key={direction.id}
-              selected={config.directionId === direction.id}
-              label={direction.label}
-              description={direction.description}
-              onClick={() => setConfig((current) => ({ ...current, directionId: direction.id }))}
-            />
-          ))}
-        </div>
-      </Card>
+      <Card className="space-y-4">
+        <Select
+          label="Loại dịch"
+          value={config.directionId}
+          options={QUIZ_DIRECTIONS.map((direction) => ({
+            value: direction.id,
+            label: direction.label,
+          }))}
+          onChange={(value) =>
+            setConfig((current) => ({ ...current, directionId: value as PracticeConfig['directionId'] }))
+          }
+        />
 
-      <Card className="space-y-3">
-        <h2 className="text-sm font-semibold text-teal-900">Thứ tự</h2>
-        <div className="grid gap-2">
-          {ORDER_STRATEGIES.map((strategy) => (
-            <OptionButton
-              key={strategy.id}
-              selected={config.orderId === strategy.id}
-              label={strategy.label}
-              onClick={() => setConfig((current) => ({ ...current, orderId: strategy.id }))}
-            />
-          ))}
-        </div>
-      </Card>
+        <Select
+          label="Thứ tự"
+          value={config.orderId}
+          options={ORDER_STRATEGIES.map((strategy) => ({
+            value: strategy.id,
+            label: strategy.label,
+          }))}
+          onChange={(value) =>
+            setConfig((current) => ({ ...current, orderId: value as PracticeConfig['orderId'] }))
+          }
+        />
 
-      <Card className="space-y-3">
-        <h2 className="text-sm font-semibold text-teal-900">Thời gian</h2>
-        <div className="grid gap-2">
-          {TIMER_STRATEGIES.map((strategy) => (
-            <OptionButton
-              key={strategy.id}
-              selected={config.timerId === strategy.id}
-              label={strategy.label}
-              description={strategy.description}
-              onClick={() =>
-                setConfig((current) => ({
-                  ...current,
-                  timerId: strategy.id,
-                  timerSeconds: strategy.defaultSeconds ?? current.timerSeconds,
-                }))
-              }
-            />
-          ))}
-        </div>
+        <Select
+          label="Thời gian"
+          value={config.timerId}
+          options={TIMER_STRATEGIES.map((strategy) => ({
+            value: strategy.id,
+            label: strategy.label,
+          }))}
+          onChange={(value) => {
+            const strategy = TIMER_STRATEGIES.find((item) => item.id === value)
+            setConfig((current) => ({
+              ...current,
+              timerId: value as PracticeConfig['timerId'],
+              timerSeconds: strategy?.defaultSeconds ?? current.timerSeconds,
+            }))
+          }}
+        />
 
         {config.timerId !== 'untimed' ? (
-          <label className="mt-2 flex flex-col gap-2">
+          <label className="flex flex-col gap-2">
             <span className="text-sm font-medium text-teal-800">Giây</span>
             <input
               type="number"
@@ -104,7 +115,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
         ) : null}
       </Card>
 
-      <BigButton onClick={handleStart} disabled={catalog.words.length === 0}>
+      <BigButton onClick={handleStart} disabled={activeSource.words.length === 0}>
         Bắt đầu
       </BigButton>
     </ScreenShell>

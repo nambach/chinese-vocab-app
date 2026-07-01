@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useApp, useCatalog } from '../context/AppContext'
 import { downloadTextFile, exportCatalogToText } from '../lib/txt'
 import {
@@ -6,7 +7,7 @@ import {
   resultDurationLabel,
   resultPercent,
 } from '../lib/results'
-import { BigButton, Card, ScreenShell, type MenuItem } from '../components/ui'
+import { BigButton, BottomDrawer, Card, Dialog, ScreenShell, type MenuItem } from '../components/ui'
 
 type CatalogScreenProps = {
   catalogId: string
@@ -15,6 +16,8 @@ type CatalogScreenProps = {
 export function CatalogScreen({ catalogId }: CatalogScreenProps) {
   const { setView, removeCatalog } = useApp()
   const catalog = useCatalog(catalogId)
+  const [shareOpen, setShareOpen] = useState(false)
+  const [copiedOpen, setCopiedOpen] = useState(false)
 
   if (!catalog) {
     return (
@@ -26,13 +29,22 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
 
   const currentCatalog = catalog
 
-  function handleExport() {
-    const content = exportCatalogToText(currentCatalog)
-    downloadTextFile(`${currentCatalog.name}.txt`, content)
+  function handleDownload() {
+    downloadTextFile(`${currentCatalog.name}.txt`, exportCatalogToText(currentCatalog))
+    setShareOpen(false)
+  }
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(exportCatalogToText(currentCatalog))
+      setShareOpen(false)
+      setCopiedOpen(true)
+    } catch {
+      window.alert('Không thể sao chép. Hãy thử tải file .txt.')
+    }
   }
 
   const menuItems: MenuItem[] = [
-    { label: 'Xuất file .txt', onClick: handleExport },
     { label: 'Cài đặt', onClick: () => setView({ name: 'settings' }) },
     {
       label: 'Xóa bộ sưu tập',
@@ -60,11 +72,16 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
         >
           Luyện tập
         </BigButton>
-        <BigButton variant="secondary" onClick={() => setView({ name: 'guidedAdd', catalogId })}>
-          + Thêm từ
-        </BigButton>
-        <BigButton variant="secondary" onClick={() => setView({ name: 'manageWords', catalogId })}>
-          Quản lý từ
+        <div className="grid grid-cols-2 gap-3">
+          <BigButton variant="secondary" className="text-base" onClick={() => setView({ name: 'guidedAdd', catalogId })}>
+            + Thêm từ
+          </BigButton>
+          <BigButton variant="secondary" className="text-base" onClick={() => setView({ name: 'manageWords', catalogId })}>
+            Quản lý từ
+          </BigButton>
+        </div>
+        <BigButton variant="secondary" onClick={() => setShareOpen(true)}>
+          Chia sẻ
         </BigButton>
       </div>
 
@@ -98,7 +115,7 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
 
       {currentCatalog.words.length === 0 ? (
         <Card className="text-center text-teal-700">
-          Bộ sưu tập trống. Thêm từ hoặc nhập file để bắt đầu luyện tập.
+          Bộ sưu tập trống. Thêm từ để bắt đầu luyện tập.
         </Card>
       ) : (
         <Card>
@@ -114,6 +131,32 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
           </ul>
         </Card>
       )}
+
+      <BottomDrawer open={shareOpen} onClose={() => setShareOpen(false)} title="Chia sẻ bộ sưu tập">
+        <div className="grid gap-3">
+          <BigButton onClick={handleCopy}>Sao chép vào bộ nhớ tạm</BigButton>
+          <BigButton variant="secondary" onClick={handleDownload}>
+            Tải file .txt
+          </BigButton>
+        </div>
+      </BottomDrawer>
+
+      <Dialog
+        open={copiedOpen}
+        onClose={() => setCopiedOpen(false)}
+        title="Đã sao chép!"
+        footer={
+          <BigButton onClick={() => setCopiedOpen(false)}>Đã hiểu</BigButton>
+        }
+      >
+        <p>Để dùng trên thiết bị khác:</p>
+        <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm">
+          <li>Mở web trên thiết bị đó.</li>
+          <li>Bấm <span className="font-semibold">“Luyện tập ngay”</span>.</li>
+          <li>Dán nội dung vừa sao chép vào ô văn bản.</li>
+          <li>Bấm luyện tập, hoặc “Lưu để dùng sau”.</li>
+        </ol>
+      </Dialog>
     </ScreenShell>
   )
 }

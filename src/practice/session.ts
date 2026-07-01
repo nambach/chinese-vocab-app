@@ -23,7 +23,8 @@ export type PracticeAttempt = {
 
 export type PracticeSessionSnapshot = {
   id: string
-  catalogId: string
+  title: string
+  catalogId?: string
   config: PracticeConfig
   words: Word[]
   currentIndex: number
@@ -36,24 +37,30 @@ export type PracticeSessionSnapshot = {
   lastAttempt?: PracticeAttempt
 }
 
+export type PracticeSessionInput = {
+  title: string
+  words: Word[]
+  config: PracticeConfig
+  catalogId?: string
+}
+
 export function createPracticeSession(
   sessionId: string,
-  catalogId: string,
-  sourceWords: Word[],
-  config: PracticeConfig,
+  input: PracticeSessionInput,
 ): PracticeSessionSnapshot | null {
-  if (sourceWords.length === 0) {
+  if (input.words.length === 0) {
     return null
   }
 
-  const orderStrategy = getOrderStrategy(config.orderId)
+  const orderStrategy = getOrderStrategy(input.config.orderId)
   const now = Date.now()
 
   return {
     id: sessionId,
-    catalogId,
-    config,
-    words: orderStrategy.orderWords(sourceWords),
+    title: input.title,
+    catalogId: input.catalogId,
+    config: input.config,
+    words: orderStrategy.orderWords(input.words),
     currentIndex: 0,
     attempts: [],
     startedAt: now,
@@ -205,11 +212,16 @@ export function getWrongWordIds(session: PracticeSessionSnapshot): string[] {
   return session.attempts.filter((attempt) => !attempt.correct).map((attempt) => attempt.wordId)
 }
 
+export function getWrongWords(session: PracticeSessionSnapshot): Word[] {
+  const wrongIds = new Set(getWrongWordIds(session))
+  return session.words.filter((word) => wrongIds.has(word.id))
+}
+
 export function defaultPracticeConfig(): PracticeConfig {
-  const timerStrategy = getTimerStrategy('untimed')
+  const timerStrategy = getTimerStrategy('timed-per-word')
   return {
     directionId: 'hanzi-to-pinyin',
-    orderId: 'sequential',
+    orderId: 'random',
     timerId: timerStrategy.id,
     timerSeconds: timerStrategy.defaultSeconds ?? 15,
   }

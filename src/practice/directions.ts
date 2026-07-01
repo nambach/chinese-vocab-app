@@ -3,16 +3,11 @@ import type { Word } from '../models/types'
 
 export type WordField = 'hanzi' | 'pinyin' | 'meaning'
 
-export type QuizDirectionId =
-  | 'hanzi-to-pinyin'
-  | 'pinyin-to-hanzi'
-  | 'hanzi-to-vn'
-  | 'pinyin-to-vn'
+export type QuizDirectionId = 'hanzi-to-pinyin' | 'hanzi-to-vn' | 'vn-to-hanzi'
 
 export type QuizDirection = {
   id: QuizDirectionId
   label: string
-  description: string
   promptField: WordField
   answerField: WordField
   answerLabel: string
@@ -37,44 +32,36 @@ export const QUIZ_DIRECTIONS: QuizDirection[] = [
   {
     id: 'hanzi-to-pinyin',
     label: '汉字 → pīnyīn',
-    description: 'Nhìn chữ Hán, gõ pinyin',
     promptField: 'hanzi',
     answerField: 'pinyin',
     answerLabel: 'Nhập pinyin',
     checkAnswer: (word, answer) => pinyinMatches(answer, word.pinyin),
   },
   {
-    id: 'pinyin-to-hanzi',
-    label: 'pīnyīn → 汉字',
-    description: 'Nhìn pinyin, gõ chữ Hán',
-    promptField: 'pinyin',
-    answerField: 'hanzi',
-    answerLabel: 'Nhập hán tự',
-    inputLang: 'zh',
-    checkAnswer: (word, answer) => normalizeText(answer) === normalizeText(word.hanzi),
-  },
-  {
     id: 'hanzi-to-vn',
     label: '汉字 → Tiếng Việt',
-    description: 'Nhìn chữ Hán, gõ nghĩa',
     promptField: 'hanzi',
     answerField: 'meaning',
     answerLabel: 'Nhập nghĩa tiếng Việt',
     checkAnswer: (word, answer) => meaningMatches(answer, word.meaning),
   },
   {
-    id: 'pinyin-to-vn',
-    label: 'pīnyīn → Tiếng Việt',
-    description: 'Nhìn pinyin, gõ nghĩa',
-    promptField: 'pinyin',
-    answerField: 'meaning',
-    answerLabel: 'Nhập nghĩa tiếng Việt',
-    checkAnswer: (word, answer) => meaningMatches(answer, word.meaning),
+    id: 'vn-to-hanzi',
+    label: 'Tiếng Việt → 汉字',
+    promptField: 'meaning',
+    answerField: 'hanzi',
+    answerLabel: 'Nhập hán tự',
+    inputLang: 'zh',
+    checkAnswer: (word, answer) => normalizeText(answer) === normalizeText(word.hanzi),
   },
 ]
 
+export function findDirection(id: string): QuizDirection | undefined {
+  return QUIZ_DIRECTIONS.find((item) => item.id === id)
+}
+
 export function getDirection(id: QuizDirectionId): QuizDirection {
-  const direction = QUIZ_DIRECTIONS.find((item) => item.id === id)
+  const direction = findDirection(id)
   if (!direction) {
     throw new Error(`Unknown direction: ${id}`)
   }

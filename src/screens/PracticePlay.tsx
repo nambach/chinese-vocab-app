@@ -11,10 +11,10 @@ import {
   isSessionTimedOut,
   submitAnswer,
 } from '../practice/session'
-import { getAnswerText, getDirection, getPromptText } from '../practice/directions'
+import { findDirection, getAnswerText, getPromptText } from '../practice/directions'
 import { SmartInput } from '../components/SmartInput'
 import { BigButton, Card, ScreenShell } from '../components/ui'
-import { useApp, useCatalog } from '../context/AppContext'
+import { useApp } from '../context/AppContext'
 
 type PracticePlayProps = {
   sessionId: string
@@ -23,11 +23,10 @@ type PracticePlayProps = {
 export function PracticePlay({ sessionId }: PracticePlayProps) {
   const { setView, getSession, updateSession, state } = useApp()
   const session = getSession(sessionId)
-  const catalog = useCatalog(session?.catalogId ?? '')
   const [answer, setAnswer] = useState('')
   const [now, setNow] = useState(Date.now())
 
-  const direction = session ? getDirection(session.config.directionId) : null
+  const direction = session ? findDirection(session.config.directionId) : undefined
   const currentWord = session ? getCurrentWord(session) : undefined
   const progress = session ? getProgress(session) : { current: 0, total: 0 }
   const answered = session ? getAnsweredCount(session) : 0
@@ -64,7 +63,10 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
     }
   }, [session?.finishedAt, sessionId, setView])
 
-  if (!session || !catalog || !direction) {
+  const exitView: () => void = () =>
+    setView(session?.catalogId ? { name: 'catalog', catalogId: session.catalogId } : { name: 'home' })
+
+  if (!session || !direction) {
     return (
       <ScreenShell title="Không tìm thấy" onBack={() => setView({ name: 'home' })}>
         <Card className="text-center text-teal-700">Phiên luyện tập không tồn tại.</Card>
@@ -82,7 +84,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
 
   if (!currentWord) {
     return (
-      <ScreenShell title="Hoàn thành" onBack={() => setView({ name: 'catalog', catalogId: catalog.id })}>
+      <ScreenShell title="Hoàn thành" onBack={exitView}>
         <Card className="text-center text-teal-700">Phiên luyện tập đã kết thúc.</Card>
       </ScreenShell>
     )
@@ -96,7 +98,6 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
   const isPinyinAnswer = direction.answerField === 'pinyin'
 
   const activeSession = session
-  const activeCatalog = catalog
 
   function handleSubmit() {
     if (activeSession.showingFeedback) {
@@ -110,11 +111,11 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
 
   return (
     <ScreenShell
-      title={activeCatalog.name}
+      title={activeSession.title}
       subtitle={`${progress.current}/${progress.total}`}
       onBack={() => {
         if (window.confirm('Thoát phiên luyện tập?')) {
-          setView({ name: 'catalog', catalogId: activeCatalog.id })
+          exitView()
         }
       }}
       backLabel="← Thoát"

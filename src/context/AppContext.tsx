@@ -3,6 +3,7 @@ import {
   addWordToCatalog,
   createCatalog,
   createId,
+  createWord,
   deleteCatalog,
   deleteWordFromCatalog,
   loadState,
@@ -18,12 +19,14 @@ import {
   createPracticeSession,
   defaultPracticeConfig,
   type PracticeConfig,
+  type PracticeSessionInput,
   type PracticeSessionSnapshot,
 } from '../practice/session'
 import type {
   AppState,
   Catalog,
   PracticeResult,
+  QuickSuite,
   Settings,
   View,
   Word,
@@ -34,8 +37,11 @@ type AppContextValue = {
   state: AppState
   view: View
   sessions: Record<string, PracticeSessionSnapshot>
+  quickSuite: QuickSuite | null
+  setQuickSuite: (suite: QuickSuite | null) => void
   setView: (view: View) => void
   addCatalog: (name: string) => Catalog
+  createCollection: (name: string, words: WordDraft[]) => Catalog
   importCatalog: (text: string, fallbackName?: string) => { catalog: Catalog; errors: string[] }
   updateCatalog: (catalog: Catalog) => void
   removeCatalog: (catalogId: string) => void
@@ -45,11 +51,7 @@ type AppContextValue = {
   moveWord: (catalogId: string, wordId: string, direction: 'up' | 'down') => void
   patchSettings: (patch: Partial<Settings>) => void
   recordPracticeResult: (catalogId: string, result: PracticeResult) => void
-  startPractice: (
-    catalogId: string,
-    config: PracticeConfig,
-    wordFilter?: (word: Word) => boolean,
-  ) => string | null
+  startPractice: (input: PracticeSessionInput) => string | null
   getSession: (sessionId: string) => PracticeSessionSnapshot | undefined
   updateSession: (
     sessionId: string,
@@ -64,6 +66,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<AppState>(() => loadState())
   const [view, setView] = useState<View>({ name: 'home' })
   const [sessions, setSessions] = useState<Record<string, PracticeSessionSnapshot>>({})
+  const [quickSuite, setQuickSuite] = useState<QuickSuite | null>(null)
 
   useEffect(() => {
     saveState(state)
@@ -74,9 +77,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       state,
       view,
       sessions,
+      quickSuite,
+      setQuickSuite,
       setView,
       addCatalog: (name) => {
         const catalog = createCatalog(name)
+        setState((current) => upsertCatalog(current, catalog))
+        return catalog
+      },
+      createCollection: (name, words) => {
+        const catalog = createCatalog(name)
+        catalog.words = words.map((word) => createWord(word))
         setState((current) => upsertCatalog(current, catalog))
         return catalog
       },
@@ -125,13 +136,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       recordPracticeResult: (catalogId, result) => {
         setState((current) => setCatalogLastResult(current, catalogId, result))
       },
-      startPractice: (catalogId, config, wordFilter) => {
-        const catalog = state.catalogs.find((item) => item.id === catalogId)
-        if (!catalog) return null
-
-        const words = wordFilter ? catalog.words.filter(wordFilter) : catalog.words
+      startPractice: (input) => {
         const sessionId = createId()
-        const session = createPracticeSession(sessionId, catalogId, words, config)
+        const session = createPracticeSession(sessionId, input)
         if (!session) return null
 
         setSessions((current) => ({ ...current, [sessionId]: session }))
@@ -147,7 +154,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       },
       defaultPracticeConfig,
     }),
-    [state, view, sessions],
+    [state, view, sessions, quickSuite],
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

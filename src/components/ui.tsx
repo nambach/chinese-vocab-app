@@ -154,6 +154,104 @@ export function Card({ children, className = '' }: { children: ReactNode; classN
   )
 }
 
+export type SelectOption = {
+  value: string
+  label: string
+}
+
+export function Select({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string
+  value: string
+  options: SelectOption[]
+  onChange: (value: string) => void
+}) {
+  return (
+    <label className="flex flex-col gap-2">
+      <span className="text-sm font-medium text-teal-800">{label}</span>
+      <div className="relative">
+        <select
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          className="w-full appearance-none rounded-2xl border border-teal-200 bg-white px-4 py-4 pr-10 text-lg text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <svg
+          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-teal-600"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+    </label>
+  )
+}
+
+export function BottomDrawer({
+  open,
+  onClose,
+  title,
+  children,
+}: {
+  open: boolean
+  onClose: () => void
+  title?: string
+  children: ReactNode
+}) {
+  if (!open) return null
+
+  return (
+    <div className="fixed inset-0 z-40 flex flex-col justify-end">
+      <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
+      <div className="relative z-50 rounded-t-3xl bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-xl">
+        <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-teal-200" />
+        {title ? <h2 className="mb-4 text-lg font-semibold text-teal-900">{title}</h2> : null}
+        {children}
+      </div>
+    </div>
+  )
+}
+
+export function Dialog({
+  open,
+  onClose,
+  title,
+  children,
+  footer,
+}: {
+  open: boolean
+  onClose: () => void
+  title?: string
+  children: ReactNode
+  footer?: ReactNode
+}) {
+  if (!open) return null
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
+      <div className="relative z-50 w-full max-w-sm rounded-3xl bg-white p-6 shadow-xl">
+        {title ? <h2 className="text-lg font-semibold text-teal-900">{title}</h2> : null}
+        <div className="mt-3 text-teal-800">{children}</div>
+        {footer ? <div className="mt-5">{footer}</div> : null}
+      </div>
+    </div>
+  )
+}
+
 export function OptionButton({
   selected,
   label,

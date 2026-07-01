@@ -1,11 +1,13 @@
 import { AppProvider, useApp } from './context/AppContext'
 import { CatalogScreen } from './screens/Catalog'
+import { CreateCollection } from './screens/CreateCollection'
 import { EditWord } from './screens/EditWord'
 import { GuidedAdd } from './screens/GuidedAdd'
 import { Home } from './screens/Home'
 import { ManageWords } from './screens/ManageWords'
 import { PracticePlay } from './screens/PracticePlay'
 import { PracticeSetup } from './screens/PracticeSetup'
+import { QuickPractice } from './screens/QuickPractice'
 import { Results } from './screens/Results'
 import { Settings } from './screens/Settings'
 
@@ -15,6 +17,10 @@ function Router() {
   switch (view.name) {
     case 'settings':
       return <Settings />
+    case 'quickPractice':
+      return <QuickPractice />
+    case 'createCollection':
+      return <CreateCollection />
     case 'catalog':
       return <CatalogScreen catalogId={view.catalogId} />
     case 'guidedAdd':

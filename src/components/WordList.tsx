@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { BigButton, Card } from './ui'
+import { normalizePinyin } from '../lib/pinyin'
 import type { Word } from '../models/types'
 
 type WordListProps = {
@@ -13,14 +14,16 @@ export function WordList({ words, onEdit, onDelete, onMove }: WordListProps) {
   const [query, setQuery] = useState('')
 
   const filteredWords = useMemo(() => {
-    const normalized = query.trim().toLowerCase()
-    if (!normalized) return words
+    const raw = query.trim().toLowerCase()
+    if (!raw) return words
+    const normalizedQuery = normalizePinyin(raw)
 
     return words.filter(
       (word) =>
-        word.hanzi.includes(normalized) ||
-        word.pinyin.toLowerCase().includes(normalized) ||
-        word.meaning.toLowerCase().includes(normalized),
+        word.hanzi.includes(query.trim()) ||
+        word.pinyin.toLowerCase().includes(raw) ||
+        normalizePinyin(word.pinyin).includes(normalizedQuery) ||
+        word.meaning.toLowerCase().includes(raw),
     )
   }, [query, words])
 
