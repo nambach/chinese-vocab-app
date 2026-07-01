@@ -55,6 +55,10 @@ function parseStored(raw: string | null): AppState {
       settings: {
         ...defaultSettings(),
         ...(parsed.settings ?? {}),
+        practiceConfig: {
+          ...defaultSettings().practiceConfig,
+          ...(parsed.settings?.practiceConfig ?? {}),
+        },
       },
     }
     return migrate(state)

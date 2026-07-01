@@ -11,9 +11,17 @@ type PracticeSetupProps = {
 }
 
 export function PracticeSetup({ catalogId }: PracticeSetupProps) {
-  const { setView, goBack, startPractice, defaultPracticeConfig, quickSuite } = useApp()
+  const { state, setView, goBack, startPractice, patchSettings, quickSuite } = useApp()
   const catalog = useCatalog(catalogId ?? '')
-  const [config, setConfig] = useState<PracticeConfig>(defaultPracticeConfig())
+  const [config, setConfig] = useState<PracticeConfig>(() => state.settings.practiceConfig)
+
+  function updateConfig(updater: (current: PracticeConfig) => PracticeConfig) {
+    setConfig((current) => {
+      const next = updater(current)
+      patchSettings({ practiceConfig: next })
+      return next
+    })
+  }
 
   const source = catalogId
     ? catalog
@@ -37,6 +45,8 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
   const activeSource = source
 
   function handleStart() {
+    patchSettings({ practiceConfig: config })
+
     const sessionId = startPractice({
       title: activeSource.title,
       words: activeSource.words,
@@ -62,7 +72,10 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
             label: direction.label,
           }))}
           onChange={(value) =>
-            setConfig((current) => ({ ...current, directionId: value as PracticeConfig['directionId'] }))
+            updateConfig((current) => ({
+              ...current,
+              directionId: value as PracticeConfig['directionId'],
+            }))
           }
         />
 
@@ -74,7 +87,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
             label: strategy.label,
           }))}
           onChange={(value) =>
-            setConfig((current) => ({ ...current, orderId: value as PracticeConfig['orderId'] }))
+            updateConfig((current) => ({ ...current, orderId: value as PracticeConfig['orderId'] }))
           }
         />
 
@@ -87,7 +100,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
           }))}
           onChange={(value) => {
             const strategy = TIMER_STRATEGIES.find((item) => item.id === value)
-            setConfig((current) => ({
+            updateConfig((current) => ({
               ...current,
               timerId: value as PracticeConfig['timerId'],
               timerSeconds: strategy?.defaultSeconds ?? current.timerSeconds,
@@ -104,7 +117,7 @@ export function PracticeSetup({ catalogId }: PracticeSetupProps) {
               max={600}
               value={config.timerSeconds}
               onChange={(event) =>
-                setConfig((current) => ({
+                updateConfig((current) => ({
                   ...current,
                   timerSeconds: Number(event.target.value) || current.timerSeconds,
                 }))

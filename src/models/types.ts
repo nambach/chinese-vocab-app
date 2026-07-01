@@ -1,4 +1,5 @@
 import type { PracticeConfig } from '../practice/session'
+import { defaultPracticeConfig } from '../practice/session'
 import type { QuizDirectionId } from '../practice/directions'
 
 export const STORAGE_KEY = 'cn-vocab:v1'
@@ -32,6 +33,7 @@ export type Catalog = {
 
 export type Settings = {
   toneNumberInput: boolean
+  practiceConfig: PracticeConfig
 }
 
 export type AppState = {
@@ -42,6 +44,7 @@ export type AppState = {
 
 export const defaultSettings = (): Settings => ({
   toneNumberInput: true,
+  practiceConfig: defaultPracticeConfig(),
 })
 
 export const defaultAppState = (): AppState => ({

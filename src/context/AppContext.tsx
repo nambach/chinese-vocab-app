@@ -19,7 +19,6 @@ import { parseHash, serializeView } from '../lib/router'
 import { trackPageView } from '../lib/analytics'
 import {
   createPracticeSession,
-  defaultPracticeConfig,
   type PracticeConfig,
   type PracticeSessionInput,
   type PracticeSessionSnapshot,
@@ -193,7 +192,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
           return { ...current, [sessionId]: updater(existing) }
         })
       },
-      defaultPracticeConfig,
+      defaultPracticeConfig: () => state.settings.practiceConfig,
     }),
     [state, view, sessions, quickSuite, setView, goBack],
   )
