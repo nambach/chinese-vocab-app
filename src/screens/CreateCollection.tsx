@@ -73,7 +73,7 @@ export function CreateCollection() {
           errorLines={new Set(parsed.errorLines)}
         />
         <p className="text-sm text-teal-700">
-          Dán nội dung đã copy, hoặc{' '}
+          Dán bộ từ vựng đã copy, hoặc{' '}
           <button
             type="button"
             onClick={startGuidedAdd}

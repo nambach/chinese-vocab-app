@@ -44,6 +44,11 @@ export function QuickPractice() {
     setView({ name: 'catalog', catalogId: catalog.id })
   }
 
+  function startGuidedAdd() {
+    const catalog = createCollection(sessionTitle, parsed.words)
+    setView({ name: 'guidedAdd', catalogId: catalog.id })
+  }
+
   return (
     <ScreenShell
       title="Luyện tập ngay"
@@ -68,6 +73,17 @@ export function QuickPractice() {
         autoFocus
         errorLines={new Set(parsed.errorLines)}
       />
+      <p className="text-sm text-teal-700">
+        Dán bộ từ vựng đã copy, hoặc{' '}
+        <button
+          type="button"
+          onClick={startGuidedAdd}
+          className="font-medium text-teal-800 underline underline-offset-2 active:text-teal-950"
+        >
+          nhập từng từ
+        </button>
+        .
+      </p>
 
       {text.trim() ? (
         <Card>
@@ -83,14 +99,7 @@ export function QuickPractice() {
             </ul>
           ) : null}
         </Card>
-      ) : (
-        <Card>
-          <p className="text-xs text-teal-600">Mỗi dòng: Hán tự | pinyin | nghĩa</p>
-          <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-2xl bg-teal-50 p-3 text-xs text-teal-800">
-            {IMPORT_FORMAT_GUIDE_BODY}
-          </pre>
-        </Card>
-      )}
+      ) : null}
     </ScreenShell>
   )
 }

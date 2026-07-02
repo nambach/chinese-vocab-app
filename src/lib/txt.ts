@@ -97,7 +97,7 @@ export function downloadTextFile(filename: string, content: string): void {
 
 export const IMPORT_FORMAT_GUIDE_BODY = `你好 | nǐ hǎo | xin chào
 谢谢 | xiè xiè | cảm ơn
-学习 | xue2 xi2 | học tập, học hành`
+学习 | xué xí | học tập, học hành`
 
 export function extractLeadingTitle(text: string): { title?: string; body: string } {
   const lines = text.split(/\r?\n/)
