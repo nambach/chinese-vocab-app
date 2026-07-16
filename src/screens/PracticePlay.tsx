@@ -11,7 +11,7 @@ import {
   isSessionTimedOut,
   submitAnswer,
 } from '../practice/session'
-import { findDirection, getAnswerText, getPromptText } from '../practice/directions'
+import { findDirection, getAnswerText, getPromptText, getSupplementaryFields, WORD_FIELD_LABELS } from '../practice/directions'
 import { SmartInput } from '../components/SmartInput'
 import { BigButton, Card, ScreenShell } from '../components/ui'
 import { useApp } from '../context/AppContext'
@@ -103,6 +103,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
   const correctAnswer = currentWord
     ? getAnswerText(currentWord, direction.answerField)
     : ''
+  const supplementaryFields = getSupplementaryFields(direction)
   const lastAttempt = session.lastAttempt
   const isPinyinAnswer = direction.answerField === 'pinyin'
   const activeSession = session
@@ -267,6 +268,18 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                   {correctAnswer}
                 </span>
               </p>
+              {supplementaryFields.map((field) => (
+                <p key={field}>
+                  {WORD_FIELD_LABELS[field]}:{' '}
+                  <span
+                    className={`font-medium ${
+                      lastAttempt?.correct ? 'text-emerald-900' : 'text-red-900'
+                    }`}
+                  >
+                    {getAnswerText(currentWord, field)}
+                  </span>
+                </p>
+              ))}
               {!lastAttempt?.correct && lastAttempt?.userAnswer ? (
                 <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
               ) : null}

@@ -3,6 +3,14 @@ import type { Word } from '../models/types'
 
 export type WordField = 'hanzi' | 'pinyin' | 'meaning'
 
+const WORD_FIELDS: WordField[] = ['hanzi', 'pinyin', 'meaning']
+
+export const WORD_FIELD_LABELS: Record<WordField, string> = {
+  hanzi: 'Hán tự',
+  pinyin: 'Pinyin',
+  meaning: 'Nghĩa',
+}
+
 export type QuizDirectionId = 'hanzi-to-pinyin' | 'hanzi-to-vn' | 'vn-to-hanzi'
 
 export type QuizDirection = {
@@ -83,4 +91,10 @@ export function getPromptText(word: Word, field: WordField): string {
 
 export function getAnswerText(word: Word, field: WordField): string {
   return word[field]
+}
+
+export function getSupplementaryFields(direction: QuizDirection): WordField[] {
+  return WORD_FIELDS.filter(
+    (field) => field !== direction.promptField && field !== direction.answerField,
+  )
 }
