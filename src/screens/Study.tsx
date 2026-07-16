@@ -12,7 +12,7 @@ const SWIPE_THRESHOLD = 48
 
 function StudyCard({ word }: { word: Word }) {
   return (
-    <Card className="flex min-h-[min(52dvh,360px)] select-none flex-col items-center justify-center p-6 text-center md:min-h-[320px] md:p-10">
+    <Card className="flex min-h-[min(52dvh,360px)] flex-col items-center justify-center p-6 text-center md:min-h-[320px] md:p-10">
       <div className="text-5xl font-bold text-teal-950 md:text-6xl">{word.hanzi}</div>
       <div className="mt-5 text-2xl text-teal-800 md:text-3xl">{word.pinyin}</div>
       <div className="mt-3 text-lg text-teal-700 md:text-xl">{word.meaning}</div>
@@ -69,7 +69,7 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
   const [index, setIndex] = useState(() =>
     Math.min(Math.max(wordIndex, 0), Math.max(words.length - 1, 0)),
   )
-  const touchStartX = useRef<number | null>(null)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([])
 
@@ -128,18 +128,23 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
   }
 
   function handleTouchStart(event: React.TouchEvent) {
-    touchStartX.current = event.changedTouches[0]?.clientX ?? null
+    const touch = event.changedTouches[0]
+    if (!touch) return
+    touchStart.current = { x: touch.clientX, y: touch.clientY }
   }
 
   function handleTouchEnd(event: React.TouchEvent) {
-    const startX = touchStartX.current
-    const endX = event.changedTouches[0]?.clientX
-    touchStartX.current = null
-    if (startX === null || endX === undefined) return
+    const start = touchStart.current
+    const touch = event.changedTouches[0]
+    touchStart.current = null
+    if (!start || !touch) return
 
-    const delta = endX - startX
-    if (Math.abs(delta) < SWIPE_THRESHOLD) return
-    if (delta > 0) goPrev()
+    const deltaX = touch.clientX - start.x
+    const deltaY = touch.clientY - start.y
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD) return
+    if (Math.abs(deltaX) < Math.abs(deltaY)) return
+
+    if (deltaX > 0) goPrev()
     else goNext()
   }
 
