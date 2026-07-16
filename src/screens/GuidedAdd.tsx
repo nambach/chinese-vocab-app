@@ -43,8 +43,8 @@ export function GuidedAdd({ catalogId }: GuidedAddProps) {
     <ScreenShell
       title="Thêm từ"
       subtitle={`${catalog.name} · đã thêm ${addedCount} từ trong phiên này`}
-      onBack={() => goBack({ name: 'catalog', catalogId })}
-      backLabel={catalog.name}
+      onBack={() => goBack({ name: 'manageWords', catalogId })}
+      backLabel="Quản lý từ"
     >
       <WordCard
         value={draft}

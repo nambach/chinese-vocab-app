@@ -76,8 +76,13 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
             Luyện tập
           </BigButton>
           <div className="grid grid-cols-2 gap-3">
-            <BigButton variant="secondary" className="text-base" onClick={() => setView({ name: 'guidedAdd', catalogId })}>
-              + Thêm từ
+            <BigButton
+              variant="secondary"
+              className="text-base"
+              onClick={() => setView({ name: 'study', catalogId })}
+              disabled={currentCatalog.words.length === 0}
+            >
+              Học
             </BigButton>
             <BigButton variant="secondary" className="text-base" onClick={() => setView({ name: 'manageWords', catalogId })}>
               Quản lý từ

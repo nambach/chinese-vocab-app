@@ -62,6 +62,7 @@ export type View =
   | { name: 'catalog'; catalogId: string }
   | { name: 'practiceHistory'; catalogId: string }
   | { name: 'guidedAdd'; catalogId: string }
+  | { name: 'study'; catalogId: string; wordIndex?: number }
   | { name: 'manageWords'; catalogId: string }
   | { name: 'editWord'; catalogId: string; wordId: string }
   | { name: 'practiceSetup'; catalogId?: string }

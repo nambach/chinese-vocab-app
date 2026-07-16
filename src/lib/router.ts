@@ -21,6 +21,10 @@ export function serializeView(view: View): string {
       return `#/c/${view.catalogId}/history`
     case 'guidedAdd':
       return `#/c/${view.catalogId}/add`
+    case 'study':
+      return view.wordIndex !== undefined
+        ? `#/c/${view.catalogId}/study/${view.wordIndex}`
+        : `#/c/${view.catalogId}/study`
     case 'manageWords':
       return `#/c/${view.catalogId}/words`
     case 'editWord':
@@ -59,6 +63,14 @@ export function parseHash(hash: string): View {
       const sub = parts[2]
       if (!sub) return { name: 'catalog', catalogId }
       if (sub === 'add') return { name: 'guidedAdd', catalogId }
+      if (sub === 'study') {
+        const wordIndex = parts[3] !== undefined ? Number(parts[3]) : undefined
+        return {
+          name: 'study',
+          catalogId,
+          wordIndex: Number.isFinite(wordIndex) ? wordIndex : undefined,
+        }
+      }
       if (sub === 'setup') return { name: 'practiceSetup', catalogId }
       if (sub === 'history') return { name: 'practiceHistory', catalogId }
       if (sub === 'words') {

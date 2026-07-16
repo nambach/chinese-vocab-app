@@ -12,6 +12,7 @@ import { PracticeSetup } from './screens/PracticeSetup'
 import { QuickPractice } from './screens/QuickPractice'
 import { Results } from './screens/Results'
 import { Settings } from './screens/Settings'
+import { Study } from './screens/Study'
 
 function Router() {
   const { view } = useApp()
@@ -31,6 +32,8 @@ function Router() {
       return <PracticeHistory catalogId={view.catalogId} />
     case 'guidedAdd':
       return <GuidedAdd catalogId={view.catalogId} />
+    case 'study':
+      return <Study catalogId={view.catalogId} wordIndex={view.wordIndex} />
     case 'manageWords':
       return <ManageWords catalogId={view.catalogId} />
     case 'editWord':

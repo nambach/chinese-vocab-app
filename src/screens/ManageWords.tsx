@@ -1,5 +1,5 @@
 import { WordList } from '../components/WordList'
-import { Card, ScreenShell } from '../components/ui'
+import { BigButton, Card, ScreenShell } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
 
 type ManageWordsProps = {
@@ -25,12 +25,15 @@ export function ManageWords({ catalogId }: ManageWordsProps) {
       onBack={() => goBack({ name: 'catalog', catalogId })}
       backLabel={catalog.name}
     >
-      <WordList
-        words={catalog.words}
-        onEdit={(wordId) => setView({ name: 'editWord', catalogId, wordId })}
-        onDelete={(wordId) => removeWord(catalogId, wordId)}
-        onMove={(wordId, direction) => moveWord(catalogId, wordId, direction)}
-      />
+      <div className="flex flex-col gap-4">
+        <BigButton onClick={() => setView({ name: 'guidedAdd', catalogId })}>+ Thêm từ</BigButton>
+        <WordList
+          words={catalog.words}
+          onEdit={(wordId) => setView({ name: 'editWord', catalogId, wordId })}
+          onDelete={(wordId) => removeWord(catalogId, wordId)}
+          onMove={(wordId, direction) => moveWord(catalogId, wordId, direction)}
+        />
+      </div>
     </ScreenShell>
   )
 }

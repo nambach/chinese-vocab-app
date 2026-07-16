@@ -251,17 +251,26 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
             >
               {lastAttempt?.correct ? 'Đúng rồi!' : 'Chưa đúng'}
             </p>
-            {!lastAttempt?.correct ? (
-              <div className="mt-3 space-y-1 text-red-700">
-                {lastAttempt?.timedOut ? <p>Hết thời gian</p> : null}
-                <p>
-                  Đáp án: <span className="font-semibold text-red-900">{correctAnswer}</span>
-                </p>
-                {lastAttempt?.userAnswer ? (
-                  <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
-                ) : null}
-              </div>
-            ) : null}
+            <div
+              className={`mt-3 space-y-1 ${
+                lastAttempt?.correct ? 'text-emerald-700' : 'text-red-700'
+              }`}
+            >
+              {!lastAttempt?.correct && lastAttempt?.timedOut ? <p>Hết thời gian</p> : null}
+              <p>
+                Đáp án:{' '}
+                <span
+                  className={`font-semibold ${
+                    lastAttempt?.correct ? 'text-emerald-900' : 'text-red-900'
+                  }`}
+                >
+                  {correctAnswer}
+                </span>
+              </p>
+              {!lastAttempt?.correct && lastAttempt?.userAnswer ? (
+                <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
+              ) : null}
+            </div>
           </Card>
         ) : null}
 
