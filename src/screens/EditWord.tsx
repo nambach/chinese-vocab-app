@@ -16,7 +16,12 @@ export function EditWord({ catalogId, wordId }: EditWordProps) {
   const initialDraft = useMemo(
     () =>
       word
-        ? { hanzi: word.hanzi, pinyin: word.pinyin, meaning: word.meaning }
+        ? {
+            hanzi: word.hanzi,
+            pinyin: word.pinyin,
+            meaning: word.meaning,
+            note: word.note ?? '',
+          }
         : emptyWordDraft(),
     [word],
   )
@@ -45,7 +50,14 @@ export function EditWord({ catalogId, wordId }: EditWordProps) {
         value={draft}
         onChange={setDraft}
         onSave={() => {
-          updateWord(catalogId, { ...word, ...draft })
+          const note = draft.note?.trim()
+          updateWord(catalogId, {
+            ...word,
+            hanzi: draft.hanzi.trim(),
+            pinyin: draft.pinyin.trim(),
+            meaning: draft.meaning.trim(),
+            note: note || undefined,
+          })
           setView({ name: 'manageWords', catalogId })
         }}
         onCancel={() => setView({ name: 'manageWords', catalogId })}

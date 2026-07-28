@@ -51,6 +51,13 @@ export function WordCard({
         placeholder="xin chào, chào bạn"
         hint="Nhiều nghĩa cách nhau bằng dấu phẩy"
       />
+      <SmartInput
+        label="Ghi chú"
+        value={value.note ?? ''}
+        onChange={(note) => onChange({ ...value, note })}
+        placeholder="khẩu ngữ, văn viết…"
+        hint="Chỉ để nhắc, không cần nhập khi luyện tập"
+      />
 
       <div className="grid gap-3">
         <BigButton onClick={onSave} disabled={!canSave}>
@@ -70,4 +77,5 @@ export const emptyWordDraft = (): WordDraft => ({
   hanzi: '',
   pinyin: '',
   meaning: '',
+  note: '',
 })

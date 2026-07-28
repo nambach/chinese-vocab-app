@@ -16,6 +16,9 @@ function StudyCard({ word }: { word: Word }) {
       <div className="text-5xl font-bold text-teal-950 md:text-6xl">{word.hanzi}</div>
       <div className="mt-5 text-2xl text-teal-800 md:text-3xl">{word.pinyin}</div>
       <div className="mt-3 text-lg text-teal-700 md:text-xl">{word.meaning}</div>
+      {word.note ? (
+        <div className="mt-3 text-sm italic text-teal-500 md:text-base">{word.note}</div>
+      ) : null}
     </Card>
   )
 }

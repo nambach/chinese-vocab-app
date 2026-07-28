@@ -10,6 +10,7 @@ export type Word = {
   hanzi: string
   pinyin: string
   meaning: string
+  note?: string
 }
 
 export type PracticeResult = {
@@ -29,6 +30,10 @@ export type Catalog = {
   updatedAt: number
   lastResult?: PracticeResult
   practiceHistory?: PracticeResult[]
+  /** Set when this catalog originated from a bundled default lesson (e.g. "bai-01"). */
+  builtinId?: string
+  /** Content fingerprint at seed time. Reserved for a future "update unmodified lessons" flow. */
+  seedHash?: string
 }
 
 export type Settings = {
@@ -40,6 +45,8 @@ export type AppState = {
   version: number
   catalogs: Catalog[]
   settings: Settings
+  /** Highest bundled lesson-pack version the user has already been offered (accepted or declined). */
+  seededVersion?: number
 }
 
 export const defaultSettings = (): Settings => ({
@@ -73,6 +80,7 @@ export type WordDraft = {
   hanzi: string
   pinyin: string
   meaning: string
+  note?: string
 }
 
 export type CombineQueue = {

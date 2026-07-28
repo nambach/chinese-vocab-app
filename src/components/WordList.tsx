@@ -55,6 +55,9 @@ export function WordList({ words, onEdit, onDelete, onMove }: WordListProps) {
                     <div className="text-2xl font-semibold text-teal-950">{word.hanzi}</div>
                     <div className="mt-1 text-base text-teal-800">{word.pinyin}</div>
                     <div className="mt-1 text-sm text-teal-700">{word.meaning}</div>
+                    {word.note ? (
+                      <div className="mt-1 text-xs italic text-teal-500">{word.note}</div>
+                    ) : null}
                   </div>
                   <div className="flex flex-col gap-2">
                     <button

@@ -60,6 +60,7 @@ function parseStored(raw: string | null): AppState {
           ...(parsed.settings?.practiceConfig ?? {}),
         },
       },
+      seededVersion: parsed.seededVersion,
     }
     return migrate(state)
   } catch {
@@ -97,11 +98,13 @@ export function createCatalog(name: string): Catalog {
 }
 
 export function createWord(input: Omit<Word, 'id'>): Word {
+  const note = input.note?.trim()
   return {
     id: createId(),
     hanzi: input.hanzi.trim(),
     pinyin: input.pinyin.trim(),
     meaning: input.meaning.trim(),
+    ...(note ? { note } : {}),
   }
 }
 

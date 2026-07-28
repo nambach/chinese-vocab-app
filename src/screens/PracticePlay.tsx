@@ -280,6 +280,15 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                   </span>
                 </p>
               ))}
+              {currentWord.note ? (
+                <p
+                  className={`text-sm italic ${
+                    lastAttempt?.correct ? 'text-emerald-600' : 'text-red-500'
+                  }`}
+                >
+                  {currentWord.note}
+                </p>
+              ) : null}
               {!lastAttempt?.correct && lastAttempt?.userAnswer ? (
                 <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
               ) : null}

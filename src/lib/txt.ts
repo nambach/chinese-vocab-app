@@ -44,7 +44,12 @@ export function parseCatalogText(text: string): ParsedImport {
       continue
     }
 
-    const parts = splitLine(line)
+    // A trailing "# ..." is a display-only note (like a code comment).
+    const hashIndex = line.indexOf('#')
+    const note = hashIndex >= 0 ? line.slice(hashIndex + 1).trim() : ''
+    const content = hashIndex >= 0 ? line.slice(0, hashIndex).trim() : line
+
+    const parts = splitLine(content)
     if (!parts || parts.length < 3) {
       errors.push(`Dòng ${index + 1}: không đúng định dạng`)
       errorLines.push(index + 1)
@@ -61,7 +66,7 @@ export function parseCatalogText(text: string): ParsedImport {
       continue
     }
 
-    words.push({ hanzi, pinyin, meaning })
+    words.push({ hanzi, pinyin, meaning, ...(note ? { note } : {}) })
   }
 
   return { name, words, errors, errorLines }
@@ -80,7 +85,10 @@ export function importCatalogFromText(
 export function exportCatalogToText(catalog: Catalog): string {
   const header = `# ${catalog.name}\n`
   const body = catalog.words
-    .map((word) => `${word.hanzi} | ${word.pinyin} | ${word.meaning}`)
+    .map((word) => {
+      const base = `${word.hanzi} | ${word.pinyin} | ${word.meaning}`
+      return word.note ? `${base} # ${word.note}` : base
+    })
     .join('\n')
   return `${header}${body}\n`
 }
@@ -97,7 +105,8 @@ export function downloadTextFile(filename: string, content: string): void {
 
 export const IMPORT_FORMAT_GUIDE_BODY = `你好 | nǐ hǎo | xin chào
 谢谢 | xiè xiè | cảm ơn
-学习 | xué xí | học tập, học hành`
+学习 | xué xí | học tập, học hành
+块 | kuài | tệ # khẩu ngữ (ghi chú, không cần nhập khi luyện)`
 
 export function extractLeadingTitle(text: string): { title?: string; body: string } {
   const lines = text.split(/\r?\n/)

@@ -1,9 +1,9 @@
 import { useApp } from '../context/AppContext'
 import { IMPORT_FORMAT_GUIDE_BODY } from '../lib/txt'
-import { Card, ScreenShell } from '../components/ui'
+import { BigButton, Card, ScreenShell } from '../components/ui'
 
 export function Settings() {
-  const { state, goBack, patchSettings } = useApp()
+  const { state, goBack, patchSettings, restoreDefaultLessons } = useApp()
 
   return (
     <ScreenShell
@@ -28,6 +28,25 @@ export function Settings() {
         <p className="mt-2 text-xs text-teal-600">
           Khi luyện gõ pinyin, thêm số 1-4 ngay sau nguyên âm để tự động thêm dấu thanh.
         </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-sm font-semibold text-teal-900">Bài học mẫu</h2>
+        <p className="mt-2 text-xs text-teal-600">
+          Thêm lại các bài học mẫu còn thiếu. Các bài đã có sẵn sẽ không bị thay đổi.
+        </p>
+        <div className="mt-3">
+          <BigButton
+            variant="secondary"
+            onClick={() => {
+              if (window.confirm('Thêm lại các bài học mẫu còn thiếu?')) {
+                restoreDefaultLessons()
+              }
+            }}
+          >
+            Khôi phục bài học mẫu
+          </BigButton>
+        </div>
       </Card>
 
       <Card>

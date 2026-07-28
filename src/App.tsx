@@ -1,4 +1,5 @@
 import { AppProvider, useApp } from './context/AppContext'
+import { LessonSeedPrompt } from './components/LessonSeedPrompt'
 import { CatalogScreen } from './screens/Catalog'
 import { CombinePractice } from './screens/CombinePractice'
 import { CreateCollection } from './screens/CreateCollection'
@@ -58,6 +59,7 @@ export default function App() {
           <Router />
         </div>
       </div>
+      <LessonSeedPrompt />
     </AppProvider>
   )
 }

@@ -15,6 +15,13 @@ import {
   upsertCatalog,
 } from '../data/store'
 import { importCatalogFromText } from '../lib/txt'
+import {
+  acceptPendingLessons,
+  declineLessonPack,
+  getPendingBuiltinLessons,
+  restoreDefaultLessons as restoreDefaultLessonsInState,
+} from '../data/seed'
+import type { BuiltinLesson } from '../data/lessons'
 import { parseHash, serializeView } from '../lib/router'
 import { trackPageView } from '../lib/analytics'
 import {
@@ -60,6 +67,10 @@ type AppContextValue = {
     updater: (session: PracticeSessionSnapshot) => PracticeSessionSnapshot,
   ) => void
   defaultPracticeConfig: () => PracticeConfig
+  pendingBuiltinLessons: BuiltinLesson[]
+  acceptDefaultLessons: () => void
+  declineDefaultLessons: () => void
+  restoreDefaultLessons: () => void
 }
 
 const AppContext = createContext<AppContextValue | null>(null)
@@ -193,6 +204,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         })
       },
       defaultPracticeConfig: () => state.settings.practiceConfig,
+      pendingBuiltinLessons: getPendingBuiltinLessons(state),
+      acceptDefaultLessons: () => setState((current) => acceptPendingLessons(current)),
+      declineDefaultLessons: () => setState((current) => declineLessonPack(current)),
+      restoreDefaultLessons: () =>
+        setState((current) => restoreDefaultLessonsInState(current)),
     }),
     [state, view, sessions, quickSuite, setView, goBack],
   )
