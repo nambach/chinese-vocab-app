@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Card, ScreenShell } from '../components/ui'
+import { Hanzi } from '../components/Hanzi'
+import { SpeakButton } from '../components/SpeakButton'
+import { StrokeOrderButton } from '../components/StrokeOrderButton'
+import { speak } from '../lib/speech'
 import { useApp, useCatalog } from '../context/AppContext'
 import type { Word } from '../models/types'
 
@@ -10,15 +14,31 @@ type StudyProps = {
 
 const SWIPE_THRESHOLD = 48
 
-function StudyCard({ word }: { word: Word }) {
+function StudyCard({
+  word,
+  onStrokeDrawerOpenChange,
+}: {
+  word: Word
+  onStrokeDrawerOpenChange?: (open: boolean) => void
+}) {
   return (
     <Card className="flex min-h-[min(52dvh,360px)] flex-col items-center justify-center p-6 text-center md:min-h-[320px] md:p-10">
-      <div className="text-5xl font-bold text-teal-950 md:text-6xl">{word.hanzi}</div>
+      <div className="text-5xl font-bold text-teal-950 md:text-6xl">
+        <Hanzi>{word.hanzi}</Hanzi>
+      </div>
       <div className="mt-5 text-2xl text-teal-800 md:text-3xl">{word.pinyin}</div>
       <div className="mt-3 text-lg text-teal-700 md:text-xl">{word.meaning}</div>
       {word.note ? (
         <div className="mt-3 text-sm italic text-teal-500 md:text-base">{word.note}</div>
       ) : null}
+      <div className="mt-5 flex items-center justify-center gap-3">
+        <SpeakButton text={word.hanzi} label={`Nghe phát âm "${word.hanzi}"`} />
+        <StrokeOrderButton
+          text={word.hanzi}
+          label={`Xem thứ tự nét "${word.hanzi}"`}
+          onOpenChange={onStrokeDrawerOpenChange}
+        />
+      </div>
     </Card>
   )
 }
@@ -66,7 +86,8 @@ function NavButton({
 }
 
 export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
-  const { setView, goBack } = useApp()
+  const { setView, goBack, state } = useApp()
+  const autoPronounce = state.settings.autoPronounce
   const catalog = useCatalog(catalogId)
   const words = catalog?.words ?? []
   const [index, setIndex] = useState(() =>
@@ -75,6 +96,7 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([])
+  const [strokeDrawerOpen, setStrokeDrawerOpen] = useState(false)
 
   const currentWord = words[index]
   const hasWords = words.length > 0
@@ -96,6 +118,11 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
     const chip = chipRefs.current[index]
     chip?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
   }, [index])
+
+  useEffect(() => {
+    if (!autoPronounce || !currentWord) return
+    speak(currentWord.hanzi)
+  }, [autoPronounce, currentWord?.id])
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -164,10 +191,12 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
 
           <div
             className="min-w-0 flex-1 touch-pan-y"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={strokeDrawerOpen ? undefined : handleTouchStart}
+            onTouchEnd={strokeDrawerOpen ? undefined : handleTouchEnd}
           >
-            {currentWord ? <StudyCard word={currentWord} /> : null}
+            {currentWord ? (
+              <StudyCard word={currentWord} onStrokeDrawerOpenChange={setStrokeDrawerOpen} />
+            ) : null}
           </div>
 
           <NavButton direction="next" disabled={index === words.length - 1} onClick={goNext} />
@@ -197,7 +226,7 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
                       : 'bg-white text-teal-800 ring-1 ring-teal-200 active:bg-teal-50'
                   }`}
                 >
-                  <span className="block max-w-[4.5rem] truncate">{word.hanzi}</span>
+                  <Hanzi className="block max-w-[4.5rem] truncate">{word.hanzi}</Hanzi>
                   <span
                     className={`mt-0.5 block text-[10px] ${
                       active ? 'text-teal-100' : 'text-teal-500'

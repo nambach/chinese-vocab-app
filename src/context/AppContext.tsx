@@ -15,6 +15,7 @@ import {
   upsertCatalog,
 } from '../data/store'
 import { importCatalogFromText } from '../lib/txt'
+import { applyHanziFont } from '../lib/fonts'
 import {
   acceptPendingLessons,
   declineLessonPack,
@@ -84,6 +85,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     saveState(state)
   }, [state])
+
+  useEffect(() => {
+    applyHanziFont(state.settings.hanziFont)
+  }, [state.settings.hanziFont])
 
   useEffect(() => {
     const syncViewFromUrl = () => {

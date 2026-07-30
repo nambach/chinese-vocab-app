@@ -170,16 +170,24 @@ function expectedHasToneMarks(expected: string): boolean {
   return stripToneMarks(converted) !== converted
 }
 
+/** Pinyin comparison ignores spaces entirely (e.g. "ni hao" === "nihao"). */
+function stripSpaces(input: string): string {
+  return input.replace(/\s+/g, '')
+}
+
 export function pinyinMatches(userInput: string, expected: string): boolean {
-  const userPlain = normalizePinyin(userInput)
-  const expectedPlain = normalizePinyin(expected)
+  const userPlain = stripSpaces(normalizePinyin(userInput))
+  const expectedPlain = stripSpaces(normalizePinyin(expected))
 
   if (userPlain !== expectedPlain) {
     return false
   }
 
   if (expectedHasToneMarks(expected)) {
-    return normalizePinyinWithTones(userInput) === normalizePinyinWithTones(expected)
+    return (
+      stripSpaces(normalizePinyinWithTones(userInput)) ===
+      stripSpaces(normalizePinyinWithTones(expected))
+    )
   }
 
   return true

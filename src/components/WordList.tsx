@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { BigButton, Card } from './ui'
+import { Hanzi } from './Hanzi'
 import { normalizePinyin } from '../lib/pinyin'
 import type { Word } from '../models/types'
 
@@ -52,7 +53,9 @@ export function WordList({ words, onEdit, onDelete, onMove }: WordListProps) {
               <Card className="p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-2xl font-semibold text-teal-950">{word.hanzi}</div>
+                    <div className="text-2xl font-semibold text-teal-950">
+                      <Hanzi>{word.hanzi}</Hanzi>
+                    </div>
                     <div className="mt-1 text-base text-teal-800">{word.pinyin}</div>
                     <div className="mt-1 text-sm text-teal-700">{word.meaning}</div>
                     {word.note ? (

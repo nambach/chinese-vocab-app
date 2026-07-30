@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   advanceSession,
   endSession,
@@ -14,6 +14,9 @@ import {
 import { findDirection, getAnswerText, getPromptText, getSupplementaryFields, WORD_FIELD_LABELS } from '../practice/directions'
 import { SmartInput } from '../components/SmartInput'
 import { BigButton, Card, ScreenShell } from '../components/ui'
+import { Hanzi } from '../components/Hanzi'
+import { SpeakButton } from '../components/SpeakButton'
+import { StrokeOrderButton } from '../components/StrokeOrderButton'
 import { useApp } from '../context/AppContext'
 import { useIsTouchDevice, useVisualViewport } from '../lib/useVisualViewport'
 
@@ -42,6 +45,23 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
       ? Math.max(0, Math.min(1, remainingMs / timerTotalMs))
       : undefined
   const timerLow = timerFraction !== undefined && timerFraction <= 0.25
+
+  // When several words in this session share the same prompt (e.g. two words
+  // both meaning "tệ"), surface the current word's note as a hint so the
+  // learner knows which one is being asked.
+  const promptHint = useMemo(() => {
+    if (!session || !direction) return undefined
+    const word = getCurrentWord(session)
+    const note = word?.note?.trim()
+    if (!word || !note) return undefined
+    const key = getPromptText(word, direction.promptField).trim().toLowerCase()
+    const shared = session.words.some(
+      (other) =>
+        other.id !== word.id &&
+        getPromptText(other, direction.promptField).trim().toLowerCase() === key,
+    )
+    return shared ? note : undefined
+  }, [session, direction])
 
   useEffect(() => {
     if (!session || session.finishedAt) return undefined
@@ -139,8 +159,14 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
               : 'text-3xl lg:text-4xl'
         }`}
       >
-        {prompt}
+        {direction.promptField === 'hanzi' ? <Hanzi>{prompt}</Hanzi> : prompt}
       </p>
+      {promptHint ? (
+        <p className="mt-3 inline-flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800">
+          <span aria-hidden="true">💡</span>
+          {promptHint}
+        </p>
+      ) : null}
     </Card>
   )
 
@@ -293,6 +319,21 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                 <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
               ) : null}
             </div>
+            {currentWord.hanzi ? (
+              <div className="mt-3 flex items-center justify-center gap-2">
+                <span className="text-lg font-semibold text-teal-900">
+                  <Hanzi>{currentWord.hanzi}</Hanzi>
+                </span>
+                <SpeakButton
+                  text={currentWord.hanzi}
+                  label={`Nghe phát âm "${currentWord.hanzi}"`}
+                />
+                <StrokeOrderButton
+                  text={currentWord.hanzi}
+                  label={`Xem thứ tự nét "${currentWord.hanzi}"`}
+                />
+              </div>
+            ) : null}
           </Card>
         ) : null}
 

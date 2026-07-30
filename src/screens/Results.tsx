@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { getScore, getWrongWords, formatDuration } from '../practice/session'
 import { BigButton, Card, ScreenShell } from '../components/ui'
+import { Hanzi } from '../components/Hanzi'
 import { useApp } from '../context/AppContext'
 
 type ResultsProps = {
@@ -129,7 +130,9 @@ export function Results({ sessionId }: ResultsProps) {
             <ul className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-1">
               {wrongWords.map((word) => (
                 <li key={word.id} className="border-b border-teal-50 pb-3 last:border-none last:pb-0">
-                  <div className="text-xl font-semibold">{word.hanzi}</div>
+                  <div className="text-xl font-semibold">
+                    <Hanzi>{word.hanzi}</Hanzi>
+                  </div>
                   <div className="text-teal-800">{word.pinyin}</div>
                   <div className="text-sm text-teal-700">{word.meaning}</div>
                 </li>

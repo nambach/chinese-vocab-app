@@ -36,9 +36,15 @@ export type Catalog = {
   seedHash?: string
 }
 
+export type HanziFontId = 'system' | 'kai' | 'kaiti' | 'mashan' | 'zhimang' | 'longcang'
+
 export type Settings = {
   toneNumberInput: boolean
   practiceConfig: PracticeConfig
+  /** Display font for Chinese characters. 'system' uses the device default. */
+  hanziFont: HanziFontId
+  /** Auto-play pronunciation when the study card changes. */
+  autoPronounce: boolean
 }
 
 export type AppState = {
@@ -52,6 +58,8 @@ export type AppState = {
 export const defaultSettings = (): Settings => ({
   toneNumberInput: true,
   practiceConfig: defaultPracticeConfig(),
+  hanziFont: 'system',
+  autoPronounce: false,
 })
 
 export const defaultAppState = (): AppState => ({
