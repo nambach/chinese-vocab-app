@@ -161,6 +161,59 @@ function PlayButton({ onClick }: { onClick: () => void }) {
   )
 }
 
+function CharCarousel({
+  chars,
+  index,
+  onSelect,
+}: {
+  chars: string[]
+  index: number
+  onSelect: (index: number) => void
+}) {
+  const chipRefs = useRef<Array<HTMLButtonElement | null>>([])
+
+  useEffect(() => {
+    chipRefs.current[index]?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    })
+  }, [index])
+
+  return (
+    <div className="w-full">
+      <p className="mb-2 text-center text-xs font-medium uppercase tracking-wide text-teal-600">
+        Chọn chữ để luyện
+      </p>
+      <div className="flex justify-center gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {chars.map((char, i) => {
+          const active = i === index
+          return (
+            <button
+              key={`${char}-${i}`}
+              ref={(element) => {
+                chipRefs.current[i] = element
+              }}
+              type="button"
+              onClick={() => onSelect(i)}
+              className={`shrink-0 rounded-2xl px-3 py-2 text-center transition ${
+                active
+                  ? 'bg-teal-700 text-white shadow-sm'
+                  : 'bg-white text-teal-800 ring-1 ring-teal-200 active:bg-teal-50'
+              }`}
+            >
+              <span className="block text-lg font-medium">{char}</span>
+              <span className={`mt-0.5 block text-[10px] ${active ? 'text-teal-100' : 'text-teal-500'}`}>
+                {i + 1}
+              </span>
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 /**
  * Renders animated stroke-order (or an interactive writing quiz) for each
  * Chinese character in `text`. In animate mode the characters auto-play in
@@ -184,6 +237,7 @@ export function StrokeOrder({
   const [width, setWidth] = useState(0)
   const charRefs = useRef<Array<CharHandle | null>>([])
   const runIdRef = useRef(0)
+  const [quizIndex, setQuizIndex] = useState(0)
 
   useLayoutEffect(() => {
     const el = rowRef.current
@@ -196,6 +250,11 @@ export function StrokeOrder({
   }, [])
 
   const charsKey = chars.join('')
+
+  // Reset to the first character when the word or mode changes.
+  useEffect(() => {
+    setQuizIndex(0)
+  }, [charsKey, mode])
 
   // Auto-play all characters in order whenever the drawer opens or replay is
   // requested (animate mode only).
@@ -236,28 +295,48 @@ export function StrokeOrder({
     )
   }
 
+  // Animate mode: fit multiple boxes per row, sized to fill the width.
   const cols = width > 0 ? Math.max(1, Math.min(chars.length, Math.floor(width / TARGET_BOX))) : 1
-  const size =
+  const gridSize =
     width > 0 ? Math.min(MAX_BOX, Math.floor((width - GAP * (cols - 1)) / cols)) : TARGET_BOX
+  // Quiz mode: one large box, sized to fill the width.
+  const soloSize = width > 0 ? Math.min(MAX_BOX, width) : TARGET_BOX
+
+  const quizCarousel = mode === 'quiz' && chars.length > 1
 
   return (
-    <div ref={rowRef} className="flex flex-wrap justify-center" style={{ gap: GAP }}>
-      {width > 0
-        ? chars.map((char, index) => (
+    <div ref={rowRef} className="flex w-full flex-col items-center gap-3">
+      {width === 0 ? null : quizCarousel ? (
+        <>
+          <StrokeOrderChar
+            key={`quiz-${quizIndex}-${chars[quizIndex]}`}
+            char={chars[quizIndex]}
+            size={soloSize}
+            mode="quiz"
+            playToken={playToken}
+          />
+          <CharCarousel chars={chars} index={quizIndex} onSelect={setQuizIndex} />
+        </>
+      ) : mode === 'quiz' ? (
+        <StrokeOrderChar char={chars[0]} size={soloSize} mode="quiz" playToken={playToken} />
+      ) : (
+        <div className="flex w-full flex-wrap justify-center" style={{ gap: GAP }}>
+          {chars.map((char, index) => (
             <div key={`${char}-${index}`} className="flex flex-col items-center gap-2">
               <StrokeOrderChar
                 ref={(handle) => {
                   charRefs.current[index] = handle
                 }}
                 char={char}
-                size={size}
+                size={gridSize}
                 mode={mode}
                 playToken={playToken}
               />
-              {mode === 'animate' ? <PlayButton onClick={() => playOne(index)} /> : null}
+              <PlayButton onClick={() => playOne(index)} />
             </div>
-          ))
-        : null}
+          ))}
+        </div>
+      )}
     </div>
   )
 }
