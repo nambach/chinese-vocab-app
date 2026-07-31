@@ -68,7 +68,7 @@ export function StrokeOrderDrawer({
             onClick={() => setPlayToken((token) => token + 1)}
             className="mx-auto rounded-2xl bg-teal-50 px-5 py-2 text-sm font-medium text-teal-700 ring-1 ring-teal-200 active:scale-95"
           >
-            {mode === 'quiz' ? 'Làm lại' : 'Phát lại'}
+            {mode === 'quiz' ? 'Làm lại' : 'Phát lại tất cả'}
           </button>
         ) : null}
 
