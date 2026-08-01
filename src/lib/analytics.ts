@@ -20,8 +20,12 @@ export function initAnalytics(): void {
   document.head.appendChild(script)
 
   window.dataLayer = window.dataLayer ?? []
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args)
+  // gtag.js hydrates the queue by inspecting the array-like `arguments`
+  // object. Pushing a plain array (e.g. via rest params) is silently
+  // ignored, so every command must forward `arguments` verbatim.
+  window.gtag = function gtag(..._args: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments)
   }
   window.gtag('js', new Date())
   window.gtag('config', MEASUREMENT_ID, { send_page_view: false })
