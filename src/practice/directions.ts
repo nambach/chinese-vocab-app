@@ -11,7 +11,11 @@ export const WORD_FIELD_LABELS: Record<WordField, string> = {
   meaning: 'Nghĩa',
 }
 
-export type QuizDirectionId = 'hanzi-to-pinyin' | 'hanzi-to-vn' | 'vn-to-hanzi'
+export type QuizDirectionId =
+  | 'hanzi-to-pinyin'
+  | 'hanzi-to-vn'
+  | 'vn-to-hanzi'
+  | 'vn-to-pinyin'
 
 export type QuizDirection = {
   id: QuizDirectionId
@@ -70,6 +74,15 @@ export const QUIZ_DIRECTIONS: QuizDirection[] = [
     answerLabel: 'Nhập hán tự',
     inputLang: 'zh',
     checkAnswer: (word, answer) => normalizeText(answer) === normalizeText(word.hanzi),
+  },
+  {
+    id: 'vn-to-pinyin',
+    label: 'Tiếng Việt → pīnyīn',
+    promptField: 'meaning',
+    answerField: 'pinyin',
+    answerLabel: 'Nhập pinyin',
+    inputLang: 'en',
+    checkAnswer: (word, answer) => pinyinMatches(answer, word.pinyin),
   },
 ]
 
