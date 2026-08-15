@@ -16,10 +16,11 @@ type CatalogScreenProps = {
 }
 
 export function CatalogScreen({ catalogId }: CatalogScreenProps) {
-  const { setView, goBack, removeCatalog } = useApp()
+  const { state, setView, goBack, removeCatalog, moveCatalog } = useApp()
   const catalog = useCatalog(catalogId)
   const [shareOpen, setShareOpen] = useState(false)
   const [copiedOpen, setCopiedOpen] = useState(false)
+  const [folderOpen, setFolderOpen] = useState(false)
 
   if (!catalog) {
     return (
@@ -49,6 +50,14 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
   }
 
   const menuItems: MenuItem[] = [
+    ...(state.folders.length > 0
+      ? [
+          {
+            label: 'Chuyển vào thư mục',
+            onClick: () => setFolderOpen(true),
+          },
+        ]
+      : []),
     {
       label: 'Xóa bộ sưu tập',
       danger: true,
@@ -160,6 +169,42 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
           <BigButton variant="secondary" onClick={handleDownload}>
             Tải file .txt
           </BigButton>
+        </div>
+      </BottomDrawer>
+
+      <BottomDrawer open={folderOpen} onClose={() => setFolderOpen(false)} title="Chuyển vào thư mục">
+        <div className="flex flex-col gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              moveCatalog(catalogId, undefined)
+              setFolderOpen(false)
+            }}
+            className={`rounded-2xl px-4 py-4 text-left transition active:scale-[0.98] ${
+              !currentCatalog.folderId
+                ? 'bg-teal-700 text-white'
+                : 'bg-teal-50 text-teal-900'
+            }`}
+          >
+            Không thuộc thư mục
+          </button>
+          {state.folders.map((folder) => (
+            <button
+              key={folder.id}
+              type="button"
+              onClick={() => {
+                moveCatalog(catalogId, folder.id)
+                setFolderOpen(false)
+              }}
+              className={`rounded-2xl px-4 py-4 text-left transition active:scale-[0.98] ${
+                currentCatalog.folderId === folder.id
+                  ? 'bg-teal-700 text-white'
+                  : 'bg-teal-50 text-teal-900'
+              }`}
+            >
+              {folder.name}
+            </button>
+          ))}
         </div>
       </BottomDrawer>
 

@@ -3,7 +3,21 @@ import { defaultPracticeConfig } from '../practice/session'
 import type { QuizDirectionId } from '../practice/directions'
 
 export const STORAGE_KEY = 'cn-vocab:v1'
-export const SCHEMA_VERSION = 1
+export const SCHEMA_VERSION = 3
+
+/** Stable id for Căn bản 1 bundled lessons (bai-01 … bai-15). */
+export const DEFAULT_BUILTIN_FOLDER_ID = 'builtin-lessons'
+export const DEFAULT_BUILTIN_FOLDER_NAME = 'Căn bản 1'
+
+/** Stable id for Căn bản 2 bundled lessons (bai-16+). */
+export const CB2_FOLDER_ID = 'can-ban-2'
+export const CB2_FOLDER_NAME = 'Căn bản 2'
+
+export function folderIdForBuiltinLesson(lessonId: string): string {
+  const match = lessonId.match(/(\d+)/)
+  const num = match ? Number(match[1]) : 0
+  return num >= 16 ? CB2_FOLDER_ID : DEFAULT_BUILTIN_FOLDER_ID
+}
 
 export type Word = {
   id: string
@@ -22,6 +36,13 @@ export type PracticeResult = {
   finishedAt: number
 }
 
+export type Folder = {
+  id: string
+  name: string
+  createdAt: number
+  updatedAt: number
+}
+
 export type Catalog = {
   id: string
   name: string
@@ -30,6 +51,8 @@ export type Catalog = {
   updatedAt: number
   lastResult?: PracticeResult
   practiceHistory?: PracticeResult[]
+  /** One-level group membership. Omitted when the catalog is ungrouped. */
+  folderId?: string
   /** Set when this catalog originated from a bundled default lesson (e.g. "bai-01"). */
   builtinId?: string
   /** Content fingerprint at seed time. Reserved for a future "update unmodified lessons" flow. */
@@ -49,6 +72,7 @@ export type Settings = {
 
 export type AppState = {
   version: number
+  folders: Folder[]
   catalogs: Catalog[]
   settings: Settings
   /** Highest bundled lesson-pack version the user has already been offered (accepted or declined). */
@@ -64,6 +88,7 @@ export const defaultSettings = (): Settings => ({
 
 export const defaultAppState = (): AppState => ({
   version: SCHEMA_VERSION,
+  folders: [],
   catalogs: [],
   settings: defaultSettings(),
 })

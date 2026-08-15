@@ -1,6 +1,7 @@
 import type { AppState, Catalog } from '../models/types'
+import { CB2_FOLDER_ID, folderIdForBuiltinLesson } from '../models/types'
 import { parseCatalogText } from '../lib/txt'
-import { createCatalog, createWord } from './store'
+import { createCatalog, createWord, ensureBuiltinFolder, ensureCb2Folder } from './store'
 import {
   LESSON_PACK,
   LESSON_PACK_VERSION,
@@ -18,7 +19,8 @@ function hashText(text: string): string {
 
 export function buildCatalogFromLesson(lesson: BuiltinLesson): Catalog {
   const parsed = parseCatalogText(lesson.text)
-  const catalog = createCatalog(parsed.name || lesson.id)
+  const folderId = folderIdForBuiltinLesson(lesson.id)
+  const catalog = createCatalog(parsed.name || lesson.id, folderId)
   catalog.words = parsed.words.map((word) => createWord(word))
   catalog.builtinId = lesson.id
   catalog.seedHash = hashText(lesson.text)
@@ -53,12 +55,18 @@ export function seedLessons(
   lessons: BuiltinLesson[],
   packVersion: number,
 ): AppState {
-  if (lessons.length === 0) {
-    return { ...state, seededVersion: packVersion }
+  let withFolders = ensureBuiltinFolder(state)
+  if (lessons.some((lesson) => folderIdForBuiltinLesson(lesson.id) === CB2_FOLDER_ID)) {
+    withFolders = ensureCb2Folder(withFolders)
   }
+
+  if (lessons.length === 0) {
+    return { ...withFolders, seededVersion: packVersion }
+  }
+
   return {
-    ...state,
-    catalogs: [...state.catalogs, ...lessons.map(buildCatalogFromLesson)],
+    ...withFolders,
+    catalogs: [...withFolders.catalogs, ...lessons.map(buildCatalogFromLesson)],
     seededVersion: packVersion,
   }
 }

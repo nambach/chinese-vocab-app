@@ -2,17 +2,22 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import {
   addWordToCatalog,
   createCatalog,
+  createFolder,
   createId,
   createWord,
   deleteCatalog,
+  deleteFolder,
   deleteWordFromCatalog,
   loadState,
+  moveCatalogToFolder,
   moveWordInCatalog,
+  renameFolder,
   saveState,
   setCatalogLastResult,
   updateSettings,
   updateWordInCatalog,
   upsertCatalog,
+  upsertFolder,
 } from '../data/store'
 import { importCatalogFromText } from '../lib/txt'
 import { applyHanziFont } from '../lib/fonts'
@@ -34,6 +39,7 @@ import {
 import type {
   AppState,
   Catalog,
+  Folder,
   PracticeResult,
   QuickSuite,
   Settings,
@@ -55,6 +61,10 @@ type AppContextValue = {
   importCatalog: (text: string, fallbackName?: string) => { catalog: Catalog; errors: string[] }
   updateCatalog: (catalog: Catalog) => void
   removeCatalog: (catalogId: string) => void
+  addFolder: (name: string) => Folder
+  renameFolderById: (folderId: string, name: string) => void
+  removeFolder: (folderId: string) => void
+  moveCatalog: (catalogId: string, folderId: string | undefined) => void
   addWord: (catalogId: string, draft: WordDraft) => void
   updateWord: (catalogId: string, word: Word) => void
   removeWord: (catalogId: string, wordId: string) => void
@@ -173,6 +183,20 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         if ('catalogId' in view && view.catalogId === catalogId) {
           setView({ name: 'home' })
         }
+      },
+      addFolder: (name) => {
+        const folder = createFolder(name)
+        setState((current) => upsertFolder(current, folder))
+        return folder
+      },
+      renameFolderById: (folderId, name) => {
+        setState((current) => renameFolder(current, folderId, name))
+      },
+      removeFolder: (folderId) => {
+        setState((current) => deleteFolder(current, folderId))
+      },
+      moveCatalog: (catalogId, folderId) => {
+        setState((current) => moveCatalogToFolder(current, catalogId, folderId))
       },
       addWord: (catalogId, draft) => {
         setState((current) => addWordToCatalog(current, catalogId, draft))

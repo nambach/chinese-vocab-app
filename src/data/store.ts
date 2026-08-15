@@ -1,10 +1,16 @@
 import {
   defaultAppState,
   defaultSettings,
+  CB2_FOLDER_ID,
+  CB2_FOLDER_NAME,
+  DEFAULT_BUILTIN_FOLDER_ID,
+  DEFAULT_BUILTIN_FOLDER_NAME,
+  folderIdForBuiltinLesson,
   SCHEMA_VERSION,
   STORAGE_KEY,
   type AppState,
   type Catalog,
+  type Folder,
   type PracticeResult,
   type Settings,
   type Word,
@@ -26,19 +32,110 @@ function normalizeCatalog(catalog: Catalog): Catalog {
   const lastResult = history[0] ?? catalog.lastResult
   return { ...catalog, practiceHistory: history, lastResult }
 }
+
+function migrateV1toV2(state: AppState): AppState {
+  const hasBuiltinLessons = state.catalogs.some((catalog) => catalog.builtinId)
+  let folders = state.folders ?? []
+
+  if (hasBuiltinLessons && !folders.some((folder) => folder.id === DEFAULT_BUILTIN_FOLDER_ID)) {
+    const now = Date.now()
+    folders = [
+      ...folders,
+      {
+        id: DEFAULT_BUILTIN_FOLDER_ID,
+        name: DEFAULT_BUILTIN_FOLDER_NAME,
+        createdAt: now,
+        updatedAt: now,
+      },
+    ]
+  }
+
+  const catalogs = state.catalogs.map((catalog) => {
+    if (catalog.builtinId && !catalog.folderId) {
+      return { ...catalog, folderId: DEFAULT_BUILTIN_FOLDER_ID }
+    }
+    return catalog
+  })
+
+  return {
+    ...state,
+    version: 2,
+    folders,
+    catalogs: catalogs.map(normalizeCatalog),
+  }
+}
+
+function migrateV2toV3(state: AppState): AppState {
+  let folders = state.folders.map((folder) => {
+    if (folder.id === DEFAULT_BUILTIN_FOLDER_ID && folder.name === 'Bài học mẫu') {
+      return { ...folder, name: DEFAULT_BUILTIN_FOLDER_NAME, updatedAt: Date.now() }
+    }
+    return folder
+  })
+
+  const needsCb2Folder = state.catalogs.some(
+    (catalog) => catalog.builtinId && folderIdForBuiltinLesson(catalog.builtinId) === CB2_FOLDER_ID,
+  )
+
+  if (needsCb2Folder && !folders.some((folder) => folder.id === CB2_FOLDER_ID)) {
+    const now = Date.now()
+    folders = [
+      ...folders,
+      {
+        id: CB2_FOLDER_ID,
+        name: CB2_FOLDER_NAME,
+        createdAt: now,
+        updatedAt: now,
+      },
+    ]
+  }
+
+  const catalogs = state.catalogs.map((catalog) => {
+    if (!catalog.builtinId) {
+      return catalog
+    }
+
+    const targetFolderId = folderIdForBuiltinLesson(catalog.builtinId)
+    if (catalog.folderId === targetFolderId) {
+      return catalog
+    }
+
+    return { ...catalog, folderId: targetFolderId }
+  })
+
+  return {
+    ...state,
+    version: 3,
+    folders,
+    catalogs: catalogs.map(normalizeCatalog),
+  }
+}
+
 function migrate(state: AppState): AppState {
-  if (state.version === SCHEMA_VERSION) {
+  let current: AppState = {
+    ...state,
+    folders: state.folders ?? [],
+  }
+
+  if (current.version < 2) {
+    current = migrateV1toV2(current)
+  }
+
+  if (current.version < 3) {
+    current = migrateV2toV3(current)
+  }
+
+  if (current.version === SCHEMA_VERSION) {
     return {
-      ...state,
-      catalogs: state.catalogs.map(normalizeCatalog),
+      ...current,
+      catalogs: current.catalogs.map(normalizeCatalog),
     }
   }
 
-  // Future migrations go here.
   return {
-    ...state,
+    ...current,
     version: SCHEMA_VERSION,
-    catalogs: state.catalogs.map(normalizeCatalog),
+    catalogs: current.catalogs.map(normalizeCatalog),
   }
 }
 
@@ -50,7 +147,8 @@ function parseStored(raw: string | null): AppState {
   try {
     const parsed = JSON.parse(raw) as Partial<AppState>
     const state: AppState = {
-      version: parsed.version ?? SCHEMA_VERSION,
+      version: parsed.version ?? 1,
+      folders: Array.isArray(parsed.folders) ? parsed.folders : [],
       catalogs: Array.isArray(parsed.catalogs) ? parsed.catalogs : [],
       settings: {
         ...defaultSettings(),
@@ -86,7 +184,7 @@ export function createId(): string {
   return crypto.randomUUID()
 }
 
-export function createCatalog(name: string): Catalog {
+export function createCatalog(name: string, folderId?: string): Catalog {
   const now = Date.now()
   return {
     id: createId(),
@@ -94,7 +192,95 @@ export function createCatalog(name: string): Catalog {
     words: [],
     createdAt: now,
     updatedAt: now,
+    ...(folderId ? { folderId } : {}),
   }
+}
+
+export function createFolder(name: string): Folder {
+  const now = Date.now()
+  return {
+    id: createId(),
+    name: name.trim(),
+    createdAt: now,
+    updatedAt: now,
+  }
+}
+
+export function ensureFolder(state: AppState, folderId: string, folderName: string): AppState {
+  if (state.folders.some((folder) => folder.id === folderId)) {
+    return state
+  }
+
+  const now = Date.now()
+  return {
+    ...state,
+    folders: [
+      ...state.folders,
+      {
+        id: folderId,
+        name: folderName,
+        createdAt: now,
+        updatedAt: now,
+      },
+    ],
+  }
+}
+
+export function ensureBuiltinFolder(state: AppState): AppState {
+  return ensureFolder(state, DEFAULT_BUILTIN_FOLDER_ID, DEFAULT_BUILTIN_FOLDER_NAME)
+}
+
+export function ensureCb2Folder(state: AppState): AppState {
+  return ensureFolder(state, CB2_FOLDER_ID, CB2_FOLDER_NAME)
+}
+
+export function upsertFolder(state: AppState, folder: Folder): AppState {
+  const exists = state.folders.some((item) => item.id === folder.id)
+  const folders = exists
+    ? state.folders.map((item) => (item.id === folder.id ? folder : item))
+    : [...state.folders, folder]
+
+  return { ...state, folders }
+}
+
+export function renameFolder(state: AppState, folderId: string, name: string): AppState {
+  const trimmed = name.trim()
+  if (!trimmed) return state
+
+  return {
+    ...state,
+    folders: state.folders.map((folder) =>
+      folder.id === folderId ? { ...folder, name: trimmed, updatedAt: Date.now() } : folder,
+    ),
+  }
+}
+
+export function deleteFolder(state: AppState, folderId: string): AppState {
+  return {
+    ...state,
+    folders: state.folders.filter((folder) => folder.id !== folderId),
+    catalogs: state.catalogs.map((catalog) =>
+      catalog.folderId === folderId ? { ...catalog, folderId: undefined } : catalog,
+    ),
+  }
+}
+
+export function moveCatalogToFolder(
+  state: AppState,
+  catalogId: string,
+  folderId: string | undefined,
+): AppState {
+  const catalog = getCatalog(state, catalogId)
+  if (!catalog) return state
+  if (folderId && !state.folders.some((folder) => folder.id === folderId)) {
+    return state
+  }
+
+  return upsertCatalog(state, {
+    ...catalog,
+    folderId,
+    updatedAt: Date.now(),
+  })
 }
 
 export function createWord(input: Omit<Word, 'id'>): Word {
