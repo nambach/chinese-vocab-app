@@ -83,20 +83,20 @@ describe('builtin lesson seeding', () => {
 })
 
 describe('bundled lesson pack', () => {
-  it('ships 16 lessons with unique ids and valid versions', () => {
-    expect(LESSON_PACK).toHaveLength(16)
+  it('ships 17 lessons with unique ids and valid versions', () => {
+    expect(LESSON_PACK).toHaveLength(17)
     const uniqueIds = new Set(LESSON_PACK.map((l) => l.id))
-    expect(uniqueIds.size).toBe(16)
+    expect(uniqueIds.size).toBe(17)
     for (const lesson of LESSON_PACK) {
       expect(lesson.introducedIn).toBeLessThanOrEqual(LESSON_PACK_VERSION)
     }
   })
 
-  it('is sorted in natural lesson order (bai-01 … bai-16)', () => {
+  it('is sorted in natural lesson order (bai-01 … bai-17)', () => {
     const orders = LESSON_PACK.map((l) => l.order)
     expect(orders).toEqual([...orders].sort((a, b) => a - b))
     expect(LESSON_PACK[0].id).toBe('bai-01')
-    expect(LESSON_PACK[15].id).toBe('bai-16')
+    expect(LESSON_PACK[16].id).toBe('bai-17')
   })
 
   it('every lesson parses into a named catalog with words', () => {
@@ -108,11 +108,13 @@ describe('bundled lesson pack', () => {
     }
   })
 
-  it('places bai-16 in the Căn bản 2 folder', () => {
-    const lesson = LESSON_PACK.find((item) => item.id === 'bai-16')
-    expect(lesson).toBeDefined()
-    const catalog = buildCatalogFromLesson(lesson!)
-    expect(catalog.folderId).toBe(CB2_FOLDER_ID)
+  it('places bai-16 and bai-17 in the Căn bản 2 folder', () => {
+    for (const id of ['bai-16', 'bai-17']) {
+      const lesson = LESSON_PACK.find((item) => item.id === id)
+      expect(lesson).toBeDefined()
+      const catalog = buildCatalogFromLesson(lesson!)
+      expect(catalog.folderId).toBe(CB2_FOLDER_ID)
+    }
   })
 
   it('keeps bai-01 in the Căn bản 1 folder', () => {

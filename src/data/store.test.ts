@@ -111,15 +111,18 @@ describe('persistence + seeding integration', () => {
     expect(loaded.folders.find((folder) => folder.id === DEFAULT_BUILTIN_FOLDER_ID)?.name).toBe(
       DEFAULT_BUILTIN_FOLDER_NAME,
     )
-    expect(loaded.catalogs).toHaveLength(16)
+    expect(loaded.catalogs).toHaveLength(LESSON_PACK.length)
+    const cb2Ids = ['bai-16', 'bai-17']
     expect(
       loaded.catalogs
-        .filter((catalog) => catalog.builtinId !== 'bai-16')
+        .filter((catalog) => !cb2Ids.includes(catalog.builtinId ?? ''))
         .every((catalog) => catalog.folderId === DEFAULT_BUILTIN_FOLDER_ID),
     ).toBe(true)
-    expect(loaded.catalogs.find((catalog) => catalog.builtinId === 'bai-16')?.folderId).toBe(
-      CB2_FOLDER_ID,
-    )
+    expect(
+      loaded.catalogs
+        .filter((catalog) => cb2Ids.includes(catalog.builtinId ?? ''))
+        .every((catalog) => catalog.folderId === CB2_FOLDER_ID),
+    ).toBe(true)
   })
 
   it('renames the legacy builtin folder to Căn bản 1 on v3 migration', () => {

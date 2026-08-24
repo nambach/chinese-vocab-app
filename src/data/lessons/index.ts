@@ -16,11 +16,12 @@ export type BuiltinLesson = {
 }
 
 /** Highest pack version currently shipped. Bump when adding lessons. */
-export const LESSON_PACK_VERSION = 2
+export const LESSON_PACK_VERSION = 3
 
 // Per-lesson version overrides. Anything not listed defaults to 1.
 const INTRODUCED_IN: Record<string, number> = {
   'bai-16': 2,
+  'bai-17': 3,
 }
 
 const modules = import.meta.glob('./*.txt', {
