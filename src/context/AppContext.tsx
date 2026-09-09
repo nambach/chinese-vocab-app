@@ -26,6 +26,9 @@ import {
   declineLessonPack,
   getPendingBuiltinLessons,
   restoreDefaultLessons as restoreDefaultLessonsInState,
+  getOutdatedBuiltinLessons,
+  acceptLessonUpdates,
+  declineLessonUpdates,
 } from '../data/seed'
 import type { BuiltinLesson } from '../data/lessons'
 import { parseHash, serializeView } from '../lib/router'
@@ -82,6 +85,9 @@ type AppContextValue = {
   acceptDefaultLessons: () => void
   declineDefaultLessons: () => void
   restoreDefaultLessons: () => void
+  outdatedBuiltinLessons: BuiltinLesson[]
+  acceptBuiltinLessonUpdates: () => void
+  declineBuiltinLessonUpdates: () => void
 }
 
 const AppContext = createContext<AppContextValue | null>(null)
@@ -238,6 +244,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       declineDefaultLessons: () => setState((current) => declineLessonPack(current)),
       restoreDefaultLessons: () =>
         setState((current) => restoreDefaultLessonsInState(current)),
+      outdatedBuiltinLessons: getOutdatedBuiltinLessons(state),
+      acceptBuiltinLessonUpdates: () => setState((current) => acceptLessonUpdates(current)),
+      declineBuiltinLessonUpdates: () => setState((current) => declineLessonUpdates(current)),
     }),
     [state, view, sessions, quickSuite, setView, goBack],
   )

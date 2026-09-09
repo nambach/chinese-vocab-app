@@ -1,5 +1,6 @@
 import { AppProvider, useApp } from './context/AppContext'
 import { LessonSeedPrompt } from './components/LessonSeedPrompt'
+import { LessonUpdatePrompt } from './components/LessonUpdatePrompt'
 import { CatalogScreen } from './screens/Catalog'
 import { CombinePractice } from './screens/CombinePractice'
 import { CreateCollection } from './screens/CreateCollection'
@@ -60,6 +61,7 @@ export default function App() {
         </div>
       </div>
       <LessonSeedPrompt />
+      <LessonUpdatePrompt />
     </AppProvider>
   )
 }
