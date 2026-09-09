@@ -31,21 +31,57 @@ function normalizeText(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, ' ')
 }
 
+const MEANING_SEPARATORS = new Set(['/', ',', ';', '|'])
+
+// Splits on separators only at paren depth 0, so a clarifier that contains a
+// comma ("làm (+ nghề nghiệp, chức vụ)") stays one meaning instead of being
+// torn into two unanswerable fragments.
 function splitMeanings(value: string): string[] {
-  return value
-    .split(/[/,|]/)
-    .map((part) => normalizeText(part))
-    .filter(Boolean)
+  const parts: string[] = []
+  let current = ''
+  let depth = 0
+
+  for (const char of value) {
+    if (char === '(') depth += 1
+    else if (char === ')') depth = Math.max(0, depth - 1)
+
+    if (depth === 0 && MEANING_SEPARATORS.has(char)) {
+      parts.push(current)
+      current = ''
+    } else {
+      current += char
+    }
+  }
+  parts.push(current)
+
+  return parts.map((part) => normalizeText(part)).filter(Boolean)
 }
 
-// Several accepted meanings, separated by "," when stored.
+/** Drops "(...)" clarifiers: "ra (hướng lại gần người nói)" -> "ra". */
+function stripParentheticals(value: string): string {
+  return value.replace(/\([^()]*\)/g, ' ')
+}
+
+// Meanings are stored separated by "/", ",", ";" or "|", and a meaning may
+// carry a "(...)" clarifier that exists to disambiguate on screen rather than
+// to be typed. Both spellings count: the literal one and the stripped one.
+function acceptedMeanings(expected: string): Set<string> {
+  return new Set([
+    ...splitMeanings(expected),
+    ...splitMeanings(stripParentheticals(expected)),
+  ])
+}
+
 // The learner may answer with any subset — each meaning they enter must match
 // one accepted option, but they do not need to enter every meaning.
 function meaningMatches(userAnswer: string, expected: string): boolean {
-  const accepted = new Set(splitMeanings(expected))
+  const accepted = acceptedMeanings(expected)
   const provided = splitMeanings(userAnswer)
   if (provided.length === 0) return false
-  return provided.every((part) => accepted.has(part))
+  return provided.every(
+    (part) =>
+      accepted.has(part) || accepted.has(normalizeText(stripParentheticals(part))),
+  )
 }
 
 export const QUIZ_DIRECTIONS: QuizDirection[] = [
