@@ -52,7 +52,7 @@ Error generating stack: `+l.message+`
 日语 | Rìyǔ | tiếng Nhật
 对 | duì | đúng, chính xác
 见 | jiàn | gặp, thấy
-去 | qù | đi # phải có nơi đến (去学校), khác 走
+去 | qù | đi # thường mang tân ngữ nơi chốn (去学校), khác 走
 邮局 | yóujú | bưu điện
 寄 | jì | gửi
 信 | xìn | thư
@@ -138,7 +138,7 @@ Error generating stack: `+l.message+`
 一本书 | yì běn shū | một quyển sách
 一只狗 | yì zhī gǒu | một con chó
 凌晨 | líng chén | rạng sáng
-早晨 | zǎo chén | sáng sớm # tinh mơ, sớm hơn 早上; thiên về văn viết
+早晨 | zǎo chén | sáng sớm # thiên về văn viết; cùng khung giờ với 早上 (khẩu ngữ)
 早上 | zǎo shang | sáng sớm, buổi sáng # khẩu ngữ; chào hỏi 早上好
 上午 | shàng wǔ | buổi sáng # trước trưa
 中午 | zhōng wǔ | buổi trưa
