@@ -14,6 +14,7 @@ import {
   renameFolder,
   saveState,
   setCatalogLastResult,
+  setCatalogPinned,
   updateSettings,
   updateWordInCatalog,
   upsertCatalog,
@@ -68,6 +69,7 @@ type AppContextValue = {
   renameFolderById: (folderId: string, name: string) => void
   removeFolder: (folderId: string) => void
   moveCatalog: (catalogId: string, folderId: string | undefined) => void
+  pinCatalog: (catalogId: string, pinned: boolean) => void
   addWord: (catalogId: string, draft: WordDraft) => void
   updateWord: (catalogId: string, word: Word) => void
   removeWord: (catalogId: string, wordId: string) => void
@@ -203,6 +205,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       },
       moveCatalog: (catalogId, folderId) => {
         setState((current) => moveCatalogToFolder(current, catalogId, folderId))
+      },
+      pinCatalog: (catalogId, pinned) => {
+        setState((current) => setCatalogPinned(current, catalogId, pinned))
       },
       addWord: (catalogId, draft) => {
         setState((current) => addWordToCatalog(current, catalogId, draft))

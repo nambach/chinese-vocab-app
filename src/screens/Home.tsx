@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { resultPercent } from '../lib/results'
+import { isCatalogPinned } from '../data/store'
 import type { Catalog, Folder } from '../models/types'
 import { BigButton, BottomDrawer, Card, Dialog, ScreenShell, type MenuItem } from '../components/ui'
 
@@ -34,16 +35,51 @@ function sortCatalogs(catalogs: Catalog[], sort: SortState): Catalog[] {
   })
 }
 
+function PinIcon({ filled }: { filled: boolean }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      {filled ? (
+        <path
+          d="M16 3l5 5-3.2.8L12.5 14.1l1.4 5.4-1.8 1.8-3.5-7.1L4 18.5 2.6 17.1l4.3-4.6-7.1-3.5 1.8-1.8 5.4 1.4 5.3-5.3L16 3z"
+          fill="currentColor"
+        />
+      ) : (
+        <path
+          d="M16 3l5 5-3.2.8L12.5 14.1l1.4 5.4-1.8 1.8-3.5-7.1L4 18.5 2.6 17.1l4.3-4.6-7.1-3.5 1.8-1.8 5.4 1.4 5.3-5.3L16 3z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+      )}
+    </svg>
+  )
+}
+
 function CatalogCard({
   catalog,
   onOpen,
+  onTogglePin,
 }: {
   catalog: Catalog
   onOpen: () => void
+  onTogglePin: () => void
 }) {
+  const pinned = isCatalogPinned(catalog)
+
   return (
-    <Card className="p-4">
-      <button type="button" onClick={onOpen} className="w-full text-left">
+    <Card className="relative p-4">
+      <button
+        type="button"
+        aria-label={pinned ? 'Bỏ ghim' : 'Ghim bộ sưu tập'}
+        aria-pressed={pinned}
+        onClick={onTogglePin}
+        className={`absolute right-2 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-xl ${
+          pinned ? 'text-teal-800' : 'text-teal-400'
+        } active:bg-teal-50`}
+      >
+        <PinIcon filled={pinned} />
+      </button>
+      <button type="button" onClick={onOpen} className="w-full pr-10 text-left">
         <h3 className="text-xl font-semibold text-teal-950">{catalog.name}</h3>
         <p className="mt-1 text-sm text-teal-700">
           {catalog.words.length} từ
@@ -66,6 +102,7 @@ function FolderSection({
   onRename,
   onDelete,
   onOpenCatalog,
+  onTogglePin,
 }: {
   folder: Folder
   catalogs: Catalog[]
@@ -74,11 +111,14 @@ function FolderSection({
   onRename: () => void
   onDelete: () => void
   onOpenCatalog: (catalogId: string) => void
+  onTogglePin: (catalogId: string) => void
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-teal-100">
+    <div
+      className={`rounded-3xl bg-white ring-1 ring-teal-100 ${menuOpen ? 'relative z-30' : ''}`}
+    >
       <div className="flex items-center gap-2 px-4 py-3">
         <button
           type="button"
@@ -123,8 +163,8 @@ function FolderSection({
 
           {menuOpen ? (
             <>
-              <div className="fixed inset-0 z-10" onClick={() => setMenuOpen(false)} aria-hidden="true" />
-              <div className="absolute right-0 z-20 mt-1 w-44 overflow-hidden rounded-2xl bg-white py-1 shadow-lg ring-1 ring-teal-100">
+              <div className="fixed inset-0 z-30" onClick={() => setMenuOpen(false)} aria-hidden="true" />
+              <div className="absolute right-0 top-full z-40 mt-1 w-44 overflow-hidden rounded-2xl bg-white py-1 shadow-lg ring-1 ring-teal-100">
                 <button
                   type="button"
                   onClick={() => {
@@ -155,7 +195,11 @@ function FolderSection({
         <ul className="grid gap-3 border-t border-teal-50 px-4 py-3 md:grid-cols-2">
           {catalogs.map((catalog) => (
             <li key={catalog.id}>
-              <CatalogCard catalog={catalog} onOpen={() => onOpenCatalog(catalog.id)} />
+              <CatalogCard
+                catalog={catalog}
+                onOpen={() => onOpenCatalog(catalog.id)}
+                onTogglePin={() => onTogglePin(catalog.id)}
+              />
             </li>
           ))}
         </ul>
@@ -165,14 +209,14 @@ function FolderSection({
 }
 
 export function Home() {
-  const { state, setView, addFolder, renameFolderById, removeFolder } = useApp()
+  const { state, setView, addFolder, renameFolderById, removeFolder, pinCatalog, patchSettings } =
+    useApp()
   const [sort, setSort] = useState<SortState>({ key: 'name', dir: 'asc' })
   const [sheetOpen, setSheetOpen] = useState(false)
   const [createFolderOpen, setCreateFolderOpen] = useState(false)
   const [newFolderName, setNewFolderName] = useState('')
   const [renameTarget, setRenameTarget] = useState<Folder | null>(null)
   const [renameName, setRenameName] = useState('')
-  const [collapsedFolders, setCollapsedFolders] = useState<Set<string>>(() => new Set())
 
   const menuItems: MenuItem[] = [
     { label: '+ Tạo bộ sưu tập', onClick: () => setView({ name: 'createCollection' }) },
@@ -180,8 +224,14 @@ export function Home() {
     { label: 'Cài đặt', onClick: () => setView({ name: 'settings' }) },
   ]
 
+  const pinnedCatalogs = useMemo(() => {
+    return [...state.catalogs]
+      .filter(isCatalogPinned)
+      .sort((a, b) => (b.pinnedAt ?? 0) - (a.pinnedAt ?? 0))
+  }, [state.catalogs])
+
   const sortedCatalogs = useMemo(
-    () => sortCatalogs(state.catalogs, sort),
+    () => sortCatalogs(state.catalogs.filter((catalog) => !isCatalogPinned(catalog)), sort),
     [state.catalogs, sort],
   )
 
@@ -220,20 +270,23 @@ export function Home() {
     )
   }
 
+  function isExpanded(folderId: string) {
+    return state.settings.expandedFolderIds.includes(folderId)
+  }
+
   function toggleFolder(folderId: string) {
-    setCollapsedFolders((current) => {
-      const next = new Set(current)
-      if (next.has(folderId)) {
-        next.delete(folderId)
-      } else {
-        next.add(folderId)
-      }
-      return next
+    const expanded = isExpanded(folderId)
+    patchSettings({
+      expandedFolderIds: expanded
+        ? state.settings.expandedFolderIds.filter((id) => id !== folderId)
+        : [...state.settings.expandedFolderIds, folderId],
     })
   }
 
-  function isExpanded(folderId: string) {
-    return !collapsedFolders.has(folderId)
+  function handleTogglePin(catalogId: string) {
+    const catalog = state.catalogs.find((item) => item.id === catalogId)
+    if (!catalog) return
+    pinCatalog(catalogId, !isCatalogPinned(catalog))
   }
 
   function handleCreateFolder() {
@@ -302,6 +355,25 @@ export function Home() {
           </div>
 
           <div className="flex flex-col gap-3">
+            {pinnedCatalogs.length > 0 ? (
+              <div className="flex flex-col gap-3">
+                <h3 className="px-1 text-xs font-semibold uppercase tracking-wide text-teal-600">
+                  Đã ghim
+                </h3>
+                <ul className="grid gap-3 md:grid-cols-2">
+                  {pinnedCatalogs.map((catalog) => (
+                    <li key={catalog.id}>
+                      <CatalogCard
+                        catalog={catalog}
+                        onOpen={() => setView({ name: 'catalog', catalogId: catalog.id })}
+                        onTogglePin={() => handleTogglePin(catalog.id)}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
             {hasFolders
               ? sortedFolders.map((folder) => {
                   const catalogs = catalogsByFolder.grouped.get(folder.id) ?? []
@@ -320,6 +392,7 @@ export function Home() {
                       }}
                       onDelete={() => handleDeleteFolder(folder)}
                       onOpenCatalog={(catalogId) => setView({ name: 'catalog', catalogId })}
+                      onTogglePin={handleTogglePin}
                     />
                   )
                 })
@@ -327,7 +400,7 @@ export function Home() {
 
             {catalogsByFolder.ungrouped.length > 0 ? (
               <div className="flex flex-col gap-3">
-                {hasFolders ? (
+                {hasFolders || pinnedCatalogs.length > 0 ? (
                   <h3 className="px-1 text-xs font-semibold uppercase tracking-wide text-teal-600">
                     Khác
                   </h3>
@@ -338,6 +411,7 @@ export function Home() {
                       <CatalogCard
                         catalog={catalog}
                         onOpen={() => setView({ name: 'catalog', catalogId: catalog.id })}
+                        onTogglePin={() => handleTogglePin(catalog.id)}
                       />
                     </li>
                   ))}

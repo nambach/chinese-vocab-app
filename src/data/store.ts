@@ -157,6 +157,9 @@ function parseStored(raw: string | null): AppState {
           ...defaultSettings().practiceConfig,
           ...(parsed.settings?.practiceConfig ?? {}),
         },
+        expandedFolderIds: Array.isArray(parsed.settings?.expandedFolderIds)
+          ? parsed.settings.expandedFolderIds
+          : defaultSettings().expandedFolderIds,
       },
       seededVersion: parsed.seededVersion,
     }
@@ -262,7 +265,33 @@ export function deleteFolder(state: AppState, folderId: string): AppState {
     catalogs: state.catalogs.map((catalog) =>
       catalog.folderId === folderId ? { ...catalog, folderId: undefined } : catalog,
     ),
+    settings: {
+      ...state.settings,
+      expandedFolderIds: state.settings.expandedFolderIds.filter((id) => id !== folderId),
+    },
   }
+}
+
+export function setCatalogPinned(
+  state: AppState,
+  catalogId: string,
+  pinned: boolean,
+): AppState {
+  const catalog = getCatalog(state, catalogId)
+  if (!catalog) return state
+
+  if (pinned) {
+    if (catalog.pinnedAt) return state
+    return upsertCatalog(state, { ...catalog, pinnedAt: Date.now() })
+  }
+
+  if (!catalog.pinnedAt) return state
+  const { pinnedAt: _removed, ...rest } = catalog
+  return upsertCatalog(state, rest)
+}
+
+export function isCatalogPinned(catalog: Catalog): boolean {
+  return Boolean(catalog.pinnedAt)
 }
 
 export function moveCatalogToFolder(

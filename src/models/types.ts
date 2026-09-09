@@ -57,6 +57,8 @@ export type Catalog = {
   builtinId?: string
   /** Content fingerprint at seed time. Reserved for a future "update unmodified lessons" flow. */
   seedHash?: string
+  /** Present when the catalog is pinned to the top of Home. */
+  pinnedAt?: number
 }
 
 export type HanziFontId = 'system' | 'kai' | 'kaiti' | 'mashan' | 'zhimang' | 'longcang'
@@ -68,6 +70,8 @@ export type Settings = {
   hanziFont: HanziFontId
   /** Auto-play pronunciation when the study card changes. */
   autoPronounce: boolean
+  /** Folder ids the user has expanded on Home. Missing ids stay collapsed. */
+  expandedFolderIds: string[]
 }
 
 export type AppState = {
@@ -84,6 +88,7 @@ export const defaultSettings = (): Settings => ({
   practiceConfig: defaultPracticeConfig(),
   hanziFont: 'system',
   autoPronounce: false,
+  expandedFolderIds: [],
 })
 
 export const defaultAppState = (): AppState => ({

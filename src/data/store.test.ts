@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { loadState, saveState } from './store'
+import { loadState, saveState, setCatalogPinned, isCatalogPinned, deleteFolder } from './store'
 import {
   acceptPendingLessons,
   declineLessonPack,
@@ -203,5 +203,95 @@ describe('persistence + seeding integration', () => {
     expect(second.catalogs.map((catalog) => catalog.folderId)).toEqual(
       first.catalogs.map((catalog) => catalog.folderId),
     )
+  })
+})
+
+describe('pin + folder collapse settings', () => {
+  beforeEach(() => installLocalStorage())
+
+  it('pins and unpins a catalog without changing updatedAt', () => {
+    const catalog = {
+      id: 'c1',
+      name: 'Bài 1',
+      words: [],
+      createdAt: 1,
+      updatedAt: 10,
+    }
+    const state = {
+      ...defaultAppState(),
+      catalogs: [catalog],
+    }
+
+    const pinned = setCatalogPinned(state, 'c1', true)
+    expect(isCatalogPinned(pinned.catalogs[0])).toBe(true)
+    expect(pinned.catalogs[0].updatedAt).toBe(10)
+    expect(pinned.catalogs[0].pinnedAt).toBeGreaterThan(0)
+
+    const unpinned = setCatalogPinned(pinned, 'c1', false)
+    expect(isCatalogPinned(unpinned.catalogs[0])).toBe(false)
+    expect(unpinned.catalogs[0].pinnedAt).toBeUndefined()
+    expect(unpinned.catalogs[0].updatedAt).toBe(10)
+  })
+
+  it('round-trips pinnedAt and defaults expandedFolderIds on load', () => {
+    const state = {
+      ...defaultAppState(),
+      catalogs: [
+        {
+          id: 'c1',
+          name: 'Bài 1',
+          words: [],
+          createdAt: 1,
+          updatedAt: 1,
+          pinnedAt: 99,
+        },
+      ],
+    }
+    saveState(state)
+    const loaded = loadState()
+    expect(loaded.catalogs[0].pinnedAt).toBe(99)
+    expect(loaded.settings.expandedFolderIds).toEqual([])
+  })
+
+  it('loads old settings without expandedFolderIds as collapsed-by-default', () => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        version: SCHEMA_VERSION,
+        folders: [],
+        catalogs: [],
+        settings: {
+          toneNumberInput: true,
+          practiceConfig: defaultAppState().settings.practiceConfig,
+          hanziFont: 'system',
+          autoPronounce: false,
+        },
+      }),
+    )
+
+    const loaded = loadState()
+    expect(loaded.settings.expandedFolderIds).toEqual([])
+  })
+
+  it('clears expandedFolderIds when a folder is deleted', () => {
+    const folderId = DEFAULT_BUILTIN_FOLDER_ID
+    const state = {
+      ...defaultAppState(),
+      folders: [
+        {
+          id: folderId,
+          name: DEFAULT_BUILTIN_FOLDER_NAME,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      ],
+      settings: {
+        ...defaultAppState().settings,
+        expandedFolderIds: [folderId, 'other'],
+      },
+    }
+
+    const next = deleteFolder(state, folderId)
+    expect(next.settings.expandedFolderIds).toEqual(['other'])
   })
 })

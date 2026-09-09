@@ -16,7 +16,7 @@ type CatalogScreenProps = {
 }
 
 export function CatalogScreen({ catalogId }: CatalogScreenProps) {
-  const { state, setView, goBack, removeCatalog, moveCatalog } = useApp()
+  const { state, setView, goBack, removeCatalog, moveCatalog, pinCatalog } = useApp()
   const catalog = useCatalog(catalogId)
   const [shareOpen, setShareOpen] = useState(false)
   const [copiedOpen, setCopiedOpen] = useState(false)
@@ -50,6 +50,10 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
   }
 
   const menuItems: MenuItem[] = [
+    {
+      label: currentCatalog.pinnedAt ? 'Bỏ ghim' : 'Ghim bộ sưu tập',
+      onClick: () => pinCatalog(catalogId, !currentCatalog.pinnedAt),
+    },
     ...(state.folders.length > 0
       ? [
           {
