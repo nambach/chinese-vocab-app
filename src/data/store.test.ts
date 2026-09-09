@@ -112,7 +112,7 @@ describe('persistence + seeding integration', () => {
       DEFAULT_BUILTIN_FOLDER_NAME,
     )
     expect(loaded.catalogs).toHaveLength(LESSON_PACK.length)
-    const cb2Ids = ['bai-16', 'bai-17']
+    const cb2Ids = ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20']
     expect(
       loaded.catalogs
         .filter((catalog) => !cb2Ids.includes(catalog.builtinId ?? ''))

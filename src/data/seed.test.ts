@@ -7,6 +7,7 @@ import {
   seedLessons,
 } from './seed'
 import { LESSON_PACK, LESSON_PACK_VERSION, type BuiltinLesson } from './lessons'
+import { parseCatalogText } from '../lib/txt'
 import type { AppState, Catalog } from '../models/types'
 import { CB2_FOLDER_ID, DEFAULT_BUILTIN_FOLDER_ID, defaultSettings } from '../models/types'
 
@@ -83,24 +84,25 @@ describe('builtin lesson seeding', () => {
 })
 
 describe('bundled lesson pack', () => {
-  it('ships 17 lessons with unique ids and valid versions', () => {
-    expect(LESSON_PACK).toHaveLength(17)
+  it('ships 20 lessons with unique ids and valid versions', () => {
+    expect(LESSON_PACK).toHaveLength(20)
     const uniqueIds = new Set(LESSON_PACK.map((l) => l.id))
-    expect(uniqueIds.size).toBe(17)
+    expect(uniqueIds.size).toBe(20)
     for (const lesson of LESSON_PACK) {
       expect(lesson.introducedIn).toBeLessThanOrEqual(LESSON_PACK_VERSION)
     }
   })
 
-  it('is sorted in natural lesson order (bai-01 … bai-17)', () => {
+  it('is sorted in natural lesson order (bai-01 … bai-20)', () => {
     const orders = LESSON_PACK.map((l) => l.order)
     expect(orders).toEqual([...orders].sort((a, b) => a - b))
     expect(LESSON_PACK[0].id).toBe('bai-01')
-    expect(LESSON_PACK[16].id).toBe('bai-17')
+    expect(LESSON_PACK[19].id).toBe('bai-20')
   })
 
   it('every lesson parses into a named catalog with words', () => {
     for (const lesson of LESSON_PACK) {
+      expect(parseCatalogText(lesson.text).errors).toEqual([])
       const catalog = buildCatalogFromLesson(lesson)
       expect(catalog.name).toBeTruthy()
       expect(catalog.words.length).toBeGreaterThan(0)
@@ -108,8 +110,8 @@ describe('bundled lesson pack', () => {
     }
   })
 
-  it('places bai-16 and bai-17 in the Căn bản 2 folder', () => {
-    for (const id of ['bai-16', 'bai-17']) {
+  it('places bai-16 … bai-20 in the Căn bản 2 folder', () => {
+    for (const id of ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20']) {
       const lesson = LESSON_PACK.find((item) => item.id === id)
       expect(lesson).toBeDefined()
       const catalog = buildCatalogFromLesson(lesson!)
