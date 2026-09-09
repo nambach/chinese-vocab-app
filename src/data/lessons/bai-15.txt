@@ -5,7 +5,7 @@
 只 | zhǐ | chỉ
 做 | zuò | làm
 医院 | yīyuàn | bệnh viện
-医生 | yīshēng | bác sĩ
+医生 | yīshēng | bác sĩ # cách gọi chung, trang trọng hơn 大夫
 公司 | gōngsī | công ty
 外贸 | wàimào | thương mại quốc tế
 大概 | dàgài | khoảng

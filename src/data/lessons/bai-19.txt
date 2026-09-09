@@ -27,7 +27,7 @@
 上个月 | shàng ge yuè | tháng trước
 这个月 | zhè ge yuè | tháng này
 下个月 | xià ge yuè | tháng sau
-早上 | zǎoshang | sáng sớm
-上午 | shàngwǔ | buổi sáng
+早上 | zǎoshang | sáng sớm, buổi sáng # khẩu ngữ; chào hỏi 早上好
+上午 | shàngwǔ | buổi sáng # trước trưa
 中午 | zhōngwǔ | buổi trưa
 下午 | xiàwǔ | buổi chiều

@@ -12,7 +12,7 @@
 留学生 | liúxuéshēng | du học sinh, lưu học sinh
 也 | yě | cũng
 都 | dōu | đều
-俩 | liǎ | hai
+俩 | liǎ | hai # = 两个, sau nó KHÔNG dùng lượng từ (他们俩)
 学生 | xuéshēng | học sinh, sinh viên
 没什么 | méi shénme | không có gì
 月 | yuè | tháng

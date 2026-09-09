@@ -28,7 +28,7 @@
 怎么 | zěnme | thế nào?
 一共 | yígòng | tổng cộng
 一共有 | yígòngyǒu | tổng cộng có
-两 | liǎng | hai
+两 | liǎng | hai # dùng trước lượng từ (两个人), khác 二 khi đếm số
 两个人 | liǎng gè rén | 2 con người
 给 | gěi | đưa, cho
 找 | zhǎo | tìm, thối tiền thừa
