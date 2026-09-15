@@ -220,20 +220,20 @@ describe('updating lessons the user already has', () => {
 })
 
 describe('bundled lesson pack', () => {
-  it('ships 20 lessons with unique ids and valid versions', () => {
-    expect(LESSON_PACK).toHaveLength(20)
+  it('ships 21 lessons with unique ids and valid versions', () => {
+    expect(LESSON_PACK).toHaveLength(21)
     const uniqueIds = new Set(LESSON_PACK.map((l) => l.id))
-    expect(uniqueIds.size).toBe(20)
+    expect(uniqueIds.size).toBe(21)
     for (const lesson of LESSON_PACK) {
       expect(lesson.introducedIn).toBeLessThanOrEqual(LESSON_PACK_VERSION)
     }
   })
 
-  it('is sorted in natural lesson order (bai-01 … bai-20)', () => {
+  it('is sorted in natural lesson order (bai-01 … bai-21)', () => {
     const orders = LESSON_PACK.map((l) => l.order)
     expect(orders).toEqual([...orders].sort((a, b) => a - b))
     expect(LESSON_PACK[0].id).toBe('bai-01')
-    expect(LESSON_PACK[19].id).toBe('bai-20')
+    expect(LESSON_PACK[20].id).toBe('bai-21')
   })
 
   it('every lesson parses into a named catalog with words', () => {
@@ -246,8 +246,8 @@ describe('bundled lesson pack', () => {
     }
   })
 
-  it('places bai-16 … bai-20 in the Căn bản 2 folder', () => {
-    for (const id of ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20']) {
+  it('places bai-16 … bai-21 in the Căn bản 2 folder', () => {
+    for (const id of ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20', 'bai-21']) {
       const lesson = LESSON_PACK.find((item) => item.id === id)
       expect(lesson).toBeDefined()
       const catalog = buildCatalogFromLesson(lesson!)
