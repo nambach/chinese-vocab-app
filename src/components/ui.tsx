@@ -13,6 +13,8 @@ type ScreenShellProps = {
   onBack?: () => void
   backLabel?: string
   menuItems?: MenuItem[]
+  /** Rendered in the right-side header slot, alongside the menu button if both are present. */
+  headerAction?: ReactNode
   children: ReactNode
   footer?: ReactNode
   /** Pin the shell to the visual viewport on touch devices (keyboard-safe layout). */
@@ -76,11 +78,14 @@ export function ScreenShell({
   onBack,
   backLabel = 'Quay lại',
   menuItems,
+  headerAction,
   children,
   footer,
   keyboardAvoiding = false,
 }: ScreenShellProps) {
   const hasMenu = Boolean(menuItems && menuItems.length > 0)
+  const hasHeaderAction = Boolean(headerAction)
+  const hasRightSlot = hasMenu || hasHeaderAction
   const headerRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
@@ -98,7 +103,7 @@ export function ScreenShell({
     const observer = new ResizeObserver(updateHeaderHeight)
     observer.observe(header)
     return () => observer.disconnect()
-  }, [subtitle, title, hasMenu])
+  }, [subtitle, title, hasMenu, hasHeaderAction])
 
   const shell = (
     <div
@@ -136,7 +141,8 @@ export function ScreenShell({
             </h1>
           </div>
 
-          <div className={`flex shrink-0 justify-end ${hasMenu ? 'w-11' : ''}`}>
+          <div className={`flex shrink-0 items-center justify-end gap-1 ${hasRightSlot ? 'min-w-11' : ''}`}>
+            {headerAction}
             {hasMenu ? <HeaderMenu items={menuItems!} /> : null}
           </div>
         </div>

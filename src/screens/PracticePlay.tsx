@@ -19,6 +19,7 @@ import { SpeakButton } from '../components/SpeakButton'
 import { StrokeOrderButton } from '../components/StrokeOrderButton'
 import { useApp } from '../context/AppContext'
 import { useIsTouchDevice, useVisualViewport } from '../lib/useVisualViewport'
+import { useHanziVariant, waitForTraditionalDataLoaded } from '../lib/traditional'
 
 type PracticePlayProps = {
   sessionId: string
@@ -34,6 +35,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
 
   const direction = session ? findDirection(session.config.directionId) : undefined
   const currentWord = session ? getCurrentWord(session) : undefined
+  const displayedHanzi = useHanziVariant(state.settings.hanziVariant, currentWord?.hanzi ?? '')
   const progress = session ? getProgress(session) : { current: 0, total: 0 }
   const answered = session ? getAnsweredCount(session) : 0
   const progressPercent =
@@ -68,6 +70,13 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
     const timer = window.setInterval(() => setNow(Date.now()), 250)
     return () => window.clearInterval(timer)
   }, [session])
+
+  // checkAnswer's traditional-answer branch (directions.ts) needs the
+  // conversion tables loaded synchronously by the time the learner submits;
+  // kick the lazy import off as soon as this direction can ask for hanzi.
+  useEffect(() => {
+    if (direction?.answerField === 'hanzi') void waitForTraditionalDataLoaded()
+  }, [direction])
 
   useEffect(() => {
     if (!session || session.showingFeedback || session.finishedAt) return
@@ -291,7 +300,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                     lastAttempt?.correct ? 'text-emerald-900' : 'text-red-900'
                   }`}
                 >
-                  {correctAnswer}
+                  {direction.answerField === 'hanzi' ? <Hanzi>{correctAnswer}</Hanzi> : correctAnswer}
                 </span>
               </p>
               {supplementaryFields.map((field) => (
@@ -302,7 +311,11 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                       lastAttempt?.correct ? 'text-emerald-900' : 'text-red-900'
                     }`}
                   >
-                    {getAnswerText(currentWord, field)}
+                    {field === 'hanzi' ? (
+                      <Hanzi>{getAnswerText(currentWord, field)}</Hanzi>
+                    ) : (
+                      getAnswerText(currentWord, field)
+                    )}
                   </span>
                 </p>
               ))}
@@ -316,7 +329,9 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                 </p>
               ) : null}
               {!lastAttempt?.correct && lastAttempt?.userAnswer ? (
-                <p className="text-sm text-red-600">Bạn nhập: {lastAttempt.userAnswer}</p>
+                <p className="text-sm text-red-600">
+                  Bạn nhập: <Hanzi convert={false}>{lastAttempt.userAnswer}</Hanzi>
+                </p>
               ) : null}
             </div>
             {currentWord.hanzi ? (
@@ -329,8 +344,8 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                   label={`Nghe phát âm "${currentWord.hanzi}"`}
                 />
                 <StrokeOrderButton
-                  text={currentWord.hanzi}
-                  label={`Xem thứ tự nét "${currentWord.hanzi}"`}
+                  text={displayedHanzi}
+                  label={`Xem thứ tự nét "${displayedHanzi}"`}
                 />
               </div>
             ) : null}

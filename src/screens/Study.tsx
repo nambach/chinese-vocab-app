@@ -3,7 +3,9 @@ import { Card, ScreenShell } from '../components/ui'
 import { Hanzi } from '../components/Hanzi'
 import { SpeakButton } from '../components/SpeakButton'
 import { StrokeOrderButton } from '../components/StrokeOrderButton'
+import { VariantToggle } from '../components/VariantToggle'
 import { speak } from '../lib/speech'
+import { useHanziVariant } from '../lib/traditional'
 import { useApp, useCatalog } from '../context/AppContext'
 import type { Word } from '../models/types'
 
@@ -21,6 +23,9 @@ function StudyCard({
   word: Word
   onStrokeDrawerOpenChange?: (open: boolean) => void
 }) {
+  const { state } = useApp()
+  const displayedHanzi = useHanziVariant(state.settings.hanziVariant, word.hanzi)
+
   return (
     <Card className="flex min-h-[min(52dvh,360px)] flex-col items-center justify-center p-6 text-center md:min-h-[320px] md:p-10">
       <div className="text-5xl font-bold text-teal-950 md:text-6xl">
@@ -34,8 +39,8 @@ function StudyCard({
       <div className="mt-5 flex items-center justify-center gap-3">
         <SpeakButton text={word.hanzi} label={`Nghe phát âm "${word.hanzi}"`} />
         <StrokeOrderButton
-          text={word.hanzi}
-          label={`Xem thứ tự nét "${word.hanzi}"`}
+          text={displayedHanzi}
+          label={`Xem thứ tự nét "${displayedHanzi}"`}
           onOpenChange={onStrokeDrawerOpenChange}
         />
       </div>
@@ -184,6 +189,7 @@ export function Study({ catalogId, wordIndex = 0 }: StudyProps) {
       subtitle={`${catalog.name} · ${index + 1}/${words.length}`}
       onBack={() => goBack({ name: 'catalog', catalogId })}
       backLabel={catalog.name}
+      headerAction={<VariantToggle />}
     >
       <div className="flex min-h-0 flex-1 flex-col gap-4">
         <div className="flex min-h-0 flex-1 items-center gap-3">

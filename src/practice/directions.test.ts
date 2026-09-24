@@ -1,5 +1,6 @@
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import { getDirection } from './directions'
+import { waitForTraditionalDataLoaded } from '../lib/traditional'
 import type { Word } from '../models/types'
 
 const check = (meaning: string, answer: string): boolean =>
@@ -60,5 +61,28 @@ describe('hanzi-to-vn answer checking', () => {
   it('rejects an empty answer', () => {
     expect(check('ra (hướng lại gần người nói)', '   ')).toBe(false)
     expect(check('ra (hướng lại gần người nói)', ',,')).toBe(false)
+  })
+})
+
+describe('vn-to-hanzi answer checking', () => {
+  beforeAll(() => waitForTraditionalDataLoaded())
+
+  const checkHanzi = (hanzi: string, answer: string): boolean =>
+    getDirection('vn-to-hanzi').checkAnswer(
+      { id: 'w', hanzi, pinyin: 'x', meaning: 'x' } as Word,
+      answer,
+    )
+
+  it('accepts the stored simplified form', () => {
+    expect(checkHanzi('面条', '面条')).toBe(true)
+  })
+
+  it('accepts the traditional form even though the word is stored simplified', () => {
+    expect(checkHanzi('面条', '麵條')).toBe(true)
+    expect(checkHanzi('一只狗', '一隻狗')).toBe(true)
+  })
+
+  it('rejects an unrelated answer', () => {
+    expect(checkHanzi('面条', '米饭')).toBe(false)
   })
 })

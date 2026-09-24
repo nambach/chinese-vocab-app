@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react'
 import HanziWriter from 'hanzi-writer'
+import { Hanzi } from './Hanzi'
 
 export type StrokeMode = 'animate' | 'quiz'
 
@@ -129,7 +130,7 @@ const StrokeOrderChar = forwardRef<
         style={{ width: size, height: size, fontSize: size * 0.5 }}
         title="Không có dữ liệu thứ tự nét cho ký tự này"
       >
-        {char}
+        <Hanzi>{char}</Hanzi>
       </div>
     )
   }
@@ -202,7 +203,9 @@ function CharCarousel({
                   : 'bg-white text-teal-800 ring-1 ring-teal-200 active:bg-teal-50'
               }`}
             >
-              <span className="block text-lg font-medium">{char}</span>
+              <span className="block text-lg font-medium">
+                <Hanzi>{char}</Hanzi>
+              </span>
               <span className={`mt-0.5 block text-[10px] ${active ? 'text-teal-100' : 'text-teal-500'}`}>
                 {i + 1}
               </span>

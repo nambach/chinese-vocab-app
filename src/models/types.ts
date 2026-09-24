@@ -63,6 +63,8 @@ export type Catalog = {
 
 export type HanziFontId = 'system' | 'kai' | 'kaiti' | 'mashan' | 'zhimang' | 'longcang'
 
+export type HanziVariant = 'simplified' | 'traditional'
+
 export type Settings = {
   toneNumberInput: boolean
   practiceConfig: PracticeConfig
@@ -72,6 +74,8 @@ export type Settings = {
   autoPronounce: boolean
   /** Folder ids the user has expanded on Home. Missing ids stay collapsed. */
   expandedFolderIds: string[]
+  /** Display variant for Chinese characters. Stored words are always simplified. */
+  hanziVariant: HanziVariant
 }
 
 export type AppState = {
@@ -89,6 +93,7 @@ export const defaultSettings = (): Settings => ({
   hanziFont: 'system',
   autoPronounce: false,
   expandedFolderIds: [],
+  hanziVariant: 'simplified',
 })
 
 export const defaultAppState = (): AppState => ({

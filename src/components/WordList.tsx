@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { BigButton, Card } from './ui'
 import { Hanzi } from './Hanzi'
 import { normalizePinyin } from '../lib/pinyin'
+import { toTraditional } from '../lib/traditional'
 import type { Word } from '../models/types'
 
 type WordListProps = {
@@ -19,9 +20,11 @@ export function WordList({ words, onEdit, onDelete, onMove }: WordListProps) {
     if (!raw) return words
     const normalizedQuery = normalizePinyin(raw)
 
+    const trimmed = query.trim()
     return words.filter(
       (word) =>
-        word.hanzi.includes(query.trim()) ||
+        word.hanzi.includes(trimmed) ||
+        toTraditional(word.hanzi).includes(trimmed) ||
         word.pinyin.toLowerCase().includes(raw) ||
         normalizePinyin(word.pinyin).includes(normalizedQuery) ||
         word.meaning.toLowerCase().includes(raw),

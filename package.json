@@ -10,7 +10,8 @@
     "preview": "vite preview --host",
     "preview:local": "npm run build:local && vite preview --host",
     "deploy": "bash scripts/deploy.sh",
-    "test": "vitest run"
+    "test": "vitest run",
+    "gen:traditional": "node scripts/gen-traditional.mjs"
   },
   "dependencies": {
     "hanzi-writer": "^3.7.3",

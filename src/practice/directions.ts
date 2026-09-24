@@ -1,4 +1,5 @@
 import { pinyinMatches } from '../lib/pinyin'
+import { toTraditional } from '../lib/traditional'
 import type { Word } from '../models/types'
 
 export type WordField = 'hanzi' | 'pinyin' | 'meaning'
@@ -109,7 +110,13 @@ export const QUIZ_DIRECTIONS: QuizDirection[] = [
     answerField: 'hanzi',
     answerLabel: 'Nhập hán tự',
     inputLang: 'zh',
-    checkAnswer: (word, answer) => normalizeText(answer) === normalizeText(word.hanzi),
+    checkAnswer: (word, answer) => {
+      const target = normalizeText(answer)
+      return (
+        target === normalizeText(word.hanzi) ||
+        target === normalizeText(toTraditional(word.hanzi))
+      )
+    },
   },
   {
     id: 'vn-to-pinyin',

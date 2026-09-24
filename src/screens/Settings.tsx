@@ -3,7 +3,7 @@ import { IMPORT_FORMAT_GUIDE_BODY } from '../lib/txt'
 import { BigButton, Card, ScreenShell, Select } from '../components/ui'
 import { Hanzi } from '../components/Hanzi'
 import { HANZI_FONTS } from '../lib/fonts'
-import type { HanziFontId } from '../models/types'
+import type { HanziFontId, HanziVariant } from '../models/types'
 
 export function Settings() {
   const { state, goBack, patchSettings, restoreDefaultLessons } = useApp()
@@ -23,6 +23,17 @@ export function Settings() {
             value={state.settings.hanziFont}
             onChange={(value) => patchSettings({ hanziFont: value as HanziFontId })}
             options={HANZI_FONTS.map((font) => ({ value: font.id, label: font.label }))}
+          />
+        </div>
+        <div className="mt-3">
+          <Select
+            label="Giản thể / Phồn thể"
+            value={state.settings.hanziVariant}
+            onChange={(value) => patchSettings({ hanziVariant: value as HanziVariant })}
+            options={[
+              { value: 'simplified', label: '简 Giản thể' },
+              { value: 'traditional', label: '繁 Phồn thể' },
+            ]}
           />
         </div>
         <div className="mt-3 flex items-center justify-center rounded-2xl bg-teal-50 py-5">
