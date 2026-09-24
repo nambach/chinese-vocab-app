@@ -5,7 +5,7 @@
 明年 | míngnián | năm sau
 后年 | hòunián | năm sau nữa
 毕业 | bìyè | tốt nghiệp # cấp học + 毕业 = đã tốt nghiệp cấp học đó, VD: 大学毕业
-多 | duō | bao nhiêu # 多 + tính từ đơn âm tiết để hỏi mức độ, VD: 长城多长
+多 | duō | nhiều; bao nhiêu # hỏi mức độ: 多 + tính từ một âm tiết, VD: 长城多长
 多大 | duōdà | bao lớn, bao nhiêu tuổi
 岁 | suì | tuổi
 狗 | gǒu | con chó # bộ "khuyển" 犭
@@ -22,7 +22,7 @@
 参加 | cānjiā | tham gia
 时间 | shíjiān | thời gian
 点 | diǎn | giờ
-点钟 | diǎnzhōng | giờ đúng
+点钟 | diǎnzhōng | giờ # cùng nghĩa với 点, VD: 三点钟 = 3 giờ
 就 | jiù | liền, bèn, thì, ngay
 一定 | yídìng | nhất định
 祝 | zhù | chúc # bộ "kỳ" 礻

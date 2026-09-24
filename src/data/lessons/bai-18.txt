@@ -33,5 +33,5 @@
 商店 | shāngdiàn | cửa hàng
 公司 | gōngsī | công ty
 公共汽车 | gōnggòng qìchē | xe buýt
-怎么走 | zěnme zǒu | đi như thế nào (hỏi đường) # địa điểm + 怎么走
-怎么去 | zěnme qù | đi bằng gì (hỏi phương tiện) # 怎么去 + địa điểm
+怎么走 | zěnme zǒu | hỏi đường, đi lối nào # địa điểm + 怎么走
+怎么去 | zěnme qù | đi thế nào, đi bằng gì # 怎么去 + địa điểm; có thể trả lời bằng phương tiện hoặc bằng đường đi

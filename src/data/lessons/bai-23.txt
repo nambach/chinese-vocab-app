@@ -12,10 +12,10 @@
 下边 | xiàbian | phía dưới, bên dưới
 里边 | lǐbian | bên trong
 旁边 | pángbiān | bên cạnh
-中间 | zhōngjiān | giữa, ở giữa # danh từ; A 在 B 和 C 中间
+中间 | zhōngjiān | giữa, ở giữa # A 在 B 和 C 中间
 离 | lí | cách (khoảng cách, cự li) # giới từ; A 离 B + khoảng cách/远/近
-远 | yuǎn | xa # tính từ
-近 | jìn | gần # tính từ
+远 | yuǎn | xa
+近 | jìn | gần
 地方 | dìfang | nơi, chỗ, địa phương # 什么地方 = chỗ nào
 足球场 | zúqiúchǎng | sân bóng đá
 足球 | zúqiú | bóng đá
@@ -26,9 +26,9 @@
 和平 | hépíng | hòa bình
 广场 | guǎngchǎng | quảng trường
 从 | cóng | từ # giới từ; 从 A 到 B (điểm xuất phát)
-到 | dào | đến # động từ
+到 | dào | đến
 米 | mǐ | mét (m) # lượng từ
-一直 | yìzhí | luôn, một mạch, suốt # phó từ
+一直 | yìzhí | đi thẳng, một mạch; luôn, suốt # phó từ; hỏi đường: 一直走, 一直往前走
 红绿灯 | hónglǜdēng | đèn giao thông
 绿 | lǜ | xanh lá
 灯 | dēng | đèn
@@ -36,11 +36,11 @@
 右 | yòu | (bên) phải
 往 | wǎng | về phía # giới từ; 往 + PVT 1 âm tiết + động từ (往前走, 往左拐)
 拐 | guǎi | quẹo, rẽ
-马路 | mǎlù | đường cái, quốc lộ # 过马路 = qua đường
+马路 | mǎlù | đường phố, đường cái # 过马路 = qua đường; quốc lộ là 公路 hoặc 国道
 路 | lù | con đường
 座 | zuò | ngôi, tòa, ngọn (vật to lớn, cố định) # lượng từ; 一座山, 一座大楼
 白色 | báisè | màu trắng
 公里 | gōnglǐ | ki-lô-mét (km) # lượng từ
 公斤 | gōngjīn | ki-lô-gam (kg) # lượng từ
-高 | gāo | cao # tính từ; 多高? = cao bao nhiêu?
-重 | zhòng | nặng # tính từ; 多重? = nặng bao nhiêu?
+高 | gāo | cao # 多高? = cao bao nhiêu?
+重 | zhòng | nặng # 多重? = nặng bao nhiêu?

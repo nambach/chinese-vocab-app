@@ -1,7 +1,7 @@
 # Bài 17
 在 | zài | đang # nhấn mạnh trạng thái tiến hành; cấu trúc 正/在/正在 + V + O + 呢
 正在 | zhèngzài | đang # nhấn mạnh cả thời gian lẫn trạng thái tiến hành
-正 | zhèng | đang # nhấn mạnh thời gian tiến hành; phủ định 没(有)/没在 + V
+正 | zhèng | đang # nhấn mạnh thời điểm đang xảy ra; phủ định dùng 没(有) + V hoặc 没在 + V, ít khi phủ định trực tiếp 正
 出来 | chūlái | ra (hướng lại gần người nói)
 出去 | chūqù | ra ngoài (hướng ra xa người nói)
 来 | lái | đến, lại # hành động hướng về gần người nói
@@ -12,7 +12,7 @@
 录音 | lùyīn | băng ghi âm; ghi âm
 想 | xiǎng | nhớ, nghĩ, muốn
 汉英 | Hàn-Yīng | Trung - Anh, Hán - Anh
-坐 | zuò | ngồi; đi (phương tiện >4 bánh, mình không lái)
+坐 | zuò | ngồi; đi bằng phương tiện mình không tự lái # ô tô, xe buýt, tàu, máy bay; xe đạp, xe máy, ngựa dùng 骑; tự lái ô tô dùng 开
 骑 | qí | lái (xe 2 bánh), cưỡi (ngựa)
 行 | xíng | được, ok
 挤 | jǐ | chật chội; chen chúc
