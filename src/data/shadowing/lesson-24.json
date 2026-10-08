@@ -1,0 +1,458 @@
+{
+  "id": "lesson-24",
+  "title": "Bài 24",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-24.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.78
+    },
+    {
+      "id": "s2",
+      "text": "一、我想学太极拳",
+      "pinyin": "Yī, wǒ xiǎng xué tàijíquán",
+      "meaning": "Bài 1: Tôi muốn học thái cực quyền",
+      "start": 3.23,
+      "end": 7.25
+    },
+    {
+      "id": "s3",
+      "text": "你会打太极拳吗？",
+      "pinyin": "Nǐ huì dǎ tàijíquán ma?",
+      "meaning": "Bạn biết đánh thái cực quyền không?",
+      "start": 8.88,
+      "end": 11.25
+    },
+    {
+      "id": "s4",
+      "text": "不会。",
+      "pinyin": "Bú huì.",
+      "meaning": "Không biết.",
+      "start": 12.22,
+      "end": 13.04
+    },
+    {
+      "id": "s5",
+      "text": "你呢？",
+      "pinyin": "Nǐ ne?",
+      "meaning": "Còn bạn?",
+      "start": 13.81,
+      "end": 14.56
+    },
+    {
+      "id": "s6",
+      "text": "我也不会。",
+      "pinyin": "Wǒ yě bú huì.",
+      "meaning": "Tôi cũng không biết.",
+      "start": 15.61,
+      "end": 16.93
+    },
+    {
+      "id": "s7",
+      "text": "你想不想学？",
+      "pinyin": "Nǐ xiǎng bu xiǎng xué?",
+      "meaning": "Bạn có muốn học không?",
+      "start": 17.8,
+      "end": 19.69
+    },
+    {
+      "id": "s8",
+      "text": "想学。",
+      "pinyin": "Xiǎng xué.",
+      "meaning": "Muốn học.",
+      "start": 20.52,
+      "end": 21.62
+    },
+    {
+      "id": "s9",
+      "text": "我也想学。",
+      "pinyin": "Wǒ yě xiǎng xué.",
+      "meaning": "Tôi cũng muốn học.",
+      "start": 22.69,
+      "end": 24.33
+    },
+    {
+      "id": "s10",
+      "text": "听说体育老师下星期教太极拳，我们去报名吧。",
+      "pinyin": "Tīngshuō tǐyù lǎoshī xià xīngqī jiāo tàijíquán, wǒmen qù bàomíng ba.",
+      "meaning": "Nghe nói thầy thể dục tuần sau dạy thái cực quyền, chúng ta đi ghi danh nhé.",
+      "start": 25.27,
+      "end": 32.18
+    },
+    {
+      "id": "s11",
+      "text": "好。",
+      "pinyin": "Hǎo.",
+      "meaning": "Được.",
+      "start": 33.08,
+      "end": 33.92
+    },
+    {
+      "id": "s12",
+      "text": "二、您能不能再说一遍",
+      "pinyin": "Èr, nín néng bu néng zài shuō yí biàn",
+      "meaning": "Bài 2: Thầy có thể nói lại một lần nữa không?",
+      "start": 35.77,
+      "end": 39.93
+    },
+    {
+      "id": "s13",
+      "text": "老师，我们想学太极拳，现在可以报名吗？",
+      "pinyin": "Lǎoshī, wǒmen xiǎng xué tàijíquán, xiànzài kěyǐ bàomíng ma?",
+      "meaning": "Thưa thầy, chúng em muốn học thái cực quyền, bây giờ ghi danh được không?",
+      "start": 42.06,
+      "end": 48.67
+    },
+    {
+      "id": "s14",
+      "text": "可以。",
+      "pinyin": "Kěyǐ.",
+      "meaning": "Được.",
+      "start": 49.67,
+      "end": 50.47
+    },
+    {
+      "id": "s15",
+      "text": "什么时候开始上课？",
+      "pinyin": "Shénme shíhou kāishǐ shàngkè?",
+      "meaning": "Khi nào bắt đầu lên lớp?",
+      "start": 52.11,
+      "end": 54.72
+    },
+    {
+      "id": "s16",
+      "text": "下星期一。",
+      "pinyin": "Xià xīngqīyī.",
+      "meaning": "Thứ Hai tuần sau.",
+      "start": 55.49,
+      "end": 56.76
+    },
+    {
+      "id": "s17",
+      "text": "每天下午都有课吗？",
+      "pinyin": "Měi tiān xiàwǔ dōu yǒu kè ma?",
+      "meaning": "Mỗi buổi chiều đều có lớp không?",
+      "start": 57.59,
+      "end": 60.26
+    },
+    {
+      "id": "s18",
+      "text": "不，只一三五下午。",
+      "pinyin": "Bù, zhǐ yī sān wǔ xiàwǔ.",
+      "meaning": "Không, chỉ chiều thứ Hai, thứ Tư và thứ Sáu.",
+      "start": 61.18,
+      "end": 64.62
+    },
+    {
+      "id": "s19",
+      "text": "对不起，您能不能再说一遍？",
+      "pinyin": "Duìbuqǐ, nín néng bu néng zài shuō yí biàn?",
+      "meaning": "Xin lỗi, thầy có thể nói lại một lần nữa không?",
+      "start": 65.61,
+      "end": 69.65
+    },
+    {
+      "id": "s20",
+      "text": "我不懂“一三五”是什么意思。",
+      "pinyin": "Wǒ bù dǒng yī sān wǔ shì shénme yìsi.",
+      "meaning": "Em không hiểu “một ba năm” nghĩa là gì.",
+      "start": 70.43,
+      "end": 74.25
+    },
+    {
+      "id": "s21",
+      "text": "就是星期一、星期三、星期五。",
+      "pinyin": "Jiùshì xīngqīyī, xīngqīsān, xīngqīwǔ.",
+      "meaning": "Là thứ Hai, thứ Tư và thứ Sáu.",
+      "start": 75.27,
+      "end": 80.1
+    },
+    {
+      "id": "s22",
+      "text": "从几点到几点上课？",
+      "pinyin": "Cóng jǐ diǎn dào jǐ diǎn shàngkè?",
+      "meaning": "Học từ mấy giờ đến mấy giờ?",
+      "start": 81.59,
+      "end": 84.74
+    },
+    {
+      "id": "s23",
+      "text": "四点半到五点半。",
+      "pinyin": "Sì diǎn bàn dào wǔ diǎn bàn.",
+      "meaning": "Từ bốn rưỡi đến năm rưỡi.",
+      "start": 86.07,
+      "end": 88.68
+    },
+    {
+      "id": "s24",
+      "text": "一次一个小时。",
+      "pinyin": "Yí cì yí ge xiǎoshí.",
+      "meaning": "Mỗi buổi một tiếng.",
+      "start": 89.46,
+      "end": 91.75
+    },
+    {
+      "id": "s25",
+      "text": "玛丽！",
+      "pinyin": "Mǎlì!",
+      "meaning": "Mary!",
+      "start": 93.19,
+      "end": 93.84
+    },
+    {
+      "id": "s26",
+      "text": "玛丽怎么没来？",
+      "pinyin": "Mǎlì zěnme méi lái?",
+      "meaning": "Mary sao không đến?",
+      "start": 94.35,
+      "end": 96.23
+    },
+    {
+      "id": "s27",
+      "text": "老师，玛丽让我给她请个假。",
+      "pinyin": "Lǎoshī, Mǎlì ràng wǒ gěi tā qǐng ge jià.",
+      "meaning": "Thưa thầy, Mary nhờ em xin phép nghỉ hộ cô ấy.",
+      "start": 97.84,
+      "end": 102.38
+    },
+    {
+      "id": "s28",
+      "text": "她今天有点儿不舒服，头疼，发烧，咳嗽，可能感冒了。",
+      "pinyin": "Tā jīntiān yǒudiǎnr bù shūfu, tóuténg, fāshāo, késou, kěnéng gǎnmào le.",
+      "meaning": "Hôm nay cô ấy hơi không khỏe, nhức đầu, sốt, ho, có lẽ bị cảm rồi.",
+      "start": 103.03,
+      "end": 112.09
+    },
+    {
+      "id": "s29",
+      "text": "她要去医院看病，不能来上课。",
+      "pinyin": "Tā yào qù yīyuàn kànbìng, bù néng lái shàngkè.",
+      "meaning": "Cô ấy phải đi bệnh viện khám, không đến lớp được.",
+      "start": 112.86,
+      "end": 117.11
+    },
+    {
+      "id": "s30",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 119.1,
+      "end": 121.01
+    },
+    {
+      "id": "s31",
+      "text": "会",
+      "pinyin": "huì",
+      "meaning": "biết, có thể",
+      "start": 122.07,
+      "end": 122.72
+    },
+    {
+      "id": "s32",
+      "text": "打",
+      "pinyin": "dǎ",
+      "meaning": "đánh, tập",
+      "start": 123.97,
+      "end": 124.83
+    },
+    {
+      "id": "s33",
+      "text": "太极拳",
+      "pinyin": "tàijíquán",
+      "meaning": "thái cực quyền",
+      "start": 126.27,
+      "end": 127.61
+    },
+    {
+      "id": "s34",
+      "text": "听说",
+      "pinyin": "tīngshuō",
+      "meaning": "nghe nói",
+      "start": 129.09,
+      "end": 130.16
+    },
+    {
+      "id": "s35",
+      "text": "下",
+      "pinyin": "xià",
+      "meaning": "tuần tới, tuần sau",
+      "start": 131.69,
+      "end": 132.38
+    },
+    {
+      "id": "s36",
+      "text": "报名",
+      "pinyin": "bàomíng",
+      "meaning": "ghi danh",
+      "start": 133.94,
+      "end": 134.98
+    },
+    {
+      "id": "s37",
+      "text": "开始",
+      "pinyin": "kāishǐ",
+      "meaning": "bắt đầu",
+      "start": 136.48,
+      "end": 137.67
+    },
+    {
+      "id": "s38",
+      "text": "能",
+      "pinyin": "néng",
+      "meaning": "có thể",
+      "start": 139.24,
+      "end": 139.98
+    },
+    {
+      "id": "s39",
+      "text": "再",
+      "pinyin": "zài",
+      "meaning": "lại",
+      "start": 141.49,
+      "end": 142.19
+    },
+    {
+      "id": "s40",
+      "text": "遍",
+      "pinyin": "biàn",
+      "meaning": "lần",
+      "start": 143.66,
+      "end": 144.28
+    },
+    {
+      "id": "s41",
+      "text": "懂",
+      "pinyin": "dǒng",
+      "meaning": "hiểu",
+      "start": 145.73,
+      "end": 146.58
+    },
+    {
+      "id": "s42",
+      "text": "舒服",
+      "pinyin": "shūfu",
+      "meaning": "thoải mái",
+      "start": 148.14,
+      "end": 149.15
+    },
+    {
+      "id": "s43",
+      "text": "意思",
+      "pinyin": "yìsi",
+      "meaning": "ý nghĩa",
+      "start": 150.66,
+      "end": 151.56
+    },
+    {
+      "id": "s44",
+      "text": "次",
+      "pinyin": "cì",
+      "meaning": "lần",
+      "start": 153.07,
+      "end": 153.74
+    },
+    {
+      "id": "s45",
+      "text": "小时",
+      "pinyin": "xiǎoshí",
+      "meaning": "tiếng đồng hồ",
+      "start": 155.27,
+      "end": 156.44
+    },
+    {
+      "id": "s46",
+      "text": "请假",
+      "pinyin": "qǐngjià",
+      "meaning": "xin phép nghỉ",
+      "start": 157.94,
+      "end": 158.99
+    },
+    {
+      "id": "s47",
+      "text": "头疼",
+      "pinyin": "tóuténg",
+      "meaning": "nhức đầu",
+      "start": 160.51,
+      "end": 161.6
+    },
+    {
+      "id": "s48",
+      "text": "头",
+      "pinyin": "tóu",
+      "meaning": "đầu",
+      "start": 163.11,
+      "end": 163.87
+    },
+    {
+      "id": "s49",
+      "text": "疼",
+      "pinyin": "téng",
+      "meaning": "đau",
+      "start": 165.4,
+      "end": 166.15
+    },
+    {
+      "id": "s50",
+      "text": "发烧",
+      "pinyin": "fāshāo",
+      "meaning": "sốt",
+      "start": 167.79,
+      "end": 168.76
+    },
+    {
+      "id": "s51",
+      "text": "可能",
+      "pinyin": "kěnéng",
+      "meaning": "có lẽ",
+      "start": 170.29,
+      "end": 171.38
+    },
+    {
+      "id": "s52",
+      "text": "咳嗽",
+      "pinyin": "késou",
+      "meaning": "ho",
+      "start": 172.9,
+      "end": 173.79
+    },
+    {
+      "id": "s53",
+      "text": "感冒",
+      "pinyin": "gǎnmào",
+      "meaning": "cảm",
+      "start": 175.31,
+      "end": 176.31
+    },
+    {
+      "id": "s54",
+      "text": "了",
+      "pinyin": "le",
+      "meaning": "rồi",
+      "start": 177.82,
+      "end": 178.29
+    },
+    {
+      "id": "s55",
+      "text": "看病",
+      "pinyin": "kànbìng",
+      "meaning": "khám bệnh",
+      "start": 179.87,
+      "end": 180.89
+    },
+    {
+      "id": "s56",
+      "text": "病",
+      "pinyin": "bìng",
+      "meaning": "bệnh",
+      "start": 182.36,
+      "end": 182.96
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "id": "lesson-23",
+  "title": "Bài 23",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-23.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.75
+    },
+    {
+      "id": "s2",
+      "text": "一、学校里边有邮局吗",
+      "pinyin": "Yī, xuéxiào lǐbian yǒu yóujú ma",
+      "meaning": "Bài 1: Trong trường có bưu điện không?",
+      "start": 3.23,
+      "end": 7.65
+    },
+    {
+      "id": "s3",
+      "text": "学校里边儿有邮局吗？",
+      "pinyin": "Xuéxiào lǐbianr yǒu yóujú ma?",
+      "meaning": "Trong trường có bưu điện không?",
+      "start": 9.45,
+      "end": 11.93
+    },
+    {
+      "id": "s4",
+      "text": "有。",
+      "pinyin": "Yǒu.",
+      "meaning": "Có.",
+      "start": 13.06,
+      "end": 13.77
+    },
+    {
+      "id": "s5",
+      "text": "邮局在哪儿？",
+      "pinyin": "Yóujú zài nǎr?",
+      "meaning": "Bưu điện ở đâu?",
+      "start": 15.02,
+      "end": 16.62
+    },
+    {
+      "id": "s6",
+      "text": "在图书馆西边。",
+      "pinyin": "Zài túshūguǎn xībian.",
+      "meaning": "Ở phía tây thư viện.",
+      "start": 17.65,
+      "end": 19.63
+    },
+    {
+      "id": "s7",
+      "text": "离这儿远吗？",
+      "pinyin": "Lí zhèr yuǎn ma?",
+      "meaning": "Cách đây xa không?",
+      "start": 20.66,
+      "end": 22.07
+    },
+    {
+      "id": "s8",
+      "text": "不远。",
+      "pinyin": "Bù yuǎn.",
+      "meaning": "Không xa.",
+      "start": 23.33,
+      "end": 24.17
+    },
+    {
+      "id": "s9",
+      "text": "很近。",
+      "pinyin": "Hěn jìn.",
+      "meaning": "Rất gần.",
+      "start": 24.68,
+      "end": 25.51
+    },
+    {
+      "id": "s10",
+      "text": "图书馆东边是什么地方？",
+      "pinyin": "Túshūguǎn dōngbian shì shénme dìfang?",
+      "meaning": "Phía đông thư viện là chỗ nào?",
+      "start": 26.66,
+      "end": 29.68
+    },
+    {
+      "id": "s11",
+      "text": "图书馆东边是一个足球场。",
+      "pinyin": "Túshūguǎn dōngbian shì yí ge zúqiúchǎng.",
+      "meaning": "Phía đông thư viện là một sân bóng đá.",
+      "start": 30.74,
+      "end": 34.46
+    },
+    {
+      "id": "s12",
+      "text": "二、从这儿到博物馆有多远",
+      "pinyin": "Èr, cóng zhèr dào bówùguǎn yǒu duō yuǎn",
+      "meaning": "Bài 2: Từ đây đến bảo tàng xa bao nhiêu?",
+      "start": 36.78,
+      "end": 41.73
+    },
+    {
+      "id": "s13",
+      "text": "劳驾，我打听一下儿，博物馆在哪儿？",
+      "pinyin": "Láojià, wǒ dǎting yíxiàr, bówùguǎn zài nǎr?",
+      "meaning": "Làm phiền, tôi hỏi thăm một chút, bảo tàng ở đâu?",
+      "start": 43.81,
+      "end": 48.95
+    },
+    {
+      "id": "s14",
+      "text": "博物馆在东边，在和平公园和人民广场中间。",
+      "pinyin": "Bówùguǎn zài dōngbian, zài Hépíng Gōngyuán hé Rénmín Guǎngchǎng zhōngjiān.",
+      "meaning": "Bảo tàng ở phía đông, giữa Công viên Hòa Bình và Quảng trường Nhân dân.",
+      "start": 50.13,
+      "end": 57.51
+    },
+    {
+      "id": "s15",
+      "text": "离这儿有多远？",
+      "pinyin": "Lí zhèr yǒu duō yuǎn?",
+      "meaning": "Cách đây bao xa?",
+      "start": 58.96,
+      "end": 60.81
+    },
+    {
+      "id": "s16",
+      "text": "从这儿到那儿大概有七八百米。",
+      "pinyin": "Cóng zhèr dào nàr dàgài yǒu qī bā bǎi mǐ.",
+      "meaning": "Từ đây đến đó khoảng bảy tám trăm mét.",
+      "start": 61.73,
+      "end": 65.75
+    },
+    {
+      "id": "s17",
+      "text": "怎么走呢？",
+      "pinyin": "Zěnme zǒu ne?",
+      "meaning": "Đi thế nào?",
+      "start": 66.91,
+      "end": 68.16
+    },
+    {
+      "id": "s18",
+      "text": "你从这儿一直往东走，到红绿灯那儿往左拐，马路东边有一座白色的大楼，那就是博物馆。",
+      "pinyin": "Nǐ cóng zhèr yìzhí wǎng dōng zǒu, dào hónglǜdēng nàr wǎng zuǒ guǎi, mǎlù dōngbian yǒu yí zuò báisè de dàlóu, nà jiùshì bówùguǎn.",
+      "meaning": "Từ đây bạn đi thẳng về phía đông, đến đèn giao thông thì rẽ trái; phía đông đường có một tòa nhà trắng, đó chính là bảo tàng.",
+      "start": 69.43,
+      "end": 83.58
+    },
+    {
+      "id": "s19",
+      "text": "谢谢您！",
+      "pinyin": "Xièxie nín!",
+      "meaning": "Cảm ơn ông!",
+      "start": 84.37,
+      "end": 85.57
+    },
+    {
+      "id": "s20",
+      "text": "不客气。",
+      "pinyin": "Bú kèqi.",
+      "meaning": "Không có gì.",
+      "start": 86.36,
+      "end": 87.43
+    },
+    {
+      "id": "s21",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 89.58,
+      "end": 91.45
+    },
+    {
+      "id": "s22",
+      "text": "边",
+      "pinyin": "biān",
+      "meaning": "bên, phía",
+      "start": 92.65,
+      "end": 93.33
+    },
+    {
+      "id": "s23",
+      "text": "东边",
+      "pinyin": "dōngbian",
+      "meaning": "phía đông",
+      "start": 94.84,
+      "end": 95.71
+    },
+    {
+      "id": "s24",
+      "text": "西边",
+      "pinyin": "xībian",
+      "meaning": "phía tây",
+      "start": 97.26,
+      "end": 98.23
+    },
+    {
+      "id": "s25",
+      "text": "南边",
+      "pinyin": "nánbian",
+      "meaning": "phía nam",
+      "start": 99.76,
+      "end": 100.64
+    },
+    {
+      "id": "s26",
+      "text": "北边",
+      "pinyin": "běibian",
+      "meaning": "phía bắc",
+      "start": 102.13,
+      "end": 102.99
+    },
+    {
+      "id": "s27",
+      "text": "前边",
+      "pinyin": "qiánbian",
+      "meaning": "phía trước",
+      "start": 104.58,
+      "end": 105.51
+    },
+    {
+      "id": "s28",
+      "text": "后边",
+      "pinyin": "hòubian",
+      "meaning": "phía sau",
+      "start": 107.1,
+      "end": 107.97
+    },
+    {
+      "id": "s29",
+      "text": "左边",
+      "pinyin": "zuǒbian",
+      "meaning": "bên trái",
+      "start": 109.52,
+      "end": 110.44
+    },
+    {
+      "id": "s30",
+      "text": "右边",
+      "pinyin": "yòubian",
+      "meaning": "bên phải",
+      "start": 112.01,
+      "end": 112.9
+    },
+    {
+      "id": "s31",
+      "text": "里边",
+      "pinyin": "lǐbian",
+      "meaning": "bên trong",
+      "start": 114.47,
+      "end": 115.43
+    },
+    {
+      "id": "s32",
+      "text": "外边",
+      "pinyin": "wàibian",
+      "meaning": "bên ngoài",
+      "start": 116.92,
+      "end": 117.83
+    },
+    {
+      "id": "s33",
+      "text": "上边",
+      "pinyin": "shàngbian",
+      "meaning": "phía trên",
+      "start": 119.29,
+      "end": 120.23
+    },
+    {
+      "id": "s34",
+      "text": "下边",
+      "pinyin": "xiàbian",
+      "meaning": "phía dưới",
+      "start": 121.72,
+      "end": 122.65
+    },
+    {
+      "id": "s35",
+      "text": "离",
+      "pinyin": "lí",
+      "meaning": "cách",
+      "start": 124.25,
+      "end": 124.99
+    },
+    {
+      "id": "s36",
+      "text": "远",
+      "pinyin": "yuǎn",
+      "meaning": "xa",
+      "start": 126.53,
+      "end": 127.4
+    },
+    {
+      "id": "s37",
+      "text": "近",
+      "pinyin": "jìn",
+      "meaning": "gần",
+      "start": 128.97,
+      "end": 129.6
+    },
+    {
+      "id": "s38",
+      "text": "地方",
+      "pinyin": "dìfang",
+      "meaning": "nơi chốn",
+      "start": 131.08,
+      "end": 131.86
+    },
+    {
+      "id": "s39",
+      "text": "足球场",
+      "pinyin": "zúqiúchǎng",
+      "meaning": "sân bóng đá",
+      "start": 133.34,
+      "end": 134.74
+    },
+    {
+      "id": "s40",
+      "text": "足球",
+      "pinyin": "zúqiú",
+      "meaning": "bóng đá",
+      "start": 136.3,
+      "end": 137.47
+    },
+    {
+      "id": "s41",
+      "text": "劳驾",
+      "pinyin": "láojià",
+      "meaning": "làm phiền",
+      "start": 138.99,
+      "end": 139.97
+    },
+    {
+      "id": "s42",
+      "text": "打听",
+      "pinyin": "dǎting",
+      "meaning": "hỏi thăm",
+      "start": 141.5,
+      "end": 142.32
+    },
+    {
+      "id": "s43",
+      "text": "博物馆",
+      "pinyin": "bówùguǎn",
+      "meaning": "viện bảo tàng",
+      "start": 143.86,
+      "end": 145.11
+    },
+    {
+      "id": "s44",
+      "text": "和平",
+      "pinyin": "hépíng",
+      "meaning": "hòa bình",
+      "start": 146.62,
+      "end": 147.84
+    },
+    {
+      "id": "s45",
+      "text": "广场",
+      "pinyin": "guǎngchǎng",
+      "meaning": "quảng trường",
+      "start": 149.22,
+      "end": 150.37
+    },
+    {
+      "id": "s46",
+      "text": "中间",
+      "pinyin": "zhōngjiān",
+      "meaning": "ở giữa",
+      "start": 151.97,
+      "end": 153.14
+    },
+    {
+      "id": "s47",
+      "text": "从",
+      "pinyin": "cóng",
+      "meaning": "từ",
+      "start": 154.67,
+      "end": 155.48
+    },
+    {
+      "id": "s48",
+      "text": "到",
+      "pinyin": "dào",
+      "meaning": "đến",
+      "start": 157.02,
+      "end": 157.62
+    },
+    {
+      "id": "s49",
+      "text": "米",
+      "pinyin": "mǐ",
+      "meaning": "mét",
+      "start": 159.13,
+      "end": 160.09
+    },
+    {
+      "id": "s50",
+      "text": "一直",
+      "pinyin": "yìzhí",
+      "meaning": "một mạch",
+      "start": 161.55,
+      "end": 162.65
+    },
+    {
+      "id": "s51",
+      "text": "红绿灯",
+      "pinyin": "hónglǜdēng",
+      "meaning": "đèn giao thông",
+      "start": 164.12,
+      "end": 165.55
+    },
+    {
+      "id": "s52",
+      "text": "绿",
+      "pinyin": "lǜ",
+      "meaning": "xanh lá",
+      "start": 167.07,
+      "end": 167.73
+    },
+    {
+      "id": "s53",
+      "text": "灯",
+      "pinyin": "dēng",
+      "meaning": "đèn",
+      "start": 169.26,
+      "end": 169.95
+    },
+    {
+      "id": "s54",
+      "text": "往",
+      "pinyin": "wǎng",
+      "meaning": "về phía",
+      "start": 171.5,
+      "end": 172.32
+    },
+    {
+      "id": "s55",
+      "text": "左",
+      "pinyin": "zuǒ",
+      "meaning": "bên trái",
+      "start": 173.79,
+      "end": 174.64
+    },
+    {
+      "id": "s56",
+      "text": "右",
+      "pinyin": "yòu",
+      "meaning": "bên phải",
+      "start": 176.06,
+      "end": 176.78
+    },
+    {
+      "id": "s57",
+      "text": "拐",
+      "pinyin": "guǎi",
+      "meaning": "rẽ",
+      "start": 178.23,
+      "end": 179.12
+    },
+    {
+      "id": "s58",
+      "text": "马路",
+      "pinyin": "mǎlù",
+      "meaning": "đường phố",
+      "start": 180.56,
+      "end": 181.57
+    },
+    {
+      "id": "s59",
+      "text": "路",
+      "pinyin": "lù",
+      "meaning": "đường",
+      "start": 183.03,
+      "end": 183.67
+    },
+    {
+      "id": "s60",
+      "text": "座",
+      "pinyin": "zuò",
+      "meaning": "tòa",
+      "start": 185.15,
+      "end": 185.83
+    },
+    {
+      "id": "s61",
+      "text": "白色",
+      "pinyin": "báisè",
+      "meaning": "màu trắng",
+      "start": 187.32,
+      "end": 188.33
+    }
+  ]
+}

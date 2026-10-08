@@ -35,6 +35,10 @@ export function serializeView(view: View): string {
       return `#/play/${view.sessionId}`
     case 'results':
       return `#/results/${view.sessionId}`
+    case 'shadowingList':
+      return '#/shadow'
+    case 'shadowingLesson':
+      return `#/shadow/${encodeURIComponent(view.lessonId)}`
   }
 }
 
@@ -57,6 +61,10 @@ export function parseHash(hash: string): View {
       return parts[1] ? { name: 'practicePlay', sessionId: parts[1] } : { name: 'home' }
     case 'results':
       return parts[1] ? { name: 'results', sessionId: parts[1] } : { name: 'home' }
+    case 'shadow':
+      return parts[1]
+        ? { name: 'shadowingLesson', lessonId: safeDecode(parts[1]) }
+        : { name: 'shadowingList' }
     case 'c': {
       const catalogId = parts[1]
       if (!catalogId) return { name: 'home' }
@@ -83,5 +91,14 @@ export function parseHash(hash: string): View {
     }
     default:
       return { name: 'home' }
+  }
+}
+
+/** A hand-edited hash like `#/shadow/%E0` must not throw during first render. */
+function safeDecode(part: string): string {
+  try {
+    return decodeURIComponent(part)
+  } catch {
+    return part
   }
 }

@@ -67,3 +67,36 @@ select {
 .animate-fade-in {
   animation: fade-in 180ms ease-out;
 }
+
+@keyframes jump-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes jump-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-jump-in {
+  animation: jump-in 80ms ease-out;
+}
+
+.animate-jump-out {
+  animation: jump-out 100ms ease-in forwards;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-dialog-in {
+  animation: dialog-in 120ms ease-out;
+}

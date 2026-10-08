@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { loadState, saveState, setCatalogPinned, isCatalogPinned, deleteFolder } from './store'
+import { createWord, loadState, saveState, setCatalogPinned, isCatalogPinned, deleteFolder } from './store'
 import {
   acceptPendingLessons,
   declineLessonPack,
@@ -293,5 +293,52 @@ describe('pin + folder collapse settings', () => {
 
     const next = deleteFolder(state, folderId)
     expect(next.settings.expandedFolderIds).toEqual(['other'])
+  })
+})
+
+describe('createWord', () => {
+  it('keeps sources when present and omits them when absent', () => {
+    const withSource = createWord({
+      hanzi: '你',
+      pinyin: 'nǐ',
+      meaning: 'bạn',
+      note: '你好 — xin chào',
+      sources: [{ lessonId: 'lesson-01', segmentId: 's1' }],
+    })
+    expect(withSource.sources).toEqual([{ lessonId: 'lesson-01', segmentId: 's1' }])
+    expect(withSource.note).toBe('你好 — xin chào')
+
+    const without = createWord({ hanzi: '好', pinyin: 'hǎo', meaning: 'tốt' })
+    expect(without).not.toHaveProperty('sources')
+  })
+})
+
+describe('word sources on load', () => {
+  beforeEach(() => installLocalStorage())
+
+  it('turns a single saved source into a list of sources', () => {
+    const state = defaultAppState()
+    state.catalogs = [
+      {
+        id: 'c1',
+        name: 'Bộ',
+        createdAt: 1,
+        updatedAt: 1,
+        words: [
+          {
+            id: 'w1',
+            hanzi: '这',
+            pinyin: 'zhè',
+            meaning: 'này',
+            source: { lessonId: 'lesson-01', segmentId: 's2' },
+          } as never,
+        ],
+      },
+    ]
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+
+    const word = loadState().catalogs[0].words[0]
+    expect(word.sources).toEqual([{ lessonId: 'lesson-01', segmentId: 's2' }])
+    expect(word).not.toHaveProperty('source')
   })
 })

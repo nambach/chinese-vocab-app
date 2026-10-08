@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from './device'
 
 export type VisualViewportState = {
   height: number
@@ -95,33 +96,9 @@ export function useVisualViewport(): VisualViewportState {
 }
 
 export function useIsMobile(): boolean {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window === 'undefined'
-      ? false
-      : window.matchMedia('(max-width: 767px), (pointer: coarse)').matches,
-  )
-
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 767px), (pointer: coarse)')
-    const update = () => setIsMobile(media.matches)
-    media.addEventListener('change', update)
-    return () => media.removeEventListener('change', update)
-  }, [])
-
-  return isMobile
+  return useMediaQuery('(max-width: 767px), (pointer: coarse)')
 }
 
 export function useIsTouchDevice(): boolean {
-  const [isTouch, setIsTouch] = useState(() =>
-    typeof window === 'undefined' ? false : window.matchMedia('(pointer: coarse)').matches,
-  )
-
-  useEffect(() => {
-    const media = window.matchMedia('(pointer: coarse)')
-    const update = () => setIsTouch(media.matches)
-    media.addEventListener('change', update)
-    return () => media.removeEventListener('change', update)
-  }, [])
-
-  return isTouch
+  return useMediaQuery('(pointer: coarse)')
 }

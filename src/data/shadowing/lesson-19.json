@@ -1,0 +1,354 @@
+{
+  "id": "lesson-19",
+  "title": "Bài 19",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-19.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.99
+    },
+    {
+      "id": "s2",
+      "text": "一、可以试试吗",
+      "pinyin": "Yī, kěyǐ shìshi ma",
+      "meaning": "Bài 1: Có thể thử một chút không?",
+      "start": 3.23,
+      "end": 6.15
+    },
+    {
+      "id": "s3",
+      "text": "我看看羽绒服。",
+      "pinyin": "Wǒ kànkan yǔróngfú.",
+      "meaning": "Mình xem áo lông vũ.",
+      "start": 7.93,
+      "end": 10.01
+    },
+    {
+      "id": "s4",
+      "text": "你看看这件怎么样？",
+      "pinyin": "Nǐ kànkan zhè jiàn zěnmeyàng?",
+      "meaning": "Bạn xem cái này thế nào?",
+      "start": 11.23,
+      "end": 14.4
+    },
+    {
+      "id": "s5",
+      "text": "又好又便宜。",
+      "pinyin": "Yòu hǎo yòu piányi.",
+      "meaning": "Vừa tốt vừa rẻ.",
+      "start": 15.63,
+      "end": 17.55
+    },
+    {
+      "id": "s6",
+      "text": "这件有一点儿长。",
+      "pinyin": "Zhè jiàn yǒu yìdiǎnr cháng.",
+      "meaning": "Cái này dài hơn một chút.",
+      "start": 18.53,
+      "end": 20.77
+    },
+    {
+      "id": "s7",
+      "text": "有短一点儿的吗？",
+      "pinyin": "Yǒu duǎn yìdiǎnr de ma?",
+      "meaning": "Có cái ngắn hơn một chút không?",
+      "start": 21.49,
+      "end": 23.18
+    },
+    {
+      "id": "s8",
+      "text": "你要深颜色的还是要浅颜色的？",
+      "pinyin": "Nǐ yào shēn yánsè de háishi yào qiǎn yánsè de?",
+      "meaning": "Bạn muốn màu đậm hay màu nhạt?",
+      "start": 24.55,
+      "end": 29.88
+    },
+    {
+      "id": "s9",
+      "text": "浅颜色的。",
+      "pinyin": "Qiǎn yánsè de.",
+      "meaning": "Màu nhạt.",
+      "start": 30.9,
+      "end": 32.22
+    },
+    {
+      "id": "s10",
+      "text": "我试试可以吗？",
+      "pinyin": "Wǒ shìshi kěyǐ ma?",
+      "meaning": "Mình thử được không?",
+      "start": 33.27,
+      "end": 35.33
+    },
+    {
+      "id": "s11",
+      "text": "当然可以。",
+      "pinyin": "Dāngrán kěyǐ.",
+      "meaning": "Đương nhiên là được.",
+      "start": 36.42,
+      "end": 37.68
+    },
+    {
+      "id": "s12",
+      "text": "这件太肥了，有没有瘦一点儿的？",
+      "pinyin": "Zhè jiàn tài féi le, yǒu méiyǒu shòu yìdiǎnr de?",
+      "meaning": "Cái này rộng quá, có cái chật hơn một chút không?",
+      "start": 38.67,
+      "end": 43.62
+    },
+    {
+      "id": "s13",
+      "text": "你再试试这一件。",
+      "pinyin": "Nǐ zài shìshi zhè yí jiàn.",
+      "meaning": "Bạn thử thêm cái này xem.",
+      "start": 44.82,
+      "end": 47.41
+    },
+    {
+      "id": "s14",
+      "text": "这件不大不小，正合适。",
+      "pinyin": "Zhè jiàn bú dà bù xiǎo, zhèng héshì.",
+      "meaning": "Cái này không to không nhỏ, vừa khít.",
+      "start": 48.38,
+      "end": 52.06
+    },
+    {
+      "id": "s15",
+      "text": "颜色也很好看。",
+      "pinyin": "Yánsè yě hěn hǎokàn.",
+      "meaning": "Màu cũng rất đẹp.",
+      "start": 53.11,
+      "end": 55.76
+    },
+    {
+      "id": "s16",
+      "text": "二、便宜一点儿吧",
+      "pinyin": "Èr, piányi yìdiǎnr ba",
+      "meaning": "Bài 2: Rẻ hơn một chút nhé",
+      "start": 57.78,
+      "end": 60.77
+    },
+    {
+      "id": "s17",
+      "text": "这种羽绒服怎么卖？",
+      "pinyin": "Zhè zhǒng yǔróngfú zěnme mài?",
+      "meaning": "Áo lông vũ loại này giá bao nhiêu?",
+      "start": 62.33,
+      "end": 64.95
+    },
+    {
+      "id": "s18",
+      "text": "一件四百块。",
+      "pinyin": "Yí jiàn sìbǎi kuài.",
+      "meaning": "Một cái bốn trăm tệ.",
+      "start": 66.21,
+      "end": 68.37
+    },
+    {
+      "id": "s19",
+      "text": "太贵了。",
+      "pinyin": "Tài guì le.",
+      "meaning": "Đắt quá.",
+      "start": 69.28,
+      "end": 70.41
+    },
+    {
+      "id": "s20",
+      "text": "便宜一点儿吧，二百怎么样？",
+      "pinyin": "Piányi yìdiǎnr ba, èrbǎi zěnmeyàng?",
+      "meaning": "Rẻ hơn một chút đi, hai trăm được không?",
+      "start": 71.05,
+      "end": 74.71
+    },
+    {
+      "id": "s21",
+      "text": "二百太少了，不卖。",
+      "pinyin": "Èrbǎi tài shǎo le, bú mài.",
+      "meaning": "Hai trăm ít quá, không bán.",
+      "start": 75.56,
+      "end": 78.04
+    },
+    {
+      "id": "s22",
+      "text": "可以打八折，你给三百二吧。",
+      "pinyin": "Kěyǐ dǎ bā zhé, nǐ gěi sānbǎi èr ba.",
+      "meaning": "Được giảm còn tám phần giá, bạn đưa ba trăm hai nhé.",
+      "start": 79.07,
+      "end": 83.2
+    },
+    {
+      "id": "s23",
+      "text": "三百行不行？",
+      "pinyin": "Sānbǎi xíng bu xíng?",
+      "meaning": "Ba trăm được không?",
+      "start": 84.21,
+      "end": 86.17
+    },
+    {
+      "id": "s24",
+      "text": "给你吧。",
+      "pinyin": "Gěi nǐ ba.",
+      "meaning": "Thôi bán cho bạn vậy.",
+      "start": 87.16,
+      "end": 87.98
+    },
+    {
+      "id": "s25",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 90.26,
+      "end": 92.17
+    },
+    {
+      "id": "s26",
+      "text": "羽绒服",
+      "pinyin": "yǔróngfú",
+      "meaning": "áo lông vũ",
+      "start": 93.44,
+      "end": 94.88
+    },
+    {
+      "id": "s27",
+      "text": "又……又……",
+      "pinyin": "yòu……yòu……",
+      "meaning": "vừa… vừa…",
+      "start": 96.28,
+      "end": 98.83
+    },
+    {
+      "id": "s28",
+      "text": "便宜",
+      "pinyin": "piányi",
+      "meaning": "rẻ",
+      "start": 100.26,
+      "end": 101.22
+    },
+    {
+      "id": "s29",
+      "text": "长",
+      "pinyin": "cháng",
+      "meaning": "dài",
+      "start": 102.68,
+      "end": 103.41
+    },
+    {
+      "id": "s30",
+      "text": "一点儿",
+      "pinyin": "yìdiǎnr",
+      "meaning": "một chút",
+      "start": 104.92,
+      "end": 106.05
+    },
+    {
+      "id": "s31",
+      "text": "短",
+      "pinyin": "duǎn",
+      "meaning": "ngắn",
+      "start": 107.34,
+      "end": 108.2
+    },
+    {
+      "id": "s32",
+      "text": "深",
+      "pinyin": "shēn",
+      "meaning": "đậm, sâu",
+      "start": 109.5,
+      "end": 110.29
+    },
+    {
+      "id": "s33",
+      "text": "浅",
+      "pinyin": "qiǎn",
+      "meaning": "nhạt, nông",
+      "start": 111.58,
+      "end": 112.43
+    },
+    {
+      "id": "s34",
+      "text": "试",
+      "pinyin": "shì",
+      "meaning": "thử",
+      "start": 113.72,
+      "end": 114.51
+    },
+    {
+      "id": "s35",
+      "text": "可以",
+      "pinyin": "kěyǐ",
+      "meaning": "có thể",
+      "start": 115.99,
+      "end": 117.12
+    },
+    {
+      "id": "s36",
+      "text": "当然",
+      "pinyin": "dāngrán",
+      "meaning": "đương nhiên",
+      "start": 118.45,
+      "end": 119.52
+    },
+    {
+      "id": "s37",
+      "text": "肥",
+      "pinyin": "féi",
+      "meaning": "rộng",
+      "start": 120.73,
+      "end": 121.48
+    },
+    {
+      "id": "s38",
+      "text": "胖",
+      "pinyin": "pàng",
+      "meaning": "mập",
+      "start": 122.82,
+      "end": 123.47
+    },
+    {
+      "id": "s39",
+      "text": "瘦",
+      "pinyin": "shòu",
+      "meaning": "chật",
+      "start": 124.82,
+      "end": 125.53
+    },
+    {
+      "id": "s40",
+      "text": "合适",
+      "pinyin": "héshì",
+      "meaning": "vừa, thích hợp",
+      "start": 126.99,
+      "end": 128.02
+    },
+    {
+      "id": "s41",
+      "text": "好看",
+      "pinyin": "hǎokàn",
+      "meaning": "đẹp",
+      "start": 129.31,
+      "end": 130.35
+    },
+    {
+      "id": "s42",
+      "text": "种",
+      "pinyin": "zhǒng",
+      "meaning": "loại",
+      "start": 131.62,
+      "end": 132.42
+    },
+    {
+      "id": "s43",
+      "text": "打折",
+      "pinyin": "dǎzhé",
+      "meaning": "giảm giá",
+      "start": 133.94,
+      "end": 135.02
+    }
+  ]
+}

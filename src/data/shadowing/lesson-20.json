@@ -1,0 +1,450 @@
+{
+  "id": "lesson-20",
+  "title": "Bài 20",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-20.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.95
+    },
+    {
+      "id": "s2",
+      "text": "一、你哪一年大学毕业",
+      "pinyin": "Yī, nǐ nǎ yì nián dàxué bìyè",
+      "meaning": "Bài 1: Bạn tốt nghiệp đại học năm nào?",
+      "start": 3.41,
+      "end": 7.61
+    },
+    {
+      "id": "s3",
+      "text": "你哪一年大学毕业？",
+      "pinyin": "Nǐ nǎ yì nián dàxué bìyè?",
+      "meaning": "Bạn tốt nghiệp đại học năm nào?",
+      "start": 9.16,
+      "end": 12.11
+    },
+    {
+      "id": "s4",
+      "text": "明年。",
+      "pinyin": "Míngnián.",
+      "meaning": "Năm sau.",
+      "start": 13.2,
+      "end": 13.99
+    },
+    {
+      "id": "s5",
+      "text": "你呢？",
+      "pinyin": "Nǐ ne?",
+      "meaning": "Còn bạn?",
+      "start": 15.18,
+      "end": 15.84
+    },
+    {
+      "id": "s6",
+      "text": "我后年。",
+      "pinyin": "Wǒ hòunián.",
+      "meaning": "Mình thì năm sau nữa.",
+      "start": 17.46,
+      "end": 18.77
+    },
+    {
+      "id": "s7",
+      "text": "你今年多大？",
+      "pinyin": "Nǐ jīnnián duō dà?",
+      "meaning": "Năm nay bạn bao nhiêu tuổi?",
+      "start": 19.73,
+      "end": 21.54
+    },
+    {
+      "id": "s8",
+      "text": "我二十一岁。",
+      "pinyin": "Wǒ èrshíyī suì.",
+      "meaning": "Mình hai mươi mốt tuổi.",
+      "start": 22.93,
+      "end": 24.56
+    },
+    {
+      "id": "s9",
+      "text": "属什么的？",
+      "pinyin": "Shǔ shénme de?",
+      "meaning": "Bạn tuổi con gì?",
+      "start": 25.99,
+      "end": 27.22
+    },
+    {
+      "id": "s10",
+      "text": "属狗的。",
+      "pinyin": "Shǔ gǒu de.",
+      "meaning": "Tuổi Tuất.",
+      "start": 28.38,
+      "end": 29.47
+    },
+    {
+      "id": "s11",
+      "text": "二、祝你生日快乐",
+      "pinyin": "Èr, zhù nǐ shēngrì kuàilè",
+      "meaning": "Bài 2: Chúc bạn sinh nhật vui vẻ",
+      "start": 31.35,
+      "end": 35.08
+    },
+    {
+      "id": "s12",
+      "text": "你的生日是几月几号？",
+      "pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+      "meaning": "Sinh nhật của bạn là ngày mấy tháng mấy?",
+      "start": 36.68,
+      "end": 39.95
+    },
+    {
+      "id": "s13",
+      "text": "我的生日是十月十八号，正好是星期六。",
+      "pinyin": "Wǒ de shēngrì shì shíyuè shíbā hào, zhènghǎo shì xīngqīliù.",
+      "meaning": "Sinh nhật mình là ngày 18 tháng 10, vừa đúng thứ Bảy.",
+      "start": 41.19,
+      "end": 48.73
+    },
+    {
+      "id": "s14",
+      "text": "是吗？",
+      "pinyin": "Shì ma?",
+      "meaning": "Thế à?",
+      "start": 49.96,
+      "end": 50.83
+    },
+    {
+      "id": "s15",
+      "text": "你打算怎么过？",
+      "pinyin": "Nǐ dǎsuan zěnme guò?",
+      "meaning": "Bạn định tổ chức thế nào?",
+      "start": 51.66,
+      "end": 53.38
+    },
+    {
+      "id": "s16",
+      "text": "我准备举行一个生日晚会。",
+      "pinyin": "Wǒ zhǔnbèi jǔxíng yí ge shēngrì wǎnhuì.",
+      "meaning": "Mình định tổ chức một buổi tiệc sinh nhật.",
+      "start": 54.24,
+      "end": 58.63
+    },
+    {
+      "id": "s17",
+      "text": "你也来参加，好吗？",
+      "pinyin": "Nǐ yě lái cānjiā, hǎo ma?",
+      "meaning": "Bạn cũng đến dự, được không?",
+      "start": 59.7,
+      "end": 62.44
+    },
+    {
+      "id": "s18",
+      "text": "什么时间举行？",
+      "pinyin": "Shénme shíjiān jǔxíng?",
+      "meaning": "Tổ chức lúc nào?",
+      "start": 63.44,
+      "end": 65.4
+    },
+    {
+      "id": "s19",
+      "text": "星期六晚上七点。",
+      "pinyin": "Xīngqīliù wǎnshang qī diǎn.",
+      "meaning": "Tối thứ Bảy lúc bảy giờ.",
+      "start": 66.4,
+      "end": 69.62
+    },
+    {
+      "id": "s20",
+      "text": "在哪儿？",
+      "pinyin": "Zài nǎr?",
+      "meaning": "Ở đâu?",
+      "start": 70.74,
+      "end": 71.6
+    },
+    {
+      "id": "s21",
+      "text": "就在我的房间。",
+      "pinyin": "Jiù zài wǒ de fángjiān.",
+      "meaning": "Ngay tại phòng mình.",
+      "start": 72.58,
+      "end": 74.83
+    },
+    {
+      "id": "s22",
+      "text": "好。",
+      "pinyin": "Hǎo.",
+      "meaning": "Được.",
+      "start": 76.02,
+      "end": 76.61
+    },
+    {
+      "id": "s23",
+      "text": "我一定去。",
+      "pinyin": "Wǒ yídìng qù.",
+      "meaning": "Mình nhất định sẽ đến.",
+      "start": 76.91,
+      "end": 78.12
+    },
+    {
+      "id": "s24",
+      "text": "祝你生日快乐！",
+      "pinyin": "Zhù nǐ shēngrì kuàilè!",
+      "meaning": "Chúc bạn sinh nhật vui vẻ!",
+      "start": 78.77,
+      "end": 80.71
+    },
+    {
+      "id": "s25",
+      "text": "谢谢！",
+      "pinyin": "Xièxie!",
+      "meaning": "Cảm ơn!",
+      "start": 81.27,
+      "end": 82.17
+    },
+    {
+      "id": "s26",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 84.09,
+      "end": 86.07
+    },
+    {
+      "id": "s27",
+      "text": "年",
+      "pinyin": "nián",
+      "meaning": "năm",
+      "start": 87.05,
+      "end": 87.82
+    },
+    {
+      "id": "s28",
+      "text": "今年",
+      "pinyin": "jīnnián",
+      "meaning": "năm nay",
+      "start": 89.11,
+      "end": 90.25
+    },
+    {
+      "id": "s29",
+      "text": "明年",
+      "pinyin": "míngnián",
+      "meaning": "năm tới",
+      "start": 91.6,
+      "end": 92.81
+    },
+    {
+      "id": "s30",
+      "text": "后年",
+      "pinyin": "hòunián",
+      "meaning": "năm sau nữa",
+      "start": 94.15,
+      "end": 95.29
+    },
+    {
+      "id": "s31",
+      "text": "去年",
+      "pinyin": "qùnián",
+      "meaning": "năm ngoái",
+      "start": 96.82,
+      "end": 98
+    },
+    {
+      "id": "s32",
+      "text": "毕业",
+      "pinyin": "bìyè",
+      "meaning": "tốt nghiệp",
+      "start": 99.4,
+      "end": 100.42
+    },
+    {
+      "id": "s33",
+      "text": "多",
+      "pinyin": "duō",
+      "meaning": "bao nhiêu",
+      "start": 101.88,
+      "end": 102.6
+    },
+    {
+      "id": "s34",
+      "text": "多大",
+      "pinyin": "duōdà",
+      "meaning": "bao nhiêu tuổi",
+      "start": 103.94,
+      "end": 104.91
+    },
+    {
+      "id": "s35",
+      "text": "岁",
+      "pinyin": "suì",
+      "meaning": "tuổi",
+      "start": 106.39,
+      "end": 107.1
+    },
+    {
+      "id": "s36",
+      "text": "属",
+      "pinyin": "shǔ",
+      "meaning": "thuộc, cầm tinh",
+      "start": 108.54,
+      "end": 109.54
+    },
+    {
+      "id": "s37",
+      "text": "狗",
+      "pinyin": "gǒu",
+      "meaning": "chó",
+      "start": 111.07,
+      "end": 112
+    },
+    {
+      "id": "s38",
+      "text": "月",
+      "pinyin": "yuè",
+      "meaning": "tháng",
+      "start": 113.45,
+      "end": 114.13
+    },
+    {
+      "id": "s39",
+      "text": "号",
+      "pinyin": "hào",
+      "meaning": "ngày",
+      "start": 115.44,
+      "end": 116.17
+    },
+    {
+      "id": "s40",
+      "text": "生日",
+      "pinyin": "shēngrì",
+      "meaning": "sinh nhật",
+      "start": 117.45,
+      "end": 118.51
+    },
+    {
+      "id": "s41",
+      "text": "正好",
+      "pinyin": "zhènghǎo",
+      "meaning": "vừa khéo",
+      "start": 120.11,
+      "end": 121.19
+    },
+    {
+      "id": "s42",
+      "text": "打算",
+      "pinyin": "dǎsuan",
+      "meaning": "dự định",
+      "start": 122.64,
+      "end": 123.5
+    },
+    {
+      "id": "s43",
+      "text": "过",
+      "pinyin": "guò",
+      "meaning": "trải qua, đón",
+      "start": 125.04,
+      "end": 125.77
+    },
+    {
+      "id": "s44",
+      "text": "准备",
+      "pinyin": "zhǔnbèi",
+      "meaning": "chuẩn bị",
+      "start": 127.19,
+      "end": 128.21
+    },
+    {
+      "id": "s45",
+      "text": "举行",
+      "pinyin": "jǔxíng",
+      "meaning": "tổ chức",
+      "start": 129.73,
+      "end": 130.89
+    },
+    {
+      "id": "s46",
+      "text": "晚会",
+      "pinyin": "wǎnhuì",
+      "meaning": "dạ hội",
+      "start": 132.31,
+      "end": 133.36
+    },
+    {
+      "id": "s47",
+      "text": "参加",
+      "pinyin": "cānjiā",
+      "meaning": "tham gia",
+      "start": 134.79,
+      "end": 135.89
+    },
+    {
+      "id": "s48",
+      "text": "时间",
+      "pinyin": "shíjiān",
+      "meaning": "thời gian",
+      "start": 137.28,
+      "end": 138.47
+    },
+    {
+      "id": "s49",
+      "text": "点",
+      "pinyin": "diǎn",
+      "meaning": "giờ",
+      "start": 139.77,
+      "end": 140.6
+    },
+    {
+      "id": "s50",
+      "text": "点钟",
+      "pinyin": "diǎnzhōng",
+      "meaning": "giờ",
+      "start": 141.92,
+      "end": 143
+    },
+    {
+      "id": "s51",
+      "text": "就",
+      "pinyin": "jiù",
+      "meaning": "thì, ngay",
+      "start": 144.47,
+      "end": 145.15
+    },
+    {
+      "id": "s52",
+      "text": "一定",
+      "pinyin": "yídìng",
+      "meaning": "nhất định",
+      "start": 146.6,
+      "end": 147.59
+    },
+    {
+      "id": "s53",
+      "text": "祝",
+      "pinyin": "zhù",
+      "meaning": "chúc",
+      "start": 149.03,
+      "end": 149.66
+    },
+    {
+      "id": "s54",
+      "text": "快乐",
+      "pinyin": "kuàilè",
+      "meaning": "vui vẻ",
+      "start": 151.28,
+      "end": 152.33
+    },
+    {
+      "id": "s55",
+      "text": "祝你生日快乐",
+      "pinyin": "zhù nǐ shēngrì kuàilè",
+      "meaning": "chúc bạn sinh nhật vui vẻ",
+      "start": 153.98,
+      "end": 156.88
+    }
+  ]
+}

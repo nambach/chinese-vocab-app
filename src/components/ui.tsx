@@ -19,6 +19,8 @@ type ScreenShellProps = {
   footer?: ReactNode
   /** Pin the shell to the visual viewport on touch devices (keyboard-safe layout). */
   keyboardAvoiding?: boolean
+  /** Lock the shell to the viewport so the body scrolls inside and the footer stays put. */
+  fillViewport?: boolean
 }
 
 function HeaderMenu({ items }: { items: MenuItem[] }) {
@@ -82,6 +84,7 @@ export function ScreenShell({
   children,
   footer,
   keyboardAvoiding = false,
+  fillViewport = false,
 }: ScreenShellProps) {
   const hasMenu = Boolean(menuItems && menuItems.length > 0)
   const hasHeaderAction = Boolean(headerAction)
@@ -107,7 +110,13 @@ export function ScreenShell({
 
   const shell = (
     <div
-      className={`flex flex-col bg-teal-50 ${keyboardAvoiding ? 'h-full min-h-0' : 'min-h-dvh md:min-h-full'}`}
+      className={`flex flex-col bg-teal-50 ${
+        fillViewport
+          ? 'h-dvh max-h-dvh md:h-[calc(100dvh-3rem)] md:max-h-[calc(100dvh-3rem)]'
+          : keyboardAvoiding
+            ? 'h-full min-h-0'
+            : 'min-h-dvh md:min-h-full'
+      }`}
     >
       <header
         ref={headerRef}
@@ -155,8 +164,12 @@ export function ScreenShell({
       </header>
 
       <main
-        className={`flex flex-col gap-4 px-4 py-6 md:gap-5 md:px-8 md:py-8 ${
-          keyboardAvoiding ? 'min-h-0 flex-1 overflow-hidden' : 'flex-1'
+        className={`flex flex-col ${
+          fillViewport
+            ? 'min-h-0 flex-1 gap-0 overflow-hidden'
+            : `gap-4 px-4 py-6 md:gap-5 md:px-8 md:py-8 ${
+                keyboardAvoiding ? 'min-h-0 flex-1 overflow-hidden' : 'flex-1'
+              }`
         }`}
       >
         {children}

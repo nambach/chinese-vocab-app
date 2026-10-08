@@ -14,6 +14,7 @@ import {
   type PracticeResult,
   type Settings,
   type Word,
+  type WordSource,
 } from '../models/types'
 
 const MAX_PRACTICE_HISTORY = 50
@@ -25,12 +26,28 @@ function normalizePracticeResult(result: PracticeResult): PracticeResult {
   }
 }
 
+/** Words saved before multi-sentence links stored a single `source`. */
+function normalizeWord(word: Word & { source?: WordSource }): Word {
+  const { source, ...rest } = word
+  if (!source) return word
+  const sources = rest.sources ?? []
+  const known = sources.some(
+    (item) => item.lessonId === source.lessonId && item.segmentId === source.segmentId,
+  )
+  return { ...rest, sources: known ? sources : [...sources, source] }
+}
+
 function normalizeCatalog(catalog: Catalog): Catalog {
   const history =
     catalog.practiceHistory?.map(normalizePracticeResult) ??
     (catalog.lastResult ? [normalizePracticeResult(catalog.lastResult)] : [])
   const lastResult = history[0] ?? catalog.lastResult
-  return { ...catalog, practiceHistory: history, lastResult }
+  return {
+    ...catalog,
+    words: Array.isArray(catalog.words) ? catalog.words.map(normalizeWord) : [],
+    practiceHistory: history,
+    lastResult,
+  }
 }
 
 function migrateV1toV2(state: AppState): AppState {
@@ -320,6 +337,7 @@ export function createWord(input: Omit<Word, 'id'>): Word {
     pinyin: input.pinyin.trim(),
     meaning: input.meaning.trim(),
     ...(note ? { note } : {}),
+    ...(input.sources?.length ? { sources: input.sources } : {}),
   }
 }
 

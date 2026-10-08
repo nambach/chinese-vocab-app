@@ -1,0 +1,498 @@
+{
+  "id": "lesson-01",
+  "title": "Bài 16",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-16.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.94
+    },
+    {
+      "id": "s2",
+      "text": "一、你常去图书馆吗",
+      "pinyin": "Yī, nǐ cháng qù túshūguǎn ma",
+      "meaning": "Bài 1: Bạn có hay đến thư viện không",
+      "start": 2.93,
+      "end": 6.58
+    },
+    {
+      "id": "s3",
+      "text": "我现在去图书馆。",
+      "pinyin": "Wǒ xiànzài qù túshūguǎn.",
+      "meaning": "Bây giờ mình đi thư viện.",
+      "start": 7.84,
+      "end": 10.5
+    },
+    {
+      "id": "s4",
+      "text": "你跟我一起去，好吗？",
+      "pinyin": "Nǐ gēn wǒ yìqǐ qù, hǎo ma?",
+      "meaning": "Bạn đi cùng mình nhé, được không?",
+      "start": 11.09,
+      "end": 14.29
+    },
+    {
+      "id": "s5",
+      "text": "好，咱们走吧。",
+      "pinyin": "Hǎo, zánmen zǒu ba.",
+      "meaning": "Được, chúng ta đi thôi.",
+      "start": 14.93,
+      "end": 17.34
+    },
+    {
+      "id": "s6",
+      "text": "你常去图书馆吗？",
+      "pinyin": "Nǐ cháng qù túshūguǎn ma?",
+      "meaning": "Bạn có hay đến thư viện không?",
+      "start": 18.25,
+      "end": 20.71
+    },
+    {
+      "id": "s7",
+      "text": "常去。我常借书，也常在那儿看书。",
+      "pinyin": "Cháng qù. Wǒ cháng jiè shū, yě cháng zài nàr kàn shū.",
+      "meaning": "Hay đi chứ, mình thường mượn sách, cũng hay đọc sách ở đó.",
+      "start": 21.63,
+      "end": 26.97
+    },
+    {
+      "id": "s8",
+      "text": "你呢？",
+      "pinyin": "Nǐ ne?",
+      "meaning": "Còn bạn?",
+      "start": 27.79,
+      "end": 28.53
+    },
+    {
+      "id": "s9",
+      "text": "常去吗？",
+      "pinyin": "Cháng qù ma?",
+      "meaning": "Có hay đi không?",
+      "start": 29.1,
+      "end": 30.2
+    },
+    {
+      "id": "s10",
+      "text": "我也常去。",
+      "pinyin": "Wǒ yě cháng qù.",
+      "meaning": "Mình cũng hay đi.",
+      "start": 31.02,
+      "end": 32.3
+    },
+    {
+      "id": "s11",
+      "text": "有时候借书，有时候上网查资料，但不常在那儿看书。",
+      "pinyin": "Yǒu shíhou jiè shū, yǒu shíhou shàngwǎng chá zīliào, dàn bù cháng zài nàr kàn shū.",
+      "meaning": "Có lúc mượn sách, có lúc lên mạng tra tài liệu, nhưng không hay đọc sách ở đó.",
+      "start": 33.09,
+      "end": 42.33
+    },
+    {
+      "id": "s12",
+      "text": "我总在宿舍看书。",
+      "pinyin": "Wǒ zǒng zài sùshè kàn shū.",
+      "meaning": "Mình luôn đọc sách ở ký túc xá.",
+      "start": 42.83,
+      "end": 45.17
+    },
+    {
+      "id": "s13",
+      "text": "你的宿舍安静吗？",
+      "pinyin": "Nǐ de sùshè ānjìng ma?",
+      "meaning": "Ký túc xá của bạn có yên tĩnh không?",
+      "start": 46.07,
+      "end": 48.45
+    },
+    {
+      "id": "s14",
+      "text": "很安静。",
+      "pinyin": "Hěn ānjìng.",
+      "meaning": "Rất yên tĩnh.",
+      "start": 49.26,
+      "end": 50.22
+    },
+    {
+      "id": "s15",
+      "text": "二、晚上你常做什么",
+      "pinyin": "Èr, wǎnshang nǐ cháng zuò shénme",
+      "meaning": "Bài 2: Buổi tối bạn thường làm gì",
+      "start": 51.99,
+      "end": 55.63
+    },
+    {
+      "id": "s16",
+      "text": "晚上你常做什么？",
+      "pinyin": "Wǎnshang nǐ cháng zuò shénme?",
+      "meaning": "Buổi tối bạn thường làm gì?",
+      "start": 56.88,
+      "end": 59.19
+    },
+    {
+      "id": "s17",
+      "text": "复习课文，预习生词，或者做练习。",
+      "pinyin": "Fùxí kèwén, yùxí shēngcí, huòzhě zuò liànxí.",
+      "meaning": "Ôn bài khóa, chuẩn bị trước từ mới, hoặc làm bài tập.",
+      "start": 60.07,
+      "end": 65.54
+    },
+    {
+      "id": "s18",
+      "text": "有时候上网跟朋友聊天儿或者收发伊妹儿。",
+      "pinyin": "Yǒu shíhou shàngwǎng gēn péngyou liáotiānr huòzhě shōufā yīmèir.",
+      "meaning": "Có lúc lên mạng tán gẫu với bạn bè, hoặc gửi nhận e-mail.",
+      "start": 66.43,
+      "end": 72.27
+    },
+    {
+      "id": "s19",
+      "text": "我也是，我还常看中文电影和电视剧的DVD。",
+      "pinyin": "Wǒ yě shì, wǒ hái cháng kàn Zhōngwén diànyǐng hé diànshìjù de DVD.",
+      "meaning": "Mình cũng vậy, mình còn hay xem DVD phim điện ảnh và phim truyền hình tiếng Trung.",
+      "start": 73.41,
+      "end": 81.2
+    },
+    {
+      "id": "s20",
+      "text": "你常看吗？",
+      "pinyin": "Nǐ cháng kàn ma?",
+      "meaning": "Bạn có hay xem không?",
+      "start": 81.56,
+      "end": 82.91
+    },
+    {
+      "id": "s21",
+      "text": "我很少看。",
+      "pinyin": "Wǒ hěn shǎo kàn.",
+      "meaning": "Mình rất ít khi xem.",
+      "start": 83.43,
+      "end": 84.85
+    },
+    {
+      "id": "s22",
+      "text": "星期六和星期日你做什么？",
+      "pinyin": "Xīngqīliù hé xīngqīrì nǐ zuò shénme?",
+      "meaning": "Thứ Bảy và Chủ nhật bạn làm gì?",
+      "start": 85.77,
+      "end": 90.53
+    },
+    {
+      "id": "s23",
+      "text": "有时候在宿舍休息，有时候跟朋友一起去公园玩儿，或者去超市买东西。",
+      "pinyin": "Yǒu shíhou zài sùshè xiūxi, yǒu shíhou gēn péngyou yìqǐ qù gōngyuán wánr, huòzhě qù chāoshì mǎi dōngxi.",
+      "meaning": "Có lúc mình nghỉ ngơi ở ký túc xá, có lúc cùng bạn bè đi công viên chơi, hoặc đi siêu thị mua đồ.",
+      "start": 91.1,
+      "end": 101.17
+    },
+    {
+      "id": "s24",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 103.27,
+      "end": 104.98
+    },
+    {
+      "id": "s25",
+      "text": "现在",
+      "pinyin": "xiànzài",
+      "meaning": "bây giờ, hiện tại",
+      "start": 105.98,
+      "end": 107.04
+    },
+    {
+      "id": "s26",
+      "text": "跟",
+      "pinyin": "gēn",
+      "meaning": "cùng, với",
+      "start": 108.24,
+      "end": 108.89
+    },
+    {
+      "id": "s27",
+      "text": "一起",
+      "pinyin": "yìqǐ",
+      "meaning": "cùng nhau",
+      "start": 109.91,
+      "end": 111.05
+    },
+    {
+      "id": "s28",
+      "text": "咱们",
+      "pinyin": "zánmen",
+      "meaning": "chúng ta",
+      "start": 112.37,
+      "end": 113.17
+    },
+    {
+      "id": "s29",
+      "text": "走",
+      "pinyin": "zǒu",
+      "meaning": "đi",
+      "start": 114.18,
+      "end": 115.11
+    },
+    {
+      "id": "s30",
+      "text": "常",
+      "pinyin": "cháng",
+      "meaning": "thường",
+      "start": 116.1,
+      "end": 116.87
+    },
+    {
+      "id": "s31",
+      "text": "常常",
+      "pinyin": "chángcháng",
+      "meaning": "thường, thường xuyên",
+      "start": 117.86,
+      "end": 119.03
+    },
+    {
+      "id": "s32",
+      "text": "有时候",
+      "pinyin": "yǒu shíhou",
+      "meaning": "có lúc, thỉnh thoảng",
+      "start": 120.5,
+      "end": 121.63
+    },
+    {
+      "id": "s33",
+      "text": "时候",
+      "pinyin": "shíhou",
+      "meaning": "lúc, khi",
+      "start": 122.77,
+      "end": 123.72
+    },
+    {
+      "id": "s34",
+      "text": "借",
+      "pinyin": "jiè",
+      "meaning": "mượn; cho mượn",
+      "start": 124.99,
+      "end": 125.61
+    },
+    {
+      "id": "s35",
+      "text": "上网",
+      "pinyin": "shàngwǎng",
+      "meaning": "lên mạng",
+      "start": 126.71,
+      "end": 127.86
+    },
+    {
+      "id": "s36",
+      "text": "网",
+      "pinyin": "wǎng",
+      "meaning": "mạng, lưới",
+      "start": 129.35,
+      "end": 130.27
+    },
+    {
+      "id": "s37",
+      "text": "查",
+      "pinyin": "chá",
+      "meaning": "tra, tra cứu",
+      "start": 131.59,
+      "end": 132.37
+    },
+    {
+      "id": "s38",
+      "text": "资料",
+      "pinyin": "zīliào",
+      "meaning": "tư liệu, tài liệu",
+      "start": 133.52,
+      "end": 134.53
+    },
+    {
+      "id": "s39",
+      "text": "总",
+      "pinyin": "zǒng",
+      "meaning": "luôn",
+      "start": 135.96,
+      "end": 136.89
+    },
+    {
+      "id": "s40",
+      "text": "总是",
+      "pinyin": "zǒngshì",
+      "meaning": "luôn, luôn luôn",
+      "start": 138.41,
+      "end": 139.46
+    },
+    {
+      "id": "s41",
+      "text": "安静",
+      "pinyin": "ānjìng",
+      "meaning": "yên tĩnh",
+      "start": 140.97,
+      "end": 141.99
+    },
+    {
+      "id": "s42",
+      "text": "晚上",
+      "pinyin": "wǎnshang",
+      "meaning": "buổi tối",
+      "start": 143.31,
+      "end": 144.23
+    },
+    {
+      "id": "s43",
+      "text": "复习",
+      "pinyin": "fùxí",
+      "meaning": "ôn tập",
+      "start": 145.68,
+      "end": 146.77
+    },
+    {
+      "id": "s44",
+      "text": "课文",
+      "pinyin": "kèwén",
+      "meaning": "bài khóa",
+      "start": 148.02,
+      "end": 149.08
+    },
+    {
+      "id": "s45",
+      "text": "预习",
+      "pinyin": "yùxí",
+      "meaning": "chuẩn bị bài trước",
+      "start": 150.49,
+      "end": 151.58
+    },
+    {
+      "id": "s46",
+      "text": "生词",
+      "pinyin": "shēngcí",
+      "meaning": "từ mới",
+      "start": 152.87,
+      "end": 154.11
+    },
+    {
+      "id": "s47",
+      "text": "或者",
+      "pinyin": "huòzhě",
+      "meaning": "hoặc, hoặc là",
+      "start": 155.57,
+      "end": 156.66
+    },
+    {
+      "id": "s48",
+      "text": "练习",
+      "pinyin": "liànxí",
+      "meaning": "luyện tập, bài tập",
+      "start": 158.08,
+      "end": 159.24
+    },
+    {
+      "id": "s49",
+      "text": "聊天儿",
+      "pinyin": "liáotiānr",
+      "meaning": "tán gẫu",
+      "start": 160.36,
+      "end": 161.43
+    },
+    {
+      "id": "s50",
+      "text": "收发",
+      "pinyin": "shōufā",
+      "meaning": "nhận và gửi",
+      "start": 162.56,
+      "end": 163.7
+    },
+    {
+      "id": "s51",
+      "text": "收",
+      "pinyin": "shōu",
+      "meaning": "nhận",
+      "start": 165.1,
+      "end": 165.92
+    },
+    {
+      "id": "s52",
+      "text": "发",
+      "pinyin": "fā",
+      "meaning": "gửi, phát",
+      "start": 167.33,
+      "end": 168.09
+    },
+    {
+      "id": "s53",
+      "text": "伊妹儿",
+      "pinyin": "yīmèir",
+      "meaning": "e-mail",
+      "start": 169.49,
+      "end": 170.49
+    },
+    {
+      "id": "s54",
+      "text": "电影",
+      "pinyin": "diànyǐng",
+      "meaning": "phim, điện ảnh",
+      "start": 171.83,
+      "end": 172.93
+    },
+    {
+      "id": "s55",
+      "text": "电视剧",
+      "pinyin": "diànshìjù",
+      "meaning": "phim truyền hình",
+      "start": 174.3,
+      "end": 175.53
+    },
+    {
+      "id": "s56",
+      "text": "电视",
+      "pinyin": "diànshì",
+      "meaning": "tivi",
+      "start": 176.93,
+      "end": 177.93
+    },
+    {
+      "id": "s57",
+      "text": "休息",
+      "pinyin": "xiūxi",
+      "meaning": "nghỉ ngơi",
+      "start": 179.08,
+      "end": 180.07
+    },
+    {
+      "id": "s58",
+      "text": "宿舍",
+      "pinyin": "sùshè",
+      "meaning": "ký túc xá",
+      "start": 181.43,
+      "end": 182.52
+    },
+    {
+      "id": "s59",
+      "text": "公园",
+      "pinyin": "gōngyuán",
+      "meaning": "công viên",
+      "start": 184.08,
+      "end": 185.16
+    },
+    {
+      "id": "s60",
+      "text": "超市",
+      "pinyin": "chāoshì",
+      "meaning": "siêu thị",
+      "start": 186.58,
+      "end": 187.66
+    },
+    {
+      "id": "s61",
+      "text": "东西",
+      "pinyin": "dōngxi",
+      "meaning": "đồ, đồ vật",
+      "start": 189.15,
+      "end": 190.07
+    }
+  ]
+}

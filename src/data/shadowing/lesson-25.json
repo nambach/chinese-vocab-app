@@ -1,0 +1,514 @@
+{
+  "id": "lesson-25",
+  "title": "Bài 25",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-25.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.77
+    },
+    {
+      "id": "s2",
+      "text": "一、她学得很好",
+      "pinyin": "Yī, tā xué de hěn hǎo",
+      "meaning": "Bài 1: Cô ấy học rất giỏi",
+      "start": 2.87,
+      "end": 6.26
+    },
+    {
+      "id": "s3",
+      "text": "罗兰，电视台想请留学生表演一个汉语节目，你愿意去吗？",
+      "pinyin": "Luólán, diànshìtái xiǎng qǐng liúxuéshēng biǎoyǎn yí ge hànyǔ jiémù, nǐ yuànyì qù ma?",
+      "meaning": "Luolan, đài truyền hình muốn mời du học sinh biểu diễn một tiết mục tiếng Trung, bạn có muốn đi không?",
+      "start": 7.66,
+      "end": 16.44
+    },
+    {
+      "id": "s4",
+      "text": "老师，我不想去。",
+      "pinyin": "Lǎoshī, wǒ bù xiǎng qù.",
+      "meaning": "Thưa thầy, em không muốn đi.",
+      "start": 17.62,
+      "end": 20.44
+    },
+    {
+      "id": "s5",
+      "text": "为什么？",
+      "pinyin": "Wèishénme?",
+      "meaning": "Tại sao?",
+      "start": 21.3,
+      "end": 22.2
+    },
+    {
+      "id": "s6",
+      "text": "我汉语说得不好，也不会表演。",
+      "pinyin": "Wǒ hànyǔ shuō de bù hǎo, yě bú huì biǎoyǎn.",
+      "meaning": "Tiếng Trung em nói không tốt, cũng không biết biểu diễn.",
+      "start": 23.04,
+      "end": 27.32
+    },
+    {
+      "id": "s7",
+      "text": "你学得不错，有很大进步，汉语水平提高得很快。",
+      "pinyin": "Nǐ xué de búcuò, yǒu hěn dà jìnbù, hànyǔ shuǐpíng tígāo de hěn kuài.",
+      "meaning": "Bạn học không tồi, tiến bộ nhiều, trình độ tiếng Trung nâng lên rất nhanh.",
+      "start": 28.18,
+      "end": 35.24
+    },
+    {
+      "id": "s8",
+      "text": "哪里，我发音发得不准，说得也不流利。",
+      "pinyin": "Nǎli, wǒ fāyīn fā de bù zhǔn, shuō de yě bù liúlì.",
+      "meaning": "Đâu có, em phát âm không chuẩn, nói cũng không lưu loát.",
+      "start": 36.46,
+      "end": 42.29
+    },
+    {
+      "id": "s9",
+      "text": "让玛丽去吧。",
+      "pinyin": "Ràng Mǎlì qù ba.",
+      "meaning": "Để Mary đi vậy.",
+      "start": 42.97,
+      "end": 44.45
+    },
+    {
+      "id": "s10",
+      "text": "她汉语学得很好，说得很流利。",
+      "pinyin": "Tā hànyǔ xué de hěn hǎo, shuō de hěn liúlì.",
+      "meaning": "Cô ấy học tiếng Trung rất tốt, nói rất lưu loát.",
+      "start": 45.23,
+      "end": 49.21
+    },
+    {
+      "id": "s11",
+      "text": "玛丽还会唱京剧。",
+      "pinyin": "Mǎlì hái huì chàng jīngjù.",
+      "meaning": "Mary còn biết hát kinh kịch.",
+      "start": 50,
+      "end": 52.22
+    },
+    {
+      "id": "s12",
+      "text": "是吗？",
+      "pinyin": "Shì ma?",
+      "meaning": "Vậy à?",
+      "start": 53.23,
+      "end": 53.99
+    },
+    {
+      "id": "s13",
+      "text": "她京剧唱得怎么样？",
+      "pinyin": "Tā jīngjù chàng de zěnmeyàng?",
+      "meaning": "Kinh kịch cô ấy hát thế nào?",
+      "start": 54.63,
+      "end": 56.98
+    },
+    {
+      "id": "s14",
+      "text": "王老师说她唱得不错。",
+      "pinyin": "Wáng lǎoshī shuō tā chàng de búcuò.",
+      "meaning": "Thầy Vương nói cô ấy hát không tồi.",
+      "start": 57.95,
+      "end": 60.41
+    },
+    {
+      "id": "s15",
+      "text": "她怎么学得这么好？",
+      "pinyin": "Tā zěnme xué de zhème hǎo?",
+      "meaning": "Sao cô ấy học giỏi thế?",
+      "start": 61.27,
+      "end": 63.43
+    },
+    {
+      "id": "s16",
+      "text": "她非常努力，也很认真。",
+      "pinyin": "Tā fēicháng nǔlì, yě hěn rènzhēn.",
+      "meaning": "Cô ấy rất cố gắng, cũng rất nghiêm túc.",
+      "start": 64.17,
+      "end": 67.54
+    },
+    {
+      "id": "s17",
+      "text": "二、她每天都起得很早",
+      "pinyin": "Èr, tā měi tiān dōu qǐ de hěn zǎo",
+      "meaning": "Bài 2: Ngày nào cô ấy cũng dậy rất sớm",
+      "start": 69.32,
+      "end": 73.64
+    },
+    {
+      "id": "s18",
+      "text": "老师，您看她太极拳打得怎么样？",
+      "pinyin": "Lǎoshī, nín kàn tā tàijíquán dǎ de zěnmeyàng?",
+      "meaning": "Thưa thầy, thầy thấy cô ấy đánh thái cực quyền thế nào?",
+      "start": 74.96,
+      "end": 79.59
+    },
+    {
+      "id": "s19",
+      "text": "打得不错。",
+      "pinyin": "Dǎ de búcuò.",
+      "meaning": "Đánh không tồi.",
+      "start": 80.28,
+      "end": 81.25
+    },
+    {
+      "id": "s20",
+      "text": "为学太极拳，她每天都起得很早。",
+      "pinyin": "Wèi xué tàijíquán, tā měi tiān dōu qǐ de hěn zǎo.",
+      "meaning": "Để học thái cực quyền, ngày nào cô ấy cũng dậy rất sớm.",
+      "start": 82.22,
+      "end": 86.59
+    },
+    {
+      "id": "s21",
+      "text": "麦克，你喜欢什么运动？",
+      "pinyin": "Màikè, nǐ xǐhuan shénme yùndòng?",
+      "meaning": "Mike, bạn thích môn thể thao nào?",
+      "start": 87.75,
+      "end": 90.7
+    },
+    {
+      "id": "s22",
+      "text": "我喜欢跑步、打篮球。",
+      "pinyin": "Wǒ xǐhuan pǎobù, dǎ lánqiú.",
+      "meaning": "Tôi thích chạy bộ và đánh bóng rổ.",
+      "start": 91.69,
+      "end": 94.91
+    },
+    {
+      "id": "s23",
+      "text": "刚才我看你跑得很快。",
+      "pinyin": "Gāngcái wǒ kàn nǐ pǎo de hěn kuài.",
+      "meaning": "Lúc nãy tôi thấy bạn chạy rất nhanh.",
+      "start": 95.96,
+      "end": 98.69
+    },
+    {
+      "id": "s24",
+      "text": "你篮球打得怎么样？",
+      "pinyin": "Nǐ lánqiú dǎ de zěnmeyàng?",
+      "meaning": "Bóng rổ bạn đánh thế nào?",
+      "start": 99.24,
+      "end": 101.3
+    },
+    {
+      "id": "s25",
+      "text": "打得还可以。",
+      "pinyin": "Dǎ de hái kěyǐ.",
+      "meaning": "Đánh cũng tạm được.",
+      "start": 101.96,
+      "end": 103.64
+    },
+    {
+      "id": "s26",
+      "text": "老师，您每天都来锻炼吗？",
+      "pinyin": "Lǎoshī, nín měi tiān dōu lái duànliàn ma?",
+      "meaning": "Thưa thầy, ngày nào thầy cũng đến tập không?",
+      "start": 105.06,
+      "end": 108.34
+    },
+    {
+      "id": "s27",
+      "text": "对，我每天都坚持锻炼。",
+      "pinyin": "Duì, wǒ měi tiān dōu jiānchí duànliàn.",
+      "meaning": "Đúng, ngày nào tôi cũng kiên trì tập.",
+      "start": 109.23,
+      "end": 112.65
+    },
+    {
+      "id": "s28",
+      "text": "你呢？",
+      "pinyin": "Nǐ ne?",
+      "meaning": "Còn bạn?",
+      "start": 113.3,
+      "end": 114.05
+    },
+    {
+      "id": "s29",
+      "text": "我不常锻炼，因为我晚上常常睡得很晚，早上起得也很晚。",
+      "pinyin": "Wǒ bù cháng duànliàn, yīnwèi wǒ wǎnshang chángcháng shuì de hěn wǎn, zǎoshang qǐ de yě hěn wǎn.",
+      "meaning": "Tôi không tập thường xuyên, vì tối hay ngủ rất muộn, sáng dậy cũng rất muộn.",
+      "start": 115.13,
+      "end": 124.65
+    },
+    {
+      "id": "s30",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 126.77,
+      "end": 128.97
+    },
+    {
+      "id": "s31",
+      "text": "电视台",
+      "pinyin": "diànshìtái",
+      "meaning": "đài truyền hình",
+      "start": 130.28,
+      "end": 131.56
+    },
+    {
+      "id": "s32",
+      "text": "台",
+      "pinyin": "tái",
+      "meaning": "đài",
+      "start": 132.9,
+      "end": 133.72
+    },
+    {
+      "id": "s33",
+      "text": "表演",
+      "pinyin": "biǎoyǎn",
+      "meaning": "biểu diễn",
+      "start": 135.02,
+      "end": 136.22
+    },
+    {
+      "id": "s34",
+      "text": "节目",
+      "pinyin": "jiémù",
+      "meaning": "tiết mục",
+      "start": 137.54,
+      "end": 138.54
+    },
+    {
+      "id": "s35",
+      "text": "愿意",
+      "pinyin": "yuànyì",
+      "meaning": "muốn, sẵn lòng",
+      "start": 139.94,
+      "end": 140.97
+    },
+    {
+      "id": "s36",
+      "text": "为什么",
+      "pinyin": "wèishénme",
+      "meaning": "tại sao",
+      "start": 142.37,
+      "end": 143.31
+    },
+    {
+      "id": "s37",
+      "text": "得",
+      "pinyin": "de",
+      "meaning": "trợ từ kết cấu",
+      "start": 144.73,
+      "end": 145.12
+    },
+    {
+      "id": "s38",
+      "text": "不错",
+      "pinyin": "búcuò",
+      "meaning": "không tồi",
+      "start": 146.54,
+      "end": 147.51
+    },
+    {
+      "id": "s39",
+      "text": "错",
+      "pinyin": "cuò",
+      "meaning": "sai",
+      "start": 148.91,
+      "end": 149.6
+    },
+    {
+      "id": "s40",
+      "text": "进步",
+      "pinyin": "jìnbù",
+      "meaning": "tiến bộ",
+      "start": 150.89,
+      "end": 151.89
+    },
+    {
+      "id": "s41",
+      "text": "水平",
+      "pinyin": "shuǐpíng",
+      "meaning": "trình độ",
+      "start": 153.28,
+      "end": 154.5
+    },
+    {
+      "id": "s42",
+      "text": "提高",
+      "pinyin": "tígāo",
+      "meaning": "nâng cao",
+      "start": 155.8,
+      "end": 156.88
+    },
+    {
+      "id": "s43",
+      "text": "快",
+      "pinyin": "kuài",
+      "meaning": "nhanh",
+      "start": 158.43,
+      "end": 159.09
+    },
+    {
+      "id": "s44",
+      "text": "哪里",
+      "pinyin": "nǎli",
+      "meaning": "ở đâu",
+      "start": 160.39,
+      "end": 161.28
+    },
+    {
+      "id": "s45",
+      "text": "准",
+      "pinyin": "zhǔn",
+      "meaning": "chuẩn",
+      "start": 162.49,
+      "end": 163.36
+    },
+    {
+      "id": "s46",
+      "text": "流利",
+      "pinyin": "liúlì",
+      "meaning": "lưu loát",
+      "start": 164.7,
+      "end": 165.68
+    },
+    {
+      "id": "s47",
+      "text": "努力",
+      "pinyin": "nǔlì",
+      "meaning": "cố gắng",
+      "start": 166.96,
+      "end": 168.01
+    },
+    {
+      "id": "s48",
+      "text": "认真",
+      "pinyin": "rènzhēn",
+      "meaning": "chăm chỉ",
+      "start": 169.34,
+      "end": 170.41
+    },
+    {
+      "id": "s49",
+      "text": "看",
+      "pinyin": "kàn",
+      "meaning": "xem",
+      "start": 171.62,
+      "end": 172.25
+    },
+    {
+      "id": "s50",
+      "text": "为",
+      "pinyin": "wèi",
+      "meaning": "vì, để",
+      "start": 173.49,
+      "end": 174.09
+    },
+    {
+      "id": "s51",
+      "text": "这么",
+      "pinyin": "zhème",
+      "meaning": "thế này",
+      "start": 175.34,
+      "end": 176.11
+    },
+    {
+      "id": "s52",
+      "text": "那么",
+      "pinyin": "nàme",
+      "meaning": "thế kia",
+      "start": 177.42,
+      "end": 178.23
+    },
+    {
+      "id": "s53",
+      "text": "早",
+      "pinyin": "zǎo",
+      "meaning": "sớm",
+      "start": 179.59,
+      "end": 180.41
+    },
+    {
+      "id": "s54",
+      "text": "运动",
+      "pinyin": "yùndòng",
+      "meaning": "thể thao",
+      "start": 181.77,
+      "end": 182.8
+    },
+    {
+      "id": "s55",
+      "text": "跑步",
+      "pinyin": "pǎobù",
+      "meaning": "chạy bộ",
+      "start": 184.1,
+      "end": 185.09
+    },
+    {
+      "id": "s56",
+      "text": "跑",
+      "pinyin": "pǎo",
+      "meaning": "chạy",
+      "start": 186.54,
+      "end": 187.47
+    },
+    {
+      "id": "s57",
+      "text": "篮球",
+      "pinyin": "lánqiú",
+      "meaning": "bóng rổ",
+      "start": 188.66,
+      "end": 189.75
+    },
+    {
+      "id": "s58",
+      "text": "球",
+      "pinyin": "qiú",
+      "meaning": "quả bóng",
+      "start": 191.06,
+      "end": 191.89
+    },
+    {
+      "id": "s59",
+      "text": "刚才",
+      "pinyin": "gāngcái",
+      "meaning": "lúc nãy",
+      "start": 193.21,
+      "end": 194.32
+    },
+    {
+      "id": "s60",
+      "text": "可以",
+      "pinyin": "kěyǐ",
+      "meaning": "kha khá",
+      "start": 195.62,
+      "end": 196.9
+    },
+    {
+      "id": "s61",
+      "text": "坚持",
+      "pinyin": "jiānchí",
+      "meaning": "kiên trì",
+      "start": 198.16,
+      "end": 199.32
+    },
+    {
+      "id": "s62",
+      "text": "因为",
+      "pinyin": "yīnwèi",
+      "meaning": "vì",
+      "start": 200.69,
+      "end": 201.7
+    },
+    {
+      "id": "s63",
+      "text": "晚",
+      "pinyin": "wǎn",
+      "meaning": "muộn",
+      "start": 202.98,
+      "end": 203.86
+    }
+  ]
+}

@@ -335,6 +335,14 @@ export function Home() {
             Luyện tập nhiều bài
           </BigButton>
         ) : null}
+
+        <BigButton
+          variant="secondary"
+          onClick={() => setView({ name: 'shadowingList' })}
+          className="md:col-span-2"
+        >
+          Luyện shadowing
+        </BigButton>
       </div>
 
       {hasCatalogs ? (

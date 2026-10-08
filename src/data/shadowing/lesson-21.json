@@ -1,0 +1,506 @@
+{
+  "id": "lesson-21",
+  "title": "Bài 21",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-21.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 2.09
+    },
+    {
+      "id": "s2",
+      "text": "一、我的一天",
+      "pinyin": "Yī, wǒ de yì tiān",
+      "meaning": "Bài 1: Một ngày của tôi",
+      "start": 3.54,
+      "end": 6.36
+    },
+    {
+      "id": "s3",
+      "text": "我每天早上六点半起床，七点吃早饭。",
+      "pinyin": "Wǒ měitiān zǎoshang liù diǎn bàn qǐchuáng, qī diǎn chī zǎofàn.",
+      "meaning": "Mỗi sáng tôi thức dậy lúc sáu giờ rưỡi, bảy giờ ăn sáng.",
+      "start": 7.87,
+      "end": 13.56
+    },
+    {
+      "id": "s4",
+      "text": "差十分八点去教室，八点上课。",
+      "pinyin": "Chà shí fēn bā diǎn qù jiàoshì, bā diǎn shàngkè.",
+      "meaning": "Bảy giờ năm mươi đến phòng học, tám giờ lên lớp.",
+      "start": 14.5,
+      "end": 19.2
+    },
+    {
+      "id": "s5",
+      "text": "上午我们有四节课，十二点下课。",
+      "pinyin": "Shàngwǔ wǒmen yǒu sì jié kè, shí'èr diǎn xiàkè.",
+      "meaning": "Buổi sáng chúng tôi có bốn tiết, mười hai giờ tan học.",
+      "start": 20.46,
+      "end": 25.92
+    },
+    {
+      "id": "s6",
+      "text": "中午我去食堂吃午饭。",
+      "pinyin": "Zhōngwǔ wǒ qù shítáng chī wǔfàn.",
+      "meaning": "Buổi trưa tôi ra căng tin ăn trưa.",
+      "start": 27.24,
+      "end": 30.49
+    },
+    {
+      "id": "s7",
+      "text": "午饭以后，我常常去朋友那儿聊天儿。",
+      "pinyin": "Wǔfàn yǐhòu, wǒ chángcháng qù péngyou nàr liáotiānr.",
+      "meaning": "Sau bữa trưa, tôi thường đến chỗ bạn tán gẫu.",
+      "start": 31.54,
+      "end": 36.27
+    },
+    {
+      "id": "s8",
+      "text": "下午没有课的时候，我去图书馆看书，或者跟中国朋友一起练习口语。",
+      "pinyin": "Xiàwǔ méiyǒu kè de shíhou, wǒ qù túshūguǎn kàn shū, huòzhě gēn Zhōngguó péngyou yìqǐ liànxí kǒuyǔ.",
+      "meaning": "Buổi chiều không có tiết thì tôi đến thư viện đọc sách, hoặc luyện nói với bạn Trung Quốc.",
+      "start": 37.39,
+      "end": 47.74
+    },
+    {
+      "id": "s9",
+      "text": "有时候在宿舍看电影光盘。",
+      "pinyin": "Yǒu shíhou zài sùshè kàn diànyǐng guāngpán.",
+      "meaning": "Có lúc ở ký túc xá xem đĩa phim.",
+      "start": 48.66,
+      "end": 52.87
+    },
+    {
+      "id": "s10",
+      "text": "四点我去操场锻炼身体。",
+      "pinyin": "Sì diǎn wǒ qù cāochǎng duànliàn shēntǐ.",
+      "meaning": "Bốn giờ tôi ra sân tập thể dục.",
+      "start": 54.4,
+      "end": 57.98
+    },
+    {
+      "id": "s11",
+      "text": "五点回宿舍洗澡、洗衣服。",
+      "pinyin": "Wǔ diǎn huí sùshè xǐzǎo, xǐ yīfu.",
+      "meaning": "Năm giờ về ký túc xá tắm, giặt quần áo.",
+      "start": 59.25,
+      "end": 63.35
+    },
+    {
+      "id": "s12",
+      "text": "六点半或者七点吃晚饭。",
+      "pinyin": "Liù diǎn bàn huòzhě qī diǎn chī wǎnfàn.",
+      "meaning": "Sáu giờ rưỡi hoặc bảy giờ ăn tối.",
+      "start": 64.31,
+      "end": 67.7
+    },
+    {
+      "id": "s13",
+      "text": "晚上我做练习、写汉字、预习课文和生词，然后看看电视、听听音乐，十一点睡觉。",
+      "pinyin": "Wǎnshang wǒ zuò liànxí, xiě hànzì, yùxí kèwén hé shēngcí, ránhòu kànkan diànshì, tīngting yīnyuè, shíyī diǎn shuìjiào.",
+      "meaning": "Buổi tối tôi làm bài tập, viết chữ Hán, chuẩn bị bài khóa và từ mới, rồi xem tivi, nghe nhạc, mười một giờ đi ngủ.",
+      "start": 69.09,
+      "end": 82.68
+    },
+    {
+      "id": "s14",
+      "text": "二、明天早上七点一刻出发",
+      "pinyin": "Èr, míngtiān zǎoshang qī diǎn yí kè chūfā",
+      "meaning": "Bài 2: Sáng mai bảy giờ mười lăm xuất phát",
+      "start": 84.44,
+      "end": 89.38
+    },
+    {
+      "id": "s15",
+      "text": "同学们，明天我们去爬山。",
+      "pinyin": "Tóngxuémen, míngtiān wǒmen qù pá shān.",
+      "meaning": "Các bạn, ngày mai chúng ta đi leo núi.",
+      "start": 90.43,
+      "end": 94.63
+    },
+    {
+      "id": "s16",
+      "text": "太好了！",
+      "pinyin": "Tài hǎo le!",
+      "meaning": "Tuyệt quá!",
+      "start": 95.42,
+      "end": 96.55
+    },
+    {
+      "id": "s17",
+      "text": "老师，您去吗？",
+      "pinyin": "Lǎoshī, nín qù ma?",
+      "meaning": "Thầy ơi, thầy có đi không?",
+      "start": 97.17,
+      "end": 99.46
+    },
+    {
+      "id": "s18",
+      "text": "去。",
+      "pinyin": "Qù.",
+      "meaning": "Có.",
+      "start": 99.99,
+      "end": 100.57
+    },
+    {
+      "id": "s19",
+      "text": "一年级的老师和学生都去。",
+      "pinyin": "Yì niánjí de lǎoshī hé xuésheng dōu qù.",
+      "meaning": "Giáo viên và sinh viên năm thứ nhất đều đi.",
+      "start": 101.39,
+      "end": 105.11
+    },
+    {
+      "id": "s20",
+      "text": "明天什么时候出发？",
+      "pinyin": "Míngtiān shénme shíhou chūfā?",
+      "meaning": "Ngày mai lúc nào xuất phát?",
+      "start": 106.21,
+      "end": 108.65
+    },
+    {
+      "id": "s21",
+      "text": "明天早上七点在楼前集合上车，七点一刻准时出发。",
+      "pinyin": "Míngtiān zǎoshang qī diǎn zài lóu qián jíhé shàngchē, qī diǎn yí kè zhǔnshí chūfā.",
+      "meaning": "Sáng mai bảy giờ tập trung lên xe trước tòa nhà, bảy giờ mười lăm xuất phát đúng giờ.",
+      "start": 110.27,
+      "end": 119.29
+    },
+    {
+      "id": "s22",
+      "text": "中午回来吗？",
+      "pinyin": "Zhōngwǔ huílái ma?",
+      "meaning": "Trưa về không?",
+      "start": 120.3,
+      "end": 121.84
+    },
+    {
+      "id": "s23",
+      "text": "不回来。",
+      "pinyin": "Bù huílái.",
+      "meaning": "Không về.",
+      "start": 122.62,
+      "end": 123.59
+    },
+    {
+      "id": "s24",
+      "text": "要带午饭。",
+      "pinyin": "Yào dài wǔfàn.",
+      "meaning": "Phải mang cơm trưa theo.",
+      "start": 124.45,
+      "end": 125.72
+    },
+    {
+      "id": "s25",
+      "text": "什么时候回来？",
+      "pinyin": "Shénme shíhou huílái?",
+      "meaning": "Lúc nào thì về?",
+      "start": 126.86,
+      "end": 128.49
+    },
+    {
+      "id": "s26",
+      "text": "下午四点。",
+      "pinyin": "Xiàwǔ sì diǎn.",
+      "meaning": "Bốn giờ chiều.",
+      "start": 129.58,
+      "end": 131.19
+    },
+    {
+      "id": "s27",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 133.03,
+      "end": 135.79
+    },
+    {
+      "id": "s28",
+      "text": "每",
+      "pinyin": "měi",
+      "meaning": "mỗi",
+      "start": 137.03,
+      "end": 137.91
+    },
+    {
+      "id": "s29",
+      "text": "早上",
+      "pinyin": "zǎoshang",
+      "meaning": "buổi sáng",
+      "start": 139.26,
+      "end": 140.16
+    },
+    {
+      "id": "s30",
+      "text": "半",
+      "pinyin": "bàn",
+      "meaning": "nửa, rưỡi",
+      "start": 141.43,
+      "end": 142
+    },
+    {
+      "id": "s31",
+      "text": "起床",
+      "pinyin": "qǐchuáng",
+      "meaning": "thức dậy",
+      "start": 143.37,
+      "end": 144.53
+    },
+    {
+      "id": "s32",
+      "text": "床",
+      "pinyin": "chuáng",
+      "meaning": "giường",
+      "start": 145.85,
+      "end": 146.65
+    },
+    {
+      "id": "s33",
+      "text": "早饭",
+      "pinyin": "zǎofàn",
+      "meaning": "bữa sáng",
+      "start": 147.99,
+      "end": 149.02
+    },
+    {
+      "id": "s34",
+      "text": "午饭",
+      "pinyin": "wǔfàn",
+      "meaning": "bữa trưa",
+      "start": 150.49,
+      "end": 151.49
+    },
+    {
+      "id": "s35",
+      "text": "晚饭",
+      "pinyin": "wǎnfàn",
+      "meaning": "bữa tối",
+      "start": 152.84,
+      "end": 153.85
+    },
+    {
+      "id": "s36",
+      "text": "以后",
+      "pinyin": "yǐhòu",
+      "meaning": "sau khi",
+      "start": 155.2,
+      "end": 156.22
+    },
+    {
+      "id": "s37",
+      "text": "差",
+      "pinyin": "chà",
+      "meaning": "kém",
+      "start": 157.49,
+      "end": 158.2
+    },
+    {
+      "id": "s38",
+      "text": "分",
+      "pinyin": "fēn",
+      "meaning": "phút",
+      "start": 159.71,
+      "end": 160.46
+    },
+    {
+      "id": "s39",
+      "text": "分钟",
+      "pinyin": "fēnzhōng",
+      "meaning": "phút",
+      "start": 161.87,
+      "end": 162.99
+    },
+    {
+      "id": "s40",
+      "text": "上课",
+      "pinyin": "shàngkè",
+      "meaning": "lên lớp",
+      "start": 164.38,
+      "end": 165.52
+    },
+    {
+      "id": "s41",
+      "text": "节",
+      "pinyin": "jié",
+      "meaning": "tiết",
+      "start": 166.84,
+      "end": 167.62
+    },
+    {
+      "id": "s42",
+      "text": "教室",
+      "pinyin": "jiàoshì",
+      "meaning": "phòng học",
+      "start": 169.02,
+      "end": 170.09
+    },
+    {
+      "id": "s43",
+      "text": "操场",
+      "pinyin": "cāochǎng",
+      "meaning": "sân tập",
+      "start": 171.45,
+      "end": 172.66
+    },
+    {
+      "id": "s44",
+      "text": "锻炼",
+      "pinyin": "duànliàn",
+      "meaning": "tập luyện",
+      "start": 174.12,
+      "end": 175.18
+    },
+    {
+      "id": "s45",
+      "text": "洗澡",
+      "pinyin": "xǐzǎo",
+      "meaning": "tắm",
+      "start": 176.53,
+      "end": 177.71
+    },
+    {
+      "id": "s46",
+      "text": "洗",
+      "pinyin": "xǐ",
+      "meaning": "rửa",
+      "start": 179.05,
+      "end": 180
+    },
+    {
+      "id": "s47",
+      "text": "然后",
+      "pinyin": "ránhòu",
+      "meaning": "sau đó",
+      "start": 181.28,
+      "end": 182.34
+    },
+    {
+      "id": "s48",
+      "text": "睡觉",
+      "pinyin": "shuìjiào",
+      "meaning": "ngủ",
+      "start": 183.63,
+      "end": 184.8
+    },
+    {
+      "id": "s49",
+      "text": "爬",
+      "pinyin": "pá",
+      "meaning": "leo",
+      "start": 186.33,
+      "end": 187.12
+    },
+    {
+      "id": "s50",
+      "text": "们",
+      "pinyin": "men",
+      "meaning": "số nhiều",
+      "start": 188.47,
+      "end": 189.01
+    },
+    {
+      "id": "s51",
+      "text": "山",
+      "pinyin": "shān",
+      "meaning": "núi",
+      "start": 190.54,
+      "end": 191.33
+    },
+    {
+      "id": "s52",
+      "text": "年级",
+      "pinyin": "niánjí",
+      "meaning": "năm học",
+      "start": 192.82,
+      "end": 193.96
+    },
+    {
+      "id": "s53",
+      "text": "出发",
+      "pinyin": "chūfā",
+      "meaning": "xuất phát",
+      "start": 195.41,
+      "end": 196.5
+    },
+    {
+      "id": "s54",
+      "text": "前",
+      "pinyin": "qián",
+      "meaning": "phía trước",
+      "start": 197.93,
+      "end": 198.73
+    },
+    {
+      "id": "s55",
+      "text": "集合",
+      "pinyin": "jíhé",
+      "meaning": "tập hợp",
+      "start": 200.14,
+      "end": 201.29
+    },
+    {
+      "id": "s56",
+      "text": "刻",
+      "pinyin": "kè",
+      "meaning": "khắc",
+      "start": 202.76,
+      "end": 203.45
+    },
+    {
+      "id": "s57",
+      "text": "上车",
+      "pinyin": "shàngchē",
+      "meaning": "lên xe",
+      "start": 204.93,
+      "end": 206.11
+    },
+    {
+      "id": "s58",
+      "text": "下车",
+      "pinyin": "xiàchē",
+      "meaning": "xuống xe",
+      "start": 207.55,
+      "end": 208.75
+    },
+    {
+      "id": "s59",
+      "text": "准时",
+      "pinyin": "zhǔnshí",
+      "meaning": "đúng giờ",
+      "start": 210.05,
+      "end": 211.22
+    },
+    {
+      "id": "s60",
+      "text": "带",
+      "pinyin": "dài",
+      "meaning": "mang theo",
+      "start": 212.75,
+      "end": 213.36
+    },
+    {
+      "id": "s61",
+      "text": "专名",
+      "pinyin": "Zhuānmíng",
+      "meaning": "Danh từ riêng",
+      "start": 214.73,
+      "end": 215.55
+    },
+    {
+      "id": "s62",
+      "text": "山本",
+      "pinyin": "shānběn",
+      "meaning": "Yamamoto",
+      "start": 217,
+      "end": 218.32
+    }
+  ]
+}

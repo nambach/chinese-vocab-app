@@ -19,12 +19,19 @@ export function folderIdForBuiltinLesson(lessonId: string): string {
   return num >= 16 ? CB2_FOLDER_ID : DEFAULT_BUILTIN_FOLDER_ID
 }
 
+export type WordSource = {
+  lessonId: string
+  segmentId: string
+}
+
 export type Word = {
   id: string
   hanzi: string
   pinyin: string
   meaning: string
   note?: string
+  /** Shadowing sentences this word was saved from or linked to. */
+  sources?: WordSource[]
 }
 
 export type PracticeResult = {
@@ -76,6 +83,14 @@ export type Settings = {
   expandedFolderIds: string[]
   /** Display variant for Chinese characters. Stored words are always simplified. */
   hanziVariant: HanziVariant
+  /** Show pinyin under each shadowing sentence. */
+  shadowShowPinyin: boolean
+  /** Show the Vietnamese meaning under each shadowing sentence. */
+  shadowShowMeaning: boolean
+  /** Last playback speed used in shadowing practice. */
+  shadowPlaybackRate: number
+  /** Last collection used when saving a word from shadowing. */
+  shadowSaveCatalogId: string | null
 }
 
 export type AppState = {
@@ -94,6 +109,10 @@ export const defaultSettings = (): Settings => ({
   autoPronounce: false,
   expandedFolderIds: [],
   hanziVariant: 'simplified',
+  shadowShowPinyin: true,
+  shadowShowMeaning: true,
+  shadowPlaybackRate: 1,
+  shadowSaveCatalogId: null,
 })
 
 export const defaultAppState = (): AppState => ({
@@ -118,12 +137,15 @@ export type View =
   | { name: 'practiceSetup'; catalogId?: string }
   | { name: 'practicePlay'; sessionId: string }
   | { name: 'results'; sessionId: string }
+  | { name: 'shadowingList' }
+  | { name: 'shadowingLesson'; lessonId: string }
 
 export type WordDraft = {
   hanzi: string
   pinyin: string
   meaning: string
   note?: string
+  sources?: WordSource[]
 }
 
 export type CombineQueue = {

@@ -1,0 +1,402 @@
+{
+  "id": "lesson-22",
+  "title": "Bài 22",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-22.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.82
+    },
+    {
+      "id": "s2",
+      "text": "今天想请大家谈谈自己的爱好。",
+      "pinyin": "Jīntiān xiǎng qǐng dàjiā tántan zìjǐ de àihào.",
+      "meaning": "Hôm nay muốn mời mọi người kể sở thích của mình.",
+      "start": 2.67,
+      "end": 7.13
+    },
+    {
+      "id": "s3",
+      "text": "谁先说？",
+      "pinyin": "Shéi xiān shuō?",
+      "meaning": "Ai nói trước?",
+      "start": 7.58,
+      "end": 8.58
+    },
+    {
+      "id": "s4",
+      "text": "老师，让我先说吧。",
+      "pinyin": "Lǎoshī, ràng wǒ xiān shuō ba.",
+      "meaning": "Thưa thầy, để em nói trước.",
+      "start": 9.54,
+      "end": 12.37
+    },
+    {
+      "id": "s5",
+      "text": "好，你说吧。",
+      "pinyin": "Hǎo, nǐ shuō ba.",
+      "meaning": "Được, em nói đi.",
+      "start": 13.4,
+      "end": 15.1
+    },
+    {
+      "id": "s6",
+      "text": "你有什么爱好？",
+      "pinyin": "Nǐ yǒu shénme àihào?",
+      "meaning": "Em có sở thích gì?",
+      "start": 15.76,
+      "end": 17.37
+    },
+    {
+      "id": "s7",
+      "text": "我的爱好是看京剧。",
+      "pinyin": "Wǒ de àihào shì kàn jīngjù.",
+      "meaning": "Sở thích của tôi là xem kinh kịch.",
+      "start": 18.44,
+      "end": 21.22
+    },
+    {
+      "id": "s8",
+      "text": "你喜欢看京剧？",
+      "pinyin": "Nǐ xǐhuan kàn jīngjù?",
+      "meaning": "Em thích xem kinh kịch à?",
+      "start": 22.41,
+      "end": 24.32
+    },
+    {
+      "id": "s9",
+      "text": "是啊，非常喜欢。",
+      "pinyin": "Shì a, fēicháng xǐhuan.",
+      "meaning": "Đúng vậy, thích lắm.",
+      "start": 25.4,
+      "end": 27.88
+    },
+    {
+      "id": "s10",
+      "text": "我还想学唱京剧，打算请一个老师教我。",
+      "pinyin": "Wǒ hái xiǎng xué chàng jīngjù, dǎsuan qǐng yí ge lǎoshī jiāo wǒ.",
+      "meaning": "Tôi còn muốn học hát kinh kịch, định mời một thầy dạy tôi.",
+      "start": 28.86,
+      "end": 34.94
+    },
+    {
+      "id": "s11",
+      "text": "麦克，你喜欢做什么？",
+      "pinyin": "Màikè, nǐ xǐhuan zuò shénme?",
+      "meaning": "Mike, em thích làm gì?",
+      "start": 36.17,
+      "end": 39.1
+    },
+    {
+      "id": "s12",
+      "text": "我喜欢玩电脑。",
+      "pinyin": "Wǒ xǐhuan wán diànnǎo.",
+      "meaning": "Tôi thích chơi máy tính.",
+      "start": 39.96,
+      "end": 42.1
+    },
+    {
+      "id": "s13",
+      "text": "罗兰呢？",
+      "pinyin": "Luólán ne?",
+      "meaning": "Còn Roland?",
+      "start": 43.12,
+      "end": 44.03
+    },
+    {
+      "id": "s14",
+      "text": "我喜欢听音乐，下课以后，听听音乐或者跟朋友聊聊天儿，感到心情很愉快。",
+      "pinyin": "Wǒ xǐhuan tīng yīnyuè, xiàkè yǐhòu, tīngting yīnyuè huòzhě gēn péngyou liáoliao tiānr, gǎndào xīnqíng hěn yúkuài.",
+      "meaning": "Tôi thích nghe nhạc; tan học thì nghe nhạc hoặc tán gẫu với bạn, thấy tâm trạng rất vui.",
+      "start": 44.89,
+      "end": 57.62
+    },
+    {
+      "id": "s15",
+      "text": "田中业余时间常常做什么？",
+      "pinyin": "Tiánzhōng yèyú shíjiān chángcháng zuò shénme?",
+      "meaning": "Thời gian rảnh Tanaka thường làm gì?",
+      "start": 58.64,
+      "end": 62.47
+    },
+    {
+      "id": "s16",
+      "text": "我来中国以前就对书法特别感兴趣。",
+      "pinyin": "Wǒ lái Zhōngguó yǐqián jiù duì shūfǎ tèbié gǎn xìngqù.",
+      "meaning": "Trước khi sang Trung Quốc tôi đã đặc biệt hứng thú với thư pháp.",
+      "start": 63.12,
+      "end": 67.73
+    },
+    {
+      "id": "s17",
+      "text": "今年公司派我来中国，我非常高兴。",
+      "pinyin": "Jīnnián gōngsī pài wǒ lái Zhōngguó, wǒ fēicháng gāoxìng.",
+      "meaning": "Năm nay công ty cử tôi sang Trung Quốc, tôi rất vui.",
+      "start": 68.24,
+      "end": 72.82
+    },
+    {
+      "id": "s18",
+      "text": "现在我正跟一个老师学书法，还学画中国画儿。",
+      "pinyin": "Xiànzài wǒ zhèng gēn yí ge lǎoshī xué shūfǎ, hái xué huà Zhōngguó huàr.",
+      "meaning": "Bây giờ tôi đang học thư pháp với một thầy, và còn học vẽ tranh Trung Quốc.",
+      "start": 73.37,
+      "end": 79.8
+    },
+    {
+      "id": "s19",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 81.68,
+      "end": 83.55
+    },
+    {
+      "id": "s20",
+      "text": "叫",
+      "pinyin": "jiào",
+      "meaning": "kêu, gọi",
+      "start": 84.96,
+      "end": 85.61
+    },
+    {
+      "id": "s21",
+      "text": "让",
+      "pinyin": "ràng",
+      "meaning": "để cho",
+      "start": 87.2,
+      "end": 87.83
+    },
+    {
+      "id": "s22",
+      "text": "大家",
+      "pinyin": "dàjiā",
+      "meaning": "mọi người",
+      "start": 89.35,
+      "end": 90.36
+    },
+    {
+      "id": "s23",
+      "text": "谈",
+      "pinyin": "tán",
+      "meaning": "nói chuyện",
+      "start": 91.9,
+      "end": 92.65
+    },
+    {
+      "id": "s24",
+      "text": "自己",
+      "pinyin": "zìjǐ",
+      "meaning": "mình",
+      "start": 94,
+      "end": 95.3
+    },
+    {
+      "id": "s25",
+      "text": "爱好",
+      "pinyin": "àihào",
+      "meaning": "sở thích",
+      "start": 96.8,
+      "end": 97.83
+    },
+    {
+      "id": "s26",
+      "text": "京剧",
+      "pinyin": "jīngjù",
+      "meaning": "kinh kịch",
+      "start": 99.37,
+      "end": 100.47
+    },
+    {
+      "id": "s27",
+      "text": "喜欢",
+      "pinyin": "xǐhuan",
+      "meaning": "thích",
+      "start": 102.02,
+      "end": 103
+    },
+    {
+      "id": "s28",
+      "text": "非常",
+      "pinyin": "fēicháng",
+      "meaning": "vô cùng",
+      "start": 104.34,
+      "end": 105.49
+    },
+    {
+      "id": "s29",
+      "text": "唱",
+      "pinyin": "chàng",
+      "meaning": "hát",
+      "start": 106.98,
+      "end": 107.66
+    },
+    {
+      "id": "s30",
+      "text": "玩",
+      "pinyin": "wán",
+      "meaning": "chơi",
+      "start": 108.98,
+      "end": 109.65
+    },
+    {
+      "id": "s31",
+      "text": "电脑",
+      "pinyin": "diànnǎo",
+      "meaning": "máy tính",
+      "start": 111.07,
+      "end": 112.19
+    },
+    {
+      "id": "s32",
+      "text": "下课",
+      "pinyin": "xiàkè",
+      "meaning": "tan học",
+      "start": 113.73,
+      "end": 114.8
+    },
+    {
+      "id": "s33",
+      "text": "感到",
+      "pinyin": "gǎndào",
+      "meaning": "cảm thấy",
+      "start": 116.25,
+      "end": 117.22
+    },
+    {
+      "id": "s34",
+      "text": "心情",
+      "pinyin": "xīnqíng",
+      "meaning": "tâm trạng",
+      "start": 118.69,
+      "end": 119.85
+    },
+    {
+      "id": "s35",
+      "text": "愉快",
+      "pinyin": "yúkuài",
+      "meaning": "vui vẻ",
+      "start": 121.24,
+      "end": 122.27
+    },
+    {
+      "id": "s36",
+      "text": "业余",
+      "pinyin": "yèyú",
+      "meaning": "nghiệp dư",
+      "start": 123.84,
+      "end": 124.94
+    },
+    {
+      "id": "s37",
+      "text": "以前",
+      "pinyin": "yǐqián",
+      "meaning": "trước đây",
+      "start": 126.45,
+      "end": 127.59
+    },
+    {
+      "id": "s38",
+      "text": "就",
+      "pinyin": "jiù",
+      "meaning": "thì",
+      "start": 129.05,
+      "end": 129.71
+    },
+    {
+      "id": "s39",
+      "text": "对",
+      "pinyin": "duì",
+      "meaning": "đối với",
+      "start": 131.22,
+      "end": 131.77
+    },
+    {
+      "id": "s40",
+      "text": "书法",
+      "pinyin": "shūfǎ",
+      "meaning": "thư pháp",
+      "start": 133.39,
+      "end": 134.65
+    },
+    {
+      "id": "s41",
+      "text": "特别",
+      "pinyin": "tèbié",
+      "meaning": "đặc biệt",
+      "start": 136.17,
+      "end": 137.34
+    },
+    {
+      "id": "s42",
+      "text": "感兴趣",
+      "pinyin": "gǎn xìngqù",
+      "meaning": "có hứng thú",
+      "start": 138.64,
+      "end": 139.9
+    },
+    {
+      "id": "s43",
+      "text": "兴趣",
+      "pinyin": "xìngqù",
+      "meaning": "hứng thú",
+      "start": 141.23,
+      "end": 142.24
+    },
+    {
+      "id": "s44",
+      "text": "派",
+      "pinyin": "pài",
+      "meaning": "cử",
+      "start": 143.74,
+      "end": 144.4
+    },
+    {
+      "id": "s45",
+      "text": "高兴",
+      "pinyin": "gāoxìng",
+      "meaning": "vui",
+      "start": 145.99,
+      "end": 147.01
+    },
+    {
+      "id": "s46",
+      "text": "画",
+      "pinyin": "huà",
+      "meaning": "vẽ",
+      "start": 148.62,
+      "end": 149.23
+    },
+    {
+      "id": "s47",
+      "text": "画儿",
+      "pinyin": "huàr",
+      "meaning": "tranh",
+      "start": 150.68,
+      "end": 151.27
+    },
+    {
+      "id": "s48",
+      "text": "专名",
+      "pinyin": "Zhuānmíng",
+      "meaning": "Danh từ riêng",
+      "start": 152.66,
+      "end": 153.53
+    },
+    {
+      "id": "s49",
+      "text": "田中",
+      "pinyin": "tiánzhōng",
+      "meaning": "Tanaka",
+      "start": 155.1,
+      "end": 156.22
+    }
+  ]
+}
