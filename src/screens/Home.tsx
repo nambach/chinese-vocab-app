@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { resultPercent } from '../lib/results'
 import { isCatalogPinned } from '../data/store'
@@ -241,9 +241,25 @@ function FolderSection({
   )
 }
 
+// Home unmounts when a child screen opens. That screen is one viewport tall, so the
+// browser clamps the window scroll to 0. Remember the position while Home is showing.
+let homeScrollY = 0
+
 export function Home() {
   const { state, setView, addFolder, renameFolderById, removeFolder, pinCatalog, patchSettings } =
     useApp()
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, homeScrollY)
+  }, [])
+
+  useEffect(() => {
+    const save = () => {
+      homeScrollY = window.scrollY
+    }
+    window.addEventListener('scroll', save, { passive: true })
+    return () => window.removeEventListener('scroll', save)
+  }, [])
   const [sort, setSort] = useState<SortState>({ key: 'name', dir: 'asc' })
   const [sheetOpen, setSheetOpen] = useState(false)
   const [createFolderOpen, setCreateFolderOpen] = useState(false)
