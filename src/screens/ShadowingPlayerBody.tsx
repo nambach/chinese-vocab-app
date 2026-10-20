@@ -1,11 +1,6 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Hanzi } from '../components/Hanzi'
-import { SavedWordsPanel } from '../components/SavedWordsPanel'
-import {
-  BookmarkIcon,
-  ExpandIcon,
-  SentenceDetailDialog,
-} from '../components/SentenceDetailDialog'
+import { ExpandIcon, SentenceDetailDialog } from '../components/SentenceDetailDialog'
 import { useApp } from '../context/AppContext'
 import { useIsDesktop } from '../lib/device'
 import { PLAYBACK_RATES, formatClock } from '../shadowing/segments'
@@ -18,55 +13,22 @@ type JumpButton = {
   direction: 'up' | 'down'
 }
 
-export function SavedCountButton({
-  count,
-  buttonRef,
-  onClick,
-}: {
-  count: number
-  buttonRef?: RefObject<HTMLButtonElement | null>
-  onClick: () => void
-}) {
-  return (
-    <button
-      type="button"
-      ref={buttonRef}
-      onClick={onClick}
-      aria-label={`Từ đã lưu (${count})`}
-      title="Từ đã lưu"
-      className="-mr-2 flex h-11 items-center gap-1 rounded-2xl px-2 text-teal-800 active:bg-teal-50"
-    >
-      <BookmarkIcon size={22} />
-      <span className="min-w-4 text-sm font-semibold tabular-nums">{count}</span>
-    </button>
-  )
-}
-
 export function ShadowingPlayerBody({
   lesson,
   player,
   setContainer,
   saved,
-  savedOpen,
-  onSavedOpenChange,
-  savedButtonRef,
   visible,
   saveCatalogId,
-  onActivateSegment,
   onEditSentence,
 }: {
   lesson: ShadowingLesson
   player: ShadowingPlayerController
   setContainer: (node: HTMLDivElement | null) => void
   saved: SavedWord[]
-  savedOpen: boolean
-  onSavedOpenChange: (open: boolean) => void
-  savedButtonRef: RefObject<HTMLButtonElement | null>
   visible: boolean
   /** Catalog this lesson belongs to. Saving a word defaults to it. */
   saveCatalogId?: string
-  /** Called when a saved word should open on the script, so a parent tab can switch. */
-  onActivateSegment?: (index: number) => void
   onEditSentence?: (segmentId: string) => void
 }) {
   const { state, patchSettings } = useApp()
@@ -79,7 +41,7 @@ export function ShadowingPlayerBody({
   const detailButtonRef = useRef<HTMLButtonElement>(null)
   const [detailIndex, setDetailIndex] = useState<number | null>(null)
   const overlayOpenRef = useRef(false)
-  overlayOpenRef.current = detailIndex !== null || savedOpen
+  overlayOpenRef.current = detailIndex !== null
   const actionsRef = useRef(player)
   actionsRef.current = player
   const activeIndexRef = useRef(player.activeIndex)
@@ -221,18 +183,6 @@ export function ShadowingPlayerBody({
     setDetailIndex(null)
     window.setTimeout(() => detailButtonRef.current?.focus({ preventScroll: true }), 0)
   }, [])
-
-  const closeSaved = useCallback(() => {
-    onSavedOpenChange(false)
-    window.setTimeout(() => savedButtonRef.current?.focus({ preventScroll: true }), 0)
-  }, [onSavedOpenChange, savedButtonRef])
-
-  function playSavedSentence(index: number) {
-    onSavedOpenChange(false)
-    player.playSegment(index)
-    onActivateSegment?.(index)
-    window.setTimeout(() => scrollIndexIntoView(index, 'smooth'), 0)
-  }
 
   useEffect(() => {
     if (!visible) return undefined
@@ -460,14 +410,6 @@ export function ShadowingPlayerBody({
                 }
               : undefined
           }
-        />
-      ) : null}
-      {savedOpen ? (
-        <SavedWordsPanel
-          segments={lesson.segments}
-          saved={saved}
-          onClose={closeSaved}
-          onPlay={playSavedSentence}
         />
       ) : null}
     </div>

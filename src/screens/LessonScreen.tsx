@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Hanzi } from '../components/Hanzi'
 import { BigButton, BottomDrawer, Card, ScreenShell } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
@@ -11,7 +11,7 @@ import { isPlaybackRate } from '../shadowing/segments'
 import { useShadowingPlayer } from '../shadowing/useShadowingPlayer'
 import type { ShadowingLesson, ShadowingSegment } from '../shadowing/types'
 import { LastResultCard, PracticeActions, useCatalogMenu } from './catalogChrome'
-import { SavedCountButton, ShadowingPlayerBody } from './ShadowingPlayerBody'
+import { ShadowingPlayerBody } from './ShadowingPlayerBody'
 
 const EMPTY_LESSON: ShadowingLesson = {
   id: 'missing',
@@ -51,8 +51,6 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
   )
   const [tab, setTab] = useState<LessonTab>('kewen')
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
-  const [savedOpen, setSavedOpen] = useState(false)
-  const savedButtonRef = useRef<HTMLButtonElement>(null)
   const savedRate = isPlaybackRate(state.settings.shadowPlaybackRate)
     ? state.settings.shadowPlaybackRate
     : 1
@@ -87,16 +85,6 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
       backLabel="Trang chủ"
       fillViewport
       menuItems={menuItems}
-      headerAction={
-        <SavedCountButton
-          count={saved.length}
-          buttonRef={savedButtonRef}
-          onClick={() => {
-            setTab('kewen')
-            setSavedOpen(true)
-          }}
-        />
-      }
     >
       <div className="shrink-0 px-4 pt-3 md:px-8">
         <div role="tablist" aria-label="Phần bài học" className="grid grid-cols-3 gap-1 rounded-2xl bg-teal-100 p-1">
@@ -127,12 +115,8 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
             player={player}
             setContainer={setContainer}
             saved={saved}
-            savedOpen={savedOpen}
-            onSavedOpenChange={setSavedOpen}
-            savedButtonRef={savedButtonRef}
             visible={tab === 'kewen'}
             saveCatalogId={catalog.id}
-            onActivateSegment={openSegment}
             onEditSentence={(segmentId) =>
               setView({ name: 'editKewen', catalogId: catalog.id, segmentId })
             }
@@ -255,9 +239,12 @@ function LessonVocab({
                 ) : null}
               </div>
               {sentences.length > 0 ? (
-                <ul className="mt-3 flex flex-col gap-3">
+                <ul className="mt-3 flex flex-col gap-2">
                   {sentences.map((position) => (
-                    <li key={position.segmentId}>
+                    <li
+                      key={position.segmentId}
+                      className="rounded-xl bg-teal-50 px-3 py-2 ring-1 ring-teal-100"
+                    >
                       <div className="flex items-end gap-1">
                         <HighlightedQuote text={position.text} word={word.hanzi} />
                         <AudioIconButton
