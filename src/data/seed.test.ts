@@ -313,6 +313,34 @@ describe('lessons with a 课文', () => {
     expect(attachBundledKewen(edited, [titled]).catalogs[0].kewen?.textTitle).toBe('Tự đặt')
   })
 
+  it('corrects 田芳 and 罗兰 on a script already saved', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const segments = [
+      { id: 's1', text: '一、课文', start: 0, end: 1, section: 'heading' as const },
+      {
+        id: 's2',
+        text: '一、田芳去哪儿了',
+        meaning: 'Bài 1: Tiên Phương đi đâu rồi',
+        start: 1,
+        end: 2,
+        section: 'heading' as const,
+      },
+      { id: 's3', text: '罗兰，你愿意去吗？', meaning: 'Luolan, bạn có muốn đi không?', start: 2, end: 3, section: 'kewen' as const },
+    ]
+    const saved = {
+      ...seeded,
+      catalogs: seeded.catalogs.map((catalog) => ({
+        ...catalog,
+        kewen: { ...catalog.kewen!, segments, textTitle: 'Tiên Phương đi đâu rồi' },
+      })),
+    }
+    const after = attachBundledKewen(saved, [KEWEN_LESSON])
+    expect(after.catalogs[0].kewen?.textTitle).toBe('Điền Phương đi đâu rồi')
+    expect(after.catalogs[0].kewen?.segments[1].meaning).toBe('Bài 1: Điền Phương đi đâu rồi')
+    expect(after.catalogs[0].kewen?.segments[2].meaning).toBe('Roland, bạn có muốn đi không?')
+    expect(attachBundledKewen(after, [KEWEN_LESSON])).toBe(after)
+  })
+
   it('fills a missing text title without touching the saved sentences', () => {
     const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
     const segments = [

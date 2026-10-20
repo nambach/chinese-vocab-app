@@ -51,6 +51,31 @@ function withPositions(catalog: Catalog, lesson: BuiltinLesson, kewen: Kewen): C
   return { ...catalog, kewen, words }
 }
 
+/** Known mistranscriptions. Only a sentence that still contains the name is changed. */
+function correctNames(kewen: Kewen): Kewen {
+  let changed = false
+  const segments = kewen.segments.map((segment) => {
+    let meaning = segment.meaning
+    if (!meaning) return segment
+    if (segment.text.includes('田芳') && meaning.includes('Tiên Phương')) {
+      meaning = meaning.replaceAll('Tiên Phương', 'Điền Phương')
+    }
+    if (segment.text.includes('罗兰') && meaning.includes('Luolan')) {
+      meaning = meaning.replaceAll('Luolan', 'Roland')
+    }
+    if (meaning === segment.meaning) return segment
+    changed = true
+    return { ...segment, meaning }
+  })
+  let textTitle = kewen.textTitle
+  if (textTitle?.includes('Tiên Phương')) {
+    textTitle = textTitle.replaceAll('Tiên Phương', 'Điền Phương')
+    changed = true
+  }
+  if (!changed) return kewen
+  return { ...kewen, segments, ...(textTitle ? { textTitle } : {}) }
+}
+
 /**
  * Give a bundled catalog its 课文 the first time the bundle has one.
  * Word text is untouched; matching words only gain their sentence positions.
@@ -65,14 +90,17 @@ export function attachBundledKewen(state: AppState, pack: readonly BuiltinLesson
     const file = lesson?.file
     if (!lesson || !file || file.audio.type !== 'file') return catalog
     if (Array.isArray(catalog.kewen?.segments)) {
-      const fromSegments = textTitleFromSegments(catalog.kewen.segments)
+      const named = correctNames(catalog.kewen)
+      const fromSegments = textTitleFromSegments(named.segments)
       const next = file.textTitle?.trim() || fromSegments
-      const current = catalog.kewen.textTitle
-      if (!next || next === current) return catalog
-      // A title the user changed stays. One copied from the heading can take the bundle's.
-      if (current && current !== fromSegments) return catalog
+      const current = named.textTitle
+      let kewen = named
+      if (next && next !== current && (!current || current === fromSegments)) {
+        kewen = { ...named, textTitle: next }
+      }
+      if (kewen === catalog.kewen) return catalog
       changed = true
-      return { ...catalog, kewen: { ...catalog.kewen, textTitle: next } }
+      return { ...catalog, kewen }
     }
     const kewen = kewenFromFile(file)
     if (!kewen) return catalog

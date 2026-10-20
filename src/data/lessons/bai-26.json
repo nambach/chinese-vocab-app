@@ -3,7 +3,7 @@
   "version": 1,
   "id": "bai-26",
   "title": "Bài 26",
-  "textTitle": "Tiên Phương đi đâu rồi",
+  "textTitle": "Điền Phương đi đâu rồi",
   "audio": {
     "type": "file",
     "src": "audio/shadowing/bai-26.mp3"
@@ -22,7 +22,7 @@
       "id": "s2",
       "text": "一、田芳去哪儿了",
       "pinyin": "Yī, Tián Fāng qù nǎr le",
-      "meaning": "Bài 1: Tiên Phương đi đâu rồi",
+      "meaning": "Bài 1: Điền Phương đi đâu rồi",
       "start": 3.06,
       "end": 6.27,
       "section": "heading"
@@ -31,7 +31,7 @@
       "id": "s3",
       "text": "喂，是田芳吗？",
       "pinyin": "Wèi, shì Tián Fāng ma?",
-      "meaning": "Alo, có phải Tiên Phương không?",
+      "meaning": "Alo, có phải Điền Phương không?",
       "start": 7.87,
       "end": 9.99,
       "section": "kewen"
@@ -40,7 +40,7 @@
       "id": "s4",
       "text": "田芳不在。是张东吧。",
       "pinyin": "Tián Fāng bú zài. Shì Zhāng Dōng ba.",
-      "meaning": "Tiên Phương không có. Là Trương Đông phải không.",
+      "meaning": "Điền Phương không có. Là Trương Đông phải không.",
       "start": 10.99,
       "end": 14.5,
       "section": "kewen"
@@ -58,7 +58,7 @@
       "id": "s6",
       "text": "田芳去哪儿了？",
       "pinyin": "Tián Fāng qù nǎr le?",
-      "meaning": "Tiên Phương đi đâu rồi?",
+      "meaning": "Điền Phương đi đâu rồi?",
       "start": 18.39,
       "end": 19.91,
       "section": "kewen"
@@ -148,7 +148,7 @@
       "id": "s16",
       "text": "阿姨，田芳回来了没有？",
       "pinyin": "Āyí, Tián Fāng huílái le méiyǒu?",
-      "meaning": "Dì, Tiên Phương về chưa?",
+      "meaning": "Dì, Điền Phương về chưa?",
       "start": 51.6,
       "end": 55.11,
       "section": "kewen"
