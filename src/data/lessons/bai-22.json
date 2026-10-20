@@ -1,0 +1,765 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-22",
+  "title": "Bài 22",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-22.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0,
+      "end": 1.36,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "今天想请大家谈谈自己的爱好。",
+      "pinyin": "Jīntiān xiǎng qǐng dàjiā tántan zìjǐ de àihào.",
+      "meaning": "Hôm nay muốn mời mọi người kể sở thích của mình.",
+      "start": 1.36,
+      "end": 6.56,
+      "section": "kewen"
+    },
+    {
+      "id": "s3",
+      "text": "谁先说？",
+      "pinyin": "Shéi xiān shuō?",
+      "meaning": "Ai nói trước?",
+      "start": 6.56,
+      "end": 8.23,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "老师，让我先说吧。",
+      "pinyin": "Lǎoshī, ràng wǒ xiān shuō ba.",
+      "meaning": "Thưa thầy, để em nói trước.",
+      "start": 9.18,
+      "end": 11.86,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "好，你说吧。",
+      "pinyin": "Hǎo, nǐ shuō ba.",
+      "meaning": "Được, em nói đi.",
+      "start": 13,
+      "end": 13.94,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "你有什么爱好？",
+      "pinyin": "Nǐ yǒu shénme àihào?",
+      "meaning": "Em có sở thích gì?",
+      "start": 13.94,
+      "end": 16.79,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "我的爱好是看京剧。",
+      "pinyin": "Wǒ de àihào shì kàn jīngjù.",
+      "meaning": "Sở thích của tôi là xem kinh kịch.",
+      "start": 17.66,
+      "end": 21.01,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "你喜欢看京剧？",
+      "pinyin": "Nǐ xǐhuan kàn jīngjù?",
+      "meaning": "Em thích xem kinh kịch à?",
+      "start": 21.64,
+      "end": 23.83,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "是啊，非常喜欢。",
+      "pinyin": "Shì a, fēicháng xǐhuan.",
+      "meaning": "Đúng vậy, thích lắm.",
+      "start": 24.84,
+      "end": 27.45,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "我还想学唱京剧，打算请一个老师教我。",
+      "pinyin": "Wǒ hái xiǎng xué chàng jīngjù, dǎsuan qǐng yí ge lǎoshī jiāo wǒ.",
+      "meaning": "Tôi còn muốn học hát kinh kịch, định mời một thầy dạy tôi.",
+      "start": 28.42,
+      "end": 34.48,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "麦克，你喜欢做什么？",
+      "pinyin": "Màikè, nǐ xǐhuan zuò shénme?",
+      "meaning": "Mike, em thích làm gì?",
+      "start": 35.76,
+      "end": 38.63,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "我喜欢玩电脑。",
+      "pinyin": "Wǒ xǐhuan wán diànnǎo.",
+      "meaning": "Tôi thích chơi máy tính.",
+      "start": 39.54,
+      "end": 41.65,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "罗兰呢？",
+      "pinyin": "Luólán ne?",
+      "meaning": "Còn Roland?",
+      "start": 42.78,
+      "end": 43.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "我喜欢听音乐，下课以后，听听音乐或者跟朋友聊聊天儿，感到心情很愉快。",
+      "pinyin": "Wǒ xǐhuan tīng yīnyuè, xiàkè yǐhòu, tīngting yīnyuè huòzhě gēn péngyou liáoliao tiānr, gǎndào xīnqíng hěn yúkuài.",
+      "meaning": "Tôi thích nghe nhạc; tan học thì nghe nhạc hoặc tán gẫu với bạn, thấy tâm trạng rất vui.",
+      "start": 44.02,
+      "end": 57.18,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "田中业余时间常常做什么？",
+      "pinyin": "Tiánzhōng yèyú shíjiān chángcháng zuò shénme?",
+      "meaning": "Thời gian rảnh Tanaka thường làm gì?",
+      "start": 58.28,
+      "end": 61.95,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "我来中国以前就对书法特别感兴趣。",
+      "pinyin": "Wǒ lái Zhōngguó yǐqián jiù duì shūfǎ tèbié gǎn xìngqù.",
+      "meaning": "Trước khi sang Trung Quốc tôi đã đặc biệt hứng thú với thư pháp.",
+      "start": 62.24,
+      "end": 67.14,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "今年公司派我来中国，我非常高兴。",
+      "pinyin": "Jīnnián gōngsī pài wǒ lái Zhōngguó, wǒ fēicháng gāoxìng.",
+      "meaning": "Năm nay công ty cử tôi sang Trung Quốc, tôi rất vui.",
+      "start": 67.14,
+      "end": 72.53,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "现在我正跟一个老师学书法，还学画中国画儿。",
+      "pinyin": "Xiànzài wǒ zhèng gēn yí ge lǎoshī xué shūfǎ, hái xué huà Zhōngguó huàr.",
+      "meaning": "Bây giờ tôi đang học thư pháp với một thầy, và còn học vẽ tranh Trung Quốc.",
+      "start": 73.04,
+      "end": 79.47,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 81.4,
+      "end": 83.22,
+      "section": "heading"
+    },
+    {
+      "id": "s20",
+      "text": "叫",
+      "pinyin": "jiào",
+      "meaning": "kêu, gọi",
+      "start": 84.42,
+      "end": 85.38,
+      "section": "shengci"
+    },
+    {
+      "id": "s21",
+      "text": "让",
+      "pinyin": "ràng",
+      "meaning": "để cho",
+      "start": 86.58,
+      "end": 87.6,
+      "section": "shengci"
+    },
+    {
+      "id": "s22",
+      "text": "大家",
+      "pinyin": "dàjiā",
+      "meaning": "mọi người",
+      "start": 88.8,
+      "end": 90.09,
+      "section": "shengci"
+    },
+    {
+      "id": "s23",
+      "text": "谈",
+      "pinyin": "tán",
+      "meaning": "nói chuyện",
+      "start": 91.29,
+      "end": 92.41,
+      "section": "shengci"
+    },
+    {
+      "id": "s24",
+      "text": "自己",
+      "pinyin": "zìjǐ",
+      "meaning": "mình",
+      "start": 93.62,
+      "end": 95.09,
+      "section": "shengci"
+    },
+    {
+      "id": "s25",
+      "text": "爱好",
+      "pinyin": "àihào",
+      "meaning": "sở thích",
+      "start": 95.92,
+      "end": 97.5,
+      "section": "shengci"
+    },
+    {
+      "id": "s26",
+      "text": "京剧",
+      "pinyin": "jīngjù",
+      "meaning": "kinh kịch",
+      "start": 97.5,
+      "end": 100.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s27",
+      "text": "喜欢",
+      "pinyin": "xǐhuan",
+      "meaning": "thích",
+      "start": 101.46,
+      "end": 102.75,
+      "section": "shengci"
+    },
+    {
+      "id": "s28",
+      "text": "非常",
+      "pinyin": "fēicháng",
+      "meaning": "vô cùng",
+      "start": 104.01,
+      "end": 105.28,
+      "section": "shengci"
+    },
+    {
+      "id": "s29",
+      "text": "唱",
+      "pinyin": "chàng",
+      "meaning": "hát",
+      "start": 106.04,
+      "end": 107.42,
+      "section": "shengci"
+    },
+    {
+      "id": "s30",
+      "text": "玩",
+      "pinyin": "wán",
+      "meaning": "chơi",
+      "start": 108.62,
+      "end": 109.21,
+      "section": "shengci"
+    },
+    {
+      "id": "s31",
+      "text": "电脑",
+      "pinyin": "diànnǎo",
+      "meaning": "máy tính",
+      "start": 109.21,
+      "end": 111.8,
+      "section": "shengci"
+    },
+    {
+      "id": "s32",
+      "text": "下课",
+      "pinyin": "xiàkè",
+      "meaning": "tan học",
+      "start": 111.8,
+      "end": 114.44,
+      "section": "shengci"
+    },
+    {
+      "id": "s33",
+      "text": "感到",
+      "pinyin": "gǎndào",
+      "meaning": "cảm thấy",
+      "start": 114.44,
+      "end": 116.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s34",
+      "text": "心情",
+      "pinyin": "xīnqíng",
+      "meaning": "tâm trạng",
+      "start": 116.96,
+      "end": 119.46,
+      "section": "shengci"
+    },
+    {
+      "id": "s35",
+      "text": "愉快",
+      "pinyin": "yúkuài",
+      "meaning": "vui vẻ",
+      "start": 119.46,
+      "end": 121.88,
+      "section": "shengci"
+    },
+    {
+      "id": "s36",
+      "text": "业余",
+      "pinyin": "yèyú",
+      "meaning": "nghiệp dư",
+      "start": 121.88,
+      "end": 124.72,
+      "section": "shengci"
+    },
+    {
+      "id": "s37",
+      "text": "以前",
+      "pinyin": "yǐqián",
+      "meaning": "trước đây",
+      "start": 125.92,
+      "end": 127.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s38",
+      "text": "就",
+      "pinyin": "jiù",
+      "meaning": "thì",
+      "start": 128.43,
+      "end": 129.54,
+      "section": "shengci"
+    },
+    {
+      "id": "s39",
+      "text": "对",
+      "pinyin": "duì",
+      "meaning": "đối với",
+      "start": 130.73,
+      "end": 131.43,
+      "section": "shengci"
+    },
+    {
+      "id": "s40",
+      "text": "书法",
+      "pinyin": "shūfǎ",
+      "meaning": "thư pháp",
+      "start": 133.04,
+      "end": 134.22,
+      "section": "shengci"
+    },
+    {
+      "id": "s41",
+      "text": "特别",
+      "pinyin": "tèbié",
+      "meaning": "đặc biệt",
+      "start": 134.22,
+      "end": 136.94,
+      "section": "shengci"
+    },
+    {
+      "id": "s42",
+      "text": "感兴趣",
+      "pinyin": "gǎn xìngqù",
+      "meaning": "có hứng thú",
+      "start": 136.94,
+      "end": 139.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s43",
+      "text": "兴趣",
+      "pinyin": "xìngqù",
+      "meaning": "hứng thú",
+      "start": 139.58,
+      "end": 142.07,
+      "section": "shengci"
+    },
+    {
+      "id": "s44",
+      "text": "派",
+      "pinyin": "pài",
+      "meaning": "cử",
+      "start": 143.15,
+      "end": 144.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s45",
+      "text": "高兴",
+      "pinyin": "gāoxìng",
+      "meaning": "vui",
+      "start": 144.04,
+      "end": 146.86,
+      "section": "shengci"
+    },
+    {
+      "id": "s46",
+      "text": "画",
+      "pinyin": "huà",
+      "meaning": "vẽ",
+      "start": 148.06,
+      "end": 148.98,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "画儿",
+      "pinyin": "huàr",
+      "meaning": "tranh",
+      "start": 150.17,
+      "end": 150.72,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "专名",
+      "pinyin": "Zhuānmíng",
+      "meaning": "Danh từ riêng",
+      "start": 150.72,
+      "end": 153.14,
+      "section": "heading"
+    },
+    {
+      "id": "s49",
+      "text": "田中",
+      "pinyin": "tiánzhōng",
+      "meaning": "Tanaka",
+      "start": 153.14,
+      "end": 156.02,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "叫",
+      "pinyin": "jiào",
+      "meaning": "kêu, gọi, bảo",
+      "segments": [
+        "s20"
+      ]
+    },
+    {
+      "hanzi": "让",
+      "pinyin": "ràng",
+      "meaning": "để, để cho, nhường",
+      "segments": [
+        "s4",
+        "s21"
+      ]
+    },
+    {
+      "hanzi": "大家",
+      "pinyin": "dàjiā",
+      "meaning": "mọi người",
+      "note": "đại từ",
+      "segments": [
+        "s2",
+        "s22"
+      ]
+    },
+    {
+      "hanzi": "谈",
+      "pinyin": "tán",
+      "meaning": "nói, nói chuyện, bàn",
+      "segments": [
+        "s2",
+        "s23"
+      ]
+    },
+    {
+      "hanzi": "谈恋爱",
+      "pinyin": "tán liàn'ài",
+      "meaning": "yêu đương, hẹn hò",
+      "note": "không liên quan đến \"nói\""
+    },
+    {
+      "hanzi": "自己",
+      "pinyin": "zìjǐ",
+      "meaning": "mình, bản thân",
+      "note": "đại từ",
+      "segments": [
+        "s2",
+        "s24"
+      ]
+    },
+    {
+      "hanzi": "爱好",
+      "pinyin": "àihào",
+      "meaning": "sở thích",
+      "note": "danh từ / động từ",
+      "segments": [
+        "s2",
+        "s25"
+      ]
+    },
+    {
+      "hanzi": "京剧",
+      "pinyin": "jīngjù",
+      "meaning": "kinh kịch",
+      "note": "hí kịch nói chung là 戏剧",
+      "segments": [
+        "s7",
+        "s26"
+      ]
+    },
+    {
+      "hanzi": "唱",
+      "pinyin": "chàng",
+      "meaning": "hát",
+      "segments": [
+        "s10",
+        "s29"
+      ]
+    },
+    {
+      "hanzi": "喜欢",
+      "pinyin": "xǐhuan",
+      "meaning": "thích",
+      "segments": [
+        "s8",
+        "s27"
+      ]
+    },
+    {
+      "hanzi": "非常",
+      "pinyin": "fēicháng",
+      "meaning": "vô cùng, rất",
+      "note": "phó từ",
+      "segments": [
+        "s9",
+        "s28"
+      ]
+    },
+    {
+      "hanzi": "玩",
+      "pinyin": "wán",
+      "meaning": "chơi",
+      "segments": [
+        "s12",
+        "s30"
+      ]
+    },
+    {
+      "hanzi": "玩游戏",
+      "pinyin": "wán yóuxì",
+      "meaning": "chơi trò chơi, chơi game"
+    },
+    {
+      "hanzi": "电脑",
+      "pinyin": "diànnǎo",
+      "meaning": "máy tính",
+      "note": "lượng từ 台 (tái)",
+      "segments": [
+        "s12",
+        "s31"
+      ]
+    },
+    {
+      "hanzi": "笔记本电脑",
+      "pinyin": "bǐjìběn diànnǎo",
+      "meaning": "laptop, máy tính xách tay"
+    },
+    {
+      "hanzi": "下课",
+      "pinyin": "xiàkè",
+      "meaning": "tan học",
+      "segments": [
+        "s14",
+        "s32"
+      ]
+    },
+    {
+      "hanzi": "感到",
+      "pinyin": "gǎndào",
+      "meaning": "cảm thấy",
+      "note": "cảm nhận do ngoại cảnh tác động",
+      "segments": [
+        "s14",
+        "s33"
+      ]
+    },
+    {
+      "hanzi": "觉得",
+      "pinyin": "juéde",
+      "meaning": "cảm thấy, cho rằng",
+      "note": "quan điểm/nhận xét dựa vào suy nghĩ"
+    },
+    {
+      "hanzi": "心情",
+      "pinyin": "xīnqíng",
+      "meaning": "tâm trạng",
+      "segments": [
+        "s14",
+        "s34"
+      ]
+    },
+    {
+      "hanzi": "愉快",
+      "pinyin": "yúkuài",
+      "meaning": "vui vẻ",
+      "note": "thiên về cảm giác bên trong, thường văn viết",
+      "segments": [
+        "s14",
+        "s35"
+      ]
+    },
+    {
+      "hanzi": "高兴",
+      "pinyin": "gāoxìng",
+      "meaning": "vui vẻ, phấn khởi",
+      "note": "lặp AABB 高高兴兴",
+      "segments": [
+        "s17",
+        "s45"
+      ]
+    },
+    {
+      "hanzi": "开心",
+      "pinyin": "kāixīn",
+      "meaning": "vui vẻ, hài lòng",
+      "note": "chọc ghẹo chỉ trong 拿/开 + người + 开心, VD: 别拿他开心"
+    },
+    {
+      "hanzi": "对",
+      "pinyin": "duì",
+      "meaning": "đối với, với",
+      "note": "giới từ; A 对 B + tính từ/động từ (他对我很好)",
+      "segments": [
+        "s16",
+        "s39"
+      ]
+    },
+    {
+      "hanzi": "业余",
+      "pinyin": "yèyú",
+      "meaning": "nghiệp dư, ngoài giờ",
+      "note": "thường đứng trước danh từ: 业余时间, 业余爱好",
+      "segments": [
+        "s15",
+        "s36"
+      ]
+    },
+    {
+      "hanzi": "书法",
+      "pinyin": "shūfǎ",
+      "meaning": "thư pháp",
+      "segments": [
+        "s16",
+        "s40"
+      ]
+    },
+    {
+      "hanzi": "特别",
+      "pinyin": "tèbié",
+      "meaning": "đặc biệt",
+      "note": "phó từ",
+      "segments": [
+        "s16",
+        "s41"
+      ]
+    },
+    {
+      "hanzi": "就",
+      "pinyin": "jiù",
+      "meaning": "đã, thì, liền",
+      "note": "phó từ",
+      "segments": [
+        "s16",
+        "s38"
+      ]
+    },
+    {
+      "hanzi": "以前",
+      "pinyin": "yǐqián",
+      "meaning": "trước đây, trước khi",
+      "segments": [
+        "s16",
+        "s37"
+      ]
+    },
+    {
+      "hanzi": "兴趣",
+      "pinyin": "xìngqù",
+      "meaning": "hứng thú",
+      "segments": [
+        "s16",
+        "s43"
+      ]
+    },
+    {
+      "hanzi": "感兴趣",
+      "pinyin": "gǎn xìngqù",
+      "meaning": "cảm thấy hứng thú, có hứng thú",
+      "note": "A 对 B 感兴趣",
+      "segments": [
+        "s16",
+        "s42"
+      ]
+    },
+    {
+      "hanzi": "派",
+      "pinyin": "pài",
+      "meaning": "phái, cử",
+      "note": "公司派我去中国",
+      "segments": [
+        "s17",
+        "s44"
+      ]
+    },
+    {
+      "hanzi": "画",
+      "pinyin": "huà",
+      "meaning": "vẽ",
+      "segments": [
+        "s18",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "画儿",
+      "pinyin": "huàr",
+      "meaning": "tranh, bức tranh",
+      "note": "画画儿 = vẽ tranh",
+      "segments": [
+        "s18",
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "游戏",
+      "pinyin": "yóuxì",
+      "meaning": "trò chơi, game"
+    },
+    {
+      "hanzi": "幸福",
+      "pinyin": "xìngfú",
+      "meaning": "hạnh phúc"
+    },
+    {
+      "hanzi": "累",
+      "pinyin": "lèi",
+      "meaning": "mệt, mệt mỏi"
+    }
+  ]
+}

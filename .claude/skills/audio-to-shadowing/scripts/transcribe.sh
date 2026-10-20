@@ -17,6 +17,7 @@ command -v ffmpeg >/dev/null || { echo "ffmpeg missing: brew install ffmpeg" >&2
 [[ -f "$MODEL" ]] || { echo "model missing: $MODEL" >&2; exit 1; }
 
 mkdir -p "$WORK"
+python3 -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' "$SOURCE" > "$WORK/asr-source.txt"
 ffmpeg -v error -y -i "$SOURCE" -ar 16000 -ac 1 -c:a pcm_s16le "$WORK/audio16k.wav"
 whisper-cli -m "$MODEL" -l zh --prompt "$PROMPT" -mc 0 -ojf -np \
   -of "$WORK/asr" -f "$WORK/audio16k.wav" > "$WORK/asr.txt" 2> "$WORK/asr.log"

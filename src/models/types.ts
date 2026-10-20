@@ -1,6 +1,7 @@
 import type { PracticeConfig } from '../practice/session'
 import { defaultPracticeConfig } from '../practice/session'
 import type { QuizDirectionId } from '../practice/directions'
+import type { AudioSource, ShadowingSegment } from '../shadowing/types'
 
 export const STORAGE_KEY = 'cn-vocab:v1'
 export const SCHEMA_VERSION = 3
@@ -34,6 +35,14 @@ export type Word = {
   sources?: WordSource[]
 }
 
+/** The 课文, stored on the device. A bundled lesson keeps pointing at its bundled mp3. */
+export type Kewen = {
+  lessonId: string
+  title: string
+  audio: AudioSource
+  segments: ShadowingSegment[]
+}
+
 export type PracticeResult = {
   id: string
   directionId: QuizDirectionId
@@ -62,8 +71,10 @@ export type Catalog = {
   folderId?: string
   /** Set when this catalog originated from a bundled default lesson (e.g. "bai-01"). */
   builtinId?: string
-  /** Content fingerprint at seed time. Reserved for a future "update unmodified lessons" flow. */
+  /** Content fingerprint at seed time. A mismatch with the bundle offers an update. */
   seedHash?: string
+  /** Set when this catalog is a lesson with a 课文, not only a word list. */
+  kewen?: Kewen
   /** Present when the catalog is pinned to the top of Home. */
   pinnedAt?: number
 }
@@ -138,7 +149,7 @@ export type View =
   | { name: 'practicePlay'; sessionId: string }
   | { name: 'results'; sessionId: string }
   | { name: 'shadowingList' }
-  | { name: 'shadowingLesson'; lessonId: string }
+  | { name: 'editKewen'; catalogId: string; segmentId?: string }
 
 export type WordDraft = {
   hanzi: string

@@ -1,5 +1,5 @@
 import { convertToneNumbers } from './pinyin'
-import { createCatalog, createWord } from '../data/store'
+import { createCatalog, createWord } from '../data/ids'
 import type { Catalog, Word } from '../models/types'
 
 export type ParsedImport = {

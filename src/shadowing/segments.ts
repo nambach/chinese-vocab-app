@@ -1,4 +1,4 @@
-import type { ShadowingLesson, ShadowingSegment } from './types'
+import type { ShadowingSegment } from './types'
 
 export const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25] as const
 
@@ -40,24 +40,16 @@ export function resolveAudioSrc(src: string): string {
   return `${prefix}${src.replace(/^\//, '')}`
 }
 
-export function validateLesson(lesson: ShadowingLesson): string[] {
+/** Timing and identity checks for a script. */
+export function validateSegments(segments: readonly ShadowingSegment[]): string[] {
   const errors: string[] = []
 
-  if (!lesson.id.trim()) errors.push('lesson id is empty')
-  if (!lesson.title.trim()) errors.push('lesson title is empty')
-
-  if (lesson.audio.type !== 'file') {
-    errors.push('audio.type must be file')
-  } else if (!lesson.audio.src.trim()) {
-    errors.push('audio src is empty')
-  }
-
-  if (lesson.segments.length === 0) errors.push('lesson has no segments')
+  if (segments.length === 0) errors.push('lesson has no segments')
 
   const ids = new Set<string>()
   let previousEnd = -Infinity
 
-  for (const segment of lesson.segments) {
+  for (const segment of segments) {
     const label = segment.id.trim() || '(missing id)'
 
     if (!segment.id.trim()) {

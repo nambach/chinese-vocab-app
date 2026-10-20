@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Card, ScreenShell } from '../components/ui'
 import { Hanzi } from '../components/Hanzi'
+import { HanziiButton } from '../components/HanziiButton'
 import { SpeakButton } from '../components/SpeakButton'
 import { StrokeOrderButton } from '../components/StrokeOrderButton'
 import { VariantToggle } from '../components/VariantToggle'
@@ -43,6 +44,7 @@ function StudyCard({
           label={`Xem thứ tự nét "${displayedHanzi}"`}
           onOpenChange={onStrokeDrawerOpenChange}
         />
+        <HanziiButton text={displayedHanzi} label={`Tra "${displayedHanzi}" trên Hanzii`} />
       </div>
     </Card>
   )

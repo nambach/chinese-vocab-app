@@ -35,6 +35,28 @@ function sortCatalogs(catalogs: Catalog[], sort: SortState): Catalog[] {
   })
 }
 
+function HeadphoneIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className="shrink-0 text-teal-700"
+    >
+      <path
+        d="M3 14v-1a9 9 0 0 1 18 0v1"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <rect x="3" y="13" width="4" height="7" rx="1.5" fill="currentColor" />
+      <rect x="17" y="13" width="4" height="7" rx="1.5" fill="currentColor" />
+    </svg>
+  )
+}
+
 function PinIcon({ filled }: { filled: boolean }) {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -80,7 +102,15 @@ function CatalogCard({
         <PinIcon filled={pinned} />
       </button>
       <button type="button" onClick={onOpen} className="w-full pr-10 text-left">
-        <h3 className="text-xl font-semibold text-teal-950">{catalog.name}</h3>
+        <h3 className="flex min-w-0 items-center gap-2 text-xl font-semibold text-teal-950">
+          {catalog.kewen ? (
+            <>
+              <HeadphoneIcon />
+              <span className="sr-only">Có bài khóa.</span>
+            </>
+          ) : null}
+          <span className="truncate">{catalog.name}</span>
+        </h3>
         <p className="mt-1 text-sm text-teal-700">
           {catalog.words.length} từ
           {catalog.lastResult

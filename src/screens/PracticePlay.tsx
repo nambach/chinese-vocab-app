@@ -15,6 +15,7 @@ import { findDirection, getAnswerText, getPromptText, getSupplementaryFields, WO
 import { SmartInput } from '../components/SmartInput'
 import { BigButton, Card, ScreenShell } from '../components/ui'
 import { Hanzi } from '../components/Hanzi'
+import { HanziiButton } from '../components/HanziiButton'
 import { SpeakButton } from '../components/SpeakButton'
 import { StrokeOrderButton } from '../components/StrokeOrderButton'
 import { useApp } from '../context/AppContext'
@@ -347,6 +348,7 @@ export function PracticePlay({ sessionId }: PracticePlayProps) {
                   text={displayedHanzi}
                   label={`Xem thứ tự nét "${displayedHanzi}"`}
                 />
+                <HanziiButton text={displayedHanzi} label={`Tra "${displayedHanzi}" trên Hanzii`} />
               </div>
             ) : null}
           </Card>

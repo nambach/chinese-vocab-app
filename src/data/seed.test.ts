@@ -12,17 +12,19 @@ import {
 import { LESSON_PACK, LESSON_PACK_VERSION, type BuiltinLesson } from './lessons'
 import { parseCatalogText } from '../lib/txt'
 import { createWord } from './store'
+import { attachBundledKewen } from './kewen'
+import type { LessonFile } from '../shadowing/lessonSchema'
 import type { AppState, Catalog } from '../models/types'
 import { CB2_FOLDER_ID, DEFAULT_BUILTIN_FOLDER_ID, defaultSettings } from '../models/types'
 
 const PACK_V1: BuiltinLesson[] = [
-  { id: 'l1', order: 1, introducedIn: 1, text: '# One\n你 | nǐ | you' },
-  { id: 'l2', order: 2, introducedIn: 1, text: '# Two\n好 | hǎo | good' },
+  { id: 'l1', order: 1, introducedIn: 1, kind: 'set', text: '# One\n你 | nǐ | you' },
+  { id: 'l2', order: 2, introducedIn: 1, kind: 'set', text: '# Two\n好 | hǎo | good' },
 ]
 
 const PACK_V2: BuiltinLesson[] = [
   ...PACK_V1,
-  { id: 'l3', order: 3, introducedIn: 2, text: '# Three\n大 | dà | big' },
+  { id: 'l3', order: 3, introducedIn: 2, kind: 'set', text: '# Three\n大 | dà | big' },
 ]
 
 function makeState(catalogs: Catalog[] = [], seededVersion?: number): AppState {
@@ -92,6 +94,7 @@ describe('updating lessons the user already has', () => {
     id: 'l1',
     order: 1,
     introducedIn: 1,
+    kind: 'set',
     // "you" gains a clarifier, a note is dropped, and a word is appended.
     text: '# One\n你 | nǐ | you (singular)\n们 | men | plural marker',
   }
@@ -219,35 +222,140 @@ describe('updating lessons the user already has', () => {
   })
 })
 
+const KEWEN_FILE: LessonFile = {
+  format: 'cn-vocab-lesson',
+  version: 1,
+  id: 'k1',
+  title: 'Bài khóa',
+  audio: { type: 'file', src: 'audio/shadowing/k1.mp3' },
+  segments: [
+    { id: 's1', text: '你好。', start: 0, end: 1, section: 'kewen' },
+    { id: 's2', text: '好', start: 1.5, end: 2, section: 'shengci' },
+  ],
+  words: [
+    { hanzi: '好', pinyin: 'hǎo', meaning: 'tốt', segments: ['s1', 's2'] },
+    { hanzi: '你', pinyin: 'nǐ', meaning: 'bạn' },
+  ],
+}
+const KEWEN_LESSON: BuiltinLesson = { id: 'k1', order: 1, introducedIn: 1, kind: 'lesson', text: '', file: KEWEN_FILE }
+
+describe('lessons with a 课文', () => {
+  it('seeds the script onto the device with the vocab and its positions', () => {
+    const catalog = buildCatalogFromLesson(KEWEN_LESSON)
+    expect(catalog.kewen).toEqual({
+      lessonId: 'k1',
+      title: 'Bài khóa',
+      audio: { type: 'file', src: 'audio/shadowing/k1.mp3' },
+      segments: KEWEN_FILE.segments,
+    })
+    expect(catalog.kewen?.segments).not.toBe(KEWEN_FILE.segments)
+    expect(catalog.words.map((word) => word.hanzi)).toEqual(['好', '你'])
+    expect(catalog.words[0].sources).toEqual([
+      { lessonId: 'k1', segmentId: 's1' },
+      { lessonId: 'k1', segmentId: 's2' },
+    ])
+    expect(catalog.words[1].sources).toBeUndefined()
+  })
+
+  it('attaches the script to an older word list once, and only adds positions to its words', () => {
+    const oldList: BuiltinLesson = { ...KEWEN_LESSON, kind: 'set', text: '# Bài khóa\n好 | hǎo | của tôi', file: undefined }
+    const state = seedLessons(makeState(), [oldList], 1)
+    const attached = attachBundledKewen(state, [KEWEN_LESSON])
+    const catalog = attached.catalogs[0]
+    expect(catalog.kewen?.segments.map((segment) => segment.id)).toEqual(['s1', 's2'])
+    expect(catalog.words).toHaveLength(1)
+    expect(catalog.words[0]).toMatchObject({ meaning: 'của tôi', id: state.catalogs[0].words[0].id })
+    expect(catalog.words[0].sources).toEqual([
+      { lessonId: 'k1', segmentId: 's1' },
+      { lessonId: 'k1', segmentId: 's2' },
+    ])
+    expect(attachBundledKewen(attached, [KEWEN_LESSON])).toBe(attached)
+  })
+
+  it('never overwrites a script already on the device', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const edited = {
+      ...seeded,
+      catalogs: seeded.catalogs.map((catalog) => ({
+        ...catalog,
+        kewen: { ...catalog.kewen!, segments: [{ id: 's1', text: '您好。', start: 0, end: 1 }] },
+      })),
+    }
+    expect(attachBundledKewen(edited, [KEWEN_LESSON])).toBe(edited)
+  })
+
+  it('leaves pinyin and times alone once the script is on the device', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const corrected: BuiltinLesson = {
+      ...KEWEN_LESSON,
+      file: {
+        ...KEWEN_FILE,
+        segments: [
+          { ...KEWEN_FILE.segments[0], pinyin: 'Nǐ hǎo.', start: 0.2, end: 1.4 },
+          KEWEN_FILE.segments[1],
+        ],
+      },
+    }
+    expect(attachBundledKewen(seeded, [corrected])).toBe(seeded)
+  })
+
+  it('keeps sentence positions when a vocab update is applied', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const v2: BuiltinLesson = {
+      ...KEWEN_LESSON,
+      file: { ...KEWEN_FILE, words: [{ ...KEWEN_FILE.words[0], meaning: 'tốt, hay' }, KEWEN_FILE.words[1]] },
+    }
+    expect(ids(outdatedLessons(seeded, [v2]))).toEqual(['k1'])
+    const word = applyLessonUpdates(seeded, [v2]).catalogs[0].words[0]
+    expect(word.meaning).toBe('tốt, hay')
+    expect(word.sources).toEqual(seeded.catalogs[0].words[0].sources)
+  })
+
+  it('does not offer an update when only the script changed', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const scriptOnly: BuiltinLesson = {
+      ...KEWEN_LESSON,
+      file: { ...KEWEN_FILE, segments: [{ ...KEWEN_FILE.segments[0], text: '您好。' }, KEWEN_FILE.segments[1]] },
+    }
+    expect(outdatedLessons(seeded, [scriptOnly])).toEqual([])
+  })
+})
+
 describe('bundled lesson pack', () => {
-  it('ships 23 lessons with unique ids and valid versions', () => {
-    expect(LESSON_PACK).toHaveLength(23)
+  it('ships 30 lessons with unique ids and valid versions', () => {
+    expect(LESSON_PACK).toHaveLength(30)
     const uniqueIds = new Set(LESSON_PACK.map((l) => l.id))
-    expect(uniqueIds.size).toBe(23)
+    expect(uniqueIds.size).toBe(30)
     for (const lesson of LESSON_PACK) {
       expect(lesson.introducedIn).toBeLessThanOrEqual(LESSON_PACK_VERSION)
     }
   })
 
-  it('is sorted in natural lesson order (bai-01 … bai-23)', () => {
+  it('is sorted in natural lesson order (bai-01 … bai-30)', () => {
     const orders = LESSON_PACK.map((l) => l.order)
     expect(orders).toEqual([...orders].sort((a, b) => a - b))
     expect(LESSON_PACK[0].id).toBe('bai-01')
-    expect(LESSON_PACK[22].id).toBe('bai-23')
+    expect(LESSON_PACK[29].id).toBe('bai-30')
   })
 
   it('every lesson parses into a named catalog with words', () => {
     for (const lesson of LESSON_PACK) {
-      expect(parseCatalogText(lesson.text).errors).toEqual([])
+      if (lesson.kind === 'set') expect(parseCatalogText(lesson.text).errors).toEqual([])
       const catalog = buildCatalogFromLesson(lesson)
       expect(catalog.name).toBeTruthy()
       expect(catalog.words.length).toBeGreaterThan(0)
       expect(catalog.builtinId).toBe(lesson.id)
+      if (lesson.kind === 'lesson') {
+        expect(catalog.kewen?.lessonId).toBe(lesson.id)
+        expect(catalog.kewen?.segments.length).toBe(lesson.file?.segments.length)
+      } else {
+        expect(catalog.kewen).toBeUndefined()
+      }
     }
   })
 
-  it('places bai-16 … bai-23 in the Căn bản 2 folder', () => {
-    for (const id of ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20', 'bai-21', 'bai-22', 'bai-23']) {
+  it('places bai-16 … bai-30 in the Căn bản 2 folder', () => {
+    for (const id of Array.from({ length: 15 }, (_, index) => `bai-${16 + index}`)) {
       const lesson = LESSON_PACK.find((item) => item.id === id)
       expect(lesson).toBeDefined()
       const catalog = buildCatalogFromLesson(lesson!)

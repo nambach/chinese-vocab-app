@@ -112,7 +112,23 @@ describe('persistence + seeding integration', () => {
       DEFAULT_BUILTIN_FOLDER_NAME,
     )
     expect(loaded.catalogs).toHaveLength(LESSON_PACK.length)
-    const cb2Ids = ['bai-16', 'bai-17', 'bai-18', 'bai-19', 'bai-20', 'bai-21', 'bai-22', 'bai-23']
+    const cb2Ids = [
+      'bai-16',
+      'bai-17',
+      'bai-18',
+      'bai-19',
+      'bai-20',
+      'bai-21',
+      'bai-22',
+      'bai-23',
+      'bai-24',
+      'bai-25',
+      'bai-26',
+      'bai-27',
+      'bai-28',
+      'bai-29',
+      'bai-30',
+    ]
     expect(
       loaded.catalogs
         .filter((catalog) => !cb2Ids.includes(catalog.builtinId ?? ''))
@@ -338,7 +354,40 @@ describe('word sources on load', () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
 
     const word = loadState().catalogs[0].words[0]
-    expect(word.sources).toEqual([{ lessonId: 'lesson-01', segmentId: 's2' }])
+    expect(word.sources).toEqual([{ lessonId: 'bai-16', segmentId: 's2' }])
     expect(word).not.toHaveProperty('source')
+  })
+
+  it('rewrites old shadowing lesson ids and drops the duplicate', () => {
+    const state = defaultAppState()
+    state.catalogs = [
+      {
+        id: 'c1',
+        name: 'Bộ',
+        createdAt: 1,
+        updatedAt: 1,
+        words: [
+          {
+            id: 'w1',
+            hanzi: '这',
+            pinyin: 'zhè',
+            meaning: 'này',
+            sources: [
+              { lessonId: 'lesson-01', segmentId: 's2' },
+              { lessonId: 'bai-16', segmentId: 's2' },
+              { lessonId: 'lesson-23', segmentId: 's9' },
+              { lessonId: 'custom-1', segmentId: 's1' },
+            ],
+          },
+        ],
+      },
+    ]
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+
+    expect(loadState().catalogs[0].words[0].sources).toEqual([
+      { lessonId: 'bai-16', segmentId: 's2' },
+      { lessonId: 'bai-23', segmentId: 's9' },
+      { lessonId: 'custom-1', segmentId: 's1' },
+    ])
   })
 })

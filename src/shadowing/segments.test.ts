@@ -5,25 +5,15 @@ import {
   formatClock,
   isPlaybackRate,
   resolveAudioSrc,
-  validateLesson,
+  validateSegments,
 } from './segments'
-import type { ShadowingLesson, ShadowingSegment } from './types'
+import type { ShadowingSegment } from './types'
 
 const segments: ShadowingSegment[] = [
   { id: 's1', text: '一', start: 0.4, end: 2.2 },
   { id: 's2', text: '二', start: 2.8, end: 5.1 },
   { id: 's3', text: '三', start: 6.0, end: 8.4 },
 ]
-
-function lesson(overrides: Partial<ShadowingLesson> = {}): ShadowingLesson {
-  return {
-    id: 'lesson-01',
-    title: 'Bài mẫu',
-    audio: { type: 'file', src: 'audio/shadowing/lesson-01.mp3' },
-    segments,
-    ...overrides,
-  }
-}
 
 describe('findSegmentIndexAt', () => {
   it('returns 0 before the first sentence', () => {
@@ -98,32 +88,22 @@ describe('isPlaybackRate', () => {
   })
 })
 
-describe('validateLesson', () => {
-  it('accepts a well-formed lesson, including touching edges and gaps', () => {
-    expect(validateLesson(lesson())).toEqual([])
+describe('validateSegments', () => {
+  it('accepts touching edges and gaps', () => {
+    expect(validateSegments(segments)).toEqual([])
     expect(
-      validateLesson(
-        lesson({
-          segments: [
-            { id: 's1', text: '一', start: 0, end: 1 },
-            { id: 's2', text: '二', start: 1, end: 2 },
-          ],
-        }),
-      ),
+      validateSegments([
+        { id: 's1', text: '一', start: 0, end: 1 },
+        { id: 's2', text: '二', start: 1, end: 2 },
+      ]),
     ).toEqual([])
   })
 
-  it('rejects overlap, empty text, duplicate ids, and non-file audio', () => {
-    const errors = validateLesson(
-      lesson({
-        audio: { type: 'youtube', videoId: 'abc' },
-        segments: [
-          { id: 's1', text: '  ', start: 1, end: 1 },
-          { id: 's1', text: '二', start: 0.5, end: 2 },
-        ],
-      }),
-    )
-    expect(errors).toContain('audio.type must be file')
+  it('rejects overlap, empty text, and duplicate ids', () => {
+    const errors = validateSegments([
+      { id: 's1', text: '  ', start: 1, end: 1 },
+      { id: 's1', text: '二', start: 0.5, end: 2 },
+    ])
     expect(errors.some((error) => error.includes('invalid range'))).toBe(true)
     expect(errors.some((error) => error.includes('text is empty'))).toBe(true)
     expect(errors.some((error) => error.includes('duplicate'))).toBe(true)

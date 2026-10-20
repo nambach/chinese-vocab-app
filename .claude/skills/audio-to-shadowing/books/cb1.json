@@ -1,0 +1,127 @@
+{
+  "id": "cb1",
+  "title": "Giáo trình Hán ngữ quyển 1",
+  "appFolder": "Căn bản 1",
+  "pdf": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/Giáo trình Hán ngữ quyển 1.pdf",
+  "pagesDir": ".shadowing-work/books/cb1/pages",
+  "pageDpi": 180,
+  "workDir": ".shadowing-work/books/cb1",
+  "idPad": 2,
+  "asrReady": false,
+  "audio": {
+    "use": "hoi-thoai",
+    "recordings": {
+      "hoi-thoai": {
+        "pattern": "/Users/nbach/Documents/Tiếng Trung CB1 - hội thoại/Bai {n:02d} - hoi thoai.mp3",
+        "covers": "课文 only. These files do not read 生词."
+      },
+      "bai-khoa": {
+        "files": {
+          "1": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 1 (bai khoa + tu moi).mp3",
+          "2": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 2 (bai khoa + tu moi).mp3",
+          "3": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 3 (bai khoa + tu moi).mp3",
+          "4": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 4 (bai khoa + tu moi).mp3",
+          "5": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 5 (bai khoa + luyen tap).mp3",
+          "6": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 6.mp3",
+          "7": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 7.mp3",
+          "8": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 8.mp3",
+          "9": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 9.mp3",
+          "10": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 10.mp3",
+          "11": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 11.mp3",
+          "12": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 12.mp3",
+          "13": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 13.mp3",
+          "14": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 14.mp3",
+          "15": "/Users/nbach/Documents/Tiếng Trung CB1/Giáo trình khóa Cơ bản 1/File nghe giáo trình Hán ngữ quyển 1/Bai 15.mp3"
+        },
+        "covers": "课文 and 生词 for lessons 1–4. Lesson 5 is the file named bai khoa + luyen tap. Lessons 6–15 are one file each."
+      }
+    }
+  },
+  "vocab": {
+    "dir": "src/data/lessons",
+    "pattern": "bai-{n:02d}.txt"
+  },
+  "print": {
+    "pageOffset": 18,
+    "sectionNumber": "A white digit in a black box, then the heading, no顿号. The app heading is still 一、课文.",
+    "checked": "Lessons 1 and 2 start on PDF 19 and 31. Lessons 3–15 are the TOC page plus offset 18."
+  },
+  "lessons": {
+    "1": {
+      "start": 19,
+      "end": 30,
+      "printed": 1
+    },
+    "2": {
+      "start": 31,
+      "end": 36,
+      "printed": 13
+    },
+    "3": {
+      "start": 37,
+      "end": 45,
+      "printed": 19
+    },
+    "4": {
+      "start": 46,
+      "end": 54,
+      "printed": 28
+    },
+    "5": {
+      "start": 55,
+      "end": 63,
+      "printed": 37
+    },
+    "6": {
+      "start": 64,
+      "end": 73,
+      "printed": 46
+    },
+    "7": {
+      "start": 74,
+      "end": 80,
+      "printed": 56
+    },
+    "8": {
+      "start": 81,
+      "end": 87,
+      "printed": 63
+    },
+    "9": {
+      "start": 88,
+      "end": 93,
+      "printed": 70
+    },
+    "10": {
+      "start": 94,
+      "end": 103,
+      "printed": 76
+    },
+    "11": {
+      "start": 104,
+      "end": 115,
+      "printed": 86
+    },
+    "12": {
+      "start": 116,
+      "end": 127,
+      "printed": 98
+    },
+    "13": {
+      "start": 128,
+      "end": 141,
+      "printed": 110
+    },
+    "14": {
+      "start": 142,
+      "end": 154,
+      "printed": 124
+    },
+    "15": {
+      "start": 155,
+      "end": 178,
+      "printed": 137
+    }
+  },
+  "appFolderNote": "The app assigns the folder from the lesson number: under 16 is Căn bản 1, 16 and above is Căn bản 2. appFolder is the expected name, not a switch."
+}

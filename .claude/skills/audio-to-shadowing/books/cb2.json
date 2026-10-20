@@ -1,0 +1,97 @@
+{
+  "id": "cb2",
+  "title": "Giáo trình Hán ngữ quyển 2",
+  "appFolder": "Căn bản 2",
+  "pdf": "/Users/nbach/Documents/CB2 - Slides/Giáo trình Hán ngữ quyển 2.pdf",
+  "pagesDir": ".shadowing-work/pdf-pages",
+  "pageDpi": 60,
+  "workDir": ".shadowing-work",
+  "idPad": 0,
+  "asrReady": true,
+  "audio": {
+    "pattern": "/Users/nbach/Documents/CB2 - Nghe/Bài {n} Hán ngữ 2.mp3",
+    "covers": "课文 and 生词"
+  },
+  "vocab": {
+    "dir": "/Users/nbach/Documents/CB2 - Slides/vocab",
+    "pattern": "bai{n}.txt",
+    "lessons": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "print": {
+    "sectionNumber": "Printed with顿号: 一、课文"
+  },
+  "notes": "Lessons 16–29 were built with the old pipeline. Do not rebuild 26–29 unless asked. Lessons 16–25 are in published-segment-ids.json. Lesson 30 is the first lesson of this pipeline; its range runs to page 238 because of the appendix. Page ranges for 16–22 were not recovered — fill them from the TOC before OCR.",
+  "lessons": {
+    "16": {
+      "start": null,
+      "end": null
+    },
+    "17": {
+      "start": null,
+      "end": null
+    },
+    "18": {
+      "start": null,
+      "end": null
+    },
+    "19": {
+      "start": null,
+      "end": null
+    },
+    "20": {
+      "start": null,
+      "end": null
+    },
+    "21": {
+      "start": null,
+      "end": null
+    },
+    "22": {
+      "start": null,
+      "end": null
+    },
+    "23": {
+      "start": 93,
+      "end": 109
+    },
+    "24": {
+      "start": 110,
+      "end": 123
+    },
+    "25": {
+      "start": 124,
+      "end": 137
+    },
+    "26": {
+      "start": 138,
+      "end": 154
+    },
+    "27": {
+      "start": 155,
+      "end": 170
+    },
+    "28": {
+      "start": 171,
+      "end": 184
+    },
+    "29": {
+      "start": 185,
+      "end": 200
+    },
+    "30": {
+      "start": 201,
+      "end": 238
+    }
+  }
+}

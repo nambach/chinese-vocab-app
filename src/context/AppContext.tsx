@@ -32,7 +32,10 @@ import {
   declineLessonUpdates,
 } from '../data/seed'
 import type { BuiltinLesson } from '../data/lessons'
+import { saveKewen } from '../data/kewenEdit'
+import { setWordSources } from '../data/lessonTransfer'
 import { parseHash, serializeView } from '../lib/router'
+import type { ShadowingSegment } from '../shadowing/types'
 import { trackPageView } from '../lib/analytics'
 import {
   createPracticeSession,
@@ -50,6 +53,7 @@ import type {
   View,
   Word,
   WordDraft,
+  WordSource,
 } from '../models/types'
 
 type AppContextValue = {
@@ -90,6 +94,8 @@ type AppContextValue = {
   outdatedBuiltinLessons: BuiltinLesson[]
   acceptBuiltinLessonUpdates: () => void
   declineBuiltinLessonUpdates: () => void
+  saveKewenEdits: (catalogId: string, segments: readonly ShadowingSegment[]) => void
+  setWordSources: (catalogId: string, wordId: string, sources: readonly WordSource[]) => void
 }
 
 const AppContext = createContext<AppContextValue | null>(null)
@@ -252,6 +258,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       outdatedBuiltinLessons: getOutdatedBuiltinLessons(state),
       acceptBuiltinLessonUpdates: () => setState((current) => acceptLessonUpdates(current)),
       declineBuiltinLessonUpdates: () => setState((current) => declineLessonUpdates(current)),
+      saveKewenEdits: (catalogId, segments) => {
+        setState((current) => saveKewen(current, catalogId, segments))
+      },
+      setWordSources: (catalogId, wordId, sources) => {
+        setState((current) => setWordSources(current, catalogId, wordId, sources))
+      },
     }),
     [state, view, sessions, quickSuite, setView, goBack],
   )

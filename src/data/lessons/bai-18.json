@@ -1,0 +1,796 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-18",
+  "title": "Bài 18",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-18.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0,
+      "end": 1.92,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、我去邮局寄包裹",
+      "pinyin": "Yī, wǒ qù yóujú jì bāoguǒ",
+      "meaning": "Bài 1: Tôi đi bưu điện gửi bưu phẩm",
+      "start": 1.92,
+      "end": 7.64,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "张东，你要去哪儿？",
+      "pinyin": "Zhāng Dōng, nǐ yào qù nǎr?",
+      "meaning": "Trương Đông, bạn đi đâu thế?",
+      "start": 7.64,
+      "end": 11.71,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "我去邮局寄包裹，顺便去书店买一本书。",
+      "pinyin": "Wǒ qù yóujú jì bāoguǒ, shùnbiàn qù shūdiàn mǎi yì běn shū.",
+      "meaning": "Mình đi bưu điện gửi bưu phẩm, tiện thể ghé hiệu sách mua một cuốn.",
+      "start": 13.18,
+      "end": 20,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "你去吗？",
+      "pinyin": "Nǐ qù ma?",
+      "meaning": "Bạn đi không?",
+      "start": 20.24,
+      "end": 21.53,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "不去，一会儿玛丽来找我。",
+      "pinyin": "Bú qù, yíhuìr Mǎlì lái zhǎo wǒ.",
+      "meaning": "Không đi, lát nữa Mary đến tìm mình.",
+      "start": 21.88,
+      "end": 27.75,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "你顺便替我买几张邮票和一份青年报吧。",
+      "pinyin": "Nǐ shùnbiàn tì wǒ mǎi jǐ zhāng yóupiào hé yí fèn Qīngnián bào ba.",
+      "meaning": "Tiện thể mua giúp mình mấy con tem và một tờ báo Thanh niên nhé.",
+      "start": 28.7,
+      "end": 35.37,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "好的。",
+      "pinyin": "Hǎo de.",
+      "meaning": "Được.",
+      "start": 36.38,
+      "end": 37.37,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "我给你拿钱。",
+      "pinyin": "Wǒ gěi nǐ ná qián.",
+      "meaning": "Mình đưa bạn tiền.",
+      "start": 38.2,
+      "end": 39.74,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "不用，先用我的钱买吧。",
+      "pinyin": "Búyòng, xiān yòng wǒ de qián mǎi ba.",
+      "meaning": "Không cần, cứ dùng tiền của mình mua trước đi.",
+      "start": 40.88,
+      "end": 44.68,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "二、外贸代表团明天去上海参观",
+      "pinyin": "Èr, wàimào dàibiǎo tuán míngtiān qù Shànghǎi cānguān",
+      "meaning": "Bài 2: Đoàn đại biểu ngoại thương ngày mai đi Thượng Hải tham quan",
+      "start": 47.23,
+      "end": 52.4,
+      "section": "heading"
+    },
+    {
+      "id": "s12",
+      "text": "玛丽，我明天去上海。",
+      "pinyin": "Mǎlì, wǒ míngtiān qù Shànghǎi.",
+      "meaning": "Mary, ngày mai mình đi Thượng Hải.",
+      "start": 52.4,
+      "end": 57.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "你去上海旅行吗？",
+      "pinyin": "Nǐ qù Shànghǎi lǚxíng ma?",
+      "meaning": "Bạn đi Thượng Hải du lịch à?",
+      "start": 57.85,
+      "end": 61.35,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "不，明天一个外贸代表团去上海参观，我去给他们当翻译。",
+      "pinyin": "Bù, míngtiān yí gè wàimào dàibiǎo tuán qù Shànghǎi cānguān, wǒ qù gěi tāmen dāng fānyì.",
+      "meaning": "Không, ngày mai một đoàn đại biểu ngoại thương đi Thượng Hải tham quan, mình đi phiên dịch cho họ.",
+      "start": 62.18,
+      "end": 72.58,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "坐飞机去还是坐火车去？",
+      "pinyin": "Zuò fēijī qù háishi zuò huǒchē qù?",
+      "meaning": "Đi máy bay hay đi tàu hỏa?",
+      "start": 73.28,
+      "end": 77.31,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "坐飞机去。",
+      "pinyin": "Zuò fēijī qù.",
+      "meaning": "Đi máy bay.",
+      "start": 78.26,
+      "end": 80.12,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "什么时候回来？",
+      "pinyin": "Shénme shíhou huílái?",
+      "meaning": "Khi nào thì về?",
+      "start": 81.48,
+      "end": 82.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "八号回来。",
+      "pinyin": "Bā hào huílái.",
+      "meaning": "Ngày mùng 8 về.",
+      "start": 84.14,
+      "end": 85.65,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "替我办一件事，行吗？",
+      "pinyin": "Tì wǒ bàn yí jiàn shì, xíng ma?",
+      "meaning": "Làm giúp mình một việc, được không?",
+      "start": 86.52,
+      "end": 89.53,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "什么事？",
+      "pinyin": "Shénme shì?",
+      "meaning": "Việc gì vậy?",
+      "start": 90.56,
+      "end": 91.38,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "你说吧。",
+      "pinyin": "Nǐ shuō ba.",
+      "meaning": "Cứ nói đi.",
+      "start": 91.38,
+      "end": 93.15,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "帮我浇一下儿花。",
+      "pinyin": "Bāng wǒ jiāo yíxiàr huā.",
+      "meaning": "Tưới giúp mình hoa một chút.",
+      "start": 94.48,
+      "end": 96.75,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "行，没问题。",
+      "pinyin": "Xíng, méi wèntí.",
+      "meaning": "Được, không sao.",
+      "start": 97.46,
+      "end": 99.35,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 102.17,
+      "end": 103.82,
+      "section": "heading"
+    },
+    {
+      "id": "s25",
+      "text": "包裹",
+      "pinyin": "bāoguǒ",
+      "meaning": "bưu phẩm",
+      "start": 103.82,
+      "end": 106.54,
+      "section": "shengci"
+    },
+    {
+      "id": "s26",
+      "text": "顺便",
+      "pinyin": "shùnbiàn",
+      "meaning": "nhân tiện",
+      "start": 106.54,
+      "end": 108.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s27",
+      "text": "替",
+      "pinyin": "tì",
+      "meaning": "thay, giùm",
+      "start": 108.96,
+      "end": 111.06,
+      "section": "shengci"
+    },
+    {
+      "id": "s28",
+      "text": "邮票",
+      "pinyin": "yóupiào",
+      "meaning": "tem",
+      "start": 111.06,
+      "end": 113.66,
+      "section": "shengci"
+    },
+    {
+      "id": "s29",
+      "text": "份",
+      "pinyin": "fèn",
+      "meaning": "phần, tờ",
+      "start": 115.06,
+      "end": 115.52,
+      "section": "shengci"
+    },
+    {
+      "id": "s30",
+      "text": "青年",
+      "pinyin": "qīngnián",
+      "meaning": "thanh niên",
+      "start": 115.52,
+      "end": 118.25,
+      "section": "shengci"
+    },
+    {
+      "id": "s31",
+      "text": "报",
+      "pinyin": "bào",
+      "meaning": "báo",
+      "start": 119.6,
+      "end": 120.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s32",
+      "text": "报纸",
+      "pinyin": "bàozhǐ",
+      "meaning": "báo giấy",
+      "start": 120.04,
+      "end": 122.77,
+      "section": "shengci"
+    },
+    {
+      "id": "s33",
+      "text": "拿",
+      "pinyin": "ná",
+      "meaning": "cầm, lấy",
+      "start": 124.14,
+      "end": 124.94,
+      "section": "shengci"
+    },
+    {
+      "id": "s34",
+      "text": "不用",
+      "pinyin": "búyòng",
+      "meaning": "không cần",
+      "start": 126.22,
+      "end": 127.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s35",
+      "text": "用",
+      "pinyin": "yòng",
+      "meaning": "dùng",
+      "start": 128.58,
+      "end": 129.16,
+      "section": "shengci"
+    },
+    {
+      "id": "s36",
+      "text": "旅行",
+      "pinyin": "lǚxíng",
+      "meaning": "du lịch",
+      "start": 129.16,
+      "end": 131.88,
+      "section": "shengci"
+    },
+    {
+      "id": "s37",
+      "text": "代表",
+      "pinyin": "dàibiǎo",
+      "meaning": "đại biểu",
+      "start": 131.88,
+      "end": 134.44,
+      "section": "shengci"
+    },
+    {
+      "id": "s38",
+      "text": "团",
+      "pinyin": "tuán",
+      "meaning": "đoàn",
+      "start": 134.44,
+      "end": 136.34,
+      "section": "shengci"
+    },
+    {
+      "id": "s39",
+      "text": "参观",
+      "pinyin": "cānguān",
+      "meaning": "tham quan",
+      "start": 136.34,
+      "end": 138.94,
+      "section": "shengci"
+    },
+    {
+      "id": "s40",
+      "text": "当",
+      "pinyin": "dāng",
+      "meaning": "làm",
+      "start": 140.24,
+      "end": 141.02,
+      "section": "shengci"
+    },
+    {
+      "id": "s41",
+      "text": "翻译",
+      "pinyin": "fānyì",
+      "meaning": "phiên dịch",
+      "start": 141.02,
+      "end": 143.47,
+      "section": "shengci"
+    },
+    {
+      "id": "s42",
+      "text": "飞机",
+      "pinyin": "fēijī",
+      "meaning": "máy bay",
+      "start": 143.47,
+      "end": 146.07,
+      "section": "shengci"
+    },
+    {
+      "id": "s43",
+      "text": "飞",
+      "pinyin": "fēi",
+      "meaning": "bay",
+      "start": 146.07,
+      "end": 148.14,
+      "section": "shengci"
+    },
+    {
+      "id": "s44",
+      "text": "火车",
+      "pinyin": "huǒchē",
+      "meaning": "tàu hỏa",
+      "start": 148.14,
+      "end": 150.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s45",
+      "text": "回来",
+      "pinyin": "huílái",
+      "meaning": "trở về",
+      "start": 150.62,
+      "end": 153.22,
+      "section": "shengci"
+    },
+    {
+      "id": "s46",
+      "text": "办",
+      "pinyin": "bàn",
+      "meaning": "lo liệu",
+      "start": 154.25,
+      "end": 154.74,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "帮",
+      "pinyin": "bāng",
+      "meaning": "giúp",
+      "start": 154.74,
+      "end": 157.02,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "浇",
+      "pinyin": "jiāo",
+      "meaning": "tưới",
+      "start": 158.3,
+      "end": 159.12,
+      "section": "shengci"
+    },
+    {
+      "id": "s49",
+      "text": "花",
+      "pinyin": "huā",
+      "meaning": "hoa",
+      "start": 160.4,
+      "end": 160.92,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "没问题",
+      "pinyin": "méi wèntí",
+      "meaning": "không vấn đề",
+      "start": 160.92,
+      "end": 163.66,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "问题",
+      "pinyin": "wèntí",
+      "meaning": "vấn đề",
+      "start": 164.94,
+      "end": 165.94,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "专名",
+      "pinyin": "Zhuānmíng",
+      "meaning": "Danh từ riêng",
+      "start": 165.94,
+      "end": 168.28,
+      "section": "heading"
+    },
+    {
+      "id": "s53",
+      "text": "上海",
+      "pinyin": "shànghǎi",
+      "meaning": "Thượng Hải",
+      "start": 168.28,
+      "end": 170.84,
+      "section": "shengci"
+    },
+    {
+      "id": "s54",
+      "text": "珍妮",
+      "pinyin": "zhēnnī",
+      "meaning": "Janet",
+      "start": 170.84,
+      "end": 173.62,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "包裹",
+      "pinyin": "bāoguǒ",
+      "meaning": "hàng, bưu phẩm, bưu kiện",
+      "segments": [
+        "s4",
+        "s25"
+      ]
+    },
+    {
+      "hanzi": "顺便",
+      "pinyin": "shùnbiàn",
+      "meaning": "nhân tiện, tiện thể",
+      "segments": [
+        "s4",
+        "s26"
+      ]
+    },
+    {
+      "hanzi": "替",
+      "pinyin": "tì",
+      "meaning": "thay, thay thế, giùm",
+      "note": "A 替 B + V (+O) = A làm giùm/thay B",
+      "segments": [
+        "s7",
+        "s27"
+      ]
+    },
+    {
+      "hanzi": "邮票",
+      "pinyin": "yóupiào",
+      "meaning": "tem",
+      "segments": [
+        "s7",
+        "s28"
+      ]
+    },
+    {
+      "hanzi": "报",
+      "pinyin": "bào",
+      "meaning": "báo (nói chung)",
+      "note": "tên báo + 报 để nói cụ thể, VD: 青年报",
+      "segments": [
+        "s7",
+        "s31"
+      ]
+    },
+    {
+      "hanzi": "报纸",
+      "pinyin": "bàozhǐ",
+      "meaning": "báo giấy",
+      "segments": [
+        "s32"
+      ]
+    },
+    {
+      "hanzi": "青年",
+      "pinyin": "qīngnián",
+      "meaning": "thanh niên",
+      "segments": [
+        "s7",
+        "s30"
+      ]
+    },
+    {
+      "hanzi": "份",
+      "pinyin": "fèn",
+      "meaning": "phần, suất, tờ, số, bản",
+      "note": "一份饭, 一份青年报",
+      "segments": [
+        "s7",
+        "s29"
+      ]
+    },
+    {
+      "hanzi": "拿",
+      "pinyin": "ná",
+      "meaning": "cầm, lấy",
+      "segments": [
+        "s9",
+        "s33"
+      ]
+    },
+    {
+      "hanzi": "用",
+      "pinyin": "yòng",
+      "meaning": "dùng, sử dụng",
+      "segments": [
+        "s10",
+        "s35"
+      ]
+    },
+    {
+      "hanzi": "不用",
+      "pinyin": "búyòng",
+      "meaning": "không cần",
+      "segments": [
+        "s10",
+        "s34"
+      ]
+    },
+    {
+      "hanzi": "旅行",
+      "pinyin": "lǚxíng",
+      "meaning": "du lịch",
+      "segments": [
+        "s13",
+        "s36"
+      ]
+    },
+    {
+      "hanzi": "代表",
+      "pinyin": "dàibiǎo",
+      "meaning": "đại biểu; thay mặt, đại diện",
+      "segments": [
+        "s14",
+        "s37"
+      ]
+    },
+    {
+      "hanzi": "团",
+      "pinyin": "tuán",
+      "meaning": "nhóm, đoàn; nắm, đốm (lượng từ cho vật hình tròn)",
+      "segments": [
+        "s14",
+        "s38"
+      ]
+    },
+    {
+      "hanzi": "参观",
+      "pinyin": "cānguān",
+      "meaning": "tham quan",
+      "segments": [
+        "s14",
+        "s39"
+      ]
+    },
+    {
+      "hanzi": "当",
+      "pinyin": "dāng",
+      "meaning": "làm (+ nghề nghiệp, chức vụ)",
+      "note": "VD: 我想当老师",
+      "segments": [
+        "s14",
+        "s40"
+      ]
+    },
+    {
+      "hanzi": "翻译",
+      "pinyin": "fānyì",
+      "meaning": "phiên dịch; phiên dịch viên",
+      "segments": [
+        "s14",
+        "s41"
+      ]
+    },
+    {
+      "hanzi": "飞机",
+      "pinyin": "fēijī",
+      "meaning": "máy bay",
+      "segments": [
+        "s15",
+        "s42"
+      ]
+    },
+    {
+      "hanzi": "火车",
+      "pinyin": "huǒchē",
+      "meaning": "tàu lửa, tàu hỏa",
+      "segments": [
+        "s15",
+        "s44"
+      ]
+    },
+    {
+      "hanzi": "飞",
+      "pinyin": "fēi",
+      "meaning": "bay",
+      "segments": [
+        "s43"
+      ]
+    },
+    {
+      "hanzi": "回来",
+      "pinyin": "huílái",
+      "meaning": "trở về, về đây (hướng lại gần người nói)",
+      "segments": [
+        "s17",
+        "s45"
+      ]
+    },
+    {
+      "hanzi": "回去",
+      "pinyin": "huíqù",
+      "meaning": "trở về, về đó (hướng ra xa người nói)"
+    },
+    {
+      "hanzi": "办",
+      "pinyin": "bàn",
+      "meaning": "làm, lo liệu (+ thủ tục)",
+      "segments": [
+        "s19",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "帮",
+      "pinyin": "bāng",
+      "meaning": "giúp, giúp đỡ",
+      "note": "A 帮 B + V (+O)",
+      "segments": [
+        "s22",
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "浇",
+      "pinyin": "jiāo",
+      "meaning": "tưới (nước)",
+      "segments": [
+        "s22",
+        "s48"
+      ]
+    },
+    {
+      "hanzi": "花",
+      "pinyin": "huā",
+      "meaning": "hoa, bông hoa",
+      "segments": [
+        "s22",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "问题",
+      "pinyin": "wèntí",
+      "meaning": "vấn đề, câu hỏi",
+      "segments": [
+        "s23",
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "没问题",
+      "pinyin": "méi wèntí",
+      "meaning": "không vấn đề gì, không sao",
+      "segments": [
+        "s23",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "邮局",
+      "pinyin": "yóujú",
+      "meaning": "bưu điện",
+      "segments": [
+        "s4"
+      ]
+    },
+    {
+      "hanzi": "市场",
+      "pinyin": "shìchǎng",
+      "meaning": "chợ"
+    },
+    {
+      "hanzi": "医院",
+      "pinyin": "yīyuàn",
+      "meaning": "bệnh viện"
+    },
+    {
+      "hanzi": "商店",
+      "pinyin": "shāngdiàn",
+      "meaning": "cửa hàng"
+    },
+    {
+      "hanzi": "公司",
+      "pinyin": "gōngsī",
+      "meaning": "công ty"
+    },
+    {
+      "hanzi": "公共汽车",
+      "pinyin": "gōnggòng qìchē",
+      "meaning": "xe buýt"
+    },
+    {
+      "hanzi": "怎么走",
+      "pinyin": "zěnme zǒu",
+      "meaning": "hỏi đường, đi lối nào",
+      "note": "địa điểm + 怎么走"
+    },
+    {
+      "hanzi": "怎么去",
+      "pinyin": "zěnme qù",
+      "meaning": "đi thế nào, đi bằng gì",
+      "note": "怎么去 + địa điểm; có thể trả lời bằng phương tiện hoặc bằng đường đi"
+    }
+  ]
+}

@@ -1,19 +1,31 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { clampIndex, findSegmentIndexAt, formatClock, resolveAudioSrc } from './segments'
-import { WaveSurferPlayer } from './player/WaveSurferPlayer'
+import { WaveSurferPlayer, type RegionTimingUpdate, type TimeRange } from './player/WaveSurferPlayer'
 import type { ShadowingLesson } from './types'
+
+export type ShadowingEditorOptions = {
+  editableSegmentId: string | null
+  onRegionUpdate?: (update: RegionTimingUpdate) => void
+  onRegionUpdated?: (update: RegionTimingUpdate) => void
+  onSelection?: (range: TimeRange | null) => void
+  /** Waveform click in edit mode. `time` is seconds into the audio. */
+  onSeek?: (time: number) => void
+}
 
 const CLOCK_INTERVAL_MS = 250
 
 type Options = {
   initialRate: number
   onRateChange?: (rate: number) => void
+  editor?: ShadowingEditorOptions
 }
+
+export type ShadowingPlayerController = ReturnType<typeof useShadowingPlayer>
 
 export function useShadowingPlayer(
   lesson: ShadowingLesson,
   container: HTMLElement | null,
-  { initialRate, onRateChange }: Options,
+  { initialRate, onRateChange, editor }: Options,
 ) {
   const segmentsRef = useRef(lesson.segments)
   segmentsRef.current = lesson.segments
@@ -22,6 +34,8 @@ export function useShadowingPlayer(
   const playSegmentRef = useRef<(index: number) => void>(() => {})
   const onRateChangeRef = useRef(onRateChange)
   onRateChangeRef.current = onRateChange
+  const editorRef = useRef(editor)
+  editorRef.current = editor
 
   const lastClock = useRef(0)
 
@@ -33,6 +47,7 @@ export function useShadowingPlayer(
   const [rate, setRateState] = useState(initialRate)
   const [clock, setClock] = useState(0)
   const [duration, setDuration] = useState(0)
+  const [zoomFactor, setZoomFactor] = useState(1)
   const rateRef = useRef(rate)
   rateRef.current = rate
 
@@ -54,7 +69,11 @@ export function useShadowingPlayer(
     const player = new WaveSurferPlayer(container, resolveAudioSrc(audioSrc))
     playerRef.current = player
     player.setPlaybackRate(rateRef.current)
+    // Apply before the ready effect. A recreated player (StrictMode, a new
+    // container) keeps `ready` true, so that effect would not run again.
+    if (editorRef.current) player.setEditMode(true)
     player.setOnRegionClick((id) => {
+      if (editorRef.current) return
       const index = segmentsRef.current.findIndex((segment) => segment.id === id)
       if (index >= 0) playSegmentRef.current(index)
     })
@@ -66,7 +85,10 @@ export function useShadowingPlayer(
         player.setPlaybackRate(rateRef.current)
       }),
       player.on('timeupdate', (time) => publishTime(time, false)),
-      player.on('seek', (time) => publishTime(time, true)),
+      player.on('seek', (time) => {
+        publishTime(time, true)
+        editorRef.current?.onSeek?.(time)
+      }),
       player.on('play', () => setPlaying(true)),
       player.on('pause', () => setPlaying(false)),
       player.on('error', () => setError(true)),
@@ -76,14 +98,33 @@ export function useShadowingPlayer(
       for (const unsubscribe of unsubscribers) unsubscribe()
       player.destroy()
       if (playerRef.current === player) playerRef.current = null
+      setReady(false)
     }
   }, [audioSrc, container, publishTime])
+
+  const editing = editor != null
+  const editableSegmentId = editor?.editableSegmentId ?? null
 
   useEffect(() => {
     const player = playerRef.current
     if (!player || !ready) return
-    player.setRegions(lesson.segments, lesson.segments[activeIndex]?.id ?? null)
-  }, [activeIndex, lesson.segments, ready])
+    player.setEditMode(editing)
+  }, [editing, ready])
+
+  useEffect(() => {
+    const player = playerRef.current
+    if (!player || !ready) return
+    const activeId = editing ? null : (lesson.segments[activeIndex]?.id ?? null)
+    player.setRegions(lesson.segments, activeId, { editableId: editableSegmentId })
+  }, [activeIndex, editableSegmentId, editing, lesson.segments, ready])
+
+  useEffect(() => {
+    const player = playerRef.current
+    if (!player || !ready) return
+    player.setOnRegionUpdate(editor?.onRegionUpdate ?? null)
+    player.setOnRegionUpdated(editor?.onRegionUpdated ?? null)
+    player.setOnSelection(editor?.onSelection ?? null)
+  }, [editor?.onRegionUpdate, editor?.onRegionUpdated, editor?.onSelection, ready])
 
   const playSegment = useCallback((index: number) => {
     const segments = segmentsRef.current
@@ -112,6 +153,11 @@ export function useShadowingPlayer(
     playerRef.current?.pause()
   }, [])
 
+  const playRange = useCallback((start: number, end: number) => {
+    if (end <= start) return
+    playerRef.current?.playRange(start, end)
+  }, [])
+
   const togglePlay = useCallback(() => {
     const player = playerRef.current
     if (!player) return
@@ -126,6 +172,28 @@ export function useShadowingPlayer(
       return nextLoop
     })
   }, [])
+
+  const zoomIn = useCallback(() => {
+    setZoomFactor(playerRef.current?.zoomIn() ?? 1)
+  }, [])
+
+  const zoomOut = useCallback(() => {
+    setZoomFactor(playerRef.current?.zoomOut() ?? 1)
+  }, [])
+
+  const zoomReset = useCallback(() => {
+    setZoomFactor(playerRef.current?.zoomReset() ?? 1)
+  }, [])
+
+  const scrollIntoView = useCallback((start: number, end: number) => {
+    playerRef.current?.scrollIntoView(start, end)
+  }, [])
+
+  const clearSelection = useCallback(() => {
+    playerRef.current?.clearSelection()
+  }, [])
+
+  const getCurrentTime = useCallback(() => playerRef.current?.getCurrentTime() ?? 0, [])
 
   const setRate = useCallback((nextRate: number) => {
     setRateState(nextRate)
@@ -145,8 +213,10 @@ export function useShadowingPlayer(
     loop,
     rate,
     timeLabel: formatClock(clock),
+    currentTime: clock,
     duration,
     playSegment,
+    playRange,
     replay,
     next,
     prev,
@@ -154,5 +224,12 @@ export function useShadowingPlayer(
     togglePlay,
     toggleLoop,
     setRate,
+    zoomIn,
+    zoomOut,
+    zoomReset,
+    zoomed: zoomFactor > 1.001,
+    scrollIntoView,
+    clearSelection,
+    getCurrentTime,
   }
 }

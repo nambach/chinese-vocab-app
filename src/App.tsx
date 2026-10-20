@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react'
 import { AppProvider, useApp } from './context/AppContext'
 import { LessonSeedPrompt } from './components/LessonSeedPrompt'
 import { LessonUpdatePrompt } from './components/LessonUpdatePrompt'
@@ -17,18 +16,7 @@ import { Results } from './screens/Results'
 import { Settings } from './screens/Settings'
 import { ShadowingList } from './screens/ShadowingList'
 import { Study } from './screens/Study'
-
-const ShadowingLesson = lazy(() =>
-  import('./screens/ShadowingLesson').then((module) => ({ default: module.ShadowingLesson })),
-)
-
-function ScreenFallback() {
-  return (
-    <div className="flex min-h-dvh items-center justify-center bg-teal-50 text-teal-700 md:min-h-full">
-      Đang mở bài…
-    </div>
-  )
-}
+import { KewenEditor } from './screens/KewenEditor'
 
 function Router() {
   const { view } = useApp()
@@ -62,12 +50,8 @@ function Router() {
       return <Results sessionId={view.sessionId} />
     case 'shadowingList':
       return <ShadowingList />
-    case 'shadowingLesson':
-      return (
-        <Suspense fallback={<ScreenFallback />}>
-          <ShadowingLesson lessonId={view.lessonId} />
-        </Suspense>
-      )
+    case 'editKewen':
+      return <KewenEditor catalogId={view.catalogId} segmentId={view.segmentId} />
     case 'home':
     default:
       return <Home />

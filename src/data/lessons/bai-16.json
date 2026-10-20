@@ -1,0 +1,920 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-16",
+  "title": "Bài 16",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-16.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0,
+      "end": 1.78,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、你常去图书馆吗",
+      "pinyin": "Yī, nǐ cháng qù túshūguǎn ma",
+      "meaning": "Bài 1: Bạn có hay đến thư viện không",
+      "start": 1.78,
+      "end": 6.47,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "我现在去图书馆。",
+      "pinyin": "Wǒ xiànzài qù túshūguǎn.",
+      "meaning": "Bây giờ mình đi thư viện.",
+      "start": 7.65,
+      "end": 10.24,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "你跟我一起去，好吗？",
+      "pinyin": "Nǐ gēn wǒ yìqǐ qù, hǎo ma?",
+      "meaning": "Bạn đi cùng mình nhé, được không?",
+      "start": 10.24,
+      "end": 14.21,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "好，咱们走吧。",
+      "pinyin": "Hǎo, zánmen zǒu ba.",
+      "meaning": "Được, chúng ta đi thôi.",
+      "start": 14.71,
+      "end": 17.21,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "你常去图书馆吗？",
+      "pinyin": "Nǐ cháng qù túshūguǎn ma?",
+      "meaning": "Bạn có hay đến thư viện không?",
+      "start": 17.65,
+      "end": 20.65,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "常去。我常借书，也常在那儿看书。",
+      "pinyin": "Cháng qù. Wǒ cháng jiè shū, yě cháng zài nàr kàn shū.",
+      "meaning": "Hay đi chứ, mình thường mượn sách, cũng hay đọc sách ở đó.",
+      "start": 21.41,
+      "end": 26.87,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "你呢？",
+      "pinyin": "Nǐ ne?",
+      "meaning": "Còn bạn?",
+      "start": 27.23,
+      "end": 28.22,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "常去吗？",
+      "pinyin": "Cháng qù ma?",
+      "meaning": "Có hay đi không?",
+      "start": 28.38,
+      "end": 29.9,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "我也常去。",
+      "pinyin": "Wǒ yě cháng qù.",
+      "meaning": "Mình cũng hay đi.",
+      "start": 30.77,
+      "end": 31.43,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "有时候借书，有时候上网查资料，但不常在那儿看书。",
+      "pinyin": "Yǒu shíhou jiè shū, yǒu shíhou shàngwǎng chá zīliào, dàn bù cháng zài nàr kàn shū.",
+      "meaning": "Có lúc mượn sách, có lúc lên mạng tra tài liệu, nhưng không hay đọc sách ở đó.",
+      "start": 31.43,
+      "end": 41.15,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "我总在宿舍看书。",
+      "pinyin": "Wǒ zǒng zài sùshè kàn shū.",
+      "meaning": "Mình luôn đọc sách ở ký túc xá.",
+      "start": 41.15,
+      "end": 44.86,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "你的宿舍安静吗？",
+      "pinyin": "Nǐ de sùshè ānjìng ma?",
+      "meaning": "Ký túc xá của bạn có yên tĩnh không?",
+      "start": 45.69,
+      "end": 48.39,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "很安静。",
+      "pinyin": "Hěn ānjìng.",
+      "meaning": "Rất yên tĩnh.",
+      "start": 49.01,
+      "end": 50.14,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "二、晚上你常做什么",
+      "pinyin": "Èr, wǎnshang nǐ cháng zuò shénme",
+      "meaning": "Bài 2: Buổi tối bạn thường làm gì",
+      "start": 51.81,
+      "end": 55.21,
+      "section": "heading"
+    },
+    {
+      "id": "s16",
+      "text": "晚上你常做什么？",
+      "pinyin": "Wǎnshang nǐ cháng zuò shénme?",
+      "meaning": "Buổi tối bạn thường làm gì?",
+      "start": 56.59,
+      "end": 58.44,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "复习课文，预习生词，或者做练习。",
+      "pinyin": "Fùxí kèwén, yùxí shēngcí, huòzhě zuò liànxí.",
+      "meaning": "Ôn bài khóa, chuẩn bị trước từ mới, hoặc làm bài tập.",
+      "start": 59.83,
+      "end": 65.4,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "有时候上网跟朋友聊天儿或者收发伊妹儿。",
+      "pinyin": "Yǒu shíhou shàngwǎng gēn péngyou liáotiānr huòzhě shōufā yīmèir.",
+      "meaning": "Có lúc lên mạng tán gẫu với bạn bè, hoặc gửi nhận e-mail.",
+      "start": 66.23,
+      "end": 73.02,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "我也是，我还常看中文电影和电视剧的DVD。",
+      "pinyin": "Wǒ yě shì, wǒ hái cháng kàn Zhōngwén diànyǐng hé diànshìjù de DVD.",
+      "meaning": "Mình cũng vậy, mình còn hay xem DVD phim điện ảnh và phim truyền hình tiếng Trung.",
+      "start": 73.02,
+      "end": 80.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "你常看吗？",
+      "pinyin": "Nǐ cháng kàn ma?",
+      "meaning": "Bạn có hay xem không?",
+      "start": 81.14,
+      "end": 82.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "我很少看。",
+      "pinyin": "Wǒ hěn shǎo kàn.",
+      "meaning": "Mình rất ít khi xem.",
+      "start": 83.15,
+      "end": 84.58,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "星期六和星期日你做什么？",
+      "pinyin": "Xīngqīliù hé xīngqīrì nǐ zuò shénme?",
+      "meaning": "Thứ Bảy và Chủ nhật bạn làm gì?",
+      "start": 85.61,
+      "end": 89.88,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "有时候在宿舍休息，有时候跟朋友一起去公园玩儿，或者去超市买东西。",
+      "pinyin": "Yǒu shíhou zài sùshè xiūxi, yǒu shíhou gēn péngyou yìqǐ qù gōngyuán wánr, huòzhě qù chāoshì mǎi dōngxi.",
+      "meaning": "Có lúc mình nghỉ ngơi ở ký túc xá, có lúc cùng bạn bè đi công viên chơi, hoặc đi siêu thị mua đồ.",
+      "start": 89.88,
+      "end": 101.04,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 103.28,
+      "end": 104.85,
+      "section": "heading"
+    },
+    {
+      "id": "s25",
+      "text": "现在",
+      "pinyin": "xiànzài",
+      "meaning": "bây giờ, hiện tại",
+      "start": 105.8,
+      "end": 106.98,
+      "section": "shengci"
+    },
+    {
+      "id": "s26",
+      "text": "跟",
+      "pinyin": "gēn",
+      "meaning": "cùng, với",
+      "start": 108.06,
+      "end": 108.71,
+      "section": "shengci"
+    },
+    {
+      "id": "s27",
+      "text": "一起",
+      "pinyin": "yìqǐ",
+      "meaning": "cùng nhau",
+      "start": 109.73,
+      "end": 110.7,
+      "section": "shengci"
+    },
+    {
+      "id": "s28",
+      "text": "咱们",
+      "pinyin": "zánmen",
+      "meaning": "chúng ta",
+      "start": 110.7,
+      "end": 113.1,
+      "section": "shengci"
+    },
+    {
+      "id": "s29",
+      "text": "走",
+      "pinyin": "zǒu",
+      "meaning": "đi",
+      "start": 113.1,
+      "end": 114.92,
+      "section": "shengci"
+    },
+    {
+      "id": "s30",
+      "text": "常",
+      "pinyin": "cháng",
+      "meaning": "thường",
+      "start": 114.92,
+      "end": 116.7,
+      "section": "shengci"
+    },
+    {
+      "id": "s31",
+      "text": "常常",
+      "pinyin": "chángcháng",
+      "meaning": "thường, thường xuyên",
+      "start": 116.7,
+      "end": 118.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s32",
+      "text": "有时候",
+      "pinyin": "yǒu shíhou",
+      "meaning": "có lúc, thỉnh thoảng",
+      "start": 118.96,
+      "end": 121.63,
+      "section": "shengci"
+    },
+    {
+      "id": "s33",
+      "text": "时候",
+      "pinyin": "shíhou",
+      "meaning": "lúc, khi",
+      "start": 122.59,
+      "end": 123.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s34",
+      "text": "借",
+      "pinyin": "jiè",
+      "meaning": "mượn; cho mượn",
+      "start": 123.62,
+      "end": 125.56,
+      "section": "shengci"
+    },
+    {
+      "id": "s35",
+      "text": "上网",
+      "pinyin": "shàngwǎng",
+      "meaning": "lên mạng",
+      "start": 125.56,
+      "end": 127.74,
+      "section": "shengci"
+    },
+    {
+      "id": "s36",
+      "text": "网",
+      "pinyin": "wǎng",
+      "meaning": "mạng, lưới",
+      "start": 127.74,
+      "end": 130.17,
+      "section": "shengci"
+    },
+    {
+      "id": "s37",
+      "text": "查",
+      "pinyin": "chá",
+      "meaning": "tra, tra cứu",
+      "start": 131.41,
+      "end": 132.2,
+      "section": "shengci"
+    },
+    {
+      "id": "s38",
+      "text": "资料",
+      "pinyin": "zīliào",
+      "meaning": "tư liệu, tài liệu",
+      "start": 132.2,
+      "end": 134.49,
+      "section": "shengci"
+    },
+    {
+      "id": "s39",
+      "text": "总",
+      "pinyin": "zǒng",
+      "meaning": "luôn",
+      "start": 135.78,
+      "end": 136.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s40",
+      "text": "总是",
+      "pinyin": "zǒngshì",
+      "meaning": "luôn, luôn luôn",
+      "start": 136.62,
+      "end": 139.36,
+      "section": "shengci"
+    },
+    {
+      "id": "s41",
+      "text": "安静",
+      "pinyin": "ānjìng",
+      "meaning": "yên tĩnh",
+      "start": 139.36,
+      "end": 141.91,
+      "section": "shengci"
+    },
+    {
+      "id": "s42",
+      "text": "晚上",
+      "pinyin": "wǎnshang",
+      "meaning": "buổi tối",
+      "start": 143.13,
+      "end": 144.06,
+      "section": "shengci"
+    },
+    {
+      "id": "s43",
+      "text": "复习",
+      "pinyin": "fùxí",
+      "meaning": "ôn tập",
+      "start": 144.06,
+      "end": 146.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s44",
+      "text": "课文",
+      "pinyin": "kèwén",
+      "meaning": "bài khóa",
+      "start": 146.58,
+      "end": 149,
+      "section": "shengci"
+    },
+    {
+      "id": "s45",
+      "text": "预习",
+      "pinyin": "yùxí",
+      "meaning": "chuẩn bị bài trước",
+      "start": 149,
+      "end": 151.44,
+      "section": "shengci"
+    },
+    {
+      "id": "s46",
+      "text": "生词",
+      "pinyin": "shēngcí",
+      "meaning": "từ mới",
+      "start": 151.44,
+      "end": 154.01,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "或者",
+      "pinyin": "huòzhě",
+      "meaning": "hoặc, hoặc là",
+      "start": 155.39,
+      "end": 156.16,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "练习",
+      "pinyin": "liànxí",
+      "meaning": "luyện tập, bài tập",
+      "start": 156.16,
+      "end": 159.06,
+      "section": "shengci"
+    },
+    {
+      "id": "s49",
+      "text": "聊天儿",
+      "pinyin": "liáotiānr",
+      "meaning": "tán gẫu",
+      "start": 159.06,
+      "end": 161.23,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "收发",
+      "pinyin": "shōufā",
+      "meaning": "nhận và gửi",
+      "start": 162.13,
+      "end": 163.64,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "收",
+      "pinyin": "shōu",
+      "meaning": "nhận",
+      "start": 164.92,
+      "end": 165.77,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "发",
+      "pinyin": "fā",
+      "meaning": "gửi, phát",
+      "start": 167.15,
+      "end": 167.97,
+      "section": "shengci"
+    },
+    {
+      "id": "s53",
+      "text": "伊妹儿",
+      "pinyin": "yīmèir",
+      "meaning": "e-mail",
+      "start": 167.97,
+      "end": 170.36,
+      "section": "shengci"
+    },
+    {
+      "id": "s54",
+      "text": "电影",
+      "pinyin": "diànyǐng",
+      "meaning": "phim, điện ảnh",
+      "start": 170.36,
+      "end": 172.76,
+      "section": "shengci"
+    },
+    {
+      "id": "s55",
+      "text": "电视剧",
+      "pinyin": "diànshìjù",
+      "meaning": "phim truyền hình",
+      "start": 172.76,
+      "end": 175.48,
+      "section": "shengci"
+    },
+    {
+      "id": "s56",
+      "text": "电视",
+      "pinyin": "diànshì",
+      "meaning": "tivi",
+      "start": 175.48,
+      "end": 177.86,
+      "section": "shengci"
+    },
+    {
+      "id": "s57",
+      "text": "休息",
+      "pinyin": "xiūxi",
+      "meaning": "nghỉ ngơi",
+      "start": 177.86,
+      "end": 180.06,
+      "section": "shengci"
+    },
+    {
+      "id": "s58",
+      "text": "宿舍",
+      "pinyin": "sùshè",
+      "meaning": "ký túc xá",
+      "start": 180.06,
+      "end": 182.33,
+      "section": "shengci"
+    },
+    {
+      "id": "s59",
+      "text": "公园",
+      "pinyin": "gōngyuán",
+      "meaning": "công viên",
+      "start": 182.33,
+      "end": 184.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s60",
+      "text": "超市",
+      "pinyin": "chāoshì",
+      "meaning": "siêu thị",
+      "start": 184.96,
+      "end": 187.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s61",
+      "text": "东西",
+      "pinyin": "dōngxi",
+      "meaning": "đồ, đồ vật",
+      "start": 187.58,
+      "end": 190.05,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "现在",
+      "pinyin": "xiànzài",
+      "meaning": "bây giờ, hiện tại",
+      "segments": [
+        "s3",
+        "s25"
+      ]
+    },
+    {
+      "hanzi": "跟",
+      "pinyin": "gēn",
+      "meaning": "cùng, với",
+      "note": "cấu trúc A 跟 B (一起) + V",
+      "segments": [
+        "s4",
+        "s26"
+      ]
+    },
+    {
+      "hanzi": "一起",
+      "pinyin": "yìqǐ",
+      "meaning": "cùng, cùng nhau",
+      "segments": [
+        "s4",
+        "s27"
+      ]
+    },
+    {
+      "hanzi": "咱们",
+      "pinyin": "zánmen",
+      "meaning": "chúng ta",
+      "note": "gồm cả người nghe; khác 我们 (có thể là \"chúng tôi\")",
+      "segments": [
+        "s5",
+        "s28"
+      ]
+    },
+    {
+      "hanzi": "走",
+      "pinyin": "zǒu",
+      "meaning": "đi",
+      "note": "không cần đích đến (走吧!), khác 去 phải có nơi đến",
+      "segments": [
+        "s5",
+        "s29"
+      ]
+    },
+    {
+      "hanzi": "常",
+      "pinyin": "cháng",
+      "meaning": "thường",
+      "note": "常 + V; ngắn hơn 常常, phủ định vẫn là 不常",
+      "segments": [
+        "s6",
+        "s30"
+      ]
+    },
+    {
+      "hanzi": "常常",
+      "pinyin": "chángcháng",
+      "meaning": "thường, thường xuyên",
+      "note": "常常 + V, phủ định: 不常 + V",
+      "segments": [
+        "s31"
+      ]
+    },
+    {
+      "hanzi": "有时候",
+      "pinyin": "yǒu shíhou",
+      "meaning": "có lúc, thỉnh thoảng",
+      "segments": [
+        "s11",
+        "s32"
+      ]
+    },
+    {
+      "hanzi": "时候",
+      "pinyin": "shíhou",
+      "meaning": "lúc, khi",
+      "note": "什么时候 = khi nào, …的时候 = lúc làm gì đó",
+      "segments": [
+        "s11",
+        "s33"
+      ]
+    },
+    {
+      "hanzi": "借",
+      "pinyin": "jiè",
+      "meaning": "mượn; cho mượn",
+      "note": "A 跟/向 B 借 + đồ = A mượn đồ của B; A 借给 B + đồ = A cho B mượn",
+      "segments": [
+        "s7",
+        "s34"
+      ]
+    },
+    {
+      "hanzi": "上网",
+      "pinyin": "shàngwǎng",
+      "meaning": "lên mạng",
+      "segments": [
+        "s11",
+        "s35"
+      ]
+    },
+    {
+      "hanzi": "网",
+      "pinyin": "wǎng",
+      "meaning": "mạng, lưới",
+      "segments": [
+        "s36"
+      ]
+    },
+    {
+      "hanzi": "查",
+      "pinyin": "chá",
+      "meaning": "tra, tra cứu",
+      "segments": [
+        "s11",
+        "s37"
+      ]
+    },
+    {
+      "hanzi": "资料",
+      "pinyin": "zīliào",
+      "meaning": "tư liệu, tài liệu",
+      "segments": [
+        "s11",
+        "s38"
+      ]
+    },
+    {
+      "hanzi": "总",
+      "pinyin": "zǒng",
+      "meaning": "luôn, luôn luôn",
+      "note": "总 + V; cùng nghĩa với 总是",
+      "segments": [
+        "s12",
+        "s39"
+      ]
+    },
+    {
+      "hanzi": "总是",
+      "pinyin": "zǒngshì",
+      "meaning": "luôn, luôn luôn",
+      "segments": [
+        "s40"
+      ]
+    },
+    {
+      "hanzi": "安静",
+      "pinyin": "ānjìng",
+      "meaning": "yên tĩnh, yên lặng",
+      "segments": [
+        "s13",
+        "s41"
+      ]
+    },
+    {
+      "hanzi": "晚上",
+      "pinyin": "wǎnshang",
+      "meaning": "buổi tối",
+      "segments": [
+        "s16",
+        "s42"
+      ]
+    },
+    {
+      "hanzi": "复习",
+      "pinyin": "fùxí",
+      "meaning": "ôn tập",
+      "segments": [
+        "s17",
+        "s43"
+      ]
+    },
+    {
+      "hanzi": "课文",
+      "pinyin": "kèwén",
+      "meaning": "bài khóa",
+      "segments": [
+        "s17",
+        "s44"
+      ]
+    },
+    {
+      "hanzi": "预习",
+      "pinyin": "yùxí",
+      "meaning": "chuẩn bị bài trước",
+      "segments": [
+        "s17",
+        "s45"
+      ]
+    },
+    {
+      "hanzi": "生词",
+      "pinyin": "shēngcí",
+      "meaning": "từ mới",
+      "segments": [
+        "s17",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "或者",
+      "pinyin": "huòzhě",
+      "meaning": "hoặc, hoặc là",
+      "note": "dùng trong câu trần thuật; khác 还是 (câu hỏi lựa chọn)",
+      "segments": [
+        "s17",
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "还是",
+      "pinyin": "háishi",
+      "meaning": "hay là",
+      "note": "dùng cho câu hỏi lựa chọn"
+    },
+    {
+      "hanzi": "练习",
+      "pinyin": "liànxí",
+      "meaning": "luyện tập, bài tập",
+      "segments": [
+        "s17",
+        "s48"
+      ]
+    },
+    {
+      "hanzi": "聊天儿",
+      "pinyin": "liáotiānr",
+      "meaning": "tán gẫu, nói chuyện phiếm",
+      "segments": [
+        "s18",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "收发",
+      "pinyin": "shōufā",
+      "meaning": "nhận và gửi (thư từ, công văn)",
+      "segments": [
+        "s18",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "收",
+      "pinyin": "shōu",
+      "meaning": "nhận",
+      "segments": [
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "发",
+      "pinyin": "fā",
+      "meaning": "gửi, phát",
+      "segments": [
+        "s52"
+      ]
+    },
+    {
+      "hanzi": "伊妹儿",
+      "pinyin": "yīmèir",
+      "meaning": "e-mail",
+      "segments": [
+        "s18",
+        "s53"
+      ]
+    },
+    {
+      "hanzi": "电影",
+      "pinyin": "diànyǐng",
+      "meaning": "phim, điện ảnh",
+      "segments": [
+        "s19",
+        "s54"
+      ]
+    },
+    {
+      "hanzi": "电视",
+      "pinyin": "diànshì",
+      "meaning": "tivi",
+      "segments": [
+        "s19",
+        "s56"
+      ]
+    },
+    {
+      "hanzi": "电视剧",
+      "pinyin": "diànshìjù",
+      "meaning": "phim truyền hình",
+      "segments": [
+        "s19",
+        "s55"
+      ]
+    },
+    {
+      "hanzi": "休息",
+      "pinyin": "xiūxi",
+      "meaning": "nghỉ ngơi",
+      "segments": [
+        "s23",
+        "s57"
+      ]
+    },
+    {
+      "hanzi": "宿舍",
+      "pinyin": "sùshè",
+      "meaning": "kí túc xá",
+      "segments": [
+        "s12",
+        "s58"
+      ]
+    },
+    {
+      "hanzi": "公园",
+      "pinyin": "gōngyuán",
+      "meaning": "công viên",
+      "segments": [
+        "s23",
+        "s59"
+      ]
+    },
+    {
+      "hanzi": "超市",
+      "pinyin": "chāoshì",
+      "meaning": "siêu thị",
+      "segments": [
+        "s23",
+        "s60"
+      ]
+    },
+    {
+      "hanzi": "东西",
+      "pinyin": "dōngxi",
+      "meaning": "đồ, đồ vật",
+      "segments": [
+        "s23",
+        "s61"
+      ]
+    },
+    {
+      "hanzi": "很少",
+      "pinyin": "hěn shǎo",
+      "meaning": "rất ít khi",
+      "note": "很少 + V (trạng ngữ tần suất); lưu ý 很多 KHÔNG dùng làm trạng ngữ",
+      "segments": [
+        "s21"
+      ]
+    },
+    {
+      "hanzi": "奶茶",
+      "pinyin": "nǎichá",
+      "meaning": "trà sữa"
+    }
+  ]
+}

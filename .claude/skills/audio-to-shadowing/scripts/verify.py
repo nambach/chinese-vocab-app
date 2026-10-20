@@ -73,16 +73,25 @@ def check_structure(segments: list[dict], duration: float) -> dict[str, list[str
     return errors
 
 
+def _abuts(a: float, b: float) -> bool:
+    """A midpoint cut: the two segments meet, so that edge is speech, not silence."""
+    return abs(a - b) < 0.03
+
+
 def check_boundaries(segments: list[dict], samples, noise_db: float) -> dict[str, list[str]]:
     flags: dict[str, list[str]] = {}
-    for seg in segments:
+    for i, seg in enumerate(segments):
         out = flags.setdefault(seg['id'], [])
-        head = rms_db(samples, seg['start'], seg['start'] + BOUNDARY_WINDOW)
-        tail = rms_db(samples, seg['end'] - BOUNDARY_WINDOW, seg['end'])
-        if head > noise_db:
-            out.append(f'start not in silence ({head:.0f} dBFS)')
-        if tail > noise_db:
-            out.append(f'end not in silence ({tail:.0f} dBFS)')
+        prev = segments[i - 1] if i else None
+        nxt = segments[i + 1] if i + 1 < len(segments) else None
+        if not (prev and _abuts(seg['start'], prev['end'])):
+            head = rms_db(samples, seg['start'], seg['start'] + BOUNDARY_WINDOW)
+            if head > noise_db:
+                out.append(f'start not in silence ({head:.0f} dBFS)')
+        if not (nxt and _abuts(seg['end'], nxt['start'])):
+            tail = rms_db(samples, seg['end'] - BOUNDARY_WINDOW, seg['end'])
+            if tail > noise_db:
+                out.append(f'end not in silence ({tail:.0f} dBFS)')
     return flags
 
 

@@ -37,8 +37,10 @@ export function serializeView(view: View): string {
       return `#/results/${view.sessionId}`
     case 'shadowingList':
       return '#/shadow'
-    case 'shadowingLesson':
-      return `#/shadow/${encodeURIComponent(view.lessonId)}`
+    case 'editKewen':
+      return view.segmentId
+        ? `#/c/${view.catalogId}/kewen/${view.segmentId}`
+        : `#/c/${view.catalogId}/kewen`
   }
 }
 
@@ -62,9 +64,7 @@ export function parseHash(hash: string): View {
     case 'results':
       return parts[1] ? { name: 'results', sessionId: parts[1] } : { name: 'home' }
     case 'shadow':
-      return parts[1]
-        ? { name: 'shadowingLesson', lessonId: safeDecode(parts[1]) }
-        : { name: 'shadowingList' }
+      return { name: 'shadowingList' }
     case 'c': {
       const catalogId = parts[1]
       if (!catalogId) return { name: 'home' }
@@ -87,18 +87,15 @@ export function parseHash(hash: string): View {
           ? { name: 'editWord', catalogId, wordId }
           : { name: 'manageWords', catalogId }
       }
+      if (sub === 'kewen') {
+        const segmentId = parts[3]
+        return segmentId
+          ? { name: 'editKewen', catalogId, segmentId }
+          : { name: 'editKewen', catalogId }
+      }
       return { name: 'catalog', catalogId }
     }
     default:
       return { name: 'home' }
-  }
-}
-
-/** A hand-edited hash like `#/shadow/%E0` must not throw during first render. */
-function safeDecode(part: string): string {
-  try {
-    return decodeURIComponent(part)
-  } catch {
-    return part
   }
 }

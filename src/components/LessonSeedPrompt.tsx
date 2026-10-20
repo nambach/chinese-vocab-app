@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext'
-import { extractLeadingTitle } from '../lib/txt'
+import { builtinLessonTitle } from '../data/lessons'
 import { BigButton, Dialog } from './ui'
 
 export function LessonSeedPrompt() {
@@ -9,7 +9,7 @@ export function LessonSeedPrompt() {
   if (count === 0) return null
 
   const names = pendingBuiltinLessons
-    .map((lesson) => extractLeadingTitle(lesson.text).title ?? lesson.id)
+    .map((lesson) => builtinLessonTitle(lesson))
     .join(', ')
 
   return (

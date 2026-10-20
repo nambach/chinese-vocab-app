@@ -16,6 +16,8 @@ type SmartInputProps = {
   onBlur?: () => void
   className?: string
   hint?: string
+  /** Multi-line field. Enter inserts a newline. */
+  multiline?: boolean
 }
 
 export function SmartInput({
@@ -32,9 +34,11 @@ export function SmartInput({
   onBlur,
   className = '',
   hint,
+  multiline = false,
 }: SmartInputProps) {
   const [enabled, setEnabled] = useState(pinyin && toneNumberInput)
   const inputRef = useRef<HTMLInputElement>(null)
+  const areaRef = useRef<HTMLTextAreaElement>(null)
   const isMobile = useIsMobile()
   const { keyboardOpen } = useVisualViewport()
 
@@ -49,7 +53,7 @@ export function SmartInput({
   }
 
   function insertAtCursor(text: string) {
-    const input = inputRef.current
+    const input = multiline ? areaRef.current : inputRef.current
     if (!input) {
       handleChange(value + text)
       return
@@ -111,29 +115,48 @@ export function SmartInput({
         ) : null}
       </div>
       {toneKeyRow}
-      <input
-        ref={inputRef}
-        value={value}
-        onChange={(event) => handleChange(event.target.value)}
-        placeholder={placeholder}
-        lang={pinyin ? 'en' : lang}
-        inputMode={pinyin ? 'text' : undefined}
-        autoFocus={autoFocus}
-        autoCapitalize="off"
-        autoCorrect="off"
-        autoComplete="off"
-        spellCheck={false}
-        enterKeyHint={onSubmit ? 'done' : undefined}
-        onFocus={() => onFocus?.()}
-        onBlur={() => onBlur?.()}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter' && onSubmit) {
-            event.preventDefault()
-            onSubmit()
-          }
-        }}
-        className="w-full shrink-0 rounded-2xl border border-teal-200 bg-teal-50 px-4 py-3 text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
-      />
+      {multiline ? (
+        <textarea
+          ref={areaRef}
+          value={value}
+          rows={3}
+          onChange={(event) => handleChange(event.target.value)}
+          placeholder={placeholder}
+          lang={pinyin ? 'en' : lang}
+          autoFocus={autoFocus}
+          autoCapitalize="off"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck={false}
+          onFocus={() => onFocus?.()}
+          onBlur={() => onBlur?.()}
+          className="w-full shrink-0 resize-y rounded-2xl border border-teal-200 bg-teal-50 px-4 py-3 text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+        />
+      ) : (
+        <input
+          ref={inputRef}
+          value={value}
+          onChange={(event) => handleChange(event.target.value)}
+          placeholder={placeholder}
+          lang={pinyin ? 'en' : lang}
+          inputMode={pinyin ? 'text' : undefined}
+          autoFocus={autoFocus}
+          autoCapitalize="off"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck={false}
+          enterKeyHint={onSubmit ? 'done' : undefined}
+          onFocus={() => onFocus?.()}
+          onBlur={() => onBlur?.()}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' && onSubmit) {
+              event.preventDefault()
+              onSubmit()
+            }
+          }}
+          className="w-full shrink-0 rounded-2xl border border-teal-200 bg-teal-50 px-4 py-3 text-teal-950 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+        />
+      )}
       {toneActive && !keyboardOpen ? (
         <span className="text-xs text-teal-600">
           {isMobile

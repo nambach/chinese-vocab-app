@@ -1,0 +1,923 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-26",
+  "title": "Bài 26",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-26.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.8,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、田芳去哪儿了",
+      "pinyin": "Yī, Tián Fāng qù nǎr le",
+      "meaning": "Bài 1: Tiên Phương đi đâu rồi",
+      "start": 3.06,
+      "end": 6.27,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "喂，是田芳吗？",
+      "pinyin": "Wèi, shì Tián Fāng ma?",
+      "meaning": "Alo, có phải Tiên Phương không?",
+      "start": 7.87,
+      "end": 9.99,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "田芳不在。是张东吧。",
+      "pinyin": "Tián Fāng bú zài. Shì Zhāng Dōng ba.",
+      "meaning": "Tiên Phương không có. Là Trương Đông phải không.",
+      "start": 10.99,
+      "end": 14.5,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "阿姨，您好。",
+      "pinyin": "Āyí, nín hǎo.",
+      "meaning": "Dì, chào dì.",
+      "start": 15.8,
+      "end": 17.39,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "田芳去哪儿了？",
+      "pinyin": "Tián Fāng qù nǎr le?",
+      "meaning": "Tiên Phương đi đâu rồi?",
+      "start": 18.39,
+      "end": 19.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "她四点多就去同学家了。",
+      "pinyin": "Tā sì diǎn duō jiù qù tóngxué jiā le.",
+      "meaning": "Cô ấy hơn bốn giờ đã sang nhà bạn học rồi.",
+      "start": 21.32,
+      "end": 24.5,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "她的一个中学同学要出国，",
+      "pinyin": "Tā de yí ge zhōngxué tóngxué yào chū guó,",
+      "meaning": "Một bạn trung học của cô ấy sắp ra nước ngoài,",
+      "start": 25.9,
+      "end": 29.46,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "她去看看她。",
+      "pinyin": "Tā qù kànkan tā.",
+      "meaning": "Cô ấy đi thăm bạn ấy.",
+      "start": 29.82,
+      "end": 31.54,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "她什么时候能回来？",
+      "pinyin": "Tā shénme shíhou néng huílái?",
+      "meaning": "Cô ấy lúc nào về được?",
+      "start": 32.67,
+      "end": 34.66,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "她没说，你打她的手机吧。",
+      "pinyin": "Tā méi shuō, nǐ dǎ tā de shǒujī ba.",
+      "meaning": "Cô ấy không nói, anh gọi điện thoại cô ấy đi.",
+      "start": 36.12,
+      "end": 40.01,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "我打了，",
+      "pinyin": "Wǒ dǎ le,",
+      "meaning": "Tôi gọi rồi,",
+      "start": 41.02,
+      "end": 41.98,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "可是她关机了。",
+      "pinyin": "Kěshì tā guānjī le.",
+      "meaning": "Nhưng cô ấy tắt máy rồi.",
+      "start": 42.92,
+      "end": 44.43,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "是吗？",
+      "pinyin": "Shì ma?",
+      "meaning": "Vậy à?",
+      "start": 45.6,
+      "end": 46.41,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "你过一会儿再打吧。",
+      "pinyin": "Nǐ guò yíhuìr zài dǎ ba.",
+      "meaning": "Anh gọi lại lát nữa đi.",
+      "start": 47.19,
+      "end": 49.87,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "阿姨，田芳回来了没有？",
+      "pinyin": "Āyí, Tián Fāng huílái le méiyǒu?",
+      "meaning": "Dì, Tiên Phương về chưa?",
+      "start": 51.6,
+      "end": 55.11,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "还没有呢。",
+      "pinyin": "Hái méiyǒu ne.",
+      "meaning": "Vẫn chưa.",
+      "start": 56.02,
+      "end": 57.42,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "二、他又来电话了",
+      "pinyin": "Èr, tā yòu lái diànhuà le",
+      "meaning": "Bài 2: Anh ấy gọi điện thoại lại",
+      "start": 59.13,
+      "end": 62.67,
+      "section": "heading"
+    },
+    {
+      "id": "s19",
+      "text": "妈，我回来了。",
+      "pinyin": "Mā, wǒ huílái le.",
+      "meaning": "Mẹ, con về rồi.",
+      "start": 64.14,
+      "end": 66.55,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "张东给你打电话了没有？",
+      "pinyin": "Zhāng Dōng gěi nǐ dǎ diànhuà le méiyǒu?",
+      "meaning": "Trương Đông gọi cho con chưa?",
+      "start": 67.78,
+      "end": 70.54,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "没有啊。",
+      "pinyin": "Méiyǒu a.",
+      "meaning": "Chưa.",
+      "start": 71.35,
+      "end": 72.37,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "他来电话找你，说打你的手机，你关机了。",
+      "pinyin": "Tā lái diànhuà zhǎo nǐ, shuō dǎ nǐ de shǒujī, nǐ guānjī le.",
+      "meaning": "Anh ấy gọi tìm con, nói gọi điện thoại con mà con tắt máy.",
+      "start": 73.49,
+      "end": 79.98,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "啊，对了，我忘开机了。",
+      "pinyin": "À, duì le, wǒ wàng kāi jī le.",
+      "meaning": "À, đúng rồi, con quên bật máy.",
+      "start": 80.76,
+      "end": 85.22,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "快，电话又响了，你去接吧。",
+      "pinyin": "Kuài, diànhuà yòu xiǎng le, nǐ qù jiē ba.",
+      "meaning": "Mau, điện thoại reo lại rồi, con nghe đi.",
+      "start": 86.07,
+      "end": 90.83,
+      "section": "kewen"
+    },
+    {
+      "id": "s25",
+      "text": "下午，你给我打电话了吧？",
+      "pinyin": "Xiàwǔ, nǐ gěi wǒ dǎ diànhuà le ba?",
+      "meaning": "Chiều nay anh gọi cho em phải không?",
+      "start": 92.46,
+      "end": 96.29,
+      "section": "kewen"
+    },
+    {
+      "id": "s26",
+      "text": "打了，你怎么关机了？",
+      "pinyin": "Dǎ le, nǐ zěnme guānjī le?",
+      "meaning": "Gọi rồi, sao em tắt máy?",
+      "start": 97.34,
+      "end": 100.45,
+      "section": "kewen"
+    },
+    {
+      "id": "s27",
+      "text": "对不起，我忘开机了。",
+      "pinyin": "Duìbuqǐ, wǒ wàng kāi jī le.",
+      "meaning": "Xin lỗi, em quên bật máy.",
+      "start": 101.55,
+      "end": 105.01,
+      "section": "kewen"
+    },
+    {
+      "id": "s28",
+      "text": "下午，你做什么了？",
+      "pinyin": "Xiàwǔ, nǐ zuò shénme le?",
+      "meaning": "Chiều nay anh làm gì?",
+      "start": 106.02,
+      "end": 108.39,
+      "section": "kewen"
+    },
+    {
+      "id": "s29",
+      "text": "我去踢足球了。",
+      "pinyin": "Wǒ qù tī zúqiú le.",
+      "meaning": "Anh đi đá bóng.",
+      "start": 109.41,
+      "end": 111.52,
+      "section": "kewen"
+    },
+    {
+      "id": "s30",
+      "text": "今天，我们跟留学生代表队比赛了。",
+      "pinyin": "Jīntiān, wǒmen gēn liúxuéshēng dàibiǎo duì bǐsài le.",
+      "meaning": "Hôm nay đội mình đá với đội tuyển lưu học sinh.",
+      "start": 112.47,
+      "end": 117.3,
+      "section": "kewen"
+    },
+    {
+      "id": "s31",
+      "text": "你们队又输了吧？",
+      "pinyin": "Nǐmen duì yòu shū le ba?",
+      "meaning": "Đội các anh lại thua rồi phải không?",
+      "start": 118.81,
+      "end": 121.07,
+      "section": "kewen"
+    },
+    {
+      "id": "s32",
+      "text": "没有。",
+      "pinyin": "Méiyǒu.",
+      "meaning": "Không.",
+      "start": 121.98,
+      "end": 122.9,
+      "section": "kewen"
+    },
+    {
+      "id": "s33",
+      "text": "这次我们赢了。",
+      "pinyin": "Zhè cì wǒmen yíng le.",
+      "meaning": "Lần này bọn em thắng.",
+      "start": 124.08,
+      "end": 126.2,
+      "section": "kewen"
+    },
+    {
+      "id": "s34",
+      "text": "几比几？",
+      "pinyin": "Jǐ bǐ jǐ?",
+      "meaning": "Tỉ số mấy?",
+      "start": 127.15,
+      "end": 128.41,
+      "section": "kewen"
+    },
+    {
+      "id": "s35",
+      "text": "二比一。",
+      "pinyin": "Èr bǐ yī.",
+      "meaning": "Hai một.",
+      "start": 129.12,
+      "end": 130.22,
+      "section": "kewen"
+    },
+    {
+      "id": "s36",
+      "text": "祝贺你们！",
+      "pinyin": "Zhùhè nǐmen!",
+      "meaning": "Chúc mừng các anh!",
+      "start": 130.75,
+      "end": 131.96,
+      "section": "kewen"
+    },
+    {
+      "id": "s37",
+      "text": "哎，你有什么事吗？",
+      "pinyin": "Āi, nǐ yǒu shénme shì ma?",
+      "meaning": "Này, anh có việc gì không?",
+      "start": 132.97,
+      "end": 135.77,
+      "section": "kewen"
+    },
+    {
+      "id": "s38",
+      "text": "我想问问你，你不是要上托福班吗？报名了没有？",
+      "pinyin": "Wǒ xiǎng wènwen nǐ, nǐ bú shì yào shàng Tuōfú bān ma? Bàomíng le méiyǒu?",
+      "meaning": "Anh muốn hỏi em, anh không phải định học lớp TOEFL sao? Đăng ký chưa?",
+      "start": 136.72,
+      "end": 144.34,
+      "section": "kewen"
+    },
+    {
+      "id": "s39",
+      "text": "已经报了。",
+      "pinyin": "Yǐjīng bào le.",
+      "meaning": "Đăng ký rồi.",
+      "start": 145.06,
+      "end": 146.33,
+      "section": "kewen"
+    },
+    {
+      "id": "s40",
+      "text": "你是不是也想考托福？",
+      "pinyin": "Nǐ shì bu shì yě xiǎng kǎo Tuōfú?",
+      "meaning": "Anh cũng muốn thi TOEFL phải không?",
+      "start": 146.99,
+      "end": 150.29,
+      "section": "kewen"
+    },
+    {
+      "id": "s41",
+      "text": "是。",
+      "pinyin": "Shì.",
+      "meaning": "Phải.",
+      "start": 151,
+      "end": 151.58,
+      "section": "kewen"
+    },
+    {
+      "id": "s42",
+      "text": "我想明天去报名。",
+      "pinyin": "Wǒ xiǎng míngtiān qù bàomíng.",
+      "meaning": "Anh muốn mai đi đăng ký.",
+      "start": 152.5,
+      "end": 154.93,
+      "section": "kewen"
+    },
+    {
+      "id": "s43",
+      "text": "你陪我一起去，好吗？",
+      "pinyin": "Nǐ péi wǒ yìqǐ qù, hǎo ma?",
+      "meaning": "Em đi cùng anh nhé?",
+      "start": 155.55,
+      "end": 158.71,
+      "section": "kewen"
+    },
+    {
+      "id": "s44",
+      "text": "好的。",
+      "pinyin": "Hǎo de.",
+      "meaning": "Được.",
+      "start": 159.25,
+      "end": 159.99,
+      "section": "kewen"
+    },
+    {
+      "id": "s45",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 162.04,
+      "end": 164.05,
+      "section": "heading"
+    },
+    {
+      "id": "s46",
+      "text": "喂",
+      "pinyin": "wèi",
+      "meaning": "a lô, này",
+      "start": 165.34,
+      "end": 165.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "阿姨",
+      "pinyin": "āyí",
+      "meaning": "dì",
+      "start": 167.25,
+      "end": 168.23,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "中学",
+      "pinyin": "zhōngxué",
+      "meaning": "trung học",
+      "start": 169.49,
+      "end": 170.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s49",
+      "text": "出国",
+      "pinyin": "chūguó",
+      "meaning": "ra nước ngoài",
+      "start": 172.04,
+      "end": 173.23,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "出",
+      "pinyin": "chū",
+      "meaning": "ra",
+      "start": 174.58,
+      "end": 175.31,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "打",
+      "pinyin": "dǎ",
+      "meaning": "gọi, đánh",
+      "start": 176.58,
+      "end": 177.41,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "打电话",
+      "pinyin": "dǎ diànhuà",
+      "meaning": "gọi điện thoại",
+      "start": 178.53,
+      "end": 179.73,
+      "section": "shengci"
+    },
+    {
+      "id": "s53",
+      "text": "关机",
+      "pinyin": "guānjī",
+      "meaning": "tắt máy",
+      "start": 181.13,
+      "end": 182.16,
+      "section": "shengci"
+    },
+    {
+      "id": "s54",
+      "text": "关",
+      "pinyin": "guān",
+      "meaning": "tắt, đóng",
+      "start": 183.62,
+      "end": 184.33,
+      "section": "shengci"
+    },
+    {
+      "id": "s55",
+      "text": "忘",
+      "pinyin": "wàng",
+      "meaning": "quên",
+      "start": 185.51,
+      "end": 188,
+      "section": "shengci"
+    },
+    {
+      "id": "s56",
+      "text": "开机",
+      "pinyin": "kāijī",
+      "meaning": "bật máy",
+      "start": 189.19,
+      "end": 190.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s57",
+      "text": "开",
+      "pinyin": "kāi",
+      "meaning": "bật, mở",
+      "start": 191.48,
+      "end": 192.23,
+      "section": "shengci"
+    },
+    {
+      "id": "s58",
+      "text": "又",
+      "pinyin": "yòu",
+      "meaning": "lại",
+      "start": 193.43,
+      "end": 194.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s59",
+      "text": "响",
+      "pinyin": "xiǎng",
+      "meaning": "reo",
+      "start": 195.26,
+      "end": 196.21,
+      "section": "shengci"
+    },
+    {
+      "id": "s60",
+      "text": "接",
+      "pinyin": "jiē",
+      "meaning": "nghe (điện thoại)",
+      "start": 197.63,
+      "end": 198.38,
+      "section": "shengci"
+    },
+    {
+      "id": "s61",
+      "text": "踢",
+      "pinyin": "tī",
+      "meaning": "đá",
+      "start": 199.59,
+      "end": 200.38,
+      "section": "shengci"
+    },
+    {
+      "id": "s62",
+      "text": "比赛",
+      "pinyin": "bǐsài",
+      "meaning": "thi đấu",
+      "start": 201.61,
+      "end": 202.61,
+      "section": "shengci"
+    },
+    {
+      "id": "s63",
+      "text": "队",
+      "pinyin": "duì",
+      "meaning": "đội",
+      "start": 203.74,
+      "end": 204.33,
+      "section": "shengci"
+    },
+    {
+      "id": "s64",
+      "text": "输",
+      "pinyin": "shū",
+      "meaning": "thua",
+      "start": 205.81,
+      "end": 206.64,
+      "section": "shengci"
+    },
+    {
+      "id": "s65",
+      "text": "赢",
+      "pinyin": "yíng",
+      "meaning": "thắng",
+      "start": 207.84,
+      "end": 208.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s66",
+      "text": "比",
+      "pinyin": "bǐ",
+      "meaning": "so, tỉ số",
+      "start": 209.84,
+      "end": 210.74,
+      "section": "shengci"
+    },
+    {
+      "id": "s67",
+      "text": "祝贺",
+      "pinyin": "zhùhè",
+      "meaning": "chúc mừng",
+      "start": 212,
+      "end": 213.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s68",
+      "text": "哎",
+      "pinyin": "āi",
+      "meaning": "này",
+      "start": 214.47,
+      "end": 215.21,
+      "section": "shengci"
+    },
+    {
+      "id": "s69",
+      "text": "上",
+      "pinyin": "shàng",
+      "meaning": "học (lớp)",
+      "start": 216.63,
+      "end": 217.38,
+      "section": "shengci"
+    },
+    {
+      "id": "s70",
+      "text": "托福",
+      "pinyin": "Tuōfú",
+      "meaning": "TOEFL",
+      "start": 218.91,
+      "end": 220,
+      "section": "shengci"
+    },
+    {
+      "id": "s71",
+      "text": "已经",
+      "pinyin": "yǐjīng",
+      "meaning": "đã",
+      "start": 221.48,
+      "end": 222.56,
+      "section": "shengci"
+    },
+    {
+      "id": "s72",
+      "text": "考",
+      "pinyin": "kǎo",
+      "meaning": "thi",
+      "start": 224.1,
+      "end": 224.99,
+      "section": "shengci"
+    },
+    {
+      "id": "s73",
+      "text": "陪",
+      "pinyin": "péi",
+      "meaning": "đi cùng",
+      "start": 226.34,
+      "end": 227.17,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "喂",
+      "pinyin": "wèi",
+      "meaning": "a lô, này",
+      "segments": [
+        "s3",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "阿姨",
+      "pinyin": "āyí",
+      "meaning": "dì",
+      "segments": [
+        "s5",
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "中学",
+      "pinyin": "zhōngxué",
+      "meaning": "trung học",
+      "segments": [
+        "s8",
+        "s48"
+      ]
+    },
+    {
+      "hanzi": "出国",
+      "pinyin": "chūguó",
+      "meaning": "ra nước ngoài",
+      "segments": [
+        "s8",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "出",
+      "pinyin": "chū",
+      "meaning": "ra",
+      "segments": [
+        "s8",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "打",
+      "pinyin": "dǎ",
+      "meaning": "gọi, đánh",
+      "segments": [
+        "s11",
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "打电话",
+      "pinyin": "dǎ diànhuà",
+      "meaning": "gọi điện thoại",
+      "segments": [
+        "s20",
+        "s52"
+      ]
+    },
+    {
+      "hanzi": "关机",
+      "pinyin": "guānjī",
+      "meaning": "tắt máy",
+      "segments": [
+        "s13",
+        "s53"
+      ]
+    },
+    {
+      "hanzi": "关",
+      "pinyin": "guān",
+      "meaning": "tắt, đóng",
+      "segments": [
+        "s13",
+        "s54"
+      ]
+    },
+    {
+      "hanzi": "忘",
+      "pinyin": "wàng",
+      "meaning": "quên",
+      "segments": [
+        "s23",
+        "s55"
+      ]
+    },
+    {
+      "hanzi": "开机",
+      "pinyin": "kāijī",
+      "meaning": "bật máy",
+      "segments": [
+        "s23",
+        "s56"
+      ]
+    },
+    {
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "meaning": "bật, mở",
+      "segments": [
+        "s27",
+        "s57"
+      ]
+    },
+    {
+      "hanzi": "又",
+      "pinyin": "yòu",
+      "meaning": "lại",
+      "segments": [
+        "s24",
+        "s58"
+      ]
+    },
+    {
+      "hanzi": "响",
+      "pinyin": "xiǎng",
+      "meaning": "reo",
+      "segments": [
+        "s24",
+        "s59"
+      ]
+    },
+    {
+      "hanzi": "接",
+      "pinyin": "jiē",
+      "meaning": "nghe (điện thoại)",
+      "segments": [
+        "s24",
+        "s60"
+      ]
+    },
+    {
+      "hanzi": "踢",
+      "pinyin": "tī",
+      "meaning": "đá",
+      "segments": [
+        "s29",
+        "s61"
+      ]
+    },
+    {
+      "hanzi": "比赛",
+      "pinyin": "bǐsài",
+      "meaning": "thi đấu",
+      "segments": [
+        "s30",
+        "s62"
+      ]
+    },
+    {
+      "hanzi": "队",
+      "pinyin": "duì",
+      "meaning": "đội",
+      "segments": [
+        "s30",
+        "s63"
+      ]
+    },
+    {
+      "hanzi": "输",
+      "pinyin": "shū",
+      "meaning": "thua",
+      "segments": [
+        "s31",
+        "s64"
+      ]
+    },
+    {
+      "hanzi": "赢",
+      "pinyin": "yíng",
+      "meaning": "thắng",
+      "segments": [
+        "s33",
+        "s65"
+      ]
+    },
+    {
+      "hanzi": "比",
+      "pinyin": "bǐ",
+      "meaning": "so, tỉ số",
+      "segments": [
+        "s34",
+        "s66"
+      ]
+    },
+    {
+      "hanzi": "祝贺",
+      "pinyin": "zhùhè",
+      "meaning": "chúc mừng",
+      "segments": [
+        "s36",
+        "s67"
+      ]
+    },
+    {
+      "hanzi": "哎",
+      "pinyin": "āi",
+      "meaning": "này",
+      "segments": [
+        "s37",
+        "s68"
+      ]
+    },
+    {
+      "hanzi": "上",
+      "pinyin": "shàng",
+      "meaning": "học (lớp)",
+      "segments": [
+        "s38",
+        "s69"
+      ]
+    },
+    {
+      "hanzi": "托福",
+      "pinyin": "Tuōfú",
+      "meaning": "TOEFL",
+      "segments": [
+        "s38",
+        "s70"
+      ]
+    },
+    {
+      "hanzi": "已经",
+      "pinyin": "yǐjīng",
+      "meaning": "đã",
+      "segments": [
+        "s39",
+        "s71"
+      ]
+    },
+    {
+      "hanzi": "考",
+      "pinyin": "kǎo",
+      "meaning": "thi",
+      "segments": [
+        "s40",
+        "s72"
+      ]
+    },
+    {
+      "hanzi": "陪",
+      "pinyin": "péi",
+      "meaning": "đi cùng",
+      "segments": [
+        "s43",
+        "s73"
+      ]
+    }
+  ]
+}

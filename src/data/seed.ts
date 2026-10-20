@@ -1,14 +1,15 @@
 import type { AppState, Catalog } from '../models/types'
 import { CB2_FOLDER_ID, folderIdForBuiltinLesson } from '../models/types'
-import { parseCatalogText } from '../lib/txt'
 import { createCatalog, createWord, ensureBuiltinFolder, ensureCb2Folder } from './store'
+import { bundledWords, kewenFromFile } from './kewen'
+import { withSource } from '../shadowing/savedWords'
 import {
+  builtinLessonTitle,
   LESSON_PACK,
   LESSON_PACK_VERSION,
   type BuiltinLesson,
 } from './lessons'
 
-/** Small stable fingerprint of a lesson's source text (reserved for future update flow). */
 function hashText(text: string): string {
   let hash = 5381
   for (let i = 0; i < text.length; i++) {
@@ -17,13 +18,20 @@ function hashText(text: string): string {
   return (hash >>> 0).toString(36)
 }
 
+/** Fingerprint of the vocab a lesson ships. The 课文 is not part of it. */
+function lessonHash(lesson: BuiltinLesson): string {
+  if (lesson.kind === 'lesson') return hashText(JSON.stringify(lesson.file?.words ?? []))
+  return hashText(lesson.text)
+}
+
 export function buildCatalogFromLesson(lesson: BuiltinLesson): Catalog {
-  const parsed = parseCatalogText(lesson.text)
   const folderId = folderIdForBuiltinLesson(lesson.id)
-  const catalog = createCatalog(parsed.name || lesson.id, folderId)
-  catalog.words = parsed.words.map((word) => createWord(word))
+  const catalog = createCatalog(builtinLessonTitle(lesson), folderId)
+  catalog.words = bundledWords(lesson).map((word) => createWord(word))
   catalog.builtinId = lesson.id
-  catalog.seedHash = hashText(lesson.text)
+  catalog.seedHash = lessonHash(lesson)
+  const kewen = lesson.file ? kewenFromFile(lesson.file) : undefined
+  if (kewen) catalog.kewen = kewen
   return catalog
 }
 
@@ -90,7 +98,7 @@ export function restoreMissing(
 // ---- Updating lessons the user already has ----
 
 /**
- * Bundled lessons whose text changed since the user's copy was seeded.
+ * Bundled lessons whose vocab changed since the user's copy was seeded.
  *
  * A copy seeded before `seedHash` existed has no baseline to compare against,
  * so it counts as current: offering an update we cannot verify would show every
@@ -108,36 +116,40 @@ export function outdatedLessons(
   return pack.filter((lesson) => {
     const catalog = byBuiltinId.get(lesson.id)
     if (!catalog?.seedHash) return false
-    return catalog.seedHash !== hashText(lesson.text)
+    return catalog.seedHash !== lessonHash(lesson)
   })
 }
 
 /**
- * Folds new bundled text into a catalog the user may have edited: words are
+ * Folds new bundled vocab into a catalog the user may have edited: words are
  * matched by hanzi and refreshed in place (keeping their id, so practice
  * history stays attached), new words are appended, and words the catalog has
  * but the lesson no longer lists are left alone — they may be the user's own.
+ * Sentence positions are kept and gain any the bundle adds.
  */
 function mergeLessonIntoCatalog(catalog: Catalog, lesson: BuiltinLesson): Catalog {
-  const parsed = parseCatalogText(lesson.text)
   const words = [...catalog.words]
   const indexByHanzi = new Map(words.map((word, index) => [word.hanzi, index]))
 
-  for (const incoming of parsed.words) {
+  for (const incoming of bundledWords(lesson)) {
     const index = indexByHanzi.get(incoming.hanzi)
     if (index === undefined) {
       indexByHanzi.set(incoming.hanzi, words.length)
       words.push(createWord(incoming))
       continue
     }
+    const current = words[index]
+    let sources = current.sources ?? []
+    for (const source of incoming.sources ?? []) sources = withSource({ ...current, sources }, source)
     // Rebuilt rather than spread so a note dropped upstream is dropped here too.
-    words[index] = { id: words[index].id, ...incoming }
+    const { sources: _bundled, ...content } = incoming
+    words[index] = { id: current.id, ...content, ...(sources.length ? { sources } : {}) }
   }
 
   return {
     ...catalog,
     words,
-    seedHash: hashText(lesson.text),
+    seedHash: lessonHash(lesson),
     updatedAt: Date.now(),
   }
 }
@@ -158,7 +170,7 @@ function rewriteBuiltinCatalogs(
   }
 }
 
-/** Merge the new bundled text into the user's copies. */
+/** Merge the new bundled vocab into the user's copies. */
 export function applyLessonUpdates(
   state: AppState,
   lessons: BuiltinLesson[],
@@ -167,7 +179,7 @@ export function applyLessonUpdates(
 }
 
 /**
- * User declined: adopt the new text as their baseline without touching any
+ * User declined: adopt the new vocab as their baseline without touching any
  * words, so the same update is not offered again.
  */
 export function dismissLessonUpdates(
@@ -176,7 +188,7 @@ export function dismissLessonUpdates(
 ): AppState {
   return rewriteBuiltinCatalogs(state, lessons, (catalog, lesson) => ({
     ...catalog,
-    seedHash: hashText(lesson.text),
+    seedHash: lessonHash(lesson),
   }))
 }
 

@@ -16,6 +16,11 @@ import {
   type Word,
   type WordSource,
 } from '../models/types'
+import { LESSON_PACK } from './lessons'
+import { attachBundledKewen } from './kewen'
+import { createId, createWord } from './ids'
+
+export { createCatalog, createId, createWord } from './ids'
 
 const MAX_PRACTICE_HISTORY = 50
 
@@ -26,15 +31,51 @@ function normalizePracticeResult(result: PracticeResult): PracticeResult {
   }
 }
 
-/** Words saved before multi-sentence links stored a single `source`. */
+/**
+ * Shadowing used these ids before each lesson became `bai-NN`.
+ * Segment ids were kept, so only the lesson id needs rewriting.
+ */
+const LEGACY_LESSON_IDS: Record<string, string> = {
+  'lesson-01': 'bai-16',
+  'lesson-17': 'bai-17',
+  'lesson-18': 'bai-18',
+  'lesson-19': 'bai-19',
+  'lesson-20': 'bai-20',
+  'lesson-21': 'bai-21',
+  'lesson-22': 'bai-22',
+  'lesson-23': 'bai-23',
+  'lesson-24': 'bai-24',
+  'lesson-25': 'bai-25',
+}
+
+function canonicalLessonId(lessonId: string): string {
+  return LEGACY_LESSON_IDS[lessonId] ?? lessonId
+}
+
+/** Fold a legacy single `source` into `sources`, and rewrite old shadowing lesson ids. */
 function normalizeWord(word: Word & { source?: WordSource }): Word {
   const { source, ...rest } = word
-  if (!source) return word
-  const sources = rest.sources ?? []
-  const known = sources.some(
-    (item) => item.lessonId === source.lessonId && item.segmentId === source.segmentId,
-  )
-  return { ...rest, sources: known ? sources : [...sources, source] }
+  const raw = [...(rest.sources ?? [])]
+  if (source) raw.push(source)
+  if (raw.length === 0) return word
+
+  const seen = new Set<string>()
+  const sources: WordSource[] = []
+  let changed = Boolean(source)
+  for (const item of raw) {
+    const lessonId = canonicalLessonId(item.lessonId)
+    if (lessonId !== item.lessonId) changed = true
+    const key = `${lessonId}\0${item.segmentId}`
+    if (seen.has(key)) {
+      changed = true
+      continue
+    }
+    seen.add(key)
+    sources.push(lessonId === item.lessonId ? item : { lessonId, segmentId: item.segmentId })
+  }
+
+  if (!changed) return word
+  return { ...rest, sources }
 }
 
 function normalizeCatalog(catalog: Catalog): Catalog {
@@ -142,12 +183,7 @@ function migrate(state: AppState): AppState {
     current = migrateV2toV3(current)
   }
 
-  if (current.version === SCHEMA_VERSION) {
-    return {
-      ...current,
-      catalogs: current.catalogs.map(normalizeCatalog),
-    }
-  }
+  current = attachBundledKewen(current, LESSON_PACK)
 
   return {
     ...current,
@@ -198,22 +234,6 @@ export function saveState(state: AppState): void {
     return
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
-}
-
-export function createId(): string {
-  return crypto.randomUUID()
-}
-
-export function createCatalog(name: string, folderId?: string): Catalog {
-  const now = Date.now()
-  return {
-    id: createId(),
-    name: name.trim(),
-    words: [],
-    createdAt: now,
-    updatedAt: now,
-    ...(folderId ? { folderId } : {}),
-  }
 }
 
 export function createFolder(name: string): Folder {
@@ -327,18 +347,6 @@ export function moveCatalogToFolder(
     folderId,
     updatedAt: Date.now(),
   })
-}
-
-export function createWord(input: Omit<Word, 'id'>): Word {
-  const note = input.note?.trim()
-  return {
-    id: createId(),
-    hanzi: input.hanzi.trim(),
-    pinyin: input.pinyin.trim(),
-    meaning: input.meaning.trim(),
-    ...(note ? { note } : {}),
-    ...(input.sources?.length ? { sources: input.sources } : {}),
-  }
 }
 
 export function updateSettings(

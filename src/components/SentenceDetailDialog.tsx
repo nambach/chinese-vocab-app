@@ -13,6 +13,11 @@ import {
   splitSentence,
   type CharSelection,
 } from '../shadowing/selection'
+import {
+  attachSentence,
+  defaultSaveCatalogId,
+  findWordByHanzi,
+} from '../shadowing/lessonView'
 import { hasSource, highlightIndices, withSource, type SavedWord } from '../shadowing/savedWords'
 import type { ShadowingSegment } from '../shadowing/types'
 import type { Word, WordDraft } from '../models/types'
@@ -30,6 +35,8 @@ export function SentenceDetailDialog({
   saved,
   onClose,
   onPlay,
+  lessonCatalogId,
+  onEditSentence,
 }: {
   lessonId: string
   segment: ShadowingSegment
@@ -39,6 +46,9 @@ export function SentenceDetailDialog({
   saved: SavedWord[]
   onClose: () => void
   onPlay: () => void
+  /** When set, saving defaults to this catalog and can attach the sentence to a word already there. */
+  lessonCatalogId?: string
+  onEditSentence?: () => void
 }) {
   const { state, addCatalog, addWord, updateWord, patchSettings } = useApp()
   const variant = state.settings.hanziVariant
@@ -104,10 +114,17 @@ export function SentenceDetailDialog({
   const selectedMatch = matches.find((word) => word.id === linkWordId) ?? matches[0]
   const alreadyLinked = selectedMatch ? hasSource(selectedMatch, lessonId, segment.id) : false
 
-  function defaultCatalogId() {
-    const savedId = state.settings.shadowSaveCatalogId
-    if (savedId && state.catalogs.some((catalog) => catalog.id === savedId)) return savedId
-    return state.catalogs[0]?.id ?? NEW_CATALOG
+  function defaultCatalogId(exceptCatalogId?: string) {
+    const ids = state.catalogs
+      .map((catalog) => catalog.id)
+      .filter((id) => id !== exceptCatalogId)
+    return (
+      defaultSaveCatalogId(
+        ids,
+        state.settings.shadowSaveCatalogId,
+        exceptCatalogId ? undefined : lessonCatalogId,
+      ) ?? NEW_CATALOG
+    )
   }
 
   function tapChar(charIndex: number) {
@@ -122,14 +139,14 @@ export function SentenceDetailDialog({
     setCopyFailed(ok ? null : target)
   }
 
-  function openSave() {
+  function openSave(exceptCatalogId?: string) {
     setDraft({
       hanzi: storedHanzi,
       pinyin: '',
       meaning: '',
       note: buildContextNote(segment),
     })
-    setCatalogChoice(defaultCatalogId())
+    setCatalogChoice(defaultCatalogId(exceptCatalogId))
     setNewName(DEFAULT_CATALOG_NAME)
     setCreatingNew(false)
     setLinkWordId(null)
@@ -159,6 +176,27 @@ export function SentenceDetailDialog({
     })
     patchSettings({ shadowSaveCatalogId: catalog.id })
     setSavedName(`Đã lưu vào ${catalog.name}`)
+    setSelection(null)
+    setCreatingNew(false)
+    setStep('sentence')
+  }
+
+  const lessonCatalog = lessonCatalogId
+    ? state.catalogs.find((catalog) => catalog.id === lessonCatalogId)
+    : undefined
+  const lessonMatch = lessonCatalog ? findWordByHanzi(lessonCatalog.words, storedHanzi) : undefined
+  const lessonAlreadyLinked = lessonMatch
+    ? hasSource(lessonMatch, lessonId, segment.id)
+    : false
+
+  function attachToLesson() {
+    if (!lessonCatalog || !lessonMatch || lessonAlreadyLinked) return
+    updateWord(
+      lessonCatalog.id,
+      attachSentence(lessonMatch, { lessonId, segmentId: segment.id }, segment),
+    )
+    patchSettings({ shadowSaveCatalogId: lessonCatalog.id })
+    setSavedName(`Đã gắn vào ${lessonCatalog.name}`)
     setSelection(null)
     setCreatingNew(false)
     setStep('sentence')
@@ -209,6 +247,15 @@ export function SentenceDetailDialog({
           >
             Nghe câu
           </button>
+          {onEditSentence ? (
+            <button
+              type="button"
+              onClick={onEditSentence}
+              className="rounded-full bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800"
+            >
+              Sửa câu này
+            </button>
+          ) : null}
           <button
             type="button"
             aria-label="Đóng"
@@ -344,18 +391,43 @@ export function SentenceDetailDialog({
                 >
                   {shown}
                 </p>
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  <FooterButton onClick={() => void copy('selection', shown)}>
-                    {copyLabel('selection', 'Copy')}
-                  </FooterButton>
-                  <FooterButton onClick={openSave}>
-                    <BookmarkIcon />
-                    Lưu
-                  </FooterButton>
-                  <FooterButton tone="secondary" onClick={() => setSelection(null)}>
-                    Bỏ chọn
-                  </FooterButton>
-                </div>
+                {lessonMatch ? (
+                  <div className="mt-3 grid gap-2">
+                    <FooterButton onClick={attachToLesson} disabled={lessonAlreadyLinked} className="w-full">
+                      {lessonAlreadyLinked
+                        ? 'Đã gắn câu này'
+                        : `Gắn câu này vào 「${lessonMatch.hanzi}」`}
+                    </FooterButton>
+                    <FooterButton
+                      tone="secondary"
+                      className="w-full"
+                      onClick={() => openSave(lessonCatalogId)}
+                    >
+                      Lưu vào bộ khác
+                    </FooterButton>
+                    <div className="grid grid-cols-2 gap-2">
+                      <FooterButton tone="secondary" onClick={() => void copy('selection', shown)}>
+                        {copyLabel('selection', 'Copy')}
+                      </FooterButton>
+                      <FooterButton tone="secondary" onClick={() => setSelection(null)}>
+                        Bỏ chọn
+                      </FooterButton>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-3 grid grid-cols-3 gap-2">
+                    <FooterButton onClick={() => void copy('selection', shown)}>
+                      {copyLabel('selection', 'Copy')}
+                    </FooterButton>
+                    <FooterButton onClick={() => openSave()}>
+                      <BookmarkIcon />
+                      Lưu
+                    </FooterButton>
+                    <FooterButton tone="secondary" onClick={() => setSelection(null)}>
+                      Bỏ chọn
+                    </FooterButton>
+                  </div>
+                )}
               </>
             ) : (
               <>

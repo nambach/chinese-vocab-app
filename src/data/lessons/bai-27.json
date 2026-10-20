@@ -1,0 +1,856 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-27",
+  "title": "Bài 27",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-27.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.92,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、你怎么了",
+      "pinyin": "Yī, nǐ zěnme le",
+      "meaning": "Bài 1: Bạn bị sao vậy",
+      "start": 2.88,
+      "end": 5.46,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "你怎么了？",
+      "pinyin": "Nǐ zěnme le?",
+      "meaning": "Bạn bị sao vậy?",
+      "start": 6.67,
+      "end": 7.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "肚子疼得厉害，在家吃了两片药，还不行。",
+      "pinyin": "Dùzi téng de lìhai, zài jiā chī le liǎng piàn yào, hái bù xíng.",
+      "meaning": "Bụng đau dữ dội, ở nhà uống hai viên thuốc rồi vẫn chưa khỏi.",
+      "start": 8.65,
+      "end": 14.98,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "拉肚子了吗？",
+      "pinyin": "Lā dùzi le ma?",
+      "meaning": "Bị tiêu chảy à?",
+      "start": 15.74,
+      "end": 17.14,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "拉了。",
+      "pinyin": "Lā le.",
+      "meaning": "Có.",
+      "start": 17.91,
+      "end": 18.64,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "昨天吃什么了？",
+      "pinyin": "Zuótiān chī shénme le?",
+      "meaning": "Hôm qua ăn gì?",
+      "start": 19.23,
+      "end": 21.11,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "就吃了一些鱼和牛肉。",
+      "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+      "meaning": "Chỉ ăn một ít cá và thịt bò.",
+      "start": 21.86,
+      "end": 24.59,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "喝什么了？",
+      "pinyin": "Hē shénme le?",
+      "meaning": "Uống gì?",
+      "start": 25.31,
+      "end": 26.52,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "喝了一瓶啤酒。",
+      "pinyin": "Hē le yì píng píjiǔ.",
+      "meaning": "Uống một chai bia.",
+      "start": 27.14,
+      "end": 29.35,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "发烧吗？",
+      "pinyin": "Fā shāo ma?",
+      "meaning": "Sốt không?",
+      "start": 30.32,
+      "end": 31.41,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "不发烧。",
+      "pinyin": "Bù fā shāo.",
+      "meaning": "Không sốt.",
+      "start": 32.17,
+      "end": 33.25,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "你先去化验一下大便，然后我再给你检查检查。",
+      "pinyin": "Nǐ xiān qù huàyàn yíxià dàbiàn, ránhòu wǒ zài gěi nǐ jiǎnchá jiǎnchá.",
+      "meaning": "Anh đi xét nghiệm phân trước, rồi tôi khám cho anh.",
+      "start": 34.17,
+      "end": 40.54,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "好吧。",
+      "pinyin": "Hǎo ba.",
+      "meaning": "Vâng.",
+      "start": 41.08,
+      "end": 41.81,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "化验结果出来了吗？",
+      "pinyin": "Huàyàn jiéguǒ chūlái le ma?",
+      "meaning": "Kết quả xét nghiệm đã ra chưa?",
+      "start": 43.19,
+      "end": 45.48,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "出来了。",
+      "pinyin": "Chūlái le.",
+      "meaning": "Ra rồi.",
+      "start": 46.06,
+      "end": 46.93,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "大夫，我是不是得了肠炎？",
+      "pinyin": "Dàifu, wǒ shì bu shì dé le chángyán?",
+      "meaning": "Bác sĩ, tôi có bị viêm ruột không?",
+      "start": 47.74,
+      "end": 51.62,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "我看了化验的结果。不是肠炎，只是消化不好。",
+      "pinyin": "Wǒ kàn le huàyàn de jiéguǒ. Bú shì chángyán, zhǐ shì xiāohuà bù hǎo.",
+      "meaning": "Tôi xem kết quả xét nghiệm rồi, không phải viêm ruột, chỉ là tiêu hóa kém.",
+      "start": 52.28,
+      "end": 59.15,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "先给你开一些药，再给你打一针。",
+      "pinyin": "Xiān gěi nǐ kāi yìxiē yào, zài gěi nǐ dǎ yì zhēn.",
+      "meaning": "Trước kê thuốc cho anh, rồi tiêm một mũi.",
+      "start": 59.86,
+      "end": 64.26,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "这药怎么吃？",
+      "pinyin": "Zhè yào zěnme chī?",
+      "meaning": "Thuốc này uống thế nào?",
+      "start": 65.07,
+      "end": 66.81,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "一天三次，一次两片，饭后吃。",
+      "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
+      "meaning": "Một ngày ba lần, mỗi lần hai viên, uống sau bữa ăn.",
+      "start": 67.48,
+      "end": 73.23,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "二、玛丽哭了",
+      "pinyin": "Èr, Mǎlì kū le",
+      "meaning": "Bài 2: Mary khóc",
+      "start": 75.08,
+      "end": 77.83,
+      "section": "heading"
+    },
+    {
+      "id": "s23",
+      "text": "玛丽，你怎么哭了？病了吗？",
+      "pinyin": "Mǎlì, nǐ zěnme kū le? Bìng le ma?",
+      "meaning": "Mary, sao bạn khóc? Bị ốm à?",
+      "start": 79.21,
+      "end": 83.44,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "不是。",
+      "pinyin": "Bú shì.",
+      "meaning": "Không phải.",
+      "start": 84.25,
+      "end": 85.18,
+      "section": "kewen"
+    },
+    {
+      "id": "s25",
+      "text": "想家了。",
+      "pinyin": "Xiǎng jiā le.",
+      "meaning": "Nhớ nhà rồi.",
+      "start": 85.48,
+      "end": 86.68,
+      "section": "kewen"
+    },
+    {
+      "id": "s26",
+      "text": "因为感到寂寞，心情不好，所以很难过。",
+      "pinyin": "Yīnwèi gǎndào jìmò, xīnqíng bù hǎo, suǒyǐ hěn nánguò.",
+      "meaning": "Vì cảm thấy cô đơn, tâm trạng không tốt, nên rất buồn.",
+      "start": 87.14,
+      "end": 92.84,
+      "section": "kewen"
+    },
+    {
+      "id": "s27",
+      "text": "别难过了。",
+      "pinyin": "Bié nánguò le.",
+      "meaning": "Đừng buồn nữa.",
+      "start": 93.63,
+      "end": 94.89,
+      "section": "kewen"
+    },
+    {
+      "id": "s28",
+      "text": "你不想家吗？",
+      "pinyin": "Nǐ bù xiǎng jiā ma?",
+      "meaning": "Bạn không nhớ nhà à?",
+      "start": 95.62,
+      "end": 97.48,
+      "section": "kewen"
+    },
+    {
+      "id": "s29",
+      "text": "我也常想家，但是不感到寂寞。",
+      "pinyin": "Wǒ yě cháng xiǎng jiā, dànshì bù gǎndào jìmò.",
+      "meaning": "Tôi cũng hay nhớ nhà, nhưng không cảm thấy cô đơn.",
+      "start": 98.1,
+      "end": 102.72,
+      "section": "kewen"
+    },
+    {
+      "id": "s30",
+      "text": "我有姐姐，还有弟弟。在家时，我们常常一起玩儿，所以，感到寂寞时，总想他们。",
+      "pinyin": "Wǒ yǒu jiějie, hái yǒu dìdi. Zài jiā shí, wǒmen chángcháng yìqǐ wánr, suǒyǐ, gǎndào jìmò shí, zǒng xiǎng tāmen.",
+      "meaning": "Tôi có chị và em trai, ở nhà chúng tôi hay chơi cùng nhau, nên khi cô đơn lại nhớ đến họ.",
+      "start": 103.77,
+      "end": 116.61,
+      "section": "kewen"
+    },
+    {
+      "id": "s31",
+      "text": "今天晚上礼堂有舞会，我们一起去跳跳舞吧。玩玩儿就好了。",
+      "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì, wǒmen yìqǐ qù tiào tiào wǔ ba. Wán wánr jiù hǎo le.",
+      "meaning": "Tối nay hội trường có vũ hội, chúng ta cùng đi nhảy, chơi chút là khá rồi.",
+      "start": 117.72,
+      "end": 127.49,
+      "section": "kewen"
+    },
+    {
+      "id": "s32",
+      "text": "什么时候去？",
+      "pinyin": "Shénme shíhou qù?",
+      "meaning": "Khi nào đi?",
+      "start": 128.29,
+      "end": 129.74,
+      "section": "kewen"
+    },
+    {
+      "id": "s33",
+      "text": "吃了晚饭就去吧。",
+      "pinyin": "Chī le wǎnfàn jiù qù ba.",
+      "meaning": "Ăn cơm tối xong rồi đi.",
+      "start": 130.6,
+      "end": 132.93,
+      "section": "kewen"
+    },
+    {
+      "id": "s34",
+      "text": "你在宿舍等我，我来叫你。",
+      "pinyin": "Nǐ zài sùshè děng wǒ, wǒ lái jiào nǐ.",
+      "meaning": "Bạn đợi tôi ở ký túc, tôi đến gọi bạn.",
+      "start": 133.73,
+      "end": 137.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s35",
+      "text": "好吧。",
+      "pinyin": "Hǎo ba.",
+      "meaning": "Được.",
+      "start": 138.97,
+      "end": 139.69,
+      "section": "kewen"
+    },
+    {
+      "id": "s36",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 141.44,
+      "end": 143.62,
+      "section": "heading"
+    },
+    {
+      "id": "s37",
+      "text": "了",
+      "pinyin": "le",
+      "meaning": "rồi, đã, xong (trợ từ)",
+      "start": 144.77,
+      "end": 145.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s38",
+      "text": "病人",
+      "pinyin": "bìngrén",
+      "meaning": "bệnh nhân",
+      "start": 146.57,
+      "end": 147.56,
+      "section": "shengci"
+    },
+    {
+      "id": "s39",
+      "text": "肚子",
+      "pinyin": "dùzi",
+      "meaning": "bụng",
+      "start": 148.8,
+      "end": 149.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s40",
+      "text": "厉害",
+      "pinyin": "lìhai",
+      "meaning": "dữ dội, ghê",
+      "start": 150.75,
+      "end": 151.65,
+      "section": "shengci"
+    },
+    {
+      "id": "s41",
+      "text": "片",
+      "pinyin": "piàn",
+      "meaning": "viên (lượng từ)",
+      "start": 152.93,
+      "end": 153.63,
+      "section": "shengci"
+    },
+    {
+      "id": "s42",
+      "text": "拉肚子",
+      "pinyin": "lā dùzi",
+      "meaning": "tiêu chảy",
+      "start": 154.88,
+      "end": 155.99,
+      "section": "shengci"
+    },
+    {
+      "id": "s43",
+      "text": "鱼",
+      "pinyin": "yú",
+      "meaning": "cá",
+      "start": 157.29,
+      "end": 157.97,
+      "section": "shengci"
+    },
+    {
+      "id": "s44",
+      "text": "牛肉",
+      "pinyin": "niúròu",
+      "meaning": "thịt bò",
+      "start": 159.42,
+      "end": 160.4,
+      "section": "shengci"
+    },
+    {
+      "id": "s45",
+      "text": "化验",
+      "pinyin": "huàyàn",
+      "meaning": "xét nghiệm",
+      "start": 161.87,
+      "end": 162.79,
+      "section": "shengci"
+    },
+    {
+      "id": "s46",
+      "text": "大便",
+      "pinyin": "dàbiàn",
+      "meaning": "phân, đại tiện",
+      "start": 163.86,
+      "end": 164.82,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "小便",
+      "pinyin": "xiǎobiàn",
+      "meaning": "tiểu tiện",
+      "start": 165.99,
+      "end": 167.06,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "检查",
+      "pinyin": "jiǎnchá",
+      "meaning": "khám, kiểm tra",
+      "start": 168.38,
+      "end": 169.54,
+      "section": "shengci"
+    },
+    {
+      "id": "s49",
+      "text": "结果",
+      "pinyin": "jiéguǒ",
+      "meaning": "kết quả",
+      "start": 170.81,
+      "end": 171.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "出来",
+      "pinyin": "chūlái",
+      "meaning": "ra",
+      "start": 173.29,
+      "end": 174.22,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "得",
+      "pinyin": "dé",
+      "meaning": "bị, mắc (được)",
+      "start": 175.54,
+      "end": 176.24,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "肠炎",
+      "pinyin": "chángyán",
+      "meaning": "viêm ruột",
+      "start": 177.51,
+      "end": 178.67,
+      "section": "shengci"
+    },
+    {
+      "id": "s53",
+      "text": "消化",
+      "pinyin": "xiāohuà",
+      "meaning": "tiêu hóa",
+      "start": 179.93,
+      "end": 181.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s54",
+      "text": "开",
+      "pinyin": "kāi",
+      "meaning": "kê (đơn)",
+      "start": 182.33,
+      "end": 183.1,
+      "section": "shengci"
+    },
+    {
+      "id": "s55",
+      "text": "开药",
+      "pinyin": "kāi yào",
+      "meaning": "kê thuốc",
+      "start": 184.32,
+      "end": 185.32,
+      "section": "shengci"
+    },
+    {
+      "id": "s56",
+      "text": "打针",
+      "pinyin": "dǎzhēn",
+      "meaning": "tiêm thuốc",
+      "start": 186.59,
+      "end": 187.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s57",
+      "text": "后",
+      "pinyin": "hòu",
+      "meaning": "sau",
+      "start": 188.88,
+      "end": 189.59,
+      "section": "shengci"
+    },
+    {
+      "id": "s58",
+      "text": "哭",
+      "pinyin": "kū",
+      "meaning": "khóc",
+      "start": 190.85,
+      "end": 191.6,
+      "section": "shengci"
+    },
+    {
+      "id": "s59",
+      "text": "寂寞",
+      "pinyin": "jìmò",
+      "meaning": "cô đơn",
+      "start": 192.91,
+      "end": 193.98,
+      "section": "shengci"
+    },
+    {
+      "id": "s60",
+      "text": "所以",
+      "pinyin": "suǒyǐ",
+      "meaning": "cho nên",
+      "start": 195.13,
+      "end": 196.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s61",
+      "text": "别",
+      "pinyin": "bié",
+      "meaning": "đừng",
+      "start": 197.6,
+      "end": 198.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s62",
+      "text": "难过",
+      "pinyin": "nánguò",
+      "meaning": "buồn",
+      "start": 199.51,
+      "end": 200.62,
+      "section": "shengci"
+    },
+    {
+      "id": "s63",
+      "text": "礼堂",
+      "pinyin": "lǐtáng",
+      "meaning": "hội trường",
+      "start": 201.87,
+      "end": 203.03,
+      "section": "shengci"
+    },
+    {
+      "id": "s64",
+      "text": "舞会",
+      "pinyin": "wǔhuì",
+      "meaning": "vũ hội",
+      "start": 204.16,
+      "end": 205.21,
+      "section": "shengci"
+    },
+    {
+      "id": "s65",
+      "text": "跳舞",
+      "pinyin": "tiàowǔ",
+      "meaning": "khiêu vũ",
+      "start": 206.24,
+      "end": 207.51,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "了",
+      "pinyin": "le",
+      "meaning": "rồi, đã, xong (trợ từ)",
+      "segments": [
+        "s3",
+        "s37"
+      ]
+    },
+    {
+      "hanzi": "病人",
+      "pinyin": "bìngrén",
+      "meaning": "bệnh nhân",
+      "segments": [
+        "s38"
+      ]
+    },
+    {
+      "hanzi": "肚子",
+      "pinyin": "dùzi",
+      "meaning": "bụng",
+      "segments": [
+        "s4",
+        "s39"
+      ]
+    },
+    {
+      "hanzi": "厉害",
+      "pinyin": "lìhai",
+      "meaning": "dữ dội, ghê",
+      "segments": [
+        "s4",
+        "s40"
+      ]
+    },
+    {
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "meaning": "viên (lượng từ)",
+      "segments": [
+        "s4",
+        "s41"
+      ]
+    },
+    {
+      "hanzi": "拉肚子",
+      "pinyin": "lā dùzi",
+      "meaning": "tiêu chảy",
+      "segments": [
+        "s5",
+        "s42"
+      ]
+    },
+    {
+      "hanzi": "鱼",
+      "pinyin": "yú",
+      "meaning": "cá",
+      "segments": [
+        "s8",
+        "s43"
+      ]
+    },
+    {
+      "hanzi": "牛肉",
+      "pinyin": "niúròu",
+      "meaning": "thịt bò",
+      "segments": [
+        "s8",
+        "s44"
+      ]
+    },
+    {
+      "hanzi": "化验",
+      "pinyin": "huàyàn",
+      "meaning": "xét nghiệm",
+      "segments": [
+        "s13",
+        "s45"
+      ]
+    },
+    {
+      "hanzi": "大便",
+      "pinyin": "dàbiàn",
+      "meaning": "phân, đại tiện",
+      "segments": [
+        "s13",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "小便",
+      "pinyin": "xiǎobiàn",
+      "meaning": "tiểu tiện",
+      "segments": [
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "检查",
+      "pinyin": "jiǎnchá",
+      "meaning": "khám, kiểm tra",
+      "segments": [
+        "s13",
+        "s48"
+      ]
+    },
+    {
+      "hanzi": "结果",
+      "pinyin": "jiéguǒ",
+      "meaning": "kết quả",
+      "segments": [
+        "s15",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "出来",
+      "pinyin": "chūlái",
+      "meaning": "ra",
+      "segments": [
+        "s15",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "得",
+      "pinyin": "dé",
+      "meaning": "bị, mắc (được)",
+      "segments": [
+        "s17",
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "肠炎",
+      "pinyin": "chángyán",
+      "meaning": "viêm ruột",
+      "segments": [
+        "s17",
+        "s52"
+      ]
+    },
+    {
+      "hanzi": "消化",
+      "pinyin": "xiāohuà",
+      "meaning": "tiêu hóa",
+      "segments": [
+        "s18",
+        "s53"
+      ]
+    },
+    {
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "meaning": "kê (đơn)",
+      "segments": [
+        "s19",
+        "s54"
+      ]
+    },
+    {
+      "hanzi": "开药",
+      "pinyin": "kāi yào",
+      "meaning": "kê thuốc",
+      "segments": [
+        "s55"
+      ]
+    },
+    {
+      "hanzi": "打针",
+      "pinyin": "dǎzhēn",
+      "meaning": "tiêm thuốc",
+      "segments": [
+        "s56"
+      ]
+    },
+    {
+      "hanzi": "后",
+      "pinyin": "hòu",
+      "meaning": "sau",
+      "segments": [
+        "s13",
+        "s57"
+      ]
+    },
+    {
+      "hanzi": "哭",
+      "pinyin": "kū",
+      "meaning": "khóc",
+      "segments": [
+        "s23",
+        "s58"
+      ]
+    },
+    {
+      "hanzi": "寂寞",
+      "pinyin": "jìmò",
+      "meaning": "cô đơn",
+      "segments": [
+        "s26",
+        "s59"
+      ]
+    },
+    {
+      "hanzi": "所以",
+      "pinyin": "suǒyǐ",
+      "meaning": "cho nên",
+      "segments": [
+        "s26",
+        "s60"
+      ]
+    },
+    {
+      "hanzi": "别",
+      "pinyin": "bié",
+      "meaning": "đừng",
+      "segments": [
+        "s27",
+        "s61"
+      ]
+    },
+    {
+      "hanzi": "难过",
+      "pinyin": "nánguò",
+      "meaning": "buồn",
+      "segments": [
+        "s26",
+        "s62"
+      ]
+    },
+    {
+      "hanzi": "礼堂",
+      "pinyin": "lǐtáng",
+      "meaning": "hội trường",
+      "segments": [
+        "s31",
+        "s63"
+      ]
+    },
+    {
+      "hanzi": "舞会",
+      "pinyin": "wǔhuì",
+      "meaning": "vũ hội",
+      "segments": [
+        "s31",
+        "s64"
+      ]
+    },
+    {
+      "hanzi": "跳舞",
+      "pinyin": "tiàowǔ",
+      "meaning": "khiêu vũ",
+      "segments": [
+        "s31",
+        "s65"
+      ]
+    }
+  ]
+}

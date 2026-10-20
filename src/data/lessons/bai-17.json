@@ -1,0 +1,746 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-17",
+  "title": "Bài 17",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-17.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0,
+      "end": 1.82,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、他在做什么呢",
+      "pinyin": "Yī, tā zài zuò shénme ne",
+      "meaning": "Bài 1: Anh ấy đang làm gì thế",
+      "start": 1.82,
+      "end": 6.23,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "麦克在宿舍吗？",
+      "pinyin": "Màikè zài sùshè ma?",
+      "meaning": "Mike có ở ký túc xá không?",
+      "start": 7.76,
+      "end": 9.98,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "在。",
+      "pinyin": "Zài.",
+      "meaning": "Có.",
+      "start": 11.08,
+      "end": 11.48,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "他在做什么呢？",
+      "pinyin": "Tā zài zuò shénme ne?",
+      "meaning": "Anh ấy đang làm gì thế?",
+      "start": 11.48,
+      "end": 13.9,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "我出来的时候，他正在听音乐呢。",
+      "pinyin": "Wǒ chūlái de shíhou, tā zhèngzài tīng yīnyuè ne.",
+      "meaning": "Lúc mình đi ra, anh ấy đang nghe nhạc.",
+      "start": 14.94,
+      "end": 18.96,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "你是不是在听音乐呢？",
+      "pinyin": "Nǐ shì bu shì zài tīng yīnyuè ne?",
+      "meaning": "Bạn đang nghe nhạc phải không?",
+      "start": 20.04,
+      "end": 22.89,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "没有，我正听课文录音呢。",
+      "pinyin": "Méiyǒu, wǒ zhèng tīng kèwén lùyīn ne.",
+      "meaning": "Không, mình đang nghe băng bài khóa.",
+      "start": 23.88,
+      "end": 28.08,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "下午你有事儿吗？",
+      "pinyin": "Xiàwǔ nǐ yǒu shìr ma?",
+      "meaning": "Chiều nay bạn có việc không?",
+      "start": 28.78,
+      "end": 30.59,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "没有事儿。",
+      "pinyin": "Méiyǒu shìr.",
+      "meaning": "Không có việc.",
+      "start": 31.58,
+      "end": 32.57,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "我们一起去书店，好吗？",
+      "pinyin": "Wǒmen yìqǐ qù shūdiàn, hǎo ma?",
+      "meaning": "Chúng ta cùng đi hiệu sách nhé?",
+      "start": 33.4,
+      "end": 36.25,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "你要买什么书？",
+      "pinyin": "Nǐ yào mǎi shénme shū?",
+      "meaning": "Bạn muốn mua sách gì?",
+      "start": 37.02,
+      "end": 39.29,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "我想买一本《汉英词典》。",
+      "pinyin": "Wǒ xiǎng mǎi yì běn Hàn-Yīng cídiǎn.",
+      "meaning": "Mình muốn mua một cuốn từ điển Hán-Anh.",
+      "start": 39.88,
+      "end": 43.05,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "咱们怎么去呢？",
+      "pinyin": "Zánmen zěnme qù ne?",
+      "meaning": "Chúng ta đi bằng gì?",
+      "start": 43.96,
+      "end": 45.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "坐车去吧。",
+      "pinyin": "Zuò chē qù ba.",
+      "meaning": "Đi xe thôi.",
+      "start": 46.94,
+      "end": 48.26,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "今天星期六，坐车太挤，骑车去怎么样？",
+      "pinyin": "Jīntiān xīngqīliù, zuò chē tài jǐ, qí chē qù zěnmeyàng?",
+      "meaning": "Hôm nay thứ Bảy, đi xe đông quá, đi xe đạp thì sao?",
+      "start": 49.4,
+      "end": 55.78,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "行。",
+      "pinyin": "Xíng.",
+      "meaning": "Được.",
+      "start": 56.46,
+      "end": 57.22,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "二、谁教你们语法",
+      "pinyin": "Èr, shuí jiāo nǐmen yǔfǎ",
+      "meaning": "Bài 2: Ai dạy các bạn ngữ pháp",
+      "start": 59.14,
+      "end": 62.72,
+      "section": "heading"
+    },
+    {
+      "id": "s19",
+      "text": "玛丽，你们有几门课？",
+      "pinyin": "Mǎlì, nǐmen yǒu jǐ mén kè?",
+      "meaning": "Mary, các bạn có mấy môn?",
+      "start": 64.54,
+      "end": 68.73,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "现在只有四门课：综合课、口语课、听力课和阅读课。",
+      "pinyin": "Xiànzài zhǐ yǒu sì mén kè: zōnghé kè, kǒuyǔ kè, tīnglì kè hé yuèdú kè.",
+      "meaning": "Bây giờ chỉ có bốn môn: tổng hợp, khẩu ngữ, nghe và đọc.",
+      "start": 69.64,
+      "end": 79.07,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "有文化课和体育课吗？",
+      "pinyin": "Yǒu wénhuà kè hé tǐyù kè ma?",
+      "meaning": "Có môn văn hóa và thể dục không?",
+      "start": 79.4,
+      "end": 85.1,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "没有。",
+      "pinyin": "Méiyǒu.",
+      "meaning": "Không có.",
+      "start": 85.96,
+      "end": 86.56,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "林老师教你们什么？",
+      "pinyin": "Lín lǎoshī jiāo nǐmen shénme?",
+      "meaning": "Cô Lâm dạy các bạn môn gì?",
+      "start": 86.56,
+      "end": 91.33,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "她教我们听力和阅读？",
+      "pinyin": "Tā jiāo wǒmen tīnglì hé yuèdú?",
+      "meaning": "Cô ấy dạy chúng mình nghe và đọc?",
+      "start": 92.54,
+      "end": 95.27,
+      "section": "kewen"
+    },
+    {
+      "id": "s25",
+      "text": "谁教你们综合课和口语课？",
+      "pinyin": "Shuí jiāo nǐmen zōnghé kè hé kǒuyǔ kè?",
+      "meaning": "Ai dạy các bạn tổng hợp và khẩu ngữ?",
+      "start": 95.27,
+      "end": 102.27,
+      "section": "kewen"
+    },
+    {
+      "id": "s26",
+      "text": "王老师。",
+      "pinyin": "Wáng lǎoshī.",
+      "meaning": "Thầy Vương.",
+      "start": 102.86,
+      "end": 104.66,
+      "section": "kewen"
+    },
+    {
+      "id": "s27",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 106.96,
+      "end": 108.66,
+      "section": "heading"
+    },
+    {
+      "id": "s28",
+      "text": "在",
+      "pinyin": "zài",
+      "meaning": "đang",
+      "start": 109.72,
+      "end": 110.36,
+      "section": "shengci"
+    },
+    {
+      "id": "s29",
+      "text": "出来",
+      "pinyin": "chūlái",
+      "meaning": "ra, về phía người nói",
+      "start": 111.42,
+      "end": 112.8,
+      "section": "shengci"
+    },
+    {
+      "id": "s30",
+      "text": "来",
+      "pinyin": "lái",
+      "meaning": "đến",
+      "start": 113.86,
+      "end": 114.98,
+      "section": "shengci"
+    },
+    {
+      "id": "s31",
+      "text": "正在",
+      "pinyin": "zhèngzài",
+      "meaning": "đang",
+      "start": 115.87,
+      "end": 117.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s32",
+      "text": "音乐",
+      "pinyin": "yīnyuè",
+      "meaning": "âm nhạc",
+      "start": 117.3,
+      "end": 119.7,
+      "section": "shengci"
+    },
+    {
+      "id": "s33",
+      "text": "没有",
+      "pinyin": "méiyǒu",
+      "meaning": "không, không có",
+      "start": 120.82,
+      "end": 122.35,
+      "section": "shengci"
+    },
+    {
+      "id": "s34",
+      "text": "正",
+      "pinyin": "zhèng",
+      "meaning": "đang",
+      "start": 123.44,
+      "end": 124.4,
+      "section": "shengci"
+    },
+    {
+      "id": "s35",
+      "text": "录音",
+      "pinyin": "lùyīn",
+      "meaning": "ghi âm",
+      "start": 124.4,
+      "end": 127.02,
+      "section": "shengci"
+    },
+    {
+      "id": "s36",
+      "text": "事",
+      "pinyin": "shì",
+      "meaning": "việc, chuyện",
+      "start": 128.08,
+      "end": 129.12,
+      "section": "shengci"
+    },
+    {
+      "id": "s37",
+      "text": "书店",
+      "pinyin": "shūdiàn",
+      "meaning": "hiệu sách",
+      "start": 130.04,
+      "end": 131.67,
+      "section": "shengci"
+    },
+    {
+      "id": "s38",
+      "text": "想",
+      "pinyin": "xiǎng",
+      "meaning": "muốn, nghĩ",
+      "start": 132.74,
+      "end": 133.99,
+      "section": "shengci"
+    },
+    {
+      "id": "s39",
+      "text": "汉英",
+      "pinyin": "hànyīng",
+      "meaning": "Hán-Anh",
+      "start": 134.97,
+      "end": 136.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s40",
+      "text": "坐",
+      "pinyin": "zuò",
+      "meaning": "ngồi; đi xe",
+      "start": 137.72,
+      "end": 138.72,
+      "section": "shengci"
+    },
+    {
+      "id": "s41",
+      "text": "挤",
+      "pinyin": "jǐ",
+      "meaning": "chật, chen",
+      "start": 139.78,
+      "end": 140.94,
+      "section": "shengci"
+    },
+    {
+      "id": "s42",
+      "text": "骑",
+      "pinyin": "qí",
+      "meaning": "đi xe hai bánh, cưỡi",
+      "start": 142.14,
+      "end": 143.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s43",
+      "text": "行",
+      "pinyin": "xíng",
+      "meaning": "được",
+      "start": 144.38,
+      "end": 145.48,
+      "section": "shengci"
+    },
+    {
+      "id": "s44",
+      "text": "门",
+      "pinyin": "mén",
+      "meaning": "cửa; môn",
+      "start": 146.54,
+      "end": 147.7,
+      "section": "shengci"
+    },
+    {
+      "id": "s45",
+      "text": "课",
+      "pinyin": "kè",
+      "meaning": "môn học, bài",
+      "start": 148.92,
+      "end": 149.9,
+      "section": "shengci"
+    },
+    {
+      "id": "s46",
+      "text": "综合",
+      "pinyin": "zōnghé",
+      "meaning": "tổng hợp",
+      "start": 150.9,
+      "end": 152.37,
+      "section": "shengci"
+    },
+    {
+      "id": "s47",
+      "text": "口语",
+      "pinyin": "kǒuyǔ",
+      "meaning": "khẩu ngữ",
+      "start": 152.37,
+      "end": 155.2,
+      "section": "shengci"
+    },
+    {
+      "id": "s48",
+      "text": "听力",
+      "pinyin": "tīnglì",
+      "meaning": "nghe",
+      "start": 156.22,
+      "end": 157.68,
+      "section": "shengci"
+    },
+    {
+      "id": "s49",
+      "text": "阅读",
+      "pinyin": "yuèdú",
+      "meaning": "đọc",
+      "start": 157.68,
+      "end": 160.14,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "文化",
+      "pinyin": "wénhuà",
+      "meaning": "văn hóa",
+      "start": 160.14,
+      "end": 162.75,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "体育",
+      "pinyin": "tǐyù",
+      "meaning": "thể dục",
+      "start": 163.64,
+      "end": 165.34,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "教",
+      "pinyin": "jiāo",
+      "meaning": "dạy",
+      "start": 166.4,
+      "end": 167.69,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "在",
+      "pinyin": "zài",
+      "meaning": "đang",
+      "note": "nhấn mạnh trạng thái tiến hành; cấu trúc 正/在/正在 + V + O + 呢",
+      "segments": [
+        "s3",
+        "s28"
+      ]
+    },
+    {
+      "hanzi": "正在",
+      "pinyin": "zhèngzài",
+      "meaning": "đang",
+      "note": "nhấn mạnh cả thời gian lẫn trạng thái tiến hành",
+      "segments": [
+        "s6",
+        "s31"
+      ]
+    },
+    {
+      "hanzi": "正",
+      "pinyin": "zhèng",
+      "meaning": "đang",
+      "note": "nhấn mạnh thời điểm đang xảy ra; phủ định dùng 没(有) + V hoặc 没在 + V, ít khi phủ định trực tiếp 正",
+      "segments": [
+        "s8",
+        "s34"
+      ]
+    },
+    {
+      "hanzi": "出来",
+      "pinyin": "chūlái",
+      "meaning": "ra (hướng lại gần người nói)",
+      "segments": [
+        "s6",
+        "s29"
+      ]
+    },
+    {
+      "hanzi": "出去",
+      "pinyin": "chūqù",
+      "meaning": "ra ngoài (hướng ra xa người nói)"
+    },
+    {
+      "hanzi": "来",
+      "pinyin": "lái",
+      "meaning": "đến, lại",
+      "note": "hành động hướng về gần người nói",
+      "segments": [
+        "s30"
+      ]
+    },
+    {
+      "hanzi": "音乐",
+      "pinyin": "yīnyuè",
+      "meaning": "âm nhạc",
+      "segments": [
+        "s6",
+        "s32"
+      ]
+    },
+    {
+      "hanzi": "没有",
+      "pinyin": "méiyǒu",
+      "meaning": "không, không có",
+      "segments": [
+        "s8",
+        "s33"
+      ]
+    },
+    {
+      "hanzi": "事",
+      "pinyin": "shì",
+      "meaning": "việc, chuyện",
+      "segments": [
+        "s9",
+        "s36"
+      ]
+    },
+    {
+      "hanzi": "书店",
+      "pinyin": "shūdiàn",
+      "meaning": "hiệu sách, nhà sách",
+      "segments": [
+        "s11",
+        "s37"
+      ]
+    },
+    {
+      "hanzi": "录音",
+      "pinyin": "lùyīn",
+      "meaning": "băng ghi âm; ghi âm",
+      "segments": [
+        "s8",
+        "s35"
+      ]
+    },
+    {
+      "hanzi": "想",
+      "pinyin": "xiǎng",
+      "meaning": "nhớ, nghĩ, muốn",
+      "segments": [
+        "s13",
+        "s38"
+      ]
+    },
+    {
+      "hanzi": "汉英",
+      "pinyin": "Hàn-Yīng",
+      "meaning": "Trung - Anh, Hán - Anh",
+      "segments": [
+        "s13",
+        "s39"
+      ]
+    },
+    {
+      "hanzi": "坐",
+      "pinyin": "zuò",
+      "meaning": "ngồi; đi bằng phương tiện mình không tự lái",
+      "note": "ô tô, xe buýt, tàu, máy bay; xe đạp, xe máy, ngựa dùng 骑; tự lái ô tô dùng 开",
+      "segments": [
+        "s15",
+        "s40"
+      ]
+    },
+    {
+      "hanzi": "骑",
+      "pinyin": "qí",
+      "meaning": "lái (xe 2 bánh), cưỡi (ngựa)",
+      "segments": [
+        "s16",
+        "s42"
+      ]
+    },
+    {
+      "hanzi": "行",
+      "pinyin": "xíng",
+      "meaning": "được, ok",
+      "segments": [
+        "s17",
+        "s43"
+      ]
+    },
+    {
+      "hanzi": "挤",
+      "pinyin": "jǐ",
+      "meaning": "chật chội; chen chúc",
+      "segments": [
+        "s16",
+        "s41"
+      ]
+    },
+    {
+      "hanzi": "门",
+      "pinyin": "mén",
+      "meaning": "cửa; môn (lượng từ cho môn học)",
+      "segments": [
+        "s19",
+        "s44"
+      ]
+    },
+    {
+      "hanzi": "课",
+      "pinyin": "kè",
+      "meaning": "môn học, bài",
+      "segments": [
+        "s19",
+        "s45"
+      ]
+    },
+    {
+      "hanzi": "综合",
+      "pinyin": "zōnghé",
+      "meaning": "tổng hợp",
+      "segments": [
+        "s20",
+        "s46"
+      ]
+    },
+    {
+      "hanzi": "口语",
+      "pinyin": "kǒuyǔ",
+      "meaning": "khẩu ngữ, nói",
+      "segments": [
+        "s20",
+        "s47"
+      ]
+    },
+    {
+      "hanzi": "听力",
+      "pinyin": "tīnglì",
+      "meaning": "môn nghe, kỹ năng nghe",
+      "segments": [
+        "s20",
+        "s48"
+      ]
+    },
+    {
+      "hanzi": "阅读",
+      "pinyin": "yuèdú",
+      "meaning": "môn đọc hiểu, đọc",
+      "segments": [
+        "s20",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "文化",
+      "pinyin": "wénhuà",
+      "meaning": "văn hóa",
+      "segments": [
+        "s21",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "体育",
+      "pinyin": "tǐyù",
+      "meaning": "thể dục, thể thao",
+      "segments": [
+        "s21",
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "meaning": "dạy",
+      "note": "có thể mang 2 tân ngữ (教我汉语)",
+      "segments": [
+        "s23",
+        "s52"
+      ]
+    },
+    {
+      "hanzi": "怎么",
+      "pinyin": "zěnme",
+      "meaning": "như thế nào, làm sao",
+      "note": "怎么 + V hỏi cách thức, VD 这个字怎么写？",
+      "segments": [
+        "s14"
+      ]
+    },
+    {
+      "hanzi": "摩托车",
+      "pinyin": "mótuōchē",
+      "meaning": "xe máy"
+    },
+    {
+      "hanzi": "自行车",
+      "pinyin": "zìxíngchē",
+      "meaning": "xe đạp"
+    },
+    {
+      "hanzi": "汽车",
+      "pinyin": "qìchē",
+      "meaning": "ô tô"
+    },
+    {
+      "hanzi": "出租车",
+      "pinyin": "chūzūchē",
+      "meaning": "taxi"
+    }
+  ]
+}

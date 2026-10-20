@@ -1,0 +1,1236 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-29",
+  "title": "Bài 29",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-29.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 2.01,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、我都做对了",
+      "pinyin": "Yī, wǒ dōu zuò duì le",
+      "meaning": "Bài 1: Tôi đều làm đúng cả",
+      "start": 2.66,
+      "end": 5.66,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "你今天考得怎么样？",
+      "pinyin": "Nǐ jīntiān kǎo de zěnmeyàng?",
+      "meaning": "Hôm nay bạn thi thế nào?",
+      "start": 7.25,
+      "end": 9.52,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "这次没考好。",
+      "pinyin": "Zhè cì méi kǎo hǎo.",
+      "meaning": "Lần này thi không tốt.",
+      "start": 10.5,
+      "end": 12.46,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "题太多了，我没有做完。",
+      "pinyin": "Tí tài duō le, wǒ méiyǒu zuò wán.",
+      "meaning": "Đề quá nhiều, tôi không làm xong.",
+      "start": 13.3,
+      "end": 17.02,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "你做完了没有？",
+      "pinyin": "Nǐ zuò wán le méiyǒu?",
+      "meaning": "Bạn làm xong chưa?",
+      "start": 17.81,
+      "end": 19.4,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "我都做完了，但是没都做对，做错了两道题，所以成绩不会太好。",
+      "pinyin": "Wǒ dōu zuò wán le, dànshì méi dōu zuò duì, zuò cuò le liǎng dào tí, suǒyǐ chéngjì bú huì tài hǎo.",
+      "meaning": "Tôi đều làm xong rồi, nhưng không phải đề nào cũng đúng, làm sai hai câu, nên thành tích sẽ không quá tốt.",
+      "start": 20.67,
+      "end": 30.16,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "语法题不太难，我觉得都做对了。",
+      "pinyin": "Yǔfǎ tí bú tài nán, wǒ juéde dōu zuò duì le.",
+      "meaning": "Phần ngữ pháp không quá khó, tôi nghĩ đều làm đúng.",
+      "start": 30.95,
+      "end": 35.74,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "听力比较难，很多句子我没听懂。",
+      "pinyin": "Tīnglì bǐjiào nán, hěn duō jùzi wǒ méi tīng dǒng.",
+      "meaning": "Phần nghe khó hơn, nhiều câu tôi không nghe hiểu.",
+      "start": 36.52,
+      "end": 41.92,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "我也不知道做对了没有。",
+      "pinyin": "Wǒ yě bù zhīdào zuò duì le méiyǒu.",
+      "meaning": "Tôi cũng không biết làm đúng chưa.",
+      "start": 43,
+      "end": 45.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "我的词典呢？",
+      "pinyin": "Wǒ de cídiǎn ne?",
+      "meaning": "Từ điển của tôi đâu?",
+      "start": 46.86,
+      "end": 48.39,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "我没看见你的词典。",
+      "pinyin": "Wǒ méi kànjiàn nǐ de cídiǎn.",
+      "meaning": "Tôi không thấy từ điển của bạn.",
+      "start": 49.63,
+      "end": 51.9,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "你找词典干什么？",
+      "pinyin": "Nǐ zhǎo cídiǎn gàn shénme?",
+      "meaning": "Bạn tìm từ điển làm gì?",
+      "start": 52.62,
+      "end": 54.79,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "我查一个词，看看写对了没有。",
+      "pinyin": "Wǒ chá yí ge cí, kànkan xiě duì le méiyǒu.",
+      "meaning": "Tôi tra một từ, xem viết đúng chưa.",
+      "start": 55.81,
+      "end": 60.04,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "糟糕，写错了。",
+      "pinyin": "Zāogāo, xiě cuò le.",
+      "meaning": "Tệ quá, viết sai rồi.",
+      "start": 61.53,
+      "end": 64.28,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "是这个“得”，我写成这个“的”了。",
+      "pinyin": "Shì zhège “de”, wǒ xiě chéng zhège “de” le.",
+      "meaning": "Là chữ “得” này, tôi lại viết thành chữ “的” này.",
+      "start": 65.56,
+      "end": 70.11,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "别查了，休息休息吧。",
+      "pinyin": "Bié chá le, xiūxi xiūxi ba.",
+      "meaning": "Đừng tra nữa, nghỉ ngơi đi.",
+      "start": 71.26,
+      "end": 74.3,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "快打开电脑，看看你买的电影光盘吧。",
+      "pinyin": "Kuài dǎkāi diànnǎo, kànkan nǐ mǎi de diànyǐng guāngpán ba.",
+      "meaning": "Mau bật máy tính, xem đĩa phim bạn mua đi.",
+      "start": 75.27,
+      "end": 79.92,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "我的衣服还没有洗完呢，还得给我妹妹回信。",
+      "pinyin": "Wǒ de yīfu hái méiyǒu xǐ wán ne, hái děi gěi wǒ mèimei huíxìn.",
+      "meaning": "Quần áo tôi còn chưa giặt xong, còn phải viết thư trả lời em gái.",
+      "start": 80.91,
+      "end": 86.61,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "看完电影再洗吧。",
+      "pinyin": "Kàn wán diànyǐng zài xǐ ba.",
+      "meaning": "Xem phim xong rồi giặt sau.",
+      "start": 87.4,
+      "end": 89.68,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "二、看完电影再做作业",
+      "pinyin": "Èr, kàn wán diànyǐng zài zuò zuòyè",
+      "meaning": "Bài 2: Xem phim xong rồi làm bài tập",
+      "start": 91.96,
+      "end": 96.23,
+      "section": "heading"
+    },
+    {
+      "id": "s22",
+      "text": "吃完晚饭，我和玛丽回到宿舍。",
+      "pinyin": "Chī wán wǎnfàn, wǒ hé Mǎlì huídào sùshè.",
+      "meaning": "Ăn xong cơm tối, tôi và Mary về ký túc xá.",
+      "start": 97.72,
+      "end": 102.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "玛丽说，",
+      "pinyin": "Mǎlì shuō,",
+      "meaning": "Mary nói,",
+      "start": 103.83,
+      "end": 104.92,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "田芳借给她了一本书，",
+      "pinyin": "Tián Fāng jiè gěi tā le yì běn shū,",
+      "meaning": "Điền Phương cho cô ấy mượn một quyển sách,",
+      "start": 105.51,
+      "end": 108.23,
+      "section": "kewen"
+    },
+    {
+      "id": "s25",
+      "text": "书里都是小故事，",
+      "pinyin": "Shū lǐ dōu shì xiǎo gùshi,",
+      "meaning": "Trong sách toàn truyện ngắn,",
+      "start": 109.04,
+      "end": 111.46,
+      "section": "kewen"
+    },
+    {
+      "id": "s26",
+      "text": "很有意思。",
+      "pinyin": "Hěn yǒu yìsi.",
+      "meaning": "Rất thú vị.",
+      "start": 112,
+      "end": 113.43,
+      "section": "kewen"
+    },
+    {
+      "id": "s27",
+      "text": "我问她，",
+      "pinyin": "Wǒ wèn tā,",
+      "meaning": "Tôi hỏi cô ấy,",
+      "start": 114.43,
+      "end": 115.43,
+      "section": "kewen"
+    },
+    {
+      "id": "s28",
+      "text": "你看完了没有？",
+      "pinyin": "Nǐ kàn wán le méiyǒu?",
+      "meaning": "Bạn đọc xong chưa?",
+      "start": 115.74,
+      "end": 117.23,
+      "section": "kewen"
+    },
+    {
+      "id": "s29",
+      "text": "她说，",
+      "pinyin": "Tā shuō,",
+      "meaning": "Cô ấy nói,",
+      "start": 118.16,
+      "end": 119.01,
+      "section": "kewen"
+    },
+    {
+      "id": "s30",
+      "text": "还没看完呢，",
+      "pinyin": "Hái méi kàn wán ne,",
+      "meaning": "Còn chưa đọc xong,",
+      "start": 119.3,
+      "end": 120.86,
+      "section": "kewen"
+    },
+    {
+      "id": "s31",
+      "text": "才看到三十页。",
+      "pinyin": "Cái kàn dào sānshí yè.",
+      "meaning": "Mới đọc đến trang ba mươi.",
+      "start": 121.39,
+      "end": 123.29,
+      "section": "kewen"
+    },
+    {
+      "id": "s32",
+      "text": "我问玛丽，",
+      "pinyin": "Wǒ wèn Mǎlì,",
+      "meaning": "Tôi hỏi Mary,",
+      "start": 124.08,
+      "end": 125.28,
+      "section": "kewen"
+    },
+    {
+      "id": "s33",
+      "text": "都看懂了吗？",
+      "pinyin": "Dōu kàn dǒng le ma?",
+      "meaning": "Đều hiểu hết chưa?",
+      "start": 125.94,
+      "end": 127.38,
+      "section": "kewen"
+    },
+    {
+      "id": "s34",
+      "text": "她回答，",
+      "pinyin": "Tā huídá,",
+      "meaning": "Cô ấy trả lời,",
+      "start": 128.31,
+      "end": 129.26,
+      "section": "kewen"
+    },
+    {
+      "id": "s35",
+      "text": "有的看懂了，",
+      "pinyin": "Yǒu de kàn dǒng le,",
+      "meaning": "Chỗ thì hiểu rồi,",
+      "start": 129.88,
+      "end": 131.43,
+      "section": "kewen"
+    },
+    {
+      "id": "s36",
+      "text": "有的没看懂。",
+      "pinyin": "Yǒu de méi kàn dǒng.",
+      "meaning": "Chỗ thì chưa hiểu.",
+      "start": 132.02,
+      "end": 133.83,
+      "section": "kewen"
+    },
+    {
+      "id": "s37",
+      "text": "可以让我看看吗？",
+      "pinyin": "Kěyǐ ràng wǒ kànkan ma?",
+      "meaning": "Cho tôi xem được không?",
+      "start": 134.86,
+      "end": 136.78,
+      "section": "kewen"
+    },
+    {
+      "id": "s38",
+      "text": "当然可以。",
+      "pinyin": "Dāngrán kěyǐ.",
+      "meaning": "Đương nhiên được.",
+      "start": 137.68,
+      "end": 139.07,
+      "section": "kewen"
+    },
+    {
+      "id": "s39",
+      "text": "我看了两个故事，也觉得很有意思，看到有意思的地方，就想笑。",
+      "pinyin": "Wǒ kàn le liǎng ge gùshi, yě juéde hěn yǒu yìsi, kàn dào yǒu yìsi de dìfang, jiù xiǎng xiào.",
+      "meaning": "Tôi đọc hai câu chuyện, cũng thấy rất thú vị, thấy chỗ hay thì muốn cười.",
+      "start": 139.82,
+      "end": 148.9,
+      "section": "kewen"
+    },
+    {
+      "id": "s40",
+      "text": "我对玛丽说，",
+      "pinyin": "Wǒ duì Mǎlì shuō,",
+      "meaning": "Tôi nói với Mary,",
+      "start": 149.89,
+      "end": 151.28,
+      "section": "kewen"
+    },
+    {
+      "id": "s41",
+      "text": "咱们可以用这些故事练习会话。",
+      "pinyin": "Zánmen kěyǐ yòng zhèxiē gùshi liànxí huìhuà.",
+      "meaning": "Chúng mình có thể dùng những câu chuyện này luyện hội thoại.",
+      "start": 152.01,
+      "end": 155.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s42",
+      "text": "玛丽说，",
+      "pinyin": "Mǎlì shuō,",
+      "meaning": "Mary nói,",
+      "start": 157.17,
+      "end": 158.1,
+      "section": "kewen"
+    },
+    {
+      "id": "s43",
+      "text": "怎么练习？",
+      "pinyin": "Zěnme liànxí?",
+      "meaning": "Luyện thế nào?",
+      "start": 158.91,
+      "end": 160.15,
+      "section": "kewen"
+    },
+    {
+      "id": "s44",
+      "text": "我念完一个故事，问你几个问题，看你能不能答对。",
+      "pinyin": "Wǒ niàn wán yí ge gùshi, wèn nǐ jǐ ge wèntí, kàn nǐ néng bu néng dá duì.",
+      "meaning": "Tôi đọc xong một câu chuyện, hỏi bạn vài câu, xem bạn trả lời đúng không.",
+      "start": 161.33,
+      "end": 168.37,
+      "section": "kewen"
+    },
+    {
+      "id": "s45",
+      "text": "你念完一个故事，也问我几个问题，看我能不能答对。",
+      "pinyin": "Nǐ niàn wán yí ge gùshi, yě wèn wǒ jǐ ge wèntí, kàn wǒ néng bu néng dá duì.",
+      "meaning": "Bạn đọc xong một câu chuyện, cũng hỏi tôi vài câu, xem tôi trả lời đúng không.",
+      "start": 169.67,
+      "end": 176.65,
+      "section": "kewen"
+    },
+    {
+      "id": "s46",
+      "text": "玛丽说，",
+      "pinyin": "Mǎlì shuō,",
+      "meaning": "Mary nói,",
+      "start": 177.69,
+      "end": 178.69,
+      "section": "kewen"
+    },
+    {
+      "id": "s47",
+      "text": "这是个好办法。",
+      "pinyin": "Zhè shì ge hǎo bànfǎ.",
+      "meaning": "Đây là cách hay.",
+      "start": 179.17,
+      "end": 180.75,
+      "section": "kewen"
+    },
+    {
+      "id": "s48",
+      "text": "我念了一个故事，",
+      "pinyin": "Wǒ niàn le yí ge gùshi,",
+      "meaning": "Tôi đọc một câu chuyện,",
+      "start": 181.7,
+      "end": 183.41,
+      "section": "kewen"
+    },
+    {
+      "id": "s49",
+      "text": "玛丽听懂了。",
+      "pinyin": "Mǎlì tīng dǒng le.",
+      "meaning": "Mary nghe hiểu rồi.",
+      "start": 184.1,
+      "end": 185.89,
+      "section": "kewen"
+    },
+    {
+      "id": "s50",
+      "text": "问了她五个问题，",
+      "pinyin": "Wèn le tā wǔ ge wèntí,",
+      "meaning": "Hỏi cô ấy năm câu,",
+      "start": 186.89,
+      "end": 188.96,
+      "section": "kewen"
+    },
+    {
+      "id": "s51",
+      "text": "她都答对了。",
+      "pinyin": "Tā dōu dá duì le.",
+      "meaning": "Cô ấy đều trả lời đúng.",
+      "start": 189.32,
+      "end": 190.83,
+      "section": "kewen"
+    },
+    {
+      "id": "s52",
+      "text": "她念了一个故事，合上书，问我听懂了没有。",
+      "pinyin": "Tā niàn le yí ge gùshi, hé shang shū, wèn wǒ tīng dǒng le méiyǒu.",
+      "meaning": "Cô ấy đọc một câu chuyện, gấp sách lại, hỏi tôi nghe hiểu chưa.",
+      "start": 191.78,
+      "end": 198.47,
+      "section": "kewen"
+    },
+    {
+      "id": "s53",
+      "text": "我说有的地方没听懂。",
+      "pinyin": "Wǒ shuō yǒu de dìfang méi tīng dǒng.",
+      "meaning": "Tôi nói có chỗ chưa nghe hiểu.",
+      "start": 199.15,
+      "end": 202.2,
+      "section": "kewen"
+    },
+    {
+      "id": "s54",
+      "text": "她打开书，",
+      "pinyin": "Tā dǎkāi shū,",
+      "meaning": "Cô ấy mở sách,",
+      "start": 203.47,
+      "end": 204.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s55",
+      "text": "又念了一遍，",
+      "pinyin": "Yòu niàn le yí biàn,",
+      "meaning": "Lại đọc một lần nữa,",
+      "start": 205.33,
+      "end": 206.88,
+      "section": "kewen"
+    },
+    {
+      "id": "s56",
+      "text": "我才听懂。",
+      "pinyin": "Wǒ cái tīng dǒng.",
+      "meaning": "Tôi mới nghe hiểu.",
+      "start": 207.55,
+      "end": 208.96,
+      "section": "kewen"
+    },
+    {
+      "id": "s57",
+      "text": "她也问了五个问题，",
+      "pinyin": "Tā yě wèn le wǔ ge wèntí,",
+      "meaning": "Cô ấy cũng hỏi năm câu,",
+      "start": 209.82,
+      "end": 212.08,
+      "section": "kewen"
+    },
+    {
+      "id": "s58",
+      "text": "我答对了四个，",
+      "pinyin": "Wǒ dá duì le sì ge,",
+      "meaning": "Tôi trả lời đúng bốn câu,",
+      "start": 212.95,
+      "end": 214.74,
+      "section": "kewen"
+    },
+    {
+      "id": "s59",
+      "text": "答错了一个。",
+      "pinyin": "Dá cuò le yí ge.",
+      "meaning": "Sai một câu.",
+      "start": 215.51,
+      "end": 216.99,
+      "section": "kewen"
+    },
+    {
+      "id": "s60",
+      "text": "我们还没有练习完，",
+      "pinyin": "Wǒmen hái méiyǒu liànxí wán,",
+      "meaning": "Chúng tôi còn chưa luyện xong,",
+      "start": 217.92,
+      "end": 220.34,
+      "section": "kewen"
+    },
+    {
+      "id": "s61",
+      "text": "就听见安娜在门外叫我们。",
+      "pinyin": "Jiù tīngjiàn Ānnà zài mén wài jiào wǒmen.",
+      "meaning": "Thì nghe thấy Anna gọi chúng tôi ngoài cửa.",
+      "start": 220.78,
+      "end": 223.88,
+      "section": "kewen"
+    },
+    {
+      "id": "s62",
+      "text": "我开开门问她，",
+      "pinyin": "Wǒ kāi kāi mén wèn tā,",
+      "meaning": "Tôi mở cửa hỏi cô ấy,",
+      "start": 224.91,
+      "end": 226.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s63",
+      "text": "什么事？",
+      "pinyin": "Shénme shì?",
+      "meaning": "Có chuyện gì?",
+      "start": 227.29,
+      "end": 228.34,
+      "section": "kewen"
+    },
+    {
+      "id": "s64",
+      "text": "晚上礼堂有电影，你们看吗？",
+      "pinyin": "Wǎnshang lǐtáng yǒu diànyǐng, nǐmen kàn ma?",
+      "meaning": "Tối nay hội trường có phim, các bạn xem không?",
+      "start": 229.36,
+      "end": 232.86,
+      "section": "kewen"
+    },
+    {
+      "id": "s65",
+      "text": "什么电影？",
+      "pinyin": "Shénme diànyǐng?",
+      "meaning": "Phim gì?",
+      "start": 233.59,
+      "end": 234.79,
+      "section": "kewen"
+    },
+    {
+      "id": "s66",
+      "text": "是个新电影，我不知道叫什么名字。",
+      "pinyin": "Shì ge xīn diànyǐng, wǒ bù zhīdào jiào shénme míngzi.",
+      "meaning": "Là phim mới, tôi không biết tên gì.",
+      "start": 235.69,
+      "end": 240.22,
+      "section": "kewen"
+    },
+    {
+      "id": "s67",
+      "text": "田芳说，这个电影非常好。",
+      "pinyin": "Tián Fāng shuō, zhège diànyǐng fēicháng hǎo.",
+      "meaning": "Điền Phương nói bộ phim này rất hay.",
+      "start": 241.16,
+      "end": 244.78,
+      "section": "kewen"
+    },
+    {
+      "id": "s68",
+      "text": "想看，但是我今天的作业还没有做完呢，",
+      "pinyin": "Xiǎng kàn, dànshì wǒ jīntiān de zuòyè hái méiyǒu zuò wán ne,",
+      "meaning": "Muốn xem, nhưng bài tập hôm nay tôi còn chưa làm xong,",
+      "start": 245.71,
+      "end": 251.2,
+      "section": "kewen"
+    },
+    {
+      "id": "s69",
+      "text": "课文也读得不太熟。",
+      "pinyin": "Kèwén yě dú de bú tài shú.",
+      "meaning": "Bài khóa cũng đọc chưa thuộc lắm.",
+      "start": 251.83,
+      "end": 254.29,
+      "section": "kewen"
+    },
+    {
+      "id": "s70",
+      "text": "安娜说，我也没做完呢。",
+      "pinyin": "Ānnà shuō, wǒ yě méi zuò wán ne.",
+      "meaning": "Anna nói, tôi cũng chưa làm xong.",
+      "start": 255.64,
+      "end": 258.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s71",
+      "text": "看完电影，再做吧。",
+      "pinyin": "Kàn wán diànyǐng, zài zuò ba.",
+      "meaning": "Xem phim xong rồi làm sau.",
+      "start": 259.44,
+      "end": 261.72,
+      "section": "kewen"
+    },
+    {
+      "id": "s72",
+      "text": "说完，我们三个就去礼堂看电影了。",
+      "pinyin": "Shuō wán, wǒmen sān ge jiù qù lǐtáng kàn diànyǐng le.",
+      "meaning": "Nói xong, ba người chúng tôi đi hội trường xem phim.",
+      "start": 262.99,
+      "end": 268.05,
+      "section": "kewen"
+    },
+    {
+      "id": "s73",
+      "text": "我们看到九点才看完，",
+      "pinyin": "Wǒmen kàn dào jiǔ diǎn cái kàn wán,",
+      "meaning": "Chúng tôi xem đến chín giờ mới xem xong,",
+      "start": 269.12,
+      "end": 271.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s74",
+      "text": "九点半，我才开始做作业。",
+      "pinyin": "Jiǔ diǎn bàn, wǒ cái kāishǐ zuò zuòyè.",
+      "meaning": "Chín giờ rưỡi tôi mới bắt đầu làm bài tập.",
+      "start": 272.6,
+      "end": 276.02,
+      "section": "kewen"
+    },
+    {
+      "id": "s75",
+      "text": "做完作业，已经十点半了。",
+      "pinyin": "Zuò wán zuòyè, yǐjīng shí diǎn bàn le.",
+      "meaning": "Làm xong bài tập, đã mười giờ rưỡi rồi.",
+      "start": 276.95,
+      "end": 280.33,
+      "section": "kewen"
+    },
+    {
+      "id": "s76",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 282.37,
+      "end": 284.4,
+      "section": "heading"
+    },
+    {
+      "id": "s77",
+      "text": "考试",
+      "pinyin": "kǎoshì",
+      "meaning": "thi",
+      "start": 285.76,
+      "end": 286.82,
+      "section": "shengci"
+    },
+    {
+      "id": "s78",
+      "text": "题",
+      "pinyin": "tí",
+      "meaning": "đề, câu hỏi (đề thi)",
+      "start": 288.14,
+      "end": 288.9,
+      "section": "shengci"
+    },
+    {
+      "id": "s79",
+      "text": "完",
+      "pinyin": "wán",
+      "meaning": "xong, hết",
+      "start": 290.25,
+      "end": 290.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s80",
+      "text": "道",
+      "pinyin": "dào",
+      "meaning": "đề (lượng từ)",
+      "start": 292.28,
+      "end": 292.85,
+      "section": "shengci"
+    },
+    {
+      "id": "s81",
+      "text": "成绩",
+      "pinyin": "chéngjì",
+      "meaning": "thành tích",
+      "start": 294.12,
+      "end": 295.1,
+      "section": "shengci"
+    },
+    {
+      "id": "s82",
+      "text": "句子",
+      "pinyin": "jùzi",
+      "meaning": "câu",
+      "start": 296.33,
+      "end": 297.19,
+      "section": "shengci"
+    },
+    {
+      "id": "s83",
+      "text": "干什么",
+      "pinyin": "gàn shénme",
+      "meaning": "làm gì",
+      "start": 298.38,
+      "end": 299.31,
+      "section": "shengci"
+    },
+    {
+      "id": "s84",
+      "text": "干",
+      "pinyin": "gàn",
+      "meaning": "làm",
+      "start": 300.48,
+      "end": 301.04,
+      "section": "shengci"
+    },
+    {
+      "id": "s85",
+      "text": "看见",
+      "pinyin": "kànjiàn",
+      "meaning": "nhìn thấy",
+      "start": 302.35,
+      "end": 303.39,
+      "section": "shengci"
+    },
+    {
+      "id": "s86",
+      "text": "见",
+      "pinyin": "jiàn",
+      "meaning": "thấy, gặp",
+      "start": 304.7,
+      "end": 305.34,
+      "section": "shengci"
+    },
+    {
+      "id": "s87",
+      "text": "词",
+      "pinyin": "cí",
+      "meaning": "từ",
+      "start": 306.51,
+      "end": 307.25,
+      "section": "shengci"
+    },
+    {
+      "id": "s88",
+      "text": "糟糕",
+      "pinyin": "zāogāo",
+      "meaning": "tồi tệ, hỏng bét",
+      "start": 308.63,
+      "end": 309.65,
+      "section": "shengci"
+    },
+    {
+      "id": "s89",
+      "text": "成",
+      "pinyin": "chéng",
+      "meaning": "thành",
+      "start": 310.75,
+      "end": 311.5,
+      "section": "shengci"
+    },
+    {
+      "id": "s90",
+      "text": "回信",
+      "pinyin": "huíxìn",
+      "meaning": "trả lời thư",
+      "start": 312.7,
+      "end": 313.69,
+      "section": "shengci"
+    },
+    {
+      "id": "s91",
+      "text": "故事",
+      "pinyin": "gùshi",
+      "meaning": "chuyện, truyện",
+      "start": 314.95,
+      "end": 315.77,
+      "section": "shengci"
+    },
+    {
+      "id": "s92",
+      "text": "有意思",
+      "pinyin": "yǒu yìsi",
+      "meaning": "thú vị",
+      "start": 317.24,
+      "end": 318.39,
+      "section": "shengci"
+    },
+    {
+      "id": "s93",
+      "text": "页",
+      "pinyin": "yè",
+      "meaning": "trang",
+      "start": 319.79,
+      "end": 320.44,
+      "section": "shengci"
+    },
+    {
+      "id": "s94",
+      "text": "笑",
+      "pinyin": "xiào",
+      "meaning": "cười",
+      "start": 321.67,
+      "end": 322.36,
+      "section": "shengci"
+    },
+    {
+      "id": "s95",
+      "text": "会话",
+      "pinyin": "huìhuà",
+      "meaning": "hội thoại",
+      "start": 323.58,
+      "end": 324.54,
+      "section": "shengci"
+    },
+    {
+      "id": "s96",
+      "text": "念",
+      "pinyin": "niàn",
+      "meaning": "đọc (đọc thành tiếng)",
+      "start": 325.75,
+      "end": 326.4,
+      "section": "shengci"
+    },
+    {
+      "id": "s97",
+      "text": "答",
+      "pinyin": "dá",
+      "meaning": "trả lời",
+      "start": 327.88,
+      "end": 328.52,
+      "section": "shengci"
+    },
+    {
+      "id": "s98",
+      "text": "办法",
+      "pinyin": "bànfa",
+      "meaning": "cách, biện pháp",
+      "start": 329.78,
+      "end": 330.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s99",
+      "text": "合上",
+      "pinyin": "hé shang",
+      "meaning": "gập lại (sách)",
+      "start": 331.8,
+      "end": 332.77,
+      "section": "shengci"
+    },
+    {
+      "id": "s100",
+      "text": "上",
+      "pinyin": "shàng",
+      "meaning": "lên",
+      "start": 333.96,
+      "end": 334.57,
+      "section": "shengci"
+    },
+    {
+      "id": "s101",
+      "text": "听见",
+      "pinyin": "tīngjiàn",
+      "meaning": "nghe thấy",
+      "start": 335.76,
+      "end": 336.79,
+      "section": "shengci"
+    },
+    {
+      "id": "s102",
+      "text": "打开",
+      "pinyin": "dǎkāi",
+      "meaning": "mở ra",
+      "start": 337.94,
+      "end": 338.96,
+      "section": "shengci"
+    },
+    {
+      "id": "s103",
+      "text": "作业",
+      "pinyin": "zuòyè",
+      "meaning": "bài tập",
+      "start": 340.21,
+      "end": 341.24,
+      "section": "shengci"
+    },
+    {
+      "id": "s104",
+      "text": "熟",
+      "pinyin": "shú",
+      "meaning": "thuộc bài",
+      "start": 342.43,
+      "end": 343.29,
+      "section": "shengci"
+    },
+    {
+      "id": "s105",
+      "text": "再",
+      "pinyin": "zài",
+      "meaning": "lại, nữa",
+      "start": 344.44,
+      "end": 345.07,
+      "section": "shengci"
+    },
+    {
+      "id": "s106",
+      "text": "专名",
+      "pinyin": "Zhuānmíng",
+      "meaning": "Danh từ riêng",
+      "start": 346.2,
+      "end": 347.11,
+      "section": "heading"
+    },
+    {
+      "id": "s107",
+      "text": "安娜",
+      "pinyin": "Ānnà",
+      "meaning": "Anna",
+      "start": 348.2,
+      "end": 349.12,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "考试",
+      "pinyin": "kǎoshì",
+      "meaning": "thi",
+      "segments": [
+        "s77"
+      ]
+    },
+    {
+      "hanzi": "题",
+      "pinyin": "tí",
+      "meaning": "đề, câu hỏi (đề thi)",
+      "segments": [
+        "s5",
+        "s78"
+      ]
+    },
+    {
+      "hanzi": "完",
+      "pinyin": "wán",
+      "meaning": "xong, hết",
+      "segments": [
+        "s5",
+        "s79"
+      ]
+    },
+    {
+      "hanzi": "道",
+      "pinyin": "dào",
+      "meaning": "đề (lượng từ)",
+      "segments": [
+        "s7",
+        "s80"
+      ]
+    },
+    {
+      "hanzi": "成绩",
+      "pinyin": "chéngjì",
+      "meaning": "thành tích",
+      "segments": [
+        "s7",
+        "s81"
+      ]
+    },
+    {
+      "hanzi": "句子",
+      "pinyin": "jùzi",
+      "meaning": "câu",
+      "segments": [
+        "s9",
+        "s82"
+      ]
+    },
+    {
+      "hanzi": "干什么",
+      "pinyin": "gàn shénme",
+      "meaning": "làm gì",
+      "segments": [
+        "s13",
+        "s83"
+      ]
+    },
+    {
+      "hanzi": "干",
+      "pinyin": "gàn",
+      "meaning": "làm",
+      "segments": [
+        "s84"
+      ]
+    },
+    {
+      "hanzi": "看见",
+      "pinyin": "kànjiàn",
+      "meaning": "nhìn thấy",
+      "segments": [
+        "s12",
+        "s85"
+      ]
+    },
+    {
+      "hanzi": "见",
+      "pinyin": "jiàn",
+      "meaning": "thấy, gặp",
+      "segments": [
+        "s12",
+        "s86"
+      ]
+    },
+    {
+      "hanzi": "词",
+      "pinyin": "cí",
+      "meaning": "từ",
+      "segments": [
+        "s11",
+        "s87"
+      ]
+    },
+    {
+      "hanzi": "糟糕",
+      "pinyin": "zāogāo",
+      "meaning": "tồi tệ, hỏng bét",
+      "segments": [
+        "s15",
+        "s88"
+      ]
+    },
+    {
+      "hanzi": "成",
+      "pinyin": "chéng",
+      "meaning": "thành",
+      "segments": [
+        "s16",
+        "s89"
+      ]
+    },
+    {
+      "hanzi": "回信",
+      "pinyin": "huíxìn",
+      "meaning": "trả lời thư",
+      "segments": [
+        "s19",
+        "s90"
+      ]
+    },
+    {
+      "hanzi": "故事",
+      "pinyin": "gùshi",
+      "meaning": "chuyện, truyện",
+      "segments": [
+        "s25",
+        "s91"
+      ]
+    },
+    {
+      "hanzi": "有意思",
+      "pinyin": "yǒu yìsi",
+      "meaning": "thú vị",
+      "segments": [
+        "s26",
+        "s92"
+      ]
+    },
+    {
+      "hanzi": "页",
+      "pinyin": "yè",
+      "meaning": "trang",
+      "segments": [
+        "s31",
+        "s93"
+      ]
+    },
+    {
+      "hanzi": "笑",
+      "pinyin": "xiào",
+      "meaning": "cười",
+      "segments": [
+        "s39",
+        "s94"
+      ]
+    },
+    {
+      "hanzi": "会话",
+      "pinyin": "huìhuà",
+      "meaning": "hội thoại",
+      "segments": [
+        "s41",
+        "s95"
+      ]
+    },
+    {
+      "hanzi": "念",
+      "pinyin": "niàn",
+      "meaning": "đọc (đọc thành tiếng)",
+      "segments": [
+        "s44",
+        "s96"
+      ]
+    },
+    {
+      "hanzi": "答",
+      "pinyin": "dá",
+      "meaning": "trả lời",
+      "segments": [
+        "s51",
+        "s97"
+      ]
+    },
+    {
+      "hanzi": "办法",
+      "pinyin": "bànfa",
+      "meaning": "cách, biện pháp",
+      "segments": [
+        "s47",
+        "s98"
+      ]
+    },
+    {
+      "hanzi": "合上",
+      "pinyin": "hé shang",
+      "meaning": "gập lại (sách)",
+      "segments": [
+        "s52",
+        "s99"
+      ]
+    },
+    {
+      "hanzi": "上",
+      "pinyin": "shàng",
+      "meaning": "lên",
+      "segments": [
+        "s64",
+        "s100"
+      ]
+    },
+    {
+      "hanzi": "听见",
+      "pinyin": "tīngjiàn",
+      "meaning": "nghe thấy",
+      "segments": [
+        "s61",
+        "s101"
+      ]
+    },
+    {
+      "hanzi": "打开",
+      "pinyin": "dǎkāi",
+      "meaning": "mở ra",
+      "segments": [
+        "s18",
+        "s102"
+      ]
+    },
+    {
+      "hanzi": "作业",
+      "pinyin": "zuòyè",
+      "meaning": "bài tập",
+      "segments": [
+        "s68",
+        "s103"
+      ]
+    },
+    {
+      "hanzi": "熟",
+      "pinyin": "shú",
+      "meaning": "thuộc bài",
+      "segments": [
+        "s69",
+        "s104"
+      ]
+    },
+    {
+      "hanzi": "再",
+      "pinyin": "zài",
+      "meaning": "lại, nữa",
+      "segments": [
+        "s20",
+        "s105"
+      ]
+    }
+  ]
+}

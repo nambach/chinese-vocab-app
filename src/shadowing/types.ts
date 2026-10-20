@@ -1,5 +1,17 @@
 export type AudioSource =
   | { type: 'file'; src: string }
+  | { type: 'url'; src: string }
+  | {
+      type: 'local'
+      /**
+       * Key in IndexedDB. Absent when a lesson was imported without the file:
+       * `name` and `size` are what the recipient matches when they choose it again.
+       */
+      blobId?: string
+      name: string
+      size: number
+      mime: string
+    }
   | { type: 'youtube'; videoId: string }
 
 export type WordTiming = {
@@ -18,6 +30,8 @@ export type ShadowingSegment = {
   /** Seconds from the start of the audio. */
   start: number
   end: number
+  /** heading: 课文 / title / 生词 labels. kewen: dialogue. shengci: a read-aloud vocab item. */
+  section?: 'heading' | 'kewen' | 'shengci'
   words?: WordTiming[]
 }
 

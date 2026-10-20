@@ -1,0 +1,1183 @@
+{
+  "format": "cn-vocab-lesson",
+  "version": 1,
+  "id": "bai-30",
+  "title": "Bài 30",
+  "audio": {
+    "type": "file",
+    "src": "audio/shadowing/bai-30.mp3"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "text": "一、课文",
+      "pinyin": "Yī, kèwén",
+      "meaning": "Một. Bài khóa",
+      "start": 0.18,
+      "end": 1.96,
+      "section": "heading"
+    },
+    {
+      "id": "s2",
+      "text": "一、我来了两个多月了",
+      "pinyin": "Yī, wǒ láile liǎng gè duō yuè le",
+      "meaning": "Bài 1: Tôi đã đến hơn hai tháng rồi",
+      "start": 3.36,
+      "end": 7.32,
+      "section": "heading"
+    },
+    {
+      "id": "s3",
+      "text": "我来了两个多月了，对这儿的生活差不多已经习惯了。",
+      "pinyin": "Wǒ láile liǎng gè duō yuè le, duì zhèr de shēnghuó chàbuduō yǐjīng xíguàn le.",
+      "meaning": "Tôi đã đến hơn hai tháng rồi, đối với cuộc sống ở đây gần như đã quen.",
+      "start": 9.09,
+      "end": 18.19,
+      "section": "kewen"
+    },
+    {
+      "id": "s4",
+      "text": "不过，有的地方还不太习惯，",
+      "pinyin": "Búguò, yǒu de dìfang hái bù tài xíguàn,",
+      "meaning": "Tuy nhiên, có chỗ tôi vẫn chưa quen,",
+      "start": 19.16,
+      "end": 23.06,
+      "section": "kewen"
+    },
+    {
+      "id": "s5",
+      "text": "总觉得这儿的气候特别干燥，",
+      "pinyin": "Zǒng juéde zhèr de qìhòu tèbié gānzào,",
+      "meaning": "Luôn cảm thấy khí hậu ở đây đặc biệt khô hanh,",
+      "start": 24.28,
+      "end": 26.83,
+      "section": "kewen"
+    },
+    {
+      "id": "s6",
+      "text": "宿舍周围不太干净，也不太安静，",
+      "pinyin": "Sùshè zhōuwéi bù tài gānjìng, yě bù tài ānjìng,",
+      "meaning": "Xung quanh ký túc xá không sạch lắm, cũng không yên tĩnh,",
+      "start": 26.89,
+      "end": 32.46,
+      "section": "kewen"
+    },
+    {
+      "id": "s7",
+      "text": "食堂里的菜太油腻。",
+      "pinyin": "Shítáng lǐ de cài tài yóunì.",
+      "meaning": "Món ăn trong căng tin quá nhiều dầu mỡ.",
+      "start": 33.22,
+      "end": 39.27,
+      "section": "kewen"
+    },
+    {
+      "id": "s8",
+      "text": "我每天早上七点多才起床，",
+      "pinyin": "Wǒ měi tiān zǎoshang qī diǎn duō cái qǐchuáng,",
+      "meaning": "Mỗi sáng tôi mới dậy sau bảy giờ,",
+      "start": 40.38,
+      "end": 44.85,
+      "section": "kewen"
+    },
+    {
+      "id": "s9",
+      "text": "所以常常没时间吃早饭，",
+      "pinyin": "Suǒyǐ chángcháng méi shíjiān chī zǎofàn,",
+      "meaning": "nên thường không có thời gian ăn sáng,",
+      "start": 45.72,
+      "end": 49.62,
+      "section": "kewen"
+    },
+    {
+      "id": "s10",
+      "text": "喝杯牛奶就去上课了，不过课间休息的时候，我可以去喝杯咖啡，吃一块点心。",
+      "pinyin": "Hē bēi niúnǎi jiù qù shàngkè le, búguò kèjiān xiūxi de shíhou, wǒ kěyǐ qù hē bēi kāfēi, chī yí kuài diǎnxin.",
+      "meaning": "Uống một cốc sữa rồi đi học; lúc nghỉ giữa tiết tôi có thể uống cà phê và ăn một miếng bánh.",
+      "start": 50.56,
+      "end": 63.3,
+      "section": "kewen"
+    },
+    {
+      "id": "s11",
+      "text": "中午，我去食堂吃午饭，",
+      "pinyin": "Zhōngwǔ, wǒ qù shítáng chī wǔfàn,",
+      "meaning": "Trưa, tôi đến căng tin ăn cơm trưa,",
+      "start": 64.09,
+      "end": 67.98,
+      "section": "kewen"
+    },
+    {
+      "id": "s12",
+      "text": "因为吃饭的人很多，所以常常要等十多分钟才能买到饭。",
+      "pinyin": "Yīnwèi chīfàn de rén hěn duō, suǒyǐ chángcháng yào děng shí duō fēnzhōng cái néng mǎidào fàn.",
+      "meaning": "Vì người ăn rất đông, nên thường phải đợi hơn mười phút mới mua được cơm.",
+      "start": 69.14,
+      "end": 78.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s13",
+      "text": "吃完饭，回宿舍看书，或者听一会儿音乐。",
+      "pinyin": "Chī wán fàn, huí sùshè kànshū, huòzhě tīng yíhuìr yīnyuè.",
+      "meaning": "Ăn xong về ký túc xá đọc sách hoặc nghe nhạc một lúc.",
+      "start": 79.99,
+      "end": 86.46,
+      "section": "kewen"
+    },
+    {
+      "id": "s14",
+      "text": "中午，我从来不睡午觉。",
+      "pinyin": "Zhōngwǔ, wǒ cónglái bù shuì wǔjiào.",
+      "meaning": "Buổi trưa tôi không bao giờ ngủ trưa.",
+      "start": 87.54,
+      "end": 90.91,
+      "section": "kewen"
+    },
+    {
+      "id": "s15",
+      "text": "下午，有时候上两节课，有时候自己学习。",
+      "pinyin": "Xiàwǔ, yǒu shíhou shàng liǎng jié kè, yǒu shíhou zìjǐ xuéxí.",
+      "meaning": "Buổi chiều, đôi khi học hai tiết, đôi khi tự học.",
+      "start": 92.01,
+      "end": 99.58,
+      "section": "kewen"
+    },
+    {
+      "id": "s16",
+      "text": "四点以后，我去体育馆锻炼身体。",
+      "pinyin": "Sì diǎn yǐhòu, wǒ qù tǐyùguǎn duànliàn shēntǐ.",
+      "meaning": "Sau bốn giờ, tôi đến nhà thi đấu tập thể dục.",
+      "start": 100.63,
+      "end": 105.78,
+      "section": "kewen"
+    },
+    {
+      "id": "s17",
+      "text": "跑步、游泳、打球，或者跟老师学打太极拳。",
+      "pinyin": "Pǎobù, yóuyǒng, dǎqiú, huòzhě gēn lǎoshī xué dǎ tàijíquán.",
+      "meaning": "Chạy bộ, bơi lội, đánh bóng, hoặc học đánh thái cực quyền với thầy.",
+      "start": 106.83,
+      "end": 114.19,
+      "section": "kewen"
+    },
+    {
+      "id": "s18",
+      "text": "我很喜欢运动。",
+      "pinyin": "Wǒ hěn xǐhuan yùndòng.",
+      "meaning": "Tôi rất thích vận động.",
+      "start": 115.24,
+      "end": 117.08,
+      "section": "kewen"
+    },
+    {
+      "id": "s19",
+      "text": "每天都坚持锻炼一个小时。",
+      "pinyin": "Měi tiān dōu jiānchí duànliàn yí gè xiǎoshí.",
+      "meaning": "Mỗi ngày đều kiên trì tập một tiếng.",
+      "start": 117.93,
+      "end": 121.63,
+      "section": "kewen"
+    },
+    {
+      "id": "s20",
+      "text": "所以身体很好。",
+      "pinyin": "Suǒyǐ shēntǐ hěn hǎo.",
+      "meaning": "Nên sức khỏe rất tốt.",
+      "start": 122.34,
+      "end": 124.67,
+      "section": "kewen"
+    },
+    {
+      "id": "s21",
+      "text": "晚饭后，我常常散一会儿步，有时跟朋友聊聊天。",
+      "pinyin": "Wǎnfàn hòu, wǒ chángcháng sàn yíhuìr bù, yǒu shí gēn péngyou liáo liáo tiān.",
+      "meaning": "Sau bữa tối, tôi thường đi dạo một lúc, đôi khi trò chuyện với bạn.",
+      "start": 125.45,
+      "end": 133.4,
+      "section": "kewen"
+    },
+    {
+      "id": "s22",
+      "text": "然后就开始复习功课，",
+      "pinyin": "Ránhòu jiù kāishǐ fùxí gōngkè,",
+      "meaning": "Sau đó bắt đầu ôn bài,",
+      "start": 133.97,
+      "end": 136.95,
+      "section": "kewen"
+    },
+    {
+      "id": "s23",
+      "text": "听半个小时课文录音，",
+      "pinyin": "Tīng bàn gè xiǎoshí kèwén lùyīn,",
+      "meaning": "nghe băng bài khóa nửa tiếng,",
+      "start": 138.07,
+      "end": 140.93,
+      "section": "kewen"
+    },
+    {
+      "id": "s24",
+      "text": "练习会话，",
+      "pinyin": "Liànxí huìhuà,",
+      "meaning": "luyện hội thoại,",
+      "start": 141.52,
+      "end": 143.02,
+      "section": "kewen"
+    },
+    {
+      "id": "s25",
+      "text": "预习生词和课文，",
+      "pinyin": "Yùxí shēngcí hé kèwén,",
+      "meaning": "chuẩn bị trước từ mới và bài khóa,",
+      "start": 143.86,
+      "end": 146.72,
+      "section": "kewen"
+    },
+    {
+      "id": "s26",
+      "text": "生词要记住，课文要念熟。",
+      "pinyin": "Shēngcí yào jìzhù, kèwén yào niàn shú.",
+      "meaning": "Từ mới phải nhớ, bài khóa phải đọc thuộc.",
+      "start": 147.68,
+      "end": 153.65,
+      "section": "kewen"
+    },
+    {
+      "id": "s27",
+      "text": "所以，每天晚上，一般要复习、预习两三个小时，",
+      "pinyin": "Suǒyǐ, měi tiān wǎnshang, yībān yào fùxí, yùxí liǎng sān gè xiǎoshí,",
+      "meaning": "Vì vậy mỗi tối thường phải ôn và chuẩn bị hai ba tiếng,",
+      "start": 154.6,
+      "end": 162.13,
+      "section": "kewen"
+    },
+    {
+      "id": "s28",
+      "text": "常常学到十一点多才睡觉。",
+      "pinyin": "Chángcháng xué dào shíyī diǎn duō cái shuìjiào.",
+      "meaning": "thường học đến hơn mười một giờ mới ngủ.",
+      "start": 163.09,
+      "end": 166.56,
+      "section": "kewen"
+    },
+    {
+      "id": "s29",
+      "text": "我每天都很忙，但过得很愉快。",
+      "pinyin": "Wǒ měi tiān dōu hěn máng, dàn guò de hěn yúkuài.",
+      "meaning": "Mỗi ngày tôi đều rất bận nhưng sống rất vui.",
+      "start": 167.47,
+      "end": 172.54,
+      "section": "kewen"
+    },
+    {
+      "id": "s30",
+      "text": "我很感谢父母给我这个机会，让我来中国留学。",
+      "pinyin": "Wǒ hěn gǎnxiè fùmǔ gěi wǒ zhège jīhuì, ràng wǒ lái Zhōngguó liúxué.",
+      "meaning": "Tôi rất cảm ơn bố mẹ đã cho tôi cơ hội này, để tôi đến Trung Quốc du học.",
+      "start": 173.32,
+      "end": 179.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s31",
+      "text": "原来打算学一年，",
+      "pinyin": "Yuánlái dǎsuàn xué yì nián,",
+      "meaning": "Ban đầu định học một năm,",
+      "start": 180.89,
+      "end": 183.15,
+      "section": "kewen"
+    },
+    {
+      "id": "s32",
+      "text": "现在我觉得一年时间太短了，",
+      "pinyin": "Xiànzài wǒ juéde yì nián shíjiān tài duǎn le,",
+      "meaning": "bây giờ tôi thấy một năm quá ngắn,",
+      "start": 184.13,
+      "end": 188.82,
+      "section": "kewen"
+    },
+    {
+      "id": "s33",
+      "text": "准备再延长一年。",
+      "pinyin": "Zhǔnbèi zài yáncháng yì nián.",
+      "meaning": "chuẩn bị kéo dài thêm một năm.",
+      "start": 189.69,
+      "end": 192.41,
+      "section": "kewen"
+    },
+    {
+      "id": "s34",
+      "text": "二、我每天都练一个小时",
+      "pinyin": "Èr, wǒ měi tiān dōu liàn yí gè xiǎoshí",
+      "meaning": "Bài 2: Mỗi ngày tôi đều luyện một tiếng",
+      "start": 194.17,
+      "end": 198.46,
+      "section": "heading"
+    },
+    {
+      "id": "s35",
+      "text": "你好，王老师，每天都起得这么早吗？",
+      "pinyin": "Nǐ hǎo, Wáng lǎoshī, měi tiān dōu qǐ de zhème zǎo ma?",
+      "meaning": "Chào thầy Vương, ngày nào thầy cũng dậy sớm thế à?",
+      "start": 199.29,
+      "end": 204.95,
+      "section": "kewen"
+    },
+    {
+      "id": "s36",
+      "text": "对，因为我练气功，所以每天五点多就起来了。",
+      "pinyin": "Duì, yīnwèi wǒ liàn qìgōng, suǒyǐ měi tiān wǔ diǎn duō jiù qǐlái le.",
+      "meaning": "Vâng, vì tôi luyện khí công nên mỗi ngày hơn năm giờ là dậy rồi.",
+      "start": 206.04,
+      "end": 213.33,
+      "section": "kewen"
+    },
+    {
+      "id": "s37",
+      "text": "练了多长时间了？",
+      "pinyin": "Liàn le duō cháng shíjiān le?",
+      "meaning": "Luyện được bao lâu rồi?",
+      "start": 214.87,
+      "end": 216.94,
+      "section": "kewen"
+    },
+    {
+      "id": "s38",
+      "text": "已经练了好几年了。",
+      "pinyin": "Yǐjīng liàn le hǎo jǐ nián le.",
+      "meaning": "Đã luyện được mấy năm rồi.",
+      "start": 217.8,
+      "end": 220.19,
+      "section": "kewen"
+    },
+    {
+      "id": "s39",
+      "text": "每天练多长时间？",
+      "pinyin": "Měi tiān liàn duō cháng shíjiān?",
+      "meaning": "Mỗi ngày luyện bao lâu?",
+      "start": 221.18,
+      "end": 223.7,
+      "section": "kewen"
+    },
+    {
+      "id": "s40",
+      "text": "不一定，有时候练一个钟头，有时候半个钟头。",
+      "pinyin": "Bù yídìng, yǒu shíhou liàn yí gè zhōngtóu, yǒu shíhou bàn gè zhōngtóu.",
+      "meaning": "Không nhất định, đôi khi luyện một tiếng, đôi khi nửa tiếng.",
+      "start": 224.85,
+      "end": 231.4,
+      "section": "kewen"
+    },
+    {
+      "id": "s41",
+      "text": "效果怎么样？",
+      "pinyin": "Xiàoguǒ zěnmeyàng?",
+      "meaning": "Hiệu quả thế nào?",
+      "start": 232.52,
+      "end": 234.14,
+      "section": "kewen"
+    },
+    {
+      "id": "s42",
+      "text": "挺好的。",
+      "pinyin": "Tǐng hǎo de.",
+      "meaning": "Khá tốt.",
+      "start": 235.03,
+      "end": 235.92,
+      "section": "kewen"
+    },
+    {
+      "id": "s43",
+      "text": "练气功对身体很有好处。",
+      "pinyin": "Liàn qìgōng duì shēntǐ hěn yǒu hǎochù.",
+      "meaning": "Luyện khí công rất có lợi cho sức khỏe.",
+      "start": 236.94,
+      "end": 240.24,
+      "section": "kewen"
+    },
+    {
+      "id": "s44",
+      "text": "以前我有好几种慢性病，高血压、失眠。",
+      "pinyin": "Yǐqián wǒ yǒu hǎo jǐ zhǒng mànxìngbìng, gāoxuèyā, shīmián.",
+      "meaning": "Trước đây tôi có mấy bệnh mạn tính, cao huyết áp, mất ngủ.",
+      "start": 241.11,
+      "end": 246.13,
+      "section": "kewen"
+    },
+    {
+      "id": "s45",
+      "text": "坚持练了几年，我的这些病差不多都好了。你也来练练吧。",
+      "pinyin": "Jiānchí liàn le jǐ nián, wǒ de zhèxiē bìng chàbuduō dōu hǎo le. Nǐ yě lái liàn lian ba.",
+      "meaning": "Kiên trì luyện vài năm, các bệnh đó gần như khỏi hết. Bạn cũng đến luyện thử đi.",
+      "start": 246.23,
+      "end": 255.58,
+      "section": "kewen"
+    },
+    {
+      "id": "s46",
+      "text": "练气功必须坚持天天练，三天打鱼，两天晒网不行。",
+      "pinyin": "Liàn qìgōng bìxū jiānchí tiāntiān liàn, sān tiān dǎ yú, liǎng tiān shài wǎng bù xíng.",
+      "meaning": "Luyện khí công phải kiên trì mỗi ngày, ba ngày đánh cá hai ngày phơi lưới là không được.",
+      "start": 256.53,
+      "end": 263.74,
+      "section": "kewen"
+    },
+    {
+      "id": "s47",
+      "text": "我也很想练，但是工作太忙，没有时间。",
+      "pinyin": "Wǒ yě hěn xiǎng liàn, dànshì gōngzuò tài máng, méiyǒu shíjiān.",
+      "meaning": "Tôi cũng rất muốn luyện, nhưng công việc quá bận, không có thời gian.",
+      "start": 264.71,
+      "end": 270.28,
+      "section": "kewen"
+    },
+    {
+      "id": "s48",
+      "text": "二、生词",
+      "pinyin": "Èr, shēngcí",
+      "meaning": "Hai. Từ mới",
+      "start": 272.1,
+      "end": 274.1,
+      "section": "heading"
+    },
+    {
+      "id": "s49",
+      "text": "生活",
+      "pinyin": "shēnghuó",
+      "meaning": "cuộc sống, sinh hoạt",
+      "start": 274.96,
+      "end": 276.11,
+      "section": "shengci"
+    },
+    {
+      "id": "s50",
+      "text": "差不多",
+      "pinyin": "chàbuduō",
+      "meaning": "gần, xấp xỉ",
+      "start": 277.34,
+      "end": 278.71,
+      "section": "shengci"
+    },
+    {
+      "id": "s51",
+      "text": "习惯",
+      "pinyin": "xíguàn",
+      "meaning": "quen, thói quen",
+      "start": 280.21,
+      "end": 281.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s52",
+      "text": "气候",
+      "pinyin": "qìhòu",
+      "meaning": "khí hậu",
+      "start": 282.83,
+      "end": 283.84,
+      "section": "shengci"
+    },
+    {
+      "id": "s53",
+      "text": "干燥",
+      "pinyin": "gānzào",
+      "meaning": "khô hanh",
+      "start": 285.26,
+      "end": 286.24,
+      "section": "shengci"
+    },
+    {
+      "id": "s54",
+      "text": "干净",
+      "pinyin": "gānjìng",
+      "meaning": "sạch sẽ",
+      "start": 287.76,
+      "end": 288.61,
+      "section": "shengci"
+    },
+    {
+      "id": "s55",
+      "text": "菜",
+      "pinyin": "cài",
+      "meaning": "món ăn",
+      "start": 289.73,
+      "end": 290.44,
+      "section": "shengci"
+    },
+    {
+      "id": "s56",
+      "text": "油腻",
+      "pinyin": "yóunì",
+      "meaning": "nhiều dầu mỡ",
+      "start": 291.88,
+      "end": 292.9,
+      "section": "shengci"
+    },
+    {
+      "id": "s57",
+      "text": "牛奶",
+      "pinyin": "niúnǎi",
+      "meaning": "sữa bò",
+      "start": 294.24,
+      "end": 295.46,
+      "section": "shengci"
+    },
+    {
+      "id": "s58",
+      "text": "不过",
+      "pinyin": "búguò",
+      "meaning": "nhưng, tuy nhiên",
+      "start": 296.7,
+      "end": 297.71,
+      "section": "shengci"
+    },
+    {
+      "id": "s59",
+      "text": "课间",
+      "pinyin": "kèjiān",
+      "meaning": "giữa các tiết học",
+      "start": 299.3,
+      "end": 300.45,
+      "section": "shengci"
+    },
+    {
+      "id": "s60",
+      "text": "块",
+      "pinyin": "kuài",
+      "meaning": "miếng, khối",
+      "start": 301.79,
+      "end": 302.51,
+      "section": "shengci"
+    },
+    {
+      "id": "s61",
+      "text": "点心",
+      "pinyin": "diǎnxin",
+      "meaning": "bánh nhẹ, điểm tâm",
+      "start": 303.67,
+      "end": 304.63,
+      "section": "shengci"
+    },
+    {
+      "id": "s62",
+      "text": "从来",
+      "pinyin": "cónglái",
+      "meaning": "từ trước đến nay",
+      "start": 305.89,
+      "end": 307.03,
+      "section": "shengci"
+    },
+    {
+      "id": "s63",
+      "text": "午觉",
+      "pinyin": "wǔjiào",
+      "meaning": "giấc ngủ trưa",
+      "start": 308.46,
+      "end": 309.51,
+      "section": "shengci"
+    },
+    {
+      "id": "s64",
+      "text": "游泳",
+      "pinyin": "yóuyǒng",
+      "meaning": "bơi lội",
+      "start": 310.72,
+      "end": 311.88,
+      "section": "shengci"
+    },
+    {
+      "id": "s65",
+      "text": "散步",
+      "pinyin": "sànbù",
+      "meaning": "đi dạo",
+      "start": 313.22,
+      "end": 314.26,
+      "section": "shengci"
+    },
+    {
+      "id": "s66",
+      "text": "功课",
+      "pinyin": "gōngkè",
+      "meaning": "bài vở",
+      "start": 315.65,
+      "end": 316.67,
+      "section": "shengci"
+    },
+    {
+      "id": "s67",
+      "text": "记住",
+      "pinyin": "jìzhù",
+      "meaning": "ghi nhớ",
+      "start": 318.2,
+      "end": 319.17,
+      "section": "shengci"
+    },
+    {
+      "id": "s68",
+      "text": "记",
+      "pinyin": "jì",
+      "meaning": "ghi nhớ",
+      "start": 320.43,
+      "end": 321.05,
+      "section": "shengci"
+    },
+    {
+      "id": "s69",
+      "text": "一般",
+      "pinyin": "yībān",
+      "meaning": "thông thường",
+      "start": 322.37,
+      "end": 323.39,
+      "section": "shengci"
+    },
+    {
+      "id": "s70",
+      "text": "感谢",
+      "pinyin": "gǎnxiè",
+      "meaning": "cảm ơn",
+      "start": 324.73,
+      "end": 325.78,
+      "section": "shengci"
+    },
+    {
+      "id": "s71",
+      "text": "父母",
+      "pinyin": "fùmǔ",
+      "meaning": "cha mẹ",
+      "start": 326.86,
+      "end": 328.1,
+      "section": "shengci"
+    },
+    {
+      "id": "s72",
+      "text": "机会",
+      "pinyin": "jīhuì",
+      "meaning": "cơ hội",
+      "start": 329.3,
+      "end": 330.3,
+      "section": "shengci"
+    },
+    {
+      "id": "s73",
+      "text": "原来",
+      "pinyin": "yuánlái",
+      "meaning": "vốn, ban đầu",
+      "start": 331.74,
+      "end": 332.82,
+      "section": "shengci"
+    },
+    {
+      "id": "s74",
+      "text": "延长",
+      "pinyin": "yáncháng",
+      "meaning": "kéo dài",
+      "start": 334.26,
+      "end": 335.38,
+      "section": "shengci"
+    },
+    {
+      "id": "s75",
+      "text": "练",
+      "pinyin": "liàn",
+      "meaning": "luyện tập",
+      "start": 336.7,
+      "end": 337.39,
+      "section": "shengci"
+    },
+    {
+      "id": "s76",
+      "text": "气功",
+      "pinyin": "qìgōng",
+      "meaning": "khí công",
+      "start": 338.74,
+      "end": 339.85,
+      "section": "shengci"
+    },
+    {
+      "id": "s77",
+      "text": "好",
+      "pinyin": "hǎo",
+      "meaning": "khá (trước số)",
+      "start": 341.21,
+      "end": 342.07,
+      "section": "shengci"
+    },
+    {
+      "id": "s78",
+      "text": "不一定",
+      "pinyin": "bù yídìng",
+      "meaning": "không nhất định",
+      "start": 343.53,
+      "end": 344.64,
+      "section": "shengci"
+    },
+    {
+      "id": "s79",
+      "text": "钟头",
+      "pinyin": "zhōngtóu",
+      "meaning": "tiếng, giờ",
+      "start": 345.95,
+      "end": 347.02,
+      "section": "shengci"
+    },
+    {
+      "id": "s80",
+      "text": "效果",
+      "pinyin": "xiàoguǒ",
+      "meaning": "hiệu quả",
+      "start": 348.37,
+      "end": 349.58,
+      "section": "shengci"
+    },
+    {
+      "id": "s81",
+      "text": "挺",
+      "pinyin": "tǐng",
+      "meaning": "rất, khá",
+      "start": 351.18,
+      "end": 352.21,
+      "section": "shengci"
+    },
+    {
+      "id": "s82",
+      "text": "好处",
+      "pinyin": "hǎochù",
+      "meaning": "lợi ích",
+      "start": 353.58,
+      "end": 354.71,
+      "section": "shengci"
+    },
+    {
+      "id": "s83",
+      "text": "坏处",
+      "pinyin": "huàichù",
+      "meaning": "tác hại",
+      "start": 356.16,
+      "end": 357.12,
+      "section": "shengci"
+    },
+    {
+      "id": "s84",
+      "text": "慢性病",
+      "pinyin": "mànxìngbìng",
+      "meaning": "bệnh mạn tính",
+      "start": 358.37,
+      "end": 359.66,
+      "section": "shengci"
+    },
+    {
+      "id": "s85",
+      "text": "高血压",
+      "pinyin": "gāoxuèyā",
+      "meaning": "huyết áp cao",
+      "start": 361.13,
+      "end": 362.46,
+      "section": "shengci"
+    },
+    {
+      "id": "s86",
+      "text": "失眠",
+      "pinyin": "shīmián",
+      "meaning": "mất ngủ",
+      "start": 363.89,
+      "end": 365.07,
+      "section": "shengci"
+    },
+    {
+      "id": "s87",
+      "text": "必须",
+      "pinyin": "bìxū",
+      "meaning": "phải, nhất thiết",
+      "start": 366.59,
+      "end": 367.65,
+      "section": "shengci"
+    },
+    {
+      "id": "s88",
+      "text": "打鱼",
+      "pinyin": "dǎ yú",
+      "meaning": "đánh cá",
+      "start": 368.92,
+      "end": 370.03,
+      "section": "shengci"
+    },
+    {
+      "id": "s89",
+      "text": "晒",
+      "pinyin": "shài",
+      "meaning": "phơi nắng",
+      "start": 371.44,
+      "end": 372.15,
+      "section": "shengci"
+    }
+  ],
+  "words": [
+    {
+      "hanzi": "生活",
+      "pinyin": "shēnghuó",
+      "meaning": "cuộc sống, sinh hoạt",
+      "segments": [
+        "s3",
+        "s49"
+      ]
+    },
+    {
+      "hanzi": "差不多",
+      "pinyin": "chàbuduō",
+      "meaning": "gần, xấp xỉ",
+      "segments": [
+        "s3",
+        "s50"
+      ]
+    },
+    {
+      "hanzi": "习惯",
+      "pinyin": "xíguàn",
+      "meaning": "quen, thói quen",
+      "segments": [
+        "s3",
+        "s51"
+      ]
+    },
+    {
+      "hanzi": "气候",
+      "pinyin": "qìhòu",
+      "meaning": "khí hậu",
+      "segments": [
+        "s5",
+        "s52"
+      ]
+    },
+    {
+      "hanzi": "干燥",
+      "pinyin": "gānzào",
+      "meaning": "khô hanh",
+      "segments": [
+        "s5",
+        "s53"
+      ]
+    },
+    {
+      "hanzi": "干净",
+      "pinyin": "gānjìng",
+      "meaning": "sạch sẽ",
+      "segments": [
+        "s6",
+        "s54"
+      ]
+    },
+    {
+      "hanzi": "菜",
+      "pinyin": "cài",
+      "meaning": "món ăn",
+      "segments": [
+        "s7",
+        "s55"
+      ]
+    },
+    {
+      "hanzi": "油腻",
+      "pinyin": "yóunì",
+      "meaning": "nhiều dầu mỡ",
+      "segments": [
+        "s7",
+        "s56"
+      ]
+    },
+    {
+      "hanzi": "牛奶",
+      "pinyin": "niúnǎi",
+      "meaning": "sữa bò",
+      "segments": [
+        "s10",
+        "s57"
+      ]
+    },
+    {
+      "hanzi": "不过",
+      "pinyin": "búguò",
+      "meaning": "nhưng, tuy nhiên",
+      "segments": [
+        "s4",
+        "s58"
+      ]
+    },
+    {
+      "hanzi": "课间",
+      "pinyin": "kèjiān",
+      "meaning": "giữa các tiết học",
+      "segments": [
+        "s10",
+        "s59"
+      ]
+    },
+    {
+      "hanzi": "块",
+      "pinyin": "kuài",
+      "meaning": "miếng, khối",
+      "segments": [
+        "s10",
+        "s60"
+      ]
+    },
+    {
+      "hanzi": "点心",
+      "pinyin": "diǎnxin",
+      "meaning": "bánh nhẹ, điểm tâm",
+      "segments": [
+        "s10",
+        "s61"
+      ]
+    },
+    {
+      "hanzi": "从来",
+      "pinyin": "cónglái",
+      "meaning": "từ trước đến nay",
+      "segments": [
+        "s14",
+        "s62"
+      ]
+    },
+    {
+      "hanzi": "午觉",
+      "pinyin": "wǔjiào",
+      "meaning": "giấc ngủ trưa",
+      "segments": [
+        "s14",
+        "s63"
+      ]
+    },
+    {
+      "hanzi": "游泳",
+      "pinyin": "yóuyǒng",
+      "meaning": "bơi lội",
+      "segments": [
+        "s17",
+        "s64"
+      ]
+    },
+    {
+      "hanzi": "散步",
+      "pinyin": "sànbù",
+      "meaning": "đi dạo",
+      "segments": [
+        "s21",
+        "s65"
+      ]
+    },
+    {
+      "hanzi": "功课",
+      "pinyin": "gōngkè",
+      "meaning": "bài vở",
+      "segments": [
+        "s22",
+        "s66"
+      ]
+    },
+    {
+      "hanzi": "记住",
+      "pinyin": "jìzhù",
+      "meaning": "ghi nhớ",
+      "segments": [
+        "s26",
+        "s67"
+      ]
+    },
+    {
+      "hanzi": "记",
+      "pinyin": "jì",
+      "meaning": "ghi nhớ",
+      "segments": [
+        "s26",
+        "s68"
+      ]
+    },
+    {
+      "hanzi": "一般",
+      "pinyin": "yībān",
+      "meaning": "thông thường",
+      "segments": [
+        "s27",
+        "s69"
+      ]
+    },
+    {
+      "hanzi": "感谢",
+      "pinyin": "gǎnxiè",
+      "meaning": "cảm ơn",
+      "segments": [
+        "s30",
+        "s70"
+      ]
+    },
+    {
+      "hanzi": "父母",
+      "pinyin": "fùmǔ",
+      "meaning": "cha mẹ",
+      "segments": [
+        "s30",
+        "s71"
+      ]
+    },
+    {
+      "hanzi": "机会",
+      "pinyin": "jīhuì",
+      "meaning": "cơ hội",
+      "segments": [
+        "s30",
+        "s72"
+      ]
+    },
+    {
+      "hanzi": "原来",
+      "pinyin": "yuánlái",
+      "meaning": "vốn, ban đầu",
+      "segments": [
+        "s31",
+        "s73"
+      ]
+    },
+    {
+      "hanzi": "延长",
+      "pinyin": "yáncháng",
+      "meaning": "kéo dài",
+      "segments": [
+        "s33",
+        "s74"
+      ]
+    },
+    {
+      "hanzi": "练",
+      "pinyin": "liàn",
+      "meaning": "luyện tập",
+      "segments": [
+        "s36",
+        "s75"
+      ]
+    },
+    {
+      "hanzi": "气功",
+      "pinyin": "qìgōng",
+      "meaning": "khí công",
+      "segments": [
+        "s36",
+        "s76"
+      ]
+    },
+    {
+      "hanzi": "好",
+      "pinyin": "hǎo",
+      "meaning": "khá (trước số)",
+      "segments": [
+        "s38",
+        "s77"
+      ]
+    },
+    {
+      "hanzi": "不一定",
+      "pinyin": "bù yídìng",
+      "meaning": "không nhất định",
+      "segments": [
+        "s40",
+        "s78"
+      ]
+    },
+    {
+      "hanzi": "钟头",
+      "pinyin": "zhōngtóu",
+      "meaning": "tiếng, giờ",
+      "segments": [
+        "s40",
+        "s79"
+      ]
+    },
+    {
+      "hanzi": "效果",
+      "pinyin": "xiàoguǒ",
+      "meaning": "hiệu quả",
+      "segments": [
+        "s41",
+        "s80"
+      ]
+    },
+    {
+      "hanzi": "挺",
+      "pinyin": "tǐng",
+      "meaning": "rất, khá",
+      "segments": [
+        "s42",
+        "s81"
+      ]
+    },
+    {
+      "hanzi": "好处",
+      "pinyin": "hǎochù",
+      "meaning": "lợi ích",
+      "segments": [
+        "s43",
+        "s82"
+      ]
+    },
+    {
+      "hanzi": "坏处",
+      "pinyin": "huàichù",
+      "meaning": "tác hại",
+      "segments": [
+        "s83"
+      ]
+    },
+    {
+      "hanzi": "慢性病",
+      "pinyin": "mànxìngbìng",
+      "meaning": "bệnh mạn tính",
+      "segments": [
+        "s44",
+        "s84"
+      ]
+    },
+    {
+      "hanzi": "高血压",
+      "pinyin": "gāoxuèyā",
+      "meaning": "huyết áp cao",
+      "segments": [
+        "s44",
+        "s85"
+      ]
+    },
+    {
+      "hanzi": "失眠",
+      "pinyin": "shīmián",
+      "meaning": "mất ngủ",
+      "segments": [
+        "s44",
+        "s86"
+      ]
+    },
+    {
+      "hanzi": "必须",
+      "pinyin": "bìxū",
+      "meaning": "phải, nhất thiết",
+      "segments": [
+        "s46",
+        "s87"
+      ]
+    },
+    {
+      "hanzi": "打鱼",
+      "pinyin": "dǎ yú",
+      "meaning": "đánh cá",
+      "segments": [
+        "s46",
+        "s88"
+      ]
+    },
+    {
+      "hanzi": "晒",
+      "pinyin": "shài",
+      "meaning": "phơi nắng",
+      "segments": [
+        "s46",
+        "s89"
+      ]
+    }
+  ]
+}

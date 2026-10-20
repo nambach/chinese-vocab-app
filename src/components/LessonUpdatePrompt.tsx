@@ -1,5 +1,5 @@
 import { useApp } from '../context/AppContext'
-import { extractLeadingTitle } from '../lib/txt'
+import { builtinLessonTitle } from '../data/lessons'
 import { BigButton, Dialog } from './ui'
 
 export function LessonUpdatePrompt() {
@@ -17,7 +17,7 @@ export function LessonUpdatePrompt() {
   if (count === 0) return null
 
   const names = outdatedBuiltinLessons
-    .map((lesson) => extractLeadingTitle(lesson.text).title ?? lesson.id)
+    .map((lesson) => builtinLessonTitle(lesson))
     .join(', ')
 
   return (
