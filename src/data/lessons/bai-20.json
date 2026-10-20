@@ -3,6 +3,7 @@
   "version": 1,
   "id": "bai-20",
   "title": "Bài 20",
+  "textTitle": "Bạn tốt nghiệp đại học năm nào?",
   "audio": {
     "type": "file",
     "src": "audio/shadowing/bai-20.mp3"

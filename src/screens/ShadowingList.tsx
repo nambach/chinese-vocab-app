@@ -31,6 +31,9 @@ export function ShadowingList() {
                   className="w-full rounded-3xl bg-white px-6 py-5 text-left shadow-sm ring-1 ring-teal-100"
                 >
                   <h2 className="text-xl font-semibold text-teal-950">{catalog.name}</h2>
+                  {catalog.kewen?.textTitle ? (
+                    <p className="mt-1 text-sm font-medium text-teal-800">{catalog.kewen.textTitle}</p>
+                  ) : null}
                   <p className="mt-1 text-sm text-teal-700">
                     {catalog.words.length} từ
                     {lesson ? ` · ${lesson.segments.length} câu · ${formatClock(lastEnd)}` : ''}

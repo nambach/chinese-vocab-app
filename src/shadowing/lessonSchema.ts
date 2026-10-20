@@ -27,6 +27,8 @@ export type LessonFile = {
   version: 1
   id: string
   title: string
+  /** Gloss of the first 课文 text. Omitted when the script has no title heading. */
+  textTitle?: string
   audio: LessonFileAudio
   segments: ShadowingSegment[]
   words: LessonWord[]
@@ -242,6 +244,7 @@ export function parseLessonFile(value: unknown): LessonFileParseResult {
 
   const id = requireString(value, 'id', 'lesson', errors)
   const title = requireString(value, 'title', 'lesson', errors)
+  const textTitle = optionalString(value, 'textTitle', 'lesson', errors)?.trim()
   const audio = parseLessonAudio(value.audio, errors)
 
   const beforeSegments = errors.length
@@ -260,6 +263,7 @@ export function parseLessonFile(value: unknown): LessonFileParseResult {
       version: 1,
       id,
       title,
+      ...(textTitle ? { textTitle } : {}),
       audio,
       segments,
       words,

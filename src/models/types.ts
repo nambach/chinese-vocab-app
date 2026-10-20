@@ -39,6 +39,8 @@ export type Word = {
 export type Kewen = {
   lessonId: string
   title: string
+  /** Gloss of the first 课文 text, taken from the heading after 一、课文. */
+  textTitle?: string
   audio: AudioSource
   segments: ShadowingSegment[]
 }

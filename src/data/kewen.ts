@@ -2,6 +2,7 @@ import { parseCatalogText } from '../lib/txt'
 import type { AppState, Catalog, Kewen, Word } from '../models/types'
 import type { LessonFile } from '../shadowing/lessonSchema'
 import { withSource } from '../shadowing/savedWords'
+import { textTitleFromSegments } from '../shadowing/textTitle'
 import type { BuiltinLesson } from './lessons'
 
 /** Words a bundled lesson ships, with sentence positions for a 课文 lesson. */
@@ -24,9 +25,11 @@ export function bundledWords(lesson: BuiltinLesson): Omit<Word, 'id'>[] {
 /** A device copy of a bundled script. Only a bundled mp3 can back it. */
 export function kewenFromFile(file: LessonFile): Kewen | undefined {
   if (file.audio.type !== 'file') return undefined
+  const textTitle = file.textTitle?.trim() || textTitleFromSegments(file.segments)
   return {
     lessonId: file.id,
     title: file.title,
+    ...(textTitle ? { textTitle } : {}),
     audio: { type: 'file', src: file.audio.src },
     segments: file.segments.map((segment) => ({ ...segment })),
   }
@@ -61,7 +64,16 @@ export function attachBundledKewen(state: AppState, pack: readonly BuiltinLesson
     const lesson = byId.get(catalog.builtinId)
     const file = lesson?.file
     if (!lesson || !file || file.audio.type !== 'file') return catalog
-    if (Array.isArray(catalog.kewen?.segments)) return catalog
+    if (Array.isArray(catalog.kewen?.segments)) {
+      const fromSegments = textTitleFromSegments(catalog.kewen.segments)
+      const next = file.textTitle?.trim() || fromSegments
+      const current = catalog.kewen.textTitle
+      if (!next || next === current) return catalog
+      // A title the user changed stays. One copied from the heading can take the bundle's.
+      if (current && current !== fromSegments) return catalog
+      changed = true
+      return { ...catalog, kewen: { ...catalog.kewen, textTitle: next } }
+    }
     const kewen = kewenFromFile(file)
     if (!kewen) return catalog
     changed = true

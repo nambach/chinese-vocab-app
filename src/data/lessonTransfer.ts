@@ -1,6 +1,7 @@
 import type { AppState, Catalog, Kewen, Word, WordSource } from '../models/types'
 import type { AudioSource } from '../shadowing/types'
 import type { LessonFile, LessonFileAudio } from '../shadowing/lessonSchema'
+import { textTitleFromSegments } from '../shadowing/textTitle'
 import { createId } from './ids'
 import { getCatalog, upsertCatalog } from './store'
 
@@ -138,11 +139,13 @@ export async function exportLesson(catalog: Catalog, audioBlob?: Blob): Promise<
   if (!kewen) return null
 
   const audio = await fileAudio(kewen.audio, audioBlob)
+  const textTitle = kewen.textTitle?.trim() || textTitleFromSegments(kewen.segments)
   return {
     format: 'cn-vocab-lesson',
     version: 1,
     id: kewen.lessonId,
     title: catalog.name.trim() || kewen.title,
+    ...(textTitle ? { textTitle } : {}),
     audio,
     segments: snapshot(kewen.segments),
     words: catalog.words.map((word) => {
@@ -190,6 +193,7 @@ export async function importLesson(file: LessonFile, options: ImportLessonOption
   const now = options.now ?? Date.now()
   const lessonId = `custom-${nextId()}`
   const audio = await runtimeAudio(file.audio, options.putAudio)
+  const textTitle = file.textTitle?.trim() || textTitleFromSegments(file.segments)
 
   return {
     id: nextId(),
@@ -214,6 +218,7 @@ export async function importLesson(file: LessonFile, options: ImportLessonOption
     kewen: {
       lessonId,
       title: file.title.trim(),
+      ...(textTitle ? { textTitle } : {}),
       audio,
       segments: snapshot(file.segments),
     },

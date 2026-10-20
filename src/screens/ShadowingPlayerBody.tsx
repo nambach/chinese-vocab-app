@@ -358,11 +358,6 @@ export function ShadowingPlayerBody({
             />
           </div>
         </div>
-        {desktop ? (
-          <p className="mt-2 text-xs text-teal-600">
-            Phím tắt: Space phát/dừng, ← → câu, R nghe lại, L lặp, [ ] tốc độ, P pinyin, M nghĩa
-          </p>
-        ) : null}
       </div>
 
       <ol ref={listRef} className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto px-4 py-4 md:px-8">

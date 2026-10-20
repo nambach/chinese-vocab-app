@@ -272,6 +272,66 @@ describe('lessons with a 课文', () => {
     expect(attachBundledKewen(attached, [KEWEN_LESSON])).toBe(attached)
   })
 
+  it('uses the bundled title when the script does not read one aloud', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const titled: BuiltinLesson = {
+      ...KEWEN_LESSON,
+      file: { ...KEWEN_FILE, textTitle: 'Tôi định mời giáo viên dạy kinh kịch' },
+    }
+    const after = attachBundledKewen(seeded, [titled])
+    expect(after.catalogs[0].kewen?.textTitle).toBe('Tôi định mời giáo viên dạy kinh kịch')
+    expect(after.catalogs[0].kewen?.segments).toBe(seeded.catalogs[0].kewen?.segments)
+  })
+
+  it('replaces a heading gloss when the bundle titles the lesson differently', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const segments = [
+      { id: 's1', text: '一、课文', start: 0, end: 1, section: 'heading' as const },
+      { id: 's2', text: '一、你怎么了', meaning: 'Bài 1: Bạn bị sao vậy', start: 1, end: 2, section: 'heading' as const },
+    ]
+    const withScript = {
+      ...seeded,
+      catalogs: seeded.catalogs.map((catalog) => ({
+        ...catalog,
+        kewen: { ...catalog.kewen!, segments, textTitle: 'Bạn bị sao vậy' },
+      })),
+    }
+    const titled: BuiltinLesson = {
+      ...KEWEN_LESSON,
+      file: { ...KEWEN_FILE, textTitle: 'Mary khóc' },
+    }
+    const after = attachBundledKewen(withScript, [titled])
+    expect(after.catalogs[0].kewen?.textTitle).toBe('Mary khóc')
+    expect(after.catalogs[0].kewen?.segments).toBe(segments)
+    const edited = {
+      ...withScript,
+      catalogs: withScript.catalogs.map((catalog) => ({
+        ...catalog,
+        kewen: { ...catalog.kewen!, textTitle: 'Tự đặt' },
+      })),
+    }
+    expect(attachBundledKewen(edited, [titled]).catalogs[0].kewen?.textTitle).toBe('Tự đặt')
+  })
+
+  it('fills a missing text title without touching the saved sentences', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const segments = [
+      { id: 's1', text: '一、课文', start: 0, end: 1, section: 'heading' as const },
+      { id: 's2', text: '一、我的一天', meaning: 'Bài 1: Một ngày của tôi', start: 1, end: 2, section: 'heading' as const },
+    ]
+    const withScript = {
+      ...seeded,
+      catalogs: seeded.catalogs.map((catalog) => ({
+        ...catalog,
+        kewen: { ...catalog.kewen!, segments },
+      })),
+    }
+    const after = attachBundledKewen(withScript, [KEWEN_LESSON])
+    expect(after.catalogs[0].kewen?.textTitle).toBe('Một ngày của tôi')
+    expect(after.catalogs[0].kewen?.segments).toBe(segments)
+    expect(attachBundledKewen(after, [KEWEN_LESSON])).toBe(after)
+  })
+
   it('never overwrites a script already on the device', () => {
     const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
     const edited = {

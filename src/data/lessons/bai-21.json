@@ -3,6 +3,7 @@
   "version": 1,
   "id": "bai-21",
   "title": "Bài 21",
+  "textTitle": "Một ngày của tôi",
   "audio": {
     "type": "file",
     "src": "audio/shadowing/bai-21.mp3"

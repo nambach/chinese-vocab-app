@@ -111,6 +111,9 @@ function CatalogCard({
           ) : null}
           <span className="truncate">{catalog.name}</span>
         </h3>
+        {catalog.kewen?.textTitle ? (
+          <p className="mt-0.5 truncate text-sm font-medium text-teal-800">{catalog.kewen.textTitle}</p>
+        ) : null}
         <p className="mt-1 text-sm text-teal-700">
           {catalog.words.length} từ
           {catalog.lastResult

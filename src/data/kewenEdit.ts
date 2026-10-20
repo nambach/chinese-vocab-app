@@ -2,6 +2,7 @@ import type { AppState } from '../models/types'
 import { createId } from './ids'
 import { getCatalog, upsertCatalog } from './store'
 import { validateSegments } from '../shadowing/segments'
+import { textTitleFromSegments } from '../shadowing/textTitle'
 import type { ShadowingSegment } from '../shadowing/types'
 
 const NEW_SEGMENT_SECONDS = 5
@@ -115,9 +116,17 @@ export function saveKewen(
   const catalog = getCatalog(state, catalogId)
   if (!catalog?.kewen) return state
 
+  const textTitle = textTitleFromSegments(sorted) || catalog.kewen.textTitle
+  const kewen = {
+    ...catalog.kewen,
+    segments: sorted.map((segment) => ({ ...segment })),
+    ...(textTitle ? { textTitle } : {}),
+  }
+  if (!textTitle) delete kewen.textTitle
+
   return upsertCatalog(state, {
     ...catalog,
-    kewen: { ...catalog.kewen, segments: sorted.map((segment) => ({ ...segment })) },
+    kewen,
     updatedAt: Date.now(),
   })
 }

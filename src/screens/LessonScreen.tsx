@@ -78,7 +78,11 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
   return (
     <ScreenShell
       title={catalog.name}
-      subtitle={`${catalog.words.length} từ`}
+      subtitle={
+        catalog.kewen?.textTitle
+          ? `${catalog.kewen.textTitle} · ${catalog.words.length} từ`
+          : `${catalog.words.length} từ`
+      }
       onBack={() => goBack({ name: 'home' })}
       backLabel="Trang chủ"
       fillViewport

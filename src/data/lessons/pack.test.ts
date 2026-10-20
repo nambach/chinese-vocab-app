@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { textTitleFromSegments } from '../../shadowing/textTitle'
 import { LESSON_PACK } from './index'
 
 /** Readings after the 专名 heading are proper names and need no word. */
@@ -50,6 +51,19 @@ describe('packaged lesson files', () => {
       const file = lesson.file!
       expect(file.audio).toEqual({ type: 'file', src: `audio/shadowing/${file.id}.mp3` })
       expect(file.segments.every((segment) => segment.section)).toBe(true)
+    }
+  })
+
+  it('stores the first 课文 title, including a title that is not read aloud', () => {
+    const titled = lessons.find((lesson) => lesson.id === 'bai-16')
+    const unspoken = lessons.find((lesson) => lesson.id === 'bai-22')
+    expect(titled?.file?.textTitle).toBe('Bạn có hay đến thư viện không')
+    expect(unspoken?.file?.textTitle).toBe('Tôi định mời giáo viên dạy kinh kịch')
+    expect(textTitleFromSegments(unspoken!.file!.segments)).toBeUndefined()
+    expect(lessons.find((lesson) => lesson.id === 'bai-27')?.file?.textTitle).toBe('Mary khóc')
+    for (const lesson of lessons) {
+      if (lesson.id === 'bai-22' || lesson.id === 'bai-27') continue
+      expect(lesson.file?.textTitle).toBe(textTitleFromSegments(lesson.file!.segments))
     }
   })
 
