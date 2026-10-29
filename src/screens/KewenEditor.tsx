@@ -9,10 +9,12 @@ import {
   formatSegmentClock,
   newSegmentAt,
   parseSegmentClock,
+  saveKewen,
   segmentErrors,
   sortSegments,
   upsertSegment,
 } from '../data/kewenEdit'
+import { saveState } from '../data/store'
 import { useIsDesktop } from '../lib/device'
 import { findSegmentIndexAt, formatClock, isPlaybackRate } from '../shadowing/segments'
 import { lessonFromKewen } from '../shadowing/lessonView'
@@ -31,6 +33,9 @@ type KewenEditorProps = {
   catalogId: string
   segmentId?: string
 }
+
+/** Wait until a burst of edits settles, then write once. Throttle would save mid-typing. */
+const SAVE_AFTER_MS = 500
 
 function differs(saved: ShadowingSegment | undefined, draft: ShadowingSegment | null): boolean {
   if (!draft) return false
@@ -55,6 +60,8 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
   )
   const savedRef = useRef(saved)
   savedRef.current = saved
+  const stateRef = useRef(state)
+  stateRef.current = state
 
   const [selectedId, setSelectedId] = useState<string | null>(segmentId ?? null)
   const [draft, setDraft] = useState<ShadowingSegment | null>(null)
@@ -65,13 +72,14 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
   const [playhead, setPlayhead] = useState(0)
   const listRef = useRef<HTMLDivElement>(null)
+  const draftRef = useRef(draft)
+  draftRef.current = draft
+  const durationRef = useRef(Number.POSITIVE_INFINITY)
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const savedSelected = saved.find((segment) => segment.id === selectedId)
   const selected = draft?.id === selectedId ? draft : (savedSelected ?? null)
-  const dirty = differs(savedSelected, draft)
 
-  const dirtyRef = useRef(dirty)
-  dirtyRef.current = dirty
   const selectedIdRef = useRef(selectedId)
   selectedIdRef.current = selectedId
 
@@ -85,11 +93,54 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
     [catalog?.kewen, displaySegments],
   )
 
+  const cancelSave = useCallback(() => {
+    if (!saveTimerRef.current) return
+    clearTimeout(saveTimerRef.current)
+    saveTimerRef.current = null
+  }, [])
+
+  const commitRef = useRef<() => void>(() => {})
+  commitRef.current = () => {
+    const current = draftRef.current
+    if (!current) return
+    const savedNow = savedRef.current
+    const original = savedNow.find((segment) => segment.id === current.id)
+    if (!differs(original, current)) return
+    const problems = segmentErrors(savedNow, current, durationRef.current)
+    if (problems.start || problems.end || problems.text) return
+    try {
+      const segments = upsertSegment(savedNow, current)
+      const next = saveKewen(stateRef.current, catalogId, segments)
+      stateRef.current = next
+      saveState(next)
+      saveKewenEdits(catalogId, segments)
+    } catch (error) {
+      window.alert(error instanceof Error ? error.message : 'Không lưu được')
+    }
+  }
+
+  const scheduleSave = useCallback(() => {
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    saveTimerRef.current = setTimeout(() => {
+      saveTimerRef.current = null
+      commitRef.current()
+    }, SAVE_AFTER_MS)
+  }, [])
+
+  const flushSave = useCallback(() => {
+    if (saveTimerRef.current) {
+      clearTimeout(saveTimerRef.current)
+      saveTimerRef.current = null
+    }
+    commitRef.current()
+  }, [])
+
   const onRegionUpdate = useCallback((update: RegionTimingUpdate) => {
+    cancelSave()
     setLive(update)
     setStartText(null)
     setEndText(null)
-  }, [])
+  }, [cancelSave])
 
   const onRegionUpdated = useCallback((update: RegionTimingUpdate) => {
     setLive(null)
@@ -103,7 +154,8 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
       if (!base || (base.start === update.start && base.end === update.end)) return current
       return { ...base, start: update.start, end: update.end }
     })
-  }, [])
+    scheduleSave()
+  }, [scheduleSave])
 
   const onSelection = useCallback((range: { start: number; end: number } | null) => {
     setSelection(range)
@@ -132,6 +184,7 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
   })
 
   const duration = player.ready && player.duration > 0 ? player.duration : Number.POSITIVE_INFINITY
+  durationRef.current = duration
   const timing = selected
     ? {
         start: live?.id === selected.id ? live.start : selected.start,
@@ -140,7 +193,6 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
     : null
   const preview = selected && timing ? { ...selected, ...timing } : null
   const errors = preview ? segmentErrors(saved, preview, duration) : {}
-  const hasErrors = Boolean(errors.start || errors.end || errors.text)
   const selectedIndex = displaySegments.findIndex((segment) => segment.id === selectedId)
 
   useEffect(() => {
@@ -173,29 +225,25 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
   }, [selectedId, player.ready, player.scrollIntoView])
 
   useEffect(() => {
-    if (!dirty) return undefined
-    const warn = (event: BeforeUnloadEvent) => {
-      event.preventDefault()
-    }
-    window.addEventListener('beforeunload', warn)
-    return () => window.removeEventListener('beforeunload', warn)
-  }, [dirty])
+    if (!draft) return
+    const original = saved.find((segment) => segment.id === draft.id)
+    if (original && !differs(original, draft)) setDraft(null)
+  }, [saved, draft])
 
   useEffect(() => {
-    const onPop = () => {
-      if (!dirtyRef.current) return
-      if (window.confirm('Bỏ thay đổi chưa lưu?')) return
-      const id = selectedIdRef.current
-      setView(id ? { name: 'editKewen', catalogId, segmentId: id } : { name: 'editKewen', catalogId })
+    const flush = () => flushSave()
+    window.addEventListener('pagehide', flush)
+    return () => {
+      window.removeEventListener('pagehide', flush)
+      flushSave()
     }
-    window.addEventListener('popstate', onPop)
-    return () => window.removeEventListener('popstate', onPop)
-  }, [catalogId, setView])
+  }, [flushSave])
 
   useEffect(() => {
     if (desktop) return
+    flushSave()
     setView({ name: 'catalog', catalogId })
-  }, [desktop, catalogId, setView])
+  }, [desktop, catalogId, setView, flushSave])
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -209,11 +257,6 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
     return () => window.removeEventListener('keydown', onKey)
   }, [player.togglePlay])
 
-  const discard = useCallback(() => {
-    if (!dirtyRef.current) return true
-    return window.confirm('Bỏ thay đổi chưa lưu?')
-  }, [])
-
   const edit = useCallback((patch: Partial<Pick<ShadowingSegment, 'text' | 'pinyin' | 'meaning' | 'start' | 'end'>>) => {
     setDraft((current) => {
       const id = selectedIdRef.current
@@ -221,11 +264,12 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
       if (!base) return current
       return { ...base, ...patch }
     })
-  }, [])
+    scheduleSave()
+  }, [scheduleSave])
 
   function select(id: string) {
     if (id === selectedId) return
-    if (!discard()) return
+    flushSave()
     setDraft(null)
     setLive(null)
     setStartText(null)
@@ -243,7 +287,7 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
 
   function addSentence() {
     if (!player.ready) return
-    if (!discard()) return
+    flushSave()
     const created = selection
       ? newSegmentAt(saved, selection.start, selection.end, player.duration)
       : newSegmentAt(saved, player.getCurrentTime(), undefined, player.duration)
@@ -257,28 +301,15 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
   }
 
   function leave() {
-    if (!discard()) return
+    flushSave()
     setView({ name: 'catalog', catalogId })
-  }
-
-  function save() {
-    if (!preview || !dirty || hasErrors) return
-    try {
-      saveKewenEdits(catalogId, upsertSegment(saved, preview))
-    } catch (error) {
-      window.alert(error instanceof Error ? error.message : 'Không lưu được')
-      return
-    }
-    setDraft(null)
-    setLive(null)
-    setStartText(null)
-    setEndText(null)
   }
 
   function remove() {
     if (!selected) return
     const isNew = !saved.some((segment) => segment.id === selected.id)
     if (isNew) {
+      cancelSave()
       setDraft(null)
       setLive(null)
       setSelectedId(null)
@@ -291,6 +322,7 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
         ? `Xóa câu này? ${linked} từ đang gắn câu này (sẽ không hiện nữa).`
         : 'Xóa câu này?'
     if (!window.confirm(message)) return
+    cancelSave()
     try {
       saveKewenEdits(catalogId, deleteSegment(saved, selected.id))
     } catch (error) {
@@ -471,16 +503,6 @@ export function KewenEditor({ catalogId, segmentId }: KewenEditorProps) {
                   onChange={(meaning) => edit({ meaning })}
                   multiline
                 />
-                <div className="mt-auto flex justify-end pt-2">
-                  <button
-                    type="button"
-                    onClick={save}
-                    disabled={!dirty || hasErrors}
-                    className="rounded-2xl bg-teal-700 px-6 py-3 text-base font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    Lưu
-                  </button>
-                </div>
               </div>
             ) : (
               <p className="text-sm text-teal-700">Chọn một câu trong danh sách hoặc thêm câu mới.</p>

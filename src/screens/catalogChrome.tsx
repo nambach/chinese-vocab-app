@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { useApp } from '../context/AppContext'
 import { useIsDesktop } from '../lib/device'
 import { getPracticeHistory } from '../data/store'
+import { exportLesson } from '../data/lessonTransfer'
 import { downloadTextFile, exportCatalogToText } from '../lib/txt'
 import {
   formatResultDate,
@@ -98,6 +99,17 @@ export function PracticeActions({ catalog }: { catalog: Catalog }) {
     setShareOpen(false)
   }
 
+  async function handleDownloadJson() {
+    const file = await exportLesson(catalog)
+    if (!file) return
+    downloadTextFile(
+      `${catalog.name}.json`,
+      `${JSON.stringify(file, null, 2)}\n`,
+      'application/json;charset=utf-8',
+    )
+    setShareOpen(false)
+  }
+
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(exportCatalogToText(catalog))
@@ -143,6 +155,11 @@ export function PracticeActions({ catalog }: { catalog: Catalog }) {
           <BigButton variant="secondary" onClick={handleDownload}>
             Tải file .txt
           </BigButton>
+          {catalog.kewen ? (
+            <BigButton variant="secondary" onClick={() => void handleDownloadJson()}>
+              Tải file .json
+            </BigButton>
+          ) : null}
         </div>
       </BottomDrawer>
 

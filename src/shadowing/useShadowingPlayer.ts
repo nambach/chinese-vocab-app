@@ -18,6 +18,9 @@ type Options = {
   initialRate: number
   onRateChange?: (rate: number) => void
   editor?: ShadowingEditorOptions
+  /** Waveform bar height. The editor leaves this unset and keeps the taller default. */
+  waveHeight?: number
+  timelineHeight?: number
 }
 
 export type ShadowingPlayerController = ReturnType<typeof useShadowingPlayer>
@@ -25,7 +28,7 @@ export type ShadowingPlayerController = ReturnType<typeof useShadowingPlayer>
 export function useShadowingPlayer(
   lesson: ShadowingLesson,
   container: HTMLElement | null,
-  { initialRate, onRateChange, editor }: Options,
+  { initialRate, onRateChange, editor, waveHeight, timelineHeight }: Options,
 ) {
   const segmentsRef = useRef(lesson.segments)
   segmentsRef.current = lesson.segments
@@ -66,7 +69,10 @@ export function useShadowingPlayer(
   useEffect(() => {
     if (!container || !audioSrc) return undefined
 
-    const player = new WaveSurferPlayer(container, resolveAudioSrc(audioSrc))
+    const player = new WaveSurferPlayer(container, resolveAudioSrc(audioSrc), {
+      height: waveHeight,
+      timelineHeight,
+    })
     playerRef.current = player
     player.setPlaybackRate(rateRef.current)
     // Apply before the ready effect. A recreated player (StrictMode, a new
@@ -100,7 +106,7 @@ export function useShadowingPlayer(
       if (playerRef.current === player) playerRef.current = null
       setReady(false)
     }
-  }, [audioSrc, container, publishTime])
+  }, [audioSrc, container, publishTime, waveHeight, timelineHeight])
 
   const editing = editor != null
   const editableSegmentId = editor?.editableSegmentId ?? null

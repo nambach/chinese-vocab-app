@@ -252,8 +252,8 @@ export function ShadowingPlayerBody({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="shrink-0 border-b border-teal-100 bg-white px-4 py-3 md:px-8">
-        <div className="relative min-h-[106px]">
+      <div className="shrink-0 border-b border-teal-100 bg-white px-4 py-2 md:px-8 md:py-3">
+        <div className="relative min-h-[80px] md:min-h-[106px]">
           <div ref={setContainer} className="w-full" />
           {!player.ready && !player.error ? (
             <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-teal-600">
@@ -360,7 +360,7 @@ export function ShadowingPlayerBody({
         })}
       </ol>
 
-      <div className="relative shrink-0 border-t border-teal-100 bg-white px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:px-8 md:py-5">
+      <div className="relative shrink-0 border-t border-teal-100 bg-white px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] md:px-8 md:py-5">
         {jump.phase !== 'hidden' ? (
           <button
             type="button"
@@ -373,7 +373,7 @@ export function ShadowingPlayerBody({
             Câu đang phát
           </button>
         ) : null}
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-5 gap-1.5 md:gap-2">
           <ControlButton label="Trước" onClick={player.prev}>
             <SkipIcon direction="prev" />
           </ControlButton>
@@ -482,10 +482,12 @@ function ControlButton({
       aria-label={label}
       aria-pressed={pressed}
       onClick={onClick}
-      className={`flex flex-col items-center gap-1 rounded-2xl px-1 py-2 text-xs font-semibold ${tone}`}
+      className={`flex flex-col items-center gap-0.5 rounded-xl px-1 py-1.5 text-xs font-semibold md:gap-1 md:rounded-2xl md:py-2 ${tone}`}
     >
-      {children}
-      <span>{label}</span>
+      <span className="[&_svg]:h-[18px] [&_svg]:w-[18px] md:[&_svg]:h-[22px] md:[&_svg]:w-[22px]">
+        {children}
+      </span>
+      <span className="hidden md:block">{label}</span>
     </button>
   )
 }

@@ -44,12 +44,16 @@ export class WaveSurferPlayer implements AudioPlayer {
   private listeners = new Map<AudioPlayerEvent, Set<(time: number) => void>>()
   private cleanups: Array<() => void> = []
 
-  constructor(container: HTMLElement, url: string) {
+  constructor(
+    container: HTMLElement,
+    url: string,
+    options?: { height?: number; timelineHeight?: number },
+  ) {
     this.regions = RegionsPlugin.create()
     this.ws = WaveSurfer.create({
       container,
       url,
-      height: 88,
+      height: options?.height ?? 88,
       normalize: true,
       waveColor: '#14b8a6',
       progressColor: '#134e4a',
@@ -58,7 +62,7 @@ export class WaveSurferPlayer implements AudioPlayer {
       plugins: [
         this.regions,
         TimelinePlugin.create({
-          height: 18,
+          height: options?.timelineHeight ?? 18,
           style: { color: '#0f766e', fontSize: '11px' },
         }),
       ],

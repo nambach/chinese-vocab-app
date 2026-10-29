@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Hanzi } from '../components/Hanzi'
 import { BigButton, BottomDrawer, Card, ScreenShell } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
+import { useMediaQuery } from '../lib/device'
 import { useHanziVariant } from '../lib/traditional'
 import { speak } from '../lib/speech'
 import type { Catalog } from '../models/types'
@@ -54,9 +55,12 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
   const savedRate = isPlaybackRate(state.settings.shadowPlaybackRate)
     ? state.settings.shadowPlaybackRate
     : 1
+  const narrow = useMediaQuery('(max-width: 767px)')
   const player = useShadowingPlayer(lesson ?? EMPTY_LESSON, lesson ? container : null, {
     initialRate: savedRate,
     onRateChange: (rate) => patchSettings({ shadowPlaybackRate: rate }),
+    waveHeight: narrow ? 64 : undefined,
+    timelineHeight: narrow ? 16 : undefined,
   })
   const saved = useMemo(
     () => (lesson ? savedWordsForLesson(state.catalogs, lesson) : []),
