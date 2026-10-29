@@ -14,8 +14,8 @@
       "text": "一、课文",
       "pinyin": "Yī, kèwén",
       "meaning": "Một. Bài khóa",
-      "start": 0.18,
-      "end": 1.89,
+      "start": 0,
+      "end": 1.99,
       "section": "heading"
     },
     {
@@ -23,8 +23,8 @@
       "text": "一、我吃了早饭就来了",
       "pinyin": "Yī, wǒ chīle zǎofàn jiù lái le",
       "meaning": "Bài 1: Tôi ăn sáng xong liền đến ngay",
-      "start": 3.23,
-      "end": 7.31,
+      "start": 3.03,
+      "end": 7.41,
       "section": "heading"
     },
     {
@@ -32,8 +32,8 @@
       "text": "我吃了早饭就来了。",
       "pinyin": "Wǒ chīle zǎofàn jiù lái le.",
       "meaning": "Tôi ăn sáng xong liền đến ngay.",
-      "start": 8.62,
-      "end": 11.16,
+      "start": 8.42,
+      "end": 11.26,
       "section": "kewen"
     },
     {
@@ -41,8 +41,8 @@
       "text": "我也是，接了你的电话，八点半就到这儿了。",
       "pinyin": "Wǒ yě shì, jiēle nǐ de diànhuà, bā diǎn bàn jiù dào zhèr le.",
       "meaning": "Tôi cũng vậy, nhận điện thoại của anh xong, tám giờ rưỡi đã đến đây rồi.",
-      "start": 12.22,
-      "end": 17.41,
+      "start": 12.02,
+      "end": 17.51,
       "section": "kewen"
     },
     {
@@ -50,8 +50,8 @@
       "text": "上次您看了几套房子？",
       "pinyin": "Shàng cì nín kànle jǐ tào fángzi?",
       "meaning": "Lần trước ông đã xem mấy căn nhà?",
-      "start": 18.19,
-      "end": 21.29,
+      "start": 17.99,
+      "end": 21.39,
       "section": "kewen"
     },
     {
@@ -59,8 +59,8 @@
       "text": "看了三套，都不太满意。有的太小，有的周围环境太乱。",
       "pinyin": "Kànle sān tào, dōu bú tài mǎnyì. Yǒude tài xiǎo, yǒude zhōuwéi huánjìng tài luàn.",
       "meaning": "Xem ba căn, đều không hài lòng lắm. Căn thì quá nhỏ, căn thì môi trường xung quanh quá lộn xộn.",
-      "start": 22.05,
-      "end": 30.59,
+      "start": 21.85,
+      "end": 30.69,
       "section": "kewen"
     },
     {
@@ -68,8 +68,8 @@
       "text": "我再带你去看几套吧。",
       "pinyin": "Wǒ zài dài nǐ qù kàn jǐ tào ba.",
       "meaning": "Tôi dẫn anh đi xem thêm vài căn nhé.",
-      "start": 31.25,
-      "end": 33.86,
+      "start": 31.05,
+      "end": 33.96,
       "section": "kewen"
     },
     {
@@ -77,8 +77,8 @@
       "text": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。",
       "pinyin": "Zhè jǐ tào fángzi, chúfáng, wòshì hái kěyǐ, dànshì kètīng miànjī xiǎole diǎnr.",
       "meaning": "Mấy căn này, bếp và phòng ngủ còn được, nhưng phòng khách hơi nhỏ.",
-      "start": 34.54,
-      "end": 43.88,
+      "start": 34.34,
+      "end": 43.98,
       "section": "kewen"
     },
     {
@@ -86,8 +86,8 @@
       "text": "有没有大一点儿的？",
       "pinyin": "Yǒu méiyǒu dà yìdiǎnr de?",
       "meaning": "Có căn nào lớn hơn không?",
-      "start": 44.37,
-      "end": 46.52,
+      "start": 44.17,
+      "end": 46.62,
       "section": "kewen"
     },
     {
@@ -95,8 +95,8 @@
       "text": "有，楼上十八层有一套。",
       "pinyin": "Yǒu, lóu shàng shíbā céng yǒu yí tào.",
       "meaning": "Có, trên lầu tầng mười tám có một căn.",
-      "start": 47.58,
-      "end": 50.81,
+      "start": 47.38,
+      "end": 50.91,
       "section": "kewen"
     },
     {
@@ -104,8 +104,8 @@
       "text": "客厅三十多平方米。",
       "pinyin": "Kètīng sānshí duō píngfāng mǐ.",
       "meaning": "Phòng khách hơn ba mươi mét vuông.",
-      "start": 51.54,
-      "end": 53.78,
+      "start": 51.34,
+      "end": 53.88,
       "section": "kewen"
     },
     {
@@ -113,8 +113,8 @@
       "text": "咱们上去看看吧。",
       "pinyin": "Zánmen shàngqu kànkan ba.",
       "meaning": "Chúng ta lên xem thử nhé.",
-      "start": 54.46,
-      "end": 56.39,
+      "start": 54.26,
+      "end": 56.49,
       "section": "kewen"
     },
     {
@@ -122,8 +122,8 @@
       "text": "这套房子下午就没有阳光了吧？",
       "pinyin": "Zhè tào fángzi xiàwǔ jiù méiyǒu yángguāng le ba?",
       "meaning": "Căn này buổi chiều không còn nắng nữa nhỉ?",
-      "start": 57.81,
-      "end": 62.1,
+      "start": 57.61,
+      "end": 62.2,
       "section": "kewen"
     },
     {
@@ -131,8 +131,8 @@
       "text": "是的。",
       "pinyin": "Shì de.",
       "meaning": "Vâng.",
-      "start": 62.66,
-      "end": 63.37,
+      "start": 62.46,
+      "end": 63.47,
       "section": "kewen"
     },
     {
@@ -140,8 +140,8 @@
       "text": "我还是想要上下午都有阳光的。",
       "pinyin": "Wǒ háishi xiǎng yào shàng xiàwǔ dōu yǒu yángguāng de.",
       "meaning": "Tôi vẫn muốn có nắng cả buổi sáng lẫn chiều.",
-      "start": 64.43,
-      "end": 69.12,
+      "start": 64.23,
+      "end": 69.22,
       "section": "kewen"
     },
     {
@@ -149,8 +149,8 @@
       "text": "二、我早就下班了",
       "pinyin": "Èr, wǒ zǎo jiù xiàbān le",
       "meaning": "Bài 2: Tôi tan ca từ lâu rồi",
-      "start": 71.78,
-      "end": 75.38,
+      "start": 71.58,
+      "end": 75.48,
       "section": "heading"
     },
     {
@@ -158,8 +158,8 @@
       "text": "怎么现在才下班？",
       "pinyin": "Zěnme xiànzài cái xiàbān?",
       "meaning": "Sao bây giờ mới tan ca?",
-      "start": 77.1,
-      "end": 79.33,
+      "start": 76.9,
+      "end": 79.43,
       "section": "kewen"
     },
     {
@@ -167,8 +167,8 @@
       "text": "我早就下班了。",
       "pinyin": "Wǒ zǎo jiù xiàbān le.",
       "meaning": "Em tan ca từ lâu rồi.",
-      "start": 80.19,
-      "end": 82.27,
+      "start": 79.99,
+      "end": 82.37,
       "section": "kewen"
     },
     {
@@ -176,8 +176,8 @@
       "text": "路上堵车堵得厉害。",
       "pinyin": "Lù shang dǔchē dǔ de lìhai.",
       "meaning": "Trên đường tắc xe kinh khủng.",
-      "start": 83.19,
-      "end": 86,
+      "start": 82.99,
+      "end": 86.1,
       "section": "kewen"
     },
     {
@@ -185,8 +185,8 @@
       "text": "我下了班就往回赶，到现在才到家。",
       "pinyin": "Wǒ xiàle bān jiù wǎng huí gǎn, dào xiànzài cái dào jiā.",
       "meaning": "Tan ca xong em vội về, đến giờ mới về tới nhà.",
-      "start": 87.39,
-      "end": 93.03,
+      "start": 87.19,
+      "end": 93.13,
       "section": "kewen"
     },
     {
@@ -194,8 +194,8 @@
       "text": "你今天看了几套房子？",
       "pinyin": "Nǐ jīntiān kànle jǐ tào fángzi?",
       "meaning": "Hôm nay anh xem mấy căn nhà?",
-      "start": 94.36,
-      "end": 97.23,
+      "start": 94.16,
+      "end": 97.33,
       "section": "kewen"
     },
     {
@@ -203,8 +203,8 @@
       "text": "看了七八套。",
       "pinyin": "Kànle qībā tào.",
       "meaning": "Xem bảy tám căn.",
-      "start": 98.6,
-      "end": 100.16,
+      "start": 98.4,
+      "end": 100.26,
       "section": "kewen"
     },
     {
@@ -212,8 +212,8 @@
       "text": "有一套我觉得不错。",
       "pinyin": "Yǒu yí tào wǒ juéde búcuò.",
       "meaning": "Có một căn em thấy không tồi.",
-      "start": 101.12,
-      "end": 103.86,
+      "start": 100.92,
+      "end": 103.96,
       "section": "kewen"
     },
     {
@@ -221,8 +221,8 @@
       "text": "等你休息的时候，再一起去看看。",
       "pinyin": "Děng nǐ xiūxi de shíhou, zài yìqǐ qù kànkan.",
       "meaning": "Đợi lúc anh nghỉ, hai vợ chồng cùng đi xem.",
-      "start": 104.66,
-      "end": 109.07,
+      "start": 104.46,
+      "end": 109.17,
       "section": "kewen"
     },
     {
@@ -230,8 +230,8 @@
       "text": "要是你也满意，咱们就租了。",
       "pinyin": "Yàoshi nǐ yě mǎnyì, zánmen jiù zū le.",
       "meaning": "Nếu anh cũng hài lòng thì mình thuê luôn.",
-      "start": 109.77,
-      "end": 113.48,
+      "start": 109.57,
+      "end": 113.58,
       "section": "kewen"
     },
     {
@@ -239,8 +239,8 @@
       "text": "房租多少钱？",
       "pinyin": "Fángzū duōshao qián?",
       "meaning": "Tiền thuê nhà bao nhiêu?",
-      "start": 114.72,
-      "end": 116.62,
+      "start": 114.52,
+      "end": 116.72,
       "section": "kewen"
     },
     {
@@ -248,8 +248,8 @@
       "text": "一个月三千块。",
       "pinyin": "Yí ge yuè sānqiān kuài.",
       "meaning": "Một tháng ba nghìn đồng.",
-      "start": 117.49,
-      "end": 119.4,
+      "start": 117.29,
+      "end": 119.5,
       "section": "kewen"
     },
     {
@@ -257,8 +257,8 @@
       "text": "怎么这么贵！",
       "pinyin": "Zěnme zhème guì!",
       "meaning": "Sao đắt thế!",
-      "start": 119.94,
-      "end": 121.4,
+      "start": 119.74,
+      "end": 121.5,
       "section": "kewen"
     },
     {
@@ -266,8 +266,8 @@
       "text": "虽然贵了点儿，但是房子真好。",
       "pinyin": "Suīrán guìle diǎnr, dànshì fángzi zhēn hǎo.",
       "meaning": "Tuy hơi đắt, nhưng nhà thật tốt.",
-      "start": 122.28,
-      "end": 126.63,
+      "start": 122.08,
+      "end": 126.73,
       "section": "kewen"
     },
     {
@@ -275,8 +275,8 @@
       "text": "周围环境怎么样？",
       "pinyin": "Zhōuwéi huánjìng zěnmeyàng?",
       "meaning": "Môi trường xung quanh thế nào?",
-      "start": 127.43,
-      "end": 129.6,
+      "start": 127.23,
+      "end": 129.7,
       "section": "kewen"
     },
     {
@@ -284,8 +284,8 @@
       "text": "环境特别好。",
       "pinyin": "Huánjìng tèbié hǎo.",
       "meaning": "Môi trường rất tốt.",
-      "start": 130.71,
-      "end": 132.47,
+      "start": 130.51,
+      "end": 132.57,
       "section": "kewen"
     },
     {
@@ -293,8 +293,8 @@
       "text": "西边是山，山下边有一条小河。",
       "pinyin": "Xībian shì shān, shān xiàbian yǒu yì tiáo xiǎo hé.",
       "meaning": "Phía tây là núi, dưới chân núi có một con suối nhỏ.",
-      "start": 133.35,
-      "end": 138.46,
+      "start": 133.15,
+      "end": 138.56,
       "section": "kewen"
     },
     {
@@ -302,8 +302,8 @@
       "text": "河边是一个很大的公园。",
       "pinyin": "Hé biān shì yí ge hěn dà de gōngyuán.",
       "meaning": "Bên sông là một công viên rất lớn.",
-      "start": 139.8,
-      "end": 142.72,
+      "start": 139.6,
+      "end": 142.82,
       "section": "kewen"
     },
     {
@@ -311,8 +311,8 @@
       "text": "周围非常安静。",
       "pinyin": "Zhōuwéi fēicháng ānjìng.",
       "meaning": "Xung quanh rất yên tĩnh.",
-      "start": 143.99,
-      "end": 146.08,
+      "start": 143.79,
+      "end": 146.18,
       "section": "kewen"
     },
     {
@@ -320,8 +320,8 @@
       "text": "交通方便不方便？",
       "pinyin": "Jiāotōng fāngbiàn bu fāngbiàn?",
       "meaning": "Giao thông có thuận tiện không?",
-      "start": 147.05,
-      "end": 149.38,
+      "start": 146.85,
+      "end": 149.48,
       "section": "kewen"
     },
     {
@@ -329,8 +329,8 @@
       "text": "交通很方便。",
       "pinyin": "Jiāotōng hěn fāngbiàn.",
       "meaning": "Giao thông rất thuận tiện.",
-      "start": 150.35,
-      "end": 152.16,
+      "start": 150.15,
+      "end": 152.26,
       "section": "kewen"
     },
     {
@@ -338,8 +338,8 @@
       "text": "楼下就有公共汽车站。",
       "pinyin": "Lóu xià jiù yǒu gōnggòng qìchēzhàn.",
       "meaning": "Ngay dưới nhà có bến xe buýt.",
-      "start": 153.18,
-      "end": 155.87,
+      "start": 152.98,
+      "end": 155.97,
       "section": "kewen"
     },
     {
@@ -347,8 +347,8 @@
       "text": "坐车十分钟就到公司了。",
       "pinyin": "Zuò chē shí fēnzhōng jiù dào gōngsī le.",
       "meaning": "Đi xe mười phút là tới công ty.",
-      "start": 156.75,
-      "end": 160.1,
+      "start": 156.55,
+      "end": 160.2,
       "section": "kewen"
     },
     {
@@ -356,8 +356,8 @@
       "text": "汽车站旁边就是地铁站。",
       "pinyin": "Qìchēzhàn pángbiān jiù shì dìtiězhàn.",
       "meaning": "Bên cạnh bến xe buýt là ga tàu điện ngầm.",
-      "start": 161.06,
-      "end": 164.94,
+      "start": 160.86,
+      "end": 165.04,
       "section": "kewen"
     },
     {
@@ -365,8 +365,8 @@
       "text": "附近有学校、医院和体育馆。",
       "pinyin": "Fùjìn yǒu xuéxiào, yīyuàn hé tǐyùguǎn.",
       "meaning": "Gần đó có trường học, bệnh viện và nhà thi đấu thể thao.",
-      "start": 165.76,
-      "end": 171.18,
+      "start": 165.56,
+      "end": 171.28,
       "section": "kewen"
     },
     {
@@ -374,8 +374,8 @@
       "text": "二、生词",
       "pinyin": "Èr, shēngcí",
       "meaning": "Hai. Từ mới",
-      "start": 173.86,
-      "end": 175.72,
+      "start": 173.66,
+      "end": 175.82,
       "section": "heading"
     },
     {
@@ -383,8 +383,8 @@
       "text": "租",
       "pinyin": "zū",
       "meaning": "thuê, mượn",
-      "start": 177.31,
-      "end": 178.05,
+      "start": 177.11,
+      "end": 178.15,
       "section": "shengci"
     },
     {
@@ -392,8 +392,8 @@
       "text": "套",
       "pinyin": "tào",
       "meaning": "căn (bộ)",
-      "start": 179.54,
-      "end": 180.22,
+      "start": 179.34,
+      "end": 180.32,
       "section": "shengci"
     },
     {
@@ -401,8 +401,8 @@
       "text": "房子",
       "pinyin": "fángzi",
       "meaning": "nhà, căn nhà",
-      "start": 181.73,
-      "end": 182.55,
+      "start": 181.53,
+      "end": 182.65,
       "section": "shengci"
     },
     {
@@ -410,8 +410,8 @@
       "text": "满意",
       "pinyin": "mǎnyì",
       "meaning": "hài lòng, vừa ý",
-      "start": 184.05,
-      "end": 185.12,
+      "start": 183.85,
+      "end": 185.22,
       "section": "shengci"
     },
     {
@@ -419,8 +419,8 @@
       "text": "有的",
       "pinyin": "yǒude",
       "meaning": "có (cái), có số (người, vật…)",
-      "start": 186.6,
-      "end": 187.42,
+      "start": 186.4,
+      "end": 187.52,
       "section": "shengci"
     },
     {
@@ -428,8 +428,8 @@
       "text": "周围",
       "pinyin": "zhōuwéi",
       "meaning": "chung quanh, xung quanh",
-      "start": 188.89,
-      "end": 189.94,
+      "start": 188.69,
+      "end": 190.04,
       "section": "shengci"
     },
     {
@@ -437,8 +437,8 @@
       "text": "环境",
       "pinyin": "huánjìng",
       "meaning": "môi trường, hoàn cảnh",
-      "start": 191.5,
-      "end": 192.49,
+      "start": 191.3,
+      "end": 192.59,
       "section": "shengci"
     },
     {
@@ -446,8 +446,8 @@
       "text": "乱",
       "pinyin": "luàn",
       "meaning": "lung tung, bừa bộn",
-      "start": 193.92,
-      "end": 194.59,
+      "start": 193.72,
+      "end": 194.69,
       "section": "shengci"
     },
     {
@@ -455,8 +455,8 @@
       "text": "厨房",
       "pinyin": "chúfáng",
       "meaning": "nhà bếp",
-      "start": 196.07,
-      "end": 197.21,
+      "start": 195.87,
+      "end": 197.31,
       "section": "shengci"
     },
     {
@@ -464,8 +464,8 @@
       "text": "卧室",
       "pinyin": "wòshì",
       "meaning": "phòng ngủ",
-      "start": 198.63,
-      "end": 199.66,
+      "start": 198.43,
+      "end": 199.76,
       "section": "shengci"
     },
     {
@@ -473,8 +473,8 @@
       "text": "客厅",
       "pinyin": "kètīng",
       "meaning": "phòng khách",
-      "start": 201.11,
-      "end": 202.25,
+      "start": 200.91,
+      "end": 202.35,
       "section": "shengci"
     },
     {
@@ -482,8 +482,8 @@
       "text": "面积",
       "pinyin": "miànjī",
       "meaning": "diện tích",
-      "start": 203.73,
-      "end": 204.81,
+      "start": 203.53,
+      "end": 204.91,
       "section": "shengci"
     },
     {
@@ -491,8 +491,8 @@
       "text": "层",
       "pinyin": "céng",
       "meaning": "tầng",
-      "start": 206.37,
-      "end": 207.12,
+      "start": 206.17,
+      "end": 207.22,
       "section": "shengci"
     },
     {
@@ -500,8 +500,8 @@
       "text": "平方米",
       "pinyin": "píngfāng mǐ",
       "meaning": "mét vuông",
-      "start": 208.66,
-      "end": 210.04,
+      "start": 208.46,
+      "end": 210.14,
       "section": "shengci"
     },
     {
@@ -509,8 +509,8 @@
       "text": "上去",
       "pinyin": "shàngqu",
       "meaning": "lên, đi lên",
-      "start": 211.49,
-      "end": 212.42,
+      "start": 211.29,
+      "end": 212.52,
       "section": "shengci"
     },
     {
@@ -518,8 +518,8 @@
       "text": "阳光",
       "pinyin": "yángguāng",
       "meaning": "ánh nắng, ánh mặt trời",
-      "start": 213.87,
-      "end": 214.92,
+      "start": 213.67,
+      "end": 215.02,
       "section": "shengci"
     },
     {
@@ -527,8 +527,8 @@
       "text": "还是",
       "pinyin": "háishi",
       "meaning": "vẫn",
-      "start": 216.44,
-      "end": 217.4,
+      "start": 216.24,
+      "end": 217.5,
       "section": "shengci"
     },
     {
@@ -536,8 +536,8 @@
       "text": "妻子",
       "pinyin": "qīzi",
       "meaning": "vợ",
-      "start": 218.9,
-      "end": 219.88,
+      "start": 218.7,
+      "end": 219.98,
       "section": "shengci"
     },
     {
@@ -545,8 +545,8 @@
       "text": "情况",
       "pinyin": "qíngkuàng",
       "meaning": "tình hình",
-      "start": 221.3,
-      "end": 222.36,
+      "start": 221.1,
+      "end": 222.46,
       "section": "shengci"
     },
     {
@@ -554,8 +554,8 @@
       "text": "才",
       "pinyin": "cái",
       "meaning": "mới",
-      "start": 223.78,
-      "end": 224.58,
+      "start": 223.58,
+      "end": 224.68,
       "section": "shengci"
     },
     {
@@ -563,8 +563,8 @@
       "text": "搭车",
       "pinyin": "dā chē",
       "meaning": "đi nhờ xe",
-      "start": 226.05,
-      "end": 227.11,
+      "start": 225.85,
+      "end": 227.21,
       "section": "shengci"
     },
     {
@@ -572,8 +572,8 @@
       "text": "赶",
       "pinyin": "gǎn",
       "meaning": "vội vã, đi gấp",
-      "start": 228.56,
-      "end": 229.37,
+      "start": 228.36,
+      "end": 229.47,
       "section": "shengci"
     },
     {
@@ -581,8 +581,8 @@
       "text": "要是",
       "pinyin": "yàoshi",
       "meaning": "nếu, nếu như",
-      "start": 230.76,
-      "end": 231.63,
+      "start": 230.56,
+      "end": 231.73,
       "section": "shengci"
     },
     {
@@ -590,8 +590,8 @@
       "text": "房租",
       "pinyin": "fángzū",
       "meaning": "tiền thuê nhà",
-      "start": 233.14,
-      "end": 234.19,
+      "start": 232.94,
+      "end": 234.29,
       "section": "shengci"
     },
     {
@@ -599,8 +599,8 @@
       "text": "虽然",
       "pinyin": "suīrán",
       "meaning": "tuy, tuy rằng",
-      "start": 235.61,
-      "end": 236.73,
+      "start": 235.41,
+      "end": 236.83,
       "section": "shengci"
     },
     {
@@ -608,8 +608,8 @@
       "text": "真",
       "pinyin": "zhēn",
       "meaning": "thật",
-      "start": 238.23,
-      "end": 238.93,
+      "start": 238.03,
+      "end": 239.03,
       "section": "shengci"
     },
     {
@@ -617,8 +617,8 @@
       "text": "条",
       "pinyin": "tiáo",
       "meaning": "con, dòng (sông)",
-      "start": 240.26,
-      "end": 241.05,
+      "start": 240.06,
+      "end": 241.15,
       "section": "shengci"
     },
     {
@@ -626,8 +626,8 @@
       "text": "河",
       "pinyin": "hé",
       "meaning": "sông",
-      "start": 242.34,
-      "end": 243.06,
+      "start": 242.14,
+      "end": 243.16,
       "section": "shengci"
     },
     {
@@ -635,8 +635,8 @@
       "text": "交通",
       "pinyin": "jiāotōng",
       "meaning": "giao thông",
-      "start": 244.3,
-      "end": 245.34,
+      "start": 244.1,
+      "end": 245.44,
       "section": "shengci"
     },
     {
@@ -644,8 +644,8 @@
       "text": "方便",
       "pinyin": "fāngbiàn",
       "meaning": "thuận tiện, tiện lợi",
-      "start": 246.8,
-      "end": 247.81,
+      "start": 246.6,
+      "end": 247.91,
       "section": "shengci"
     },
     {
@@ -653,8 +653,8 @@
       "text": "站",
       "pinyin": "zhàn",
       "meaning": "trạm, bến",
-      "start": 249.09,
-      "end": 249.65,
+      "start": 248.89,
+      "end": 249.75,
       "section": "shengci"
     },
     {
@@ -662,8 +662,8 @@
       "text": "公共汽车",
       "pinyin": "gōnggòng qìchē",
       "meaning": "xe buýt",
-      "start": 250.83,
-      "end": 252.59,
+      "start": 250.63,
+      "end": 252.69,
       "section": "shengci"
     },
     {
@@ -671,8 +671,8 @@
       "text": "车站",
       "pinyin": "chēzhàn",
       "meaning": "bến xe, ga",
-      "start": 253.84,
-      "end": 254.9,
+      "start": 253.64,
+      "end": 255,
       "section": "shengci"
     },
     {
@@ -680,8 +680,8 @@
       "text": "旁边",
       "pinyin": "pángbiān",
       "meaning": "bên cạnh",
-      "start": 256.13,
-      "end": 257.26,
+      "start": 255.93,
+      "end": 257.36,
       "section": "shengci"
     },
     {
@@ -689,8 +689,8 @@
       "text": "地铁",
       "pinyin": "dìtiě",
       "meaning": "tàu điện ngầm",
-      "start": 258.38,
-      "end": 259.44,
+      "start": 258.18,
+      "end": 259.54,
       "section": "shengci"
     },
     {
@@ -698,8 +698,8 @@
       "text": "附近",
       "pinyin": "fùjìn",
       "meaning": "gần đấy, quanh đây",
-      "start": 260.59,
-      "end": 261.64,
+      "start": 260.39,
+      "end": 261.74,
       "section": "shengci"
     },
     {
@@ -707,8 +707,8 @@
       "text": "体育馆",
       "pinyin": "tǐyùguǎn",
       "meaning": "nhà thi đấu thể thao",
-      "start": 262.7,
-      "end": 263.97,
+      "start": 262.5,
+      "end": 264.07,
       "section": "shengci"
     }
   ],

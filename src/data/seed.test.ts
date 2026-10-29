@@ -247,6 +247,7 @@ describe('lessons with a 课文', () => {
       title: 'Bài khóa',
       audio: { type: 'file', src: 'audio/shadowing/k1.mp3' },
       segments: KEWEN_FILE.segments,
+      edgePad: 1,
     })
     expect(catalog.kewen?.segments).not.toBe(KEWEN_FILE.segments)
     expect(catalog.words.map((word) => word.hanzi)).toEqual(['好', '你'])
@@ -385,6 +386,34 @@ describe('lessons with a 课文', () => {
       },
     }
     expect(attachBundledKewen(seeded, [corrected])).toBe(seeded)
+  })
+
+  it('pads a saved script once, then leaves those times alone', () => {
+    const seeded = seedLessons(makeState(), [KEWEN_LESSON], 1)
+    const saved = {
+      ...seeded,
+      catalogs: seeded.catalogs.map((catalog) => {
+        const kewen = { ...catalog.kewen! }
+        delete kewen.edgePad
+        return {
+          ...catalog,
+          kewen: {
+            ...kewen,
+            segments: [
+              { id: 's1', text: '你好。', start: 0, end: 1, section: 'kewen' as const },
+              { id: 's2', text: '好', start: 1.5, end: 2, section: 'shengci' as const },
+            ],
+          },
+        }
+      }),
+    }
+    const once = attachBundledKewen(saved, [KEWEN_LESSON])
+    expect(once.catalogs[0].kewen?.segments.map((segment) => [segment.start, segment.end])).toEqual([
+      [0, 1.1],
+      [1.3, 2.1],
+    ])
+    expect(once.catalogs[0].kewen?.edgePad).toBe(1)
+    expect(attachBundledKewen(once, [KEWEN_LESSON])).toBe(once)
   })
 
   it('keeps sentence positions when a vocab update is applied', () => {

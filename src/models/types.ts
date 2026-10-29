@@ -43,6 +43,11 @@ export type Kewen = {
   textTitle?: string
   audio: AudioSource
   segments: ShadowingSegment[]
+  /**
+   * 1 after the 0.2s / 0.1s edge pad has been applied.
+   * Keeps a later load from padding the same sentences again.
+   */
+  edgePad?: 1
 }
 
 export type PracticeResult = {

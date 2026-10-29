@@ -14,8 +14,8 @@
       "text": "一、课文",
       "pinyin": "Yī, kèwén",
       "meaning": "Một. Bài khóa",
-      "start": 0.18,
-      "end": 1.92,
+      "start": 0,
+      "end": 2.02,
       "section": "heading"
     },
     {
@@ -23,8 +23,8 @@
       "text": "一、你怎么了",
       "pinyin": "Yī, nǐ zěnme le",
       "meaning": "Bài 1: Bạn bị sao vậy",
-      "start": 2.88,
-      "end": 5.46,
+      "start": 2.68,
+      "end": 5.56,
       "section": "heading"
     },
     {
@@ -32,8 +32,8 @@
       "text": "你怎么了？",
       "pinyin": "Nǐ zěnme le?",
       "meaning": "Bạn bị sao vậy?",
-      "start": 6.67,
-      "end": 7.85,
+      "start": 6.47,
+      "end": 7.95,
       "section": "kewen"
     },
     {
@@ -41,8 +41,8 @@
       "text": "肚子疼得厉害，在家吃了两片药，还不行。",
       "pinyin": "Dùzi téng de lìhai, zài jiā chī le liǎng piàn yào, hái bù xíng.",
       "meaning": "Bụng đau dữ dội, ở nhà uống hai viên thuốc rồi vẫn chưa khỏi.",
-      "start": 8.65,
-      "end": 14.98,
+      "start": 8.45,
+      "end": 15.08,
       "section": "kewen"
     },
     {
@@ -50,8 +50,8 @@
       "text": "拉肚子了吗？",
       "pinyin": "Lā dùzi le ma?",
       "meaning": "Bị tiêu chảy à?",
-      "start": 15.74,
-      "end": 17.14,
+      "start": 15.54,
+      "end": 17.24,
       "section": "kewen"
     },
     {
@@ -59,8 +59,8 @@
       "text": "拉了。",
       "pinyin": "Lā le.",
       "meaning": "Có.",
-      "start": 17.91,
-      "end": 18.64,
+      "start": 17.71,
+      "end": 18.74,
       "section": "kewen"
     },
     {
@@ -68,8 +68,8 @@
       "text": "昨天吃什么了？",
       "pinyin": "Zuótiān chī shénme le?",
       "meaning": "Hôm qua ăn gì?",
-      "start": 19.23,
-      "end": 21.11,
+      "start": 19.03,
+      "end": 21.21,
       "section": "kewen"
     },
     {
@@ -77,8 +77,8 @@
       "text": "就吃了一些鱼和牛肉。",
       "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
       "meaning": "Chỉ ăn một ít cá và thịt bò.",
-      "start": 21.86,
-      "end": 24.59,
+      "start": 21.66,
+      "end": 24.69,
       "section": "kewen"
     },
     {
@@ -86,8 +86,8 @@
       "text": "喝什么了？",
       "pinyin": "Hē shénme le?",
       "meaning": "Uống gì?",
-      "start": 25.31,
-      "end": 26.52,
+      "start": 25.11,
+      "end": 26.62,
       "section": "kewen"
     },
     {
@@ -95,8 +95,8 @@
       "text": "喝了一瓶啤酒。",
       "pinyin": "Hē le yì píng píjiǔ.",
       "meaning": "Uống một chai bia.",
-      "start": 27.14,
-      "end": 29.35,
+      "start": 26.94,
+      "end": 29.45,
       "section": "kewen"
     },
     {
@@ -104,8 +104,8 @@
       "text": "发烧吗？",
       "pinyin": "Fā shāo ma?",
       "meaning": "Sốt không?",
-      "start": 30.32,
-      "end": 31.41,
+      "start": 30.12,
+      "end": 31.51,
       "section": "kewen"
     },
     {
@@ -113,8 +113,8 @@
       "text": "不发烧。",
       "pinyin": "Bù fā shāo.",
       "meaning": "Không sốt.",
-      "start": 32.17,
-      "end": 33.25,
+      "start": 31.97,
+      "end": 33.35,
       "section": "kewen"
     },
     {
@@ -122,8 +122,8 @@
       "text": "你先去化验一下大便，然后我再给你检查检查。",
       "pinyin": "Nǐ xiān qù huàyàn yíxià dàbiàn, ránhòu wǒ zài gěi nǐ jiǎnchá jiǎnchá.",
       "meaning": "Anh đi xét nghiệm phân trước, rồi tôi khám cho anh.",
-      "start": 34.17,
-      "end": 40.54,
+      "start": 33.97,
+      "end": 40.64,
       "section": "kewen"
     },
     {
@@ -131,8 +131,8 @@
       "text": "好吧。",
       "pinyin": "Hǎo ba.",
       "meaning": "Vâng.",
-      "start": 41.08,
-      "end": 41.81,
+      "start": 40.88,
+      "end": 41.91,
       "section": "kewen"
     },
     {
@@ -140,8 +140,8 @@
       "text": "化验结果出来了吗？",
       "pinyin": "Huàyàn jiéguǒ chūlái le ma?",
       "meaning": "Kết quả xét nghiệm đã ra chưa?",
-      "start": 43.19,
-      "end": 45.48,
+      "start": 42.99,
+      "end": 45.58,
       "section": "kewen"
     },
     {
@@ -149,8 +149,8 @@
       "text": "出来了。",
       "pinyin": "Chūlái le.",
       "meaning": "Ra rồi.",
-      "start": 46.06,
-      "end": 46.93,
+      "start": 45.86,
+      "end": 47.03,
       "section": "kewen"
     },
     {
@@ -158,8 +158,8 @@
       "text": "大夫，我是不是得了肠炎？",
       "pinyin": "Dàifu, wǒ shì bu shì dé le chángyán?",
       "meaning": "Bác sĩ, tôi có bị viêm ruột không?",
-      "start": 47.74,
-      "end": 51.62,
+      "start": 47.54,
+      "end": 51.72,
       "section": "kewen"
     },
     {
@@ -167,8 +167,8 @@
       "text": "我看了化验的结果。不是肠炎，只是消化不好。",
       "pinyin": "Wǒ kàn le huàyàn de jiéguǒ. Bú shì chángyán, zhǐ shì xiāohuà bù hǎo.",
       "meaning": "Tôi xem kết quả xét nghiệm rồi, không phải viêm ruột, chỉ là tiêu hóa kém.",
-      "start": 52.28,
-      "end": 59.15,
+      "start": 52.08,
+      "end": 59.25,
       "section": "kewen"
     },
     {
@@ -176,8 +176,8 @@
       "text": "先给你开一些药，再给你打一针。",
       "pinyin": "Xiān gěi nǐ kāi yìxiē yào, zài gěi nǐ dǎ yì zhēn.",
       "meaning": "Trước kê thuốc cho anh, rồi tiêm một mũi.",
-      "start": 59.86,
-      "end": 64.26,
+      "start": 59.66,
+      "end": 64.36,
       "section": "kewen"
     },
     {
@@ -185,8 +185,8 @@
       "text": "这药怎么吃？",
       "pinyin": "Zhè yào zěnme chī?",
       "meaning": "Thuốc này uống thế nào?",
-      "start": 65.07,
-      "end": 66.81,
+      "start": 64.87,
+      "end": 66.91,
       "section": "kewen"
     },
     {
@@ -194,8 +194,8 @@
       "text": "一天三次，一次两片，饭后吃。",
       "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
       "meaning": "Một ngày ba lần, mỗi lần hai viên, uống sau bữa ăn.",
-      "start": 67.48,
-      "end": 73.23,
+      "start": 67.28,
+      "end": 73.33,
       "section": "kewen"
     },
     {
@@ -203,8 +203,8 @@
       "text": "二、玛丽哭了",
       "pinyin": "Èr, Mǎlì kū le",
       "meaning": "Bài 2: Mary khóc",
-      "start": 75.08,
-      "end": 77.83,
+      "start": 74.88,
+      "end": 77.93,
       "section": "heading"
     },
     {
@@ -212,8 +212,8 @@
       "text": "玛丽，你怎么哭了？病了吗？",
       "pinyin": "Mǎlì, nǐ zěnme kū le? Bìng le ma?",
       "meaning": "Mary, sao bạn khóc? Bị ốm à?",
-      "start": 79.21,
-      "end": 83.44,
+      "start": 79.01,
+      "end": 83.54,
       "section": "kewen"
     },
     {
@@ -221,8 +221,8 @@
       "text": "不是。",
       "pinyin": "Bú shì.",
       "meaning": "Không phải.",
-      "start": 84.25,
-      "end": 85.18,
+      "start": 84.05,
+      "end": 85.28,
       "section": "kewen"
     },
     {
@@ -230,8 +230,8 @@
       "text": "想家了。",
       "pinyin": "Xiǎng jiā le.",
       "meaning": "Nhớ nhà rồi.",
-      "start": 85.48,
-      "end": 86.68,
+      "start": 85.28,
+      "end": 86.78,
       "section": "kewen"
     },
     {
@@ -239,8 +239,8 @@
       "text": "因为感到寂寞，心情不好，所以很难过。",
       "pinyin": "Yīnwèi gǎndào jìmò, xīnqíng bù hǎo, suǒyǐ hěn nánguò.",
       "meaning": "Vì cảm thấy cô đơn, tâm trạng không tốt, nên rất buồn.",
-      "start": 87.14,
-      "end": 92.84,
+      "start": 86.94,
+      "end": 92.94,
       "section": "kewen"
     },
     {
@@ -248,8 +248,8 @@
       "text": "别难过了。",
       "pinyin": "Bié nánguò le.",
       "meaning": "Đừng buồn nữa.",
-      "start": 93.63,
-      "end": 94.89,
+      "start": 93.43,
+      "end": 94.99,
       "section": "kewen"
     },
     {
@@ -257,8 +257,8 @@
       "text": "你不想家吗？",
       "pinyin": "Nǐ bù xiǎng jiā ma?",
       "meaning": "Bạn không nhớ nhà à?",
-      "start": 95.62,
-      "end": 97.48,
+      "start": 95.42,
+      "end": 97.58,
       "section": "kewen"
     },
     {
@@ -266,8 +266,8 @@
       "text": "我也常想家，但是不感到寂寞。",
       "pinyin": "Wǒ yě cháng xiǎng jiā, dànshì bù gǎndào jìmò.",
       "meaning": "Tôi cũng hay nhớ nhà, nhưng không cảm thấy cô đơn.",
-      "start": 98.1,
-      "end": 102.72,
+      "start": 97.9,
+      "end": 102.82,
       "section": "kewen"
     },
     {
@@ -275,8 +275,8 @@
       "text": "我有姐姐，还有弟弟。在家时，我们常常一起玩儿，所以，感到寂寞时，总想他们。",
       "pinyin": "Wǒ yǒu jiějie, hái yǒu dìdi. Zài jiā shí, wǒmen chángcháng yìqǐ wánr, suǒyǐ, gǎndào jìmò shí, zǒng xiǎng tāmen.",
       "meaning": "Tôi có chị và em trai, ở nhà chúng tôi hay chơi cùng nhau, nên khi cô đơn lại nhớ đến họ.",
-      "start": 103.77,
-      "end": 116.61,
+      "start": 103.57,
+      "end": 116.71,
       "section": "kewen"
     },
     {
@@ -284,8 +284,8 @@
       "text": "今天晚上礼堂有舞会，我们一起去跳跳舞吧。玩玩儿就好了。",
       "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì, wǒmen yìqǐ qù tiào tiào wǔ ba. Wán wánr jiù hǎo le.",
       "meaning": "Tối nay hội trường có vũ hội, chúng ta cùng đi nhảy, chơi chút là khá rồi.",
-      "start": 117.72,
-      "end": 127.49,
+      "start": 117.52,
+      "end": 127.59,
       "section": "kewen"
     },
     {
@@ -293,8 +293,8 @@
       "text": "什么时候去？",
       "pinyin": "Shénme shíhou qù?",
       "meaning": "Khi nào đi?",
-      "start": 128.29,
-      "end": 129.74,
+      "start": 128.09,
+      "end": 129.84,
       "section": "kewen"
     },
     {
@@ -302,8 +302,8 @@
       "text": "吃了晚饭就去吧。",
       "pinyin": "Chī le wǎnfàn jiù qù ba.",
       "meaning": "Ăn cơm tối xong rồi đi.",
-      "start": 130.6,
-      "end": 132.93,
+      "start": 130.4,
+      "end": 133.03,
       "section": "kewen"
     },
     {
@@ -311,8 +311,8 @@
       "text": "你在宿舍等我，我来叫你。",
       "pinyin": "Nǐ zài sùshè děng wǒ, wǒ lái jiào nǐ.",
       "meaning": "Bạn đợi tôi ở ký túc, tôi đến gọi bạn.",
-      "start": 133.73,
-      "end": 137.91,
+      "start": 133.53,
+      "end": 138.01,
       "section": "kewen"
     },
     {
@@ -320,8 +320,8 @@
       "text": "好吧。",
       "pinyin": "Hǎo ba.",
       "meaning": "Được.",
-      "start": 138.97,
-      "end": 139.69,
+      "start": 138.77,
+      "end": 139.79,
       "section": "kewen"
     },
     {
@@ -329,8 +329,8 @@
       "text": "二、生词",
       "pinyin": "Èr, shēngcí",
       "meaning": "Hai. Từ mới",
-      "start": 141.44,
-      "end": 143.62,
+      "start": 141.24,
+      "end": 143.72,
       "section": "heading"
     },
     {
@@ -338,8 +338,8 @@
       "text": "了",
       "pinyin": "le",
       "meaning": "rồi, đã, xong (trợ từ)",
-      "start": 144.77,
-      "end": 145.26,
+      "start": 144.57,
+      "end": 145.36,
       "section": "shengci"
     },
     {
@@ -347,8 +347,8 @@
       "text": "病人",
       "pinyin": "bìngrén",
       "meaning": "bệnh nhân",
-      "start": 146.57,
-      "end": 147.56,
+      "start": 146.37,
+      "end": 147.66,
       "section": "shengci"
     },
     {
@@ -356,8 +356,8 @@
       "text": "肚子",
       "pinyin": "dùzi",
       "meaning": "bụng",
-      "start": 148.8,
-      "end": 149.62,
+      "start": 148.6,
+      "end": 149.72,
       "section": "shengci"
     },
     {
@@ -365,8 +365,8 @@
       "text": "厉害",
       "pinyin": "lìhai",
       "meaning": "dữ dội, ghê",
-      "start": 150.75,
-      "end": 151.65,
+      "start": 150.55,
+      "end": 151.75,
       "section": "shengci"
     },
     {
@@ -374,8 +374,8 @@
       "text": "片",
       "pinyin": "piàn",
       "meaning": "viên (lượng từ)",
-      "start": 152.93,
-      "end": 153.63,
+      "start": 152.73,
+      "end": 153.73,
       "section": "shengci"
     },
     {
@@ -383,8 +383,8 @@
       "text": "拉肚子",
       "pinyin": "lā dùzi",
       "meaning": "tiêu chảy",
-      "start": 154.88,
-      "end": 155.99,
+      "start": 154.68,
+      "end": 156.09,
       "section": "shengci"
     },
     {
@@ -392,8 +392,8 @@
       "text": "鱼",
       "pinyin": "yú",
       "meaning": "cá",
-      "start": 157.29,
-      "end": 157.97,
+      "start": 157.09,
+      "end": 158.07,
       "section": "shengci"
     },
     {
@@ -401,8 +401,8 @@
       "text": "牛肉",
       "pinyin": "niúròu",
       "meaning": "thịt bò",
-      "start": 159.42,
-      "end": 160.4,
+      "start": 159.22,
+      "end": 160.5,
       "section": "shengci"
     },
     {
@@ -410,8 +410,8 @@
       "text": "化验",
       "pinyin": "huàyàn",
       "meaning": "xét nghiệm",
-      "start": 161.87,
-      "end": 162.79,
+      "start": 161.67,
+      "end": 162.89,
       "section": "shengci"
     },
     {
@@ -419,8 +419,8 @@
       "text": "大便",
       "pinyin": "dàbiàn",
       "meaning": "phân, đại tiện",
-      "start": 163.86,
-      "end": 164.82,
+      "start": 163.66,
+      "end": 164.92,
       "section": "shengci"
     },
     {
@@ -428,8 +428,8 @@
       "text": "小便",
       "pinyin": "xiǎobiàn",
       "meaning": "tiểu tiện",
-      "start": 165.99,
-      "end": 167.06,
+      "start": 165.79,
+      "end": 167.16,
       "section": "shengci"
     },
     {
@@ -437,8 +437,8 @@
       "text": "检查",
       "pinyin": "jiǎnchá",
       "meaning": "khám, kiểm tra",
-      "start": 168.38,
-      "end": 169.54,
+      "start": 168.18,
+      "end": 169.64,
       "section": "shengci"
     },
     {
@@ -446,8 +446,8 @@
       "text": "结果",
       "pinyin": "jiéguǒ",
       "meaning": "kết quả",
-      "start": 170.81,
-      "end": 171.96,
+      "start": 170.61,
+      "end": 172.06,
       "section": "shengci"
     },
     {
@@ -455,8 +455,8 @@
       "text": "出来",
       "pinyin": "chūlái",
       "meaning": "ra",
-      "start": 173.29,
-      "end": 174.22,
+      "start": 173.09,
+      "end": 174.32,
       "section": "shengci"
     },
     {
@@ -464,8 +464,8 @@
       "text": "得",
       "pinyin": "dé",
       "meaning": "bị, mắc (được)",
-      "start": 175.54,
-      "end": 176.24,
+      "start": 175.34,
+      "end": 176.34,
       "section": "shengci"
     },
     {
@@ -473,8 +473,8 @@
       "text": "肠炎",
       "pinyin": "chángyán",
       "meaning": "viêm ruột",
-      "start": 177.51,
-      "end": 178.67,
+      "start": 177.31,
+      "end": 178.77,
       "section": "shengci"
     },
     {
@@ -482,8 +482,8 @@
       "text": "消化",
       "pinyin": "xiāohuà",
       "meaning": "tiêu hóa",
-      "start": 179.93,
-      "end": 181.04,
+      "start": 179.73,
+      "end": 181.14,
       "section": "shengci"
     },
     {
@@ -491,8 +491,8 @@
       "text": "开",
       "pinyin": "kāi",
       "meaning": "kê (đơn)",
-      "start": 182.33,
-      "end": 183.1,
+      "start": 182.13,
+      "end": 183.2,
       "section": "shengci"
     },
     {
@@ -500,8 +500,8 @@
       "text": "开药",
       "pinyin": "kāi yào",
       "meaning": "kê thuốc",
-      "start": 184.32,
-      "end": 185.32,
+      "start": 184.12,
+      "end": 185.42,
       "section": "shengci"
     },
     {
@@ -509,8 +509,8 @@
       "text": "打针",
       "pinyin": "dǎzhēn",
       "meaning": "tiêm thuốc",
-      "start": 186.59,
-      "end": 187.62,
+      "start": 186.39,
+      "end": 187.72,
       "section": "shengci"
     },
     {
@@ -518,8 +518,8 @@
       "text": "后",
       "pinyin": "hòu",
       "meaning": "sau",
-      "start": 188.88,
-      "end": 189.59,
+      "start": 188.68,
+      "end": 189.69,
       "section": "shengci"
     },
     {
@@ -527,8 +527,8 @@
       "text": "哭",
       "pinyin": "kū",
       "meaning": "khóc",
-      "start": 190.85,
-      "end": 191.6,
+      "start": 190.65,
+      "end": 191.7,
       "section": "shengci"
     },
     {
@@ -536,8 +536,8 @@
       "text": "寂寞",
       "pinyin": "jìmò",
       "meaning": "cô đơn",
-      "start": 192.91,
-      "end": 193.98,
+      "start": 192.71,
+      "end": 194.08,
       "section": "shengci"
     },
     {
@@ -545,8 +545,8 @@
       "text": "所以",
       "pinyin": "suǒyǐ",
       "meaning": "cho nên",
-      "start": 195.13,
-      "end": 196.26,
+      "start": 194.93,
+      "end": 196.36,
       "section": "shengci"
     },
     {
@@ -554,8 +554,8 @@
       "text": "别",
       "pinyin": "bié",
       "meaning": "đừng",
-      "start": 197.6,
-      "end": 198.3,
+      "start": 197.4,
+      "end": 198.4,
       "section": "shengci"
     },
     {
@@ -563,8 +563,8 @@
       "text": "难过",
       "pinyin": "nánguò",
       "meaning": "buồn",
-      "start": 199.51,
-      "end": 200.62,
+      "start": 199.31,
+      "end": 200.72,
       "section": "shengci"
     },
     {
@@ -572,8 +572,8 @@
       "text": "礼堂",
       "pinyin": "lǐtáng",
       "meaning": "hội trường",
-      "start": 201.87,
-      "end": 203.03,
+      "start": 201.67,
+      "end": 203.13,
       "section": "shengci"
     },
     {
@@ -581,8 +581,8 @@
       "text": "舞会",
       "pinyin": "wǔhuì",
       "meaning": "vũ hội",
-      "start": 204.16,
-      "end": 205.21,
+      "start": 203.96,
+      "end": 205.31,
       "section": "shengci"
     },
     {
@@ -590,8 +590,8 @@
       "text": "跳舞",
       "pinyin": "tiàowǔ",
       "meaning": "khiêu vũ",
-      "start": 206.24,
-      "end": 207.51,
+      "start": 206.04,
+      "end": 207.61,
       "section": "shengci"
     }
   ],

@@ -2,6 +2,7 @@ import { parseCatalogText } from '../lib/txt'
 import type { AppState, Catalog, Kewen, Word } from '../models/types'
 import type { LessonFile } from '../shadowing/lessonSchema'
 import { withSource } from '../shadowing/savedWords'
+import { BUNDLED_AUDIO_DURATION, padSegmentEdges } from '../shadowing/segments'
 import { textTitleFromSegments } from '../shadowing/textTitle'
 import type { BuiltinLesson } from './lessons'
 
@@ -32,6 +33,7 @@ export function kewenFromFile(file: LessonFile): Kewen | undefined {
     ...(textTitle ? { textTitle } : {}),
     audio: { type: 'file', src: file.audio.src },
     segments: file.segments.map((segment) => ({ ...segment })),
+    edgePad: 1,
   }
 }
 
@@ -79,7 +81,8 @@ function correctNames(kewen: Kewen): Kewen {
 /**
  * Give a bundled catalog its 课文 the first time the bundle has one.
  * Word text is untouched; matching words only gain their sentence positions.
- * A script already on the device is the user's copy and is left alone.
+ * A script already on the device is the user's copy: text is left alone.
+ * Sentence edges are padded once (0.2s before, 0.1s after) when that pad is missing.
  */
 export function attachBundledKewen(state: AppState, pack: readonly BuiltinLesson[]): AppState {
   const byId = new Map(pack.map((lesson) => [lesson.id, lesson]))
@@ -97,6 +100,10 @@ export function attachBundledKewen(state: AppState, pack: readonly BuiltinLesson
       let kewen = named
       if (next && next !== current && (!current || current === fromSegments)) {
         kewen = { ...named, textTitle: next }
+      }
+      if (kewen.edgePad !== 1) {
+        const duration = kewen.audio.type === 'file' ? BUNDLED_AUDIO_DURATION[kewen.audio.src] : undefined
+        kewen = { ...kewen, segments: padSegmentEdges(kewen.segments, duration), edgePad: 1 }
       }
       if (kewen === catalog.kewen) return catalog
       changed = true

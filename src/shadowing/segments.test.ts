@@ -4,6 +4,7 @@ import {
   findSegmentIndexAt,
   formatClock,
   isPlaybackRate,
+  padSegmentEdges,
   resolveAudioSrc,
   validateSegments,
 } from './segments'
@@ -108,5 +109,46 @@ describe('validateSegments', () => {
     expect(errors.some((error) => error.includes('text is empty'))).toBe(true)
     expect(errors.some((error) => error.includes('duplicate'))).toBe(true)
     expect(errors.some((error) => error.includes('overlaps or is out of order'))).toBe(true)
+  })
+})
+
+describe('padSegmentEdges', () => {
+  const tight: ShadowingSegment[] = [
+    { id: 's1', text: '一', start: 0, end: 1 },
+    { id: 's2', text: '二', start: 1.5, end: 2 },
+    { id: 's3', text: '三', start: 2, end: 3 },
+  ]
+
+  it('adds 0.2s before and 0.1s after when the gap allows', () => {
+    const padded = padSegmentEdges(tight, 10)
+    expect(padded.map((segment) => [segment.start, segment.end])).toEqual([
+      [0, 1.1],
+      [1.3, 2],
+      [2, 3.1],
+    ])
+    expect(validateSegments(padded)).toEqual([])
+  })
+
+  it('splits a short gap in the same 2:1 ratio and stays inside the audio', () => {
+    const padded = padSegmentEdges(
+      [
+        { id: 's1', text: '一', start: 0.18, end: 1 },
+        { id: 's2', text: '二', start: 1.15, end: 9.96 },
+      ],
+      10,
+    )
+    expect(padded.map((segment) => [segment.start, segment.end])).toEqual([
+      [0, 1.05],
+      [1.05, 10],
+    ])
+  })
+
+  it('keeps other fields and the original order', () => {
+    const padded = padSegmentEdges([
+      { id: 's2', text: '二', pinyin: 'èr', start: 2, end: 3 },
+      { id: 's1', text: '一', start: 0, end: 1 },
+    ])
+    expect(padded.map((segment) => segment.id)).toEqual(['s2', 's1'])
+    expect(padded[0].pinyin).toBe('èr')
   })
 })

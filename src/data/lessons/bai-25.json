@@ -15,7 +15,7 @@
       "pinyin": "Yī, kèwén",
       "meaning": "Một. Bài khóa",
       "start": 0,
-      "end": 1.66,
+      "end": 1.76,
       "section": "heading"
     },
     {
@@ -23,7 +23,7 @@
       "text": "一、她学得很好",
       "pinyin": "Yī, tā xué de hěn hǎo",
       "meaning": "Bài 1: Cô ấy học rất giỏi",
-      "start": 2.72,
+      "start": 2.52,
       "end": 6.04,
       "section": "heading"
     },
@@ -33,7 +33,7 @@
       "pinyin": "Luólán, diànshìtái xiǎng qǐng liúxuéshēng biǎoyǎn yí ge hànyǔ jiémù, nǐ yuànyì qù ma?",
       "meaning": "Roland, đài truyền hình muốn mời du học sinh biểu diễn một tiết mục tiếng Trung, bạn có muốn đi không?",
       "start": 6.04,
-      "end": 16.38,
+      "end": 16.48,
       "section": "kewen"
     },
     {
@@ -41,8 +41,8 @@
       "text": "老师，我不想去。",
       "pinyin": "Lǎoshī, wǒ bù xiǎng qù.",
       "meaning": "Thưa thầy, em không muốn đi.",
-      "start": 17.42,
-      "end": 19.89,
+      "start": 17.22,
+      "end": 19.99,
       "section": "kewen"
     },
     {
@@ -50,8 +50,8 @@
       "text": "为什么？",
       "pinyin": "Wèishénme?",
       "meaning": "Tại sao?",
-      "start": 20.84,
-      "end": 22.14,
+      "start": 20.64,
+      "end": 22.24,
       "section": "kewen"
     },
     {
@@ -59,8 +59,8 @@
       "text": "我汉语说得不好，也不会表演。",
       "pinyin": "Wǒ hànyǔ shuō de bù hǎo, yě bú huì biǎoyǎn.",
       "meaning": "Tiếng Trung em nói không tốt, cũng không biết biểu diễn.",
-      "start": 22.76,
-      "end": 26.91,
+      "start": 22.56,
+      "end": 27.01,
       "section": "kewen"
     },
     {
@@ -68,8 +68,8 @@
       "text": "你学得不错，有很大进步，汉语水平提高得很快。",
       "pinyin": "Nǐ xué de búcuò, yǒu hěn dà jìnbù, hànyǔ shuǐpíng tígāo de hěn kuài.",
       "meaning": "Bạn học không tồi, tiến bộ nhiều, trình độ tiếng Trung nâng lên rất nhanh.",
-      "start": 27.98,
-      "end": 35.03,
+      "start": 27.78,
+      "end": 35.13,
       "section": "kewen"
     },
     {
@@ -77,7 +77,7 @@
       "text": "哪里，我发音发得不准，说得也不流利。",
       "pinyin": "Nǎli, wǒ fāyīn fā de bù zhǔn, shuō de yě bù liúlì.",
       "meaning": "Đâu có, em phát âm không chuẩn, nói cũng không lưu loát.",
-      "start": 36.28,
+      "start": 36.08,
       "end": 41.89,
       "section": "kewen"
     },
@@ -87,7 +87,7 @@
       "pinyin": "Ràng Mǎlì qù ba.",
       "meaning": "Để Mary đi vậy.",
       "start": 41.89,
-      "end": 44.39,
+      "end": 44.45,
       "section": "kewen"
     },
     {
@@ -95,7 +95,7 @@
       "text": "她汉语学得很好，说得很流利。",
       "pinyin": "Tā hànyǔ xué de hěn hǎo, shuō de hěn liúlì.",
       "meaning": "Cô ấy học tiếng Trung rất tốt, nói rất lưu loát.",
-      "start": 44.56,
+      "start": 44.45,
       "end": 49.16,
       "section": "kewen"
     },
@@ -105,7 +105,7 @@
       "pinyin": "Mǎlì hái huì chàng jīngjù.",
       "meaning": "Mary còn biết hát kinh kịch.",
       "start": 49.16,
-      "end": 52.16,
+      "end": 52.26,
       "section": "kewen"
     },
     {
@@ -113,7 +113,7 @@
       "text": "是吗？",
       "pinyin": "Shì ma?",
       "meaning": "Vậy à?",
-      "start": 53.04,
+      "start": 52.84,
       "end": 53.56,
       "section": "kewen"
     },
@@ -123,7 +123,7 @@
       "pinyin": "Tā jīngjù chàng de zěnmeyàng?",
       "meaning": "Kinh kịch cô ấy hát thế nào?",
       "start": 53.56,
-      "end": 56.62,
+      "end": 56.72,
       "section": "kewen"
     },
     {
@@ -131,8 +131,8 @@
       "text": "王老师说她唱得不错。",
       "pinyin": "Wáng lǎoshī shuō tā chàng de búcuò.",
       "meaning": "Thầy Vương nói cô ấy hát không tồi.",
-      "start": 57.66,
-      "end": 60.02,
+      "start": 57.46,
+      "end": 60.12,
       "section": "kewen"
     },
     {
@@ -140,8 +140,8 @@
       "text": "她怎么学得这么好？",
       "pinyin": "Tā zěnme xué de zhème hǎo?",
       "meaning": "Sao cô ấy học giỏi thế?",
-      "start": 61,
-      "end": 63.11,
+      "start": 60.8,
+      "end": 63.21,
       "section": "kewen"
     },
     {
@@ -149,8 +149,8 @@
       "text": "她非常努力，也很认真。",
       "pinyin": "Tā fēicháng nǔlì, yě hěn rènzhēn.",
       "meaning": "Cô ấy rất cố gắng, cũng rất nghiêm túc.",
-      "start": 63.9,
-      "end": 67.29,
+      "start": 63.7,
+      "end": 67.39,
       "section": "kewen"
     },
     {
@@ -158,8 +158,8 @@
       "text": "二、她每天都起得很早",
       "pinyin": "Èr, tā měi tiān dōu qǐ de hěn zǎo",
       "meaning": "Bài 2: Ngày nào cô ấy cũng dậy rất sớm",
-      "start": 69.22,
-      "end": 72.74,
+      "start": 69.02,
+      "end": 72.84,
       "section": "heading"
     },
     {
@@ -167,8 +167,8 @@
       "text": "老师，您看她太极拳打得怎么样？",
       "pinyin": "Lǎoshī, nín kàn tā tàijíquán dǎ de zěnmeyàng?",
       "meaning": "Thưa thầy, thầy thấy cô ấy đánh thái cực quyền thế nào?",
-      "start": 74.56,
-      "end": 79.36,
+      "start": 74.36,
+      "end": 79.46,
       "section": "kewen"
     },
     {
@@ -176,8 +176,8 @@
       "text": "打得不错。",
       "pinyin": "Dǎ de búcuò.",
       "meaning": "Đánh không tồi.",
-      "start": 80.04,
-      "end": 81.16,
+      "start": 79.84,
+      "end": 81.26,
       "section": "kewen"
     },
     {
@@ -185,8 +185,8 @@
       "text": "为学太极拳，她每天都起得很早。",
       "pinyin": "Wèi xué tàijíquán, tā měi tiān dōu qǐ de hěn zǎo.",
       "meaning": "Để học thái cực quyền, ngày nào cô ấy cũng dậy rất sớm.",
-      "start": 82.06,
-      "end": 86.37,
+      "start": 81.86,
+      "end": 86.47,
       "section": "kewen"
     },
     {
@@ -194,8 +194,8 @@
       "text": "麦克，你喜欢什么运动？",
       "pinyin": "Màikè, nǐ xǐhuan shénme yùndòng?",
       "meaning": "Mike, bạn thích môn thể thao nào?",
-      "start": 87.56,
-      "end": 90.47,
+      "start": 87.36,
+      "end": 90.57,
       "section": "kewen"
     },
     {
@@ -203,8 +203,8 @@
       "text": "我喜欢跑步、打篮球。",
       "pinyin": "Wǒ xǐhuan pǎobù, dǎ lánqiú.",
       "meaning": "Tôi thích chạy bộ và đánh bóng rổ.",
-      "start": 91.06,
-      "end": 94.57,
+      "start": 90.86,
+      "end": 94.67,
       "section": "kewen"
     },
     {
@@ -212,7 +212,7 @@
       "text": "刚才我看你跑得很快。",
       "pinyin": "Gāngcái wǒ kàn nǐ pǎo de hěn kuài.",
       "meaning": "Lúc nãy tôi thấy bạn chạy rất nhanh.",
-      "start": 95.32,
+      "start": 95.12,
       "end": 98.24,
       "section": "kewen"
     },
@@ -222,7 +222,7 @@
       "pinyin": "Nǐ lánqiú dǎ de zěnmeyàng?",
       "meaning": "Bóng rổ bạn đánh thế nào?",
       "start": 98.24,
-      "end": 101.15,
+      "end": 101.25,
       "section": "kewen"
     },
     {
@@ -230,8 +230,8 @@
       "text": "打得还可以。",
       "pinyin": "Dǎ de hái kěyǐ.",
       "meaning": "Đánh cũng tạm được.",
-      "start": 101.74,
-      "end": 103.27,
+      "start": 101.54,
+      "end": 103.37,
       "section": "kewen"
     },
     {
@@ -239,8 +239,8 @@
       "text": "老师，您每天都来锻炼吗？",
       "pinyin": "Lǎoshī, nín měi tiān dōu lái duànliàn ma?",
       "meaning": "Thưa thầy, ngày nào thầy cũng đến tập không?",
-      "start": 104.56,
-      "end": 108.28,
+      "start": 104.36,
+      "end": 108.38,
       "section": "kewen"
     },
     {
@@ -248,7 +248,7 @@
       "text": "对，我每天都坚持锻炼。",
       "pinyin": "Duì, wǒ měi tiān dōu jiānchí duànliàn.",
       "meaning": "Đúng, ngày nào tôi cũng kiên trì tập.",
-      "start": 108.96,
+      "start": 108.76,
       "end": 112.58,
       "section": "kewen"
     },
@@ -258,7 +258,7 @@
       "pinyin": "Nǐ ne?",
       "meaning": "Còn bạn?",
       "start": 112.58,
-      "end": 113.97,
+      "end": 114.07,
       "section": "kewen"
     },
     {
@@ -266,8 +266,8 @@
       "text": "我不常锻炼，因为我晚上常常睡得很晚，早上起得也很晚。",
       "pinyin": "Wǒ bù cháng duànliàn, yīnwèi wǒ wǎnshang chángcháng shuì de hěn wǎn, zǎoshang qǐ de yě hěn wǎn.",
       "meaning": "Tôi không tập thường xuyên, vì tối hay ngủ rất muộn, sáng dậy cũng rất muộn.",
-      "start": 114.68,
-      "end": 124.12,
+      "start": 114.48,
+      "end": 124.22,
       "section": "kewen"
     },
     {
@@ -275,7 +275,7 @@
       "text": "二、生词",
       "pinyin": "Èr, shēngcí",
       "meaning": "Hai. Từ mới",
-      "start": 126.76,
+      "start": 126.56,
       "end": 128.64,
       "section": "heading"
     },
@@ -285,7 +285,7 @@
       "pinyin": "diànshìtái",
       "meaning": "đài truyền hình",
       "start": 128.64,
-      "end": 131.41,
+      "end": 131.51,
       "section": "shengci"
     },
     {
@@ -293,8 +293,8 @@
       "text": "台",
       "pinyin": "tái",
       "meaning": "đài",
-      "start": 132.45,
-      "end": 133.58,
+      "start": 132.25,
+      "end": 133.68,
       "section": "shengci"
     },
     {
@@ -302,8 +302,8 @@
       "text": "表演",
       "pinyin": "biǎoyǎn",
       "meaning": "biểu diễn",
-      "start": 134.52,
-      "end": 136.14,
+      "start": 134.32,
+      "end": 136.24,
       "section": "shengci"
     },
     {
@@ -311,8 +311,8 @@
       "text": "节目",
       "pinyin": "jiémù",
       "meaning": "tiết mục",
-      "start": 136.99,
-      "end": 138.52,
+      "start": 136.79,
+      "end": 138.62,
       "section": "shengci"
     },
     {
@@ -320,8 +320,8 @@
       "text": "愿意",
       "pinyin": "yuànyì",
       "meaning": "muốn, sẵn lòng",
-      "start": 139.38,
-      "end": 140.95,
+      "start": 139.18,
+      "end": 141.05,
       "section": "shengci"
     },
     {
@@ -329,8 +329,8 @@
       "text": "为什么",
       "pinyin": "wèishénme",
       "meaning": "tại sao",
-      "start": 141.93,
-      "end": 143.12,
+      "start": 141.73,
+      "end": 143.22,
       "section": "shengci"
     },
     {
@@ -338,8 +338,8 @@
       "text": "得",
       "pinyin": "de",
       "meaning": "trợ từ kết cấu",
-      "start": 144.09,
-      "end": 145.1,
+      "start": 143.89,
+      "end": 145.2,
       "section": "shengci"
     },
     {
@@ -347,8 +347,8 @@
       "text": "不错",
       "pinyin": "búcuò",
       "meaning": "không tồi",
-      "start": 145.92,
-      "end": 147.46,
+      "start": 145.72,
+      "end": 147.56,
       "section": "shengci"
     },
     {
@@ -356,8 +356,8 @@
       "text": "错",
       "pinyin": "cuò",
       "meaning": "sai",
-      "start": 148.43,
-      "end": 149.5,
+      "start": 148.23,
+      "end": 149.6,
       "section": "shengci"
     },
     {
@@ -365,8 +365,8 @@
       "text": "进步",
       "pinyin": "jìnbù",
       "meaning": "tiến bộ",
-      "start": 150.32,
-      "end": 151.86,
+      "start": 150.12,
+      "end": 151.96,
       "section": "shengci"
     },
     {
@@ -374,8 +374,8 @@
       "text": "水平",
       "pinyin": "shuǐpíng",
       "meaning": "trình độ",
-      "start": 152.79,
-      "end": 154.42,
+      "start": 152.59,
+      "end": 154.52,
       "section": "shengci"
     },
     {
@@ -383,8 +383,8 @@
       "text": "提高",
       "pinyin": "tígāo",
       "meaning": "nâng cao",
-      "start": 155.28,
-      "end": 156.84,
+      "start": 155.08,
+      "end": 156.94,
       "section": "shengci"
     },
     {
@@ -392,7 +392,7 @@
       "text": "快",
       "pinyin": "kuài",
       "meaning": "nhanh",
-      "start": 157.81,
+      "start": 157.61,
       "end": 158.84,
       "section": "shengci"
     },
@@ -402,7 +402,7 @@
       "pinyin": "nǎli",
       "meaning": "ở đâu",
       "start": 158.84,
-      "end": 161.28,
+      "end": 161.38,
       "section": "shengci"
     },
     {
@@ -410,8 +410,8 @@
       "text": "准",
       "pinyin": "zhǔn",
       "meaning": "chuẩn",
-      "start": 162.12,
-      "end": 163.3,
+      "start": 161.92,
+      "end": 163.4,
       "section": "shengci"
     },
     {
@@ -419,8 +419,8 @@
       "text": "流利",
       "pinyin": "liúlì",
       "meaning": "lưu loát",
-      "start": 164.01,
-      "end": 165.64,
+      "start": 163.81,
+      "end": 165.74,
       "section": "shengci"
     },
     {
@@ -428,8 +428,8 @@
       "text": "努力",
       "pinyin": "nǔlì",
       "meaning": "cố gắng",
-      "start": 166.47,
-      "end": 168,
+      "start": 166.27,
+      "end": 168.1,
       "section": "shengci"
     },
     {
@@ -437,8 +437,8 @@
       "text": "认真",
       "pinyin": "rènzhēn",
       "meaning": "chăm chỉ",
-      "start": 168.81,
-      "end": 170.34,
+      "start": 168.61,
+      "end": 170.44,
       "section": "shengci"
     },
     {
@@ -446,8 +446,8 @@
       "text": "看",
       "pinyin": "kàn",
       "meaning": "xem",
-      "start": 171.31,
-      "end": 172.24,
+      "start": 171.11,
+      "end": 172.34,
       "section": "shengci"
     },
     {
@@ -455,8 +455,8 @@
       "text": "为",
       "pinyin": "wèi",
       "meaning": "vì, để",
-      "start": 173.21,
-      "end": 173.91,
+      "start": 173.01,
+      "end": 174.01,
       "section": "shengci"
     },
     {
@@ -464,8 +464,8 @@
       "text": "这么",
       "pinyin": "zhème",
       "meaning": "thế này",
-      "start": 174.99,
-      "end": 176.04,
+      "start": 174.79,
+      "end": 176.14,
       "section": "shengci"
     },
     {
@@ -473,8 +473,8 @@
       "text": "那么",
       "pinyin": "nàme",
       "meaning": "thế kia",
-      "start": 177.01,
-      "end": 178.18,
+      "start": 176.81,
+      "end": 178.28,
       "section": "shengci"
     },
     {
@@ -482,8 +482,8 @@
       "text": "早",
       "pinyin": "zǎo",
       "meaning": "sớm",
-      "start": 179.15,
-      "end": 180.3,
+      "start": 178.95,
+      "end": 180.4,
       "section": "shengci"
     },
     {
@@ -491,8 +491,8 @@
       "text": "运动",
       "pinyin": "yùndòng",
       "meaning": "thể thao",
-      "start": 181.15,
-      "end": 182.72,
+      "start": 180.95,
+      "end": 182.82,
       "section": "shengci"
     },
     {
@@ -500,8 +500,8 @@
       "text": "跑步",
       "pinyin": "pǎobù",
       "meaning": "chạy bộ",
-      "start": 183.54,
-      "end": 185.08,
+      "start": 183.34,
+      "end": 185.18,
       "section": "shengci"
     },
     {
@@ -509,7 +509,7 @@
       "text": "跑",
       "pinyin": "pǎo",
       "meaning": "chạy",
-      "start": 186.06,
+      "start": 185.86,
       "end": 187.22,
       "section": "shengci"
     },
@@ -519,7 +519,7 @@
       "pinyin": "lánqiú",
       "meaning": "bóng rổ",
       "start": 187.22,
-      "end": 189.64,
+      "end": 189.74,
       "section": "shengci"
     },
     {
@@ -527,8 +527,8 @@
       "text": "球",
       "pinyin": "qiú",
       "meaning": "quả bóng",
-      "start": 190.61,
-      "end": 191.68,
+      "start": 190.41,
+      "end": 191.78,
       "section": "shengci"
     },
     {
@@ -536,8 +536,8 @@
       "text": "刚才",
       "pinyin": "gāngcái",
       "meaning": "lúc nãy",
-      "start": 192.62,
-      "end": 194.24,
+      "start": 192.42,
+      "end": 194.34,
       "section": "shengci"
     },
     {
@@ -545,8 +545,8 @@
       "text": "可以",
       "pinyin": "kěyǐ",
       "meaning": "kha khá",
-      "start": 195.25,
-      "end": 196.84,
+      "start": 195.05,
+      "end": 196.94,
       "section": "shengci"
     },
     {
@@ -554,8 +554,8 @@
       "text": "坚持",
       "pinyin": "jiānchí",
       "meaning": "kiên trì",
-      "start": 197.4,
-      "end": 199.22,
+      "start": 197.2,
+      "end": 199.32,
       "section": "shengci"
     },
     {
@@ -563,8 +563,8 @@
       "text": "因为",
       "pinyin": "yīnwèi",
       "meaning": "vì",
-      "start": 200.26,
-      "end": 201.64,
+      "start": 200.06,
+      "end": 201.74,
       "section": "shengci"
     },
     {
@@ -572,8 +572,8 @@
       "text": "晚",
       "pinyin": "wǎn",
       "meaning": "muộn",
-      "start": 202.61,
-      "end": 203.68,
+      "start": 202.41,
+      "end": 203.73,
       "section": "shengci"
     }
   ],

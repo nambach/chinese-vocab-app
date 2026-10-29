@@ -24,7 +24,7 @@
       "pinyin": "Yī, kěyǐ shìshi ma",
       "meaning": "Bài 1: Có thể thử một chút không?",
       "start": 1.7,
-      "end": 5.87,
+      "end": 5.97,
       "section": "heading"
     },
     {
@@ -32,7 +32,7 @@
       "text": "我看看羽绒服。",
       "pinyin": "Wǒ kànkan yǔróngfú.",
       "meaning": "Mình xem áo lông vũ.",
-      "start": 7.38,
+      "start": 7.18,
       "end": 9.69,
       "section": "kewen"
     },
@@ -42,7 +42,7 @@
       "pinyin": "Nǐ kànkan zhè jiàn zěnmeyàng?",
       "meaning": "Bạn xem cái này thế nào?",
       "start": 9.69,
-      "end": 14.18,
+      "end": 14.28,
       "section": "kewen"
     },
     {
@@ -50,7 +50,7 @@
       "text": "又好又便宜。",
       "pinyin": "Yòu hǎo yòu piányi.",
       "meaning": "Vừa tốt vừa rẻ.",
-      "start": 15.46,
+      "start": 15.26,
       "end": 17.34,
       "section": "kewen"
     },
@@ -69,7 +69,7 @@
       "pinyin": "Yǒu duǎn yìdiǎnr de ma?",
       "meaning": "Có cái ngắn hơn một chút không?",
       "start": 20.7,
-      "end": 23.13,
+      "end": 23.23,
       "section": "kewen"
     },
     {
@@ -77,8 +77,8 @@
       "text": "你要深颜色的还是要浅颜色的？",
       "pinyin": "Nǐ yào shēn yánsè de háishi yào qiǎn yánsè de?",
       "meaning": "Bạn muốn màu đậm hay màu nhạt?",
-      "start": 24.38,
-      "end": 29.83,
+      "start": 24.18,
+      "end": 29.93,
       "section": "kewen"
     },
     {
@@ -86,8 +86,8 @@
       "text": "浅颜色的。",
       "pinyin": "Qiǎn yánsè de.",
       "meaning": "Màu nhạt.",
-      "start": 30.72,
-      "end": 32.2,
+      "start": 30.52,
+      "end": 32.3,
       "section": "kewen"
     },
     {
@@ -95,8 +95,8 @@
       "text": "我试试可以吗？",
       "pinyin": "Wǒ shìshi kěyǐ ma?",
       "meaning": "Mình thử được không?",
-      "start": 33.02,
-      "end": 35.15,
+      "start": 32.82,
+      "end": 35.25,
       "section": "kewen"
     },
     {
@@ -104,8 +104,8 @@
       "text": "当然可以。",
       "pinyin": "Dāngrán kěyǐ.",
       "meaning": "Đương nhiên là được.",
-      "start": 36.18,
-      "end": 37.21,
+      "start": 35.98,
+      "end": 37.31,
       "section": "kewen"
     },
     {
@@ -113,8 +113,8 @@
       "text": "这件太肥了，有没有瘦一点儿的？",
       "pinyin": "Zhè jiàn tài féi le, yǒu méiyǒu shòu yìdiǎnr de?",
       "meaning": "Cái này rộng quá, có cái chật hơn một chút không?",
-      "start": 38.5,
-      "end": 43.42,
+      "start": 38.3,
+      "end": 43.52,
       "section": "kewen"
     },
     {
@@ -122,8 +122,8 @@
       "text": "你再试试这一件。",
       "pinyin": "Nǐ zài shìshi zhè yí jiàn.",
       "meaning": "Bạn thử thêm cái này xem.",
-      "start": 44.3,
-      "end": 47.05,
+      "start": 44.1,
+      "end": 47.15,
       "section": "kewen"
     },
     {
@@ -131,7 +131,7 @@
       "text": "这件不大不小，正合适。",
       "pinyin": "Zhè jiàn bú dà bù xiǎo, zhèng héshì.",
       "meaning": "Cái này không to không nhỏ, vừa khít.",
-      "start": 47.62,
+      "start": 47.42,
       "end": 51.86,
       "section": "kewen"
     },
@@ -141,7 +141,7 @@
       "pinyin": "Yánsè yě hěn hǎokàn.",
       "meaning": "Màu cũng rất đẹp.",
       "start": 51.86,
-      "end": 55.9,
+      "end": 56,
       "section": "kewen"
     },
     {
@@ -149,7 +149,7 @@
       "text": "二、便宜一点儿吧",
       "pinyin": "Èr, piányi yìdiǎnr ba",
       "meaning": "Bài 2: Rẻ hơn một chút nhé",
-      "start": 57.23,
+      "start": 57.03,
       "end": 60.69,
       "section": "heading"
     },
@@ -159,7 +159,7 @@
       "pinyin": "Zhè zhǒng yǔróngfú zěnme mài?",
       "meaning": "Áo lông vũ loại này giá bao nhiêu?",
       "start": 60.69,
-      "end": 64.88,
+      "end": 64.98,
       "section": "kewen"
     },
     {
@@ -167,7 +167,7 @@
       "text": "一件四百块。",
       "pinyin": "Yí jiàn sìbǎi kuài.",
       "meaning": "Một cái bốn trăm tệ.",
-      "start": 66.04,
+      "start": 65.84,
       "end": 68.12,
       "section": "kewen"
     },
@@ -186,7 +186,7 @@
       "pinyin": "Piányi yìdiǎnr ba, èrbǎi zěnmeyàng?",
       "meaning": "Rẻ hơn một chút đi, hai trăm được không?",
       "start": 70.25,
-      "end": 74.45,
+      "end": 74.55,
       "section": "kewen"
     },
     {
@@ -194,7 +194,7 @@
       "text": "二百太少了，不卖。",
       "pinyin": "Èrbǎi tài shǎo le, bú mài.",
       "meaning": "Hai trăm ít quá, không bán.",
-      "start": 75.4,
+      "start": 75.2,
       "end": 77.84,
       "section": "kewen"
     },
@@ -204,7 +204,7 @@
       "pinyin": "Kěyǐ dǎ bā zhé, nǐ gěi sānbǎi èr ba.",
       "meaning": "Được giảm còn tám phần giá, bạn đưa ba trăm hai nhé.",
       "start": 77.84,
-      "end": 83.16,
+      "end": 83.26,
       "section": "kewen"
     },
     {
@@ -212,8 +212,8 @@
       "text": "三百行不行？",
       "pinyin": "Sānbǎi xíng bu xíng?",
       "meaning": "Ba trăm được không?",
-      "start": 84.08,
-      "end": 85.55,
+      "start": 83.88,
+      "end": 85.65,
       "section": "kewen"
     },
     {
@@ -221,8 +221,8 @@
       "text": "给你吧。",
       "pinyin": "Gěi nǐ ba.",
       "meaning": "Thôi bán cho bạn vậy.",
-      "start": 86.96,
-      "end": 87.93,
+      "start": 86.76,
+      "end": 88.03,
       "section": "kewen"
     },
     {
@@ -230,7 +230,7 @@
       "text": "二、生词",
       "pinyin": "Èr, shēngcí",
       "meaning": "Hai. Từ mới",
-      "start": 90.08,
+      "start": 89.88,
       "end": 91.86,
       "section": "heading"
     },
@@ -240,7 +240,7 @@
       "pinyin": "yǔróngfú",
       "meaning": "áo lông vũ",
       "start": 91.86,
-      "end": 94.76,
+      "end": 94.86,
       "section": "shengci"
     },
     {
@@ -248,7 +248,7 @@
       "text": "又……又……",
       "pinyin": "yòu……yòu……",
       "meaning": "vừa… vừa…",
-      "start": 96.09,
+      "start": 95.89,
       "end": 98.66,
       "section": "shengci"
     },
@@ -258,7 +258,7 @@
       "pinyin": "piányi",
       "meaning": "rẻ",
       "start": 98.66,
-      "end": 101.23,
+      "end": 101.33,
       "section": "shengci"
     },
     {
@@ -266,8 +266,8 @@
       "text": "长",
       "pinyin": "cháng",
       "meaning": "dài",
-      "start": 102.57,
-      "end": 103.3,
+      "start": 102.37,
+      "end": 103.4,
       "section": "shengci"
     },
     {
@@ -275,8 +275,8 @@
       "text": "一点儿",
       "pinyin": "yìdiǎnr",
       "meaning": "một chút",
-      "start": 104.63,
-      "end": 106,
+      "start": 104.43,
+      "end": 106.1,
       "section": "shengci"
     },
     {
@@ -284,8 +284,8 @@
       "text": "短",
       "pinyin": "duǎn",
       "meaning": "ngắn",
-      "start": 106.83,
-      "end": 108.15,
+      "start": 106.63,
+      "end": 108.25,
       "section": "shengci"
     },
     {
@@ -293,7 +293,7 @@
       "text": "深",
       "pinyin": "shēn",
       "meaning": "đậm, sâu",
-      "start": 109.45,
+      "start": 109.25,
       "end": 109.98,
       "section": "shengci"
     },
@@ -303,7 +303,7 @@
       "pinyin": "qiǎn",
       "meaning": "nhạt, nông",
       "start": 109.98,
-      "end": 112.27,
+      "end": 112.37,
       "section": "shengci"
     },
     {
@@ -311,8 +311,8 @@
       "text": "试",
       "pinyin": "shì",
       "meaning": "thử",
-      "start": 113.61,
-      "end": 114.36,
+      "start": 113.41,
+      "end": 114.46,
       "section": "shengci"
     },
     {
@@ -320,8 +320,8 @@
       "text": "可以",
       "pinyin": "kěyǐ",
       "meaning": "có thể",
-      "start": 115.69,
-      "end": 117.07,
+      "start": 115.49,
+      "end": 117.17,
       "section": "shengci"
     },
     {
@@ -329,7 +329,7 @@
       "text": "当然",
       "pinyin": "dāngrán",
       "meaning": "đương nhiên",
-      "start": 118.25,
+      "start": 118.05,
       "end": 119.13,
       "section": "shengci"
     },
@@ -393,7 +393,7 @@
       "pinyin": "dǎzhé",
       "meaning": "giảm giá",
       "start": 132.12,
-      "end": 134.92,
+      "end": 134.95,
       "section": "shengci"
     }
   ],
