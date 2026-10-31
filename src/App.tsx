@@ -13,6 +13,7 @@ import { PracticePlay } from './screens/PracticePlay'
 import { PracticeSetup } from './screens/PracticeSetup'
 import { QuickPractice } from './screens/QuickPractice'
 import { Results } from './screens/Results'
+import { Search } from './screens/Search'
 import { Settings } from './screens/Settings'
 import { ShadowingList } from './screens/ShadowingList'
 import { Study } from './screens/Study'
@@ -30,8 +31,10 @@ function Router() {
       return <CombinePractice />
     case 'createCollection':
       return <CreateCollection />
+    case 'search':
+      return <Search />
     case 'catalog':
-      return <CatalogScreen catalogId={view.catalogId} />
+      return <CatalogScreen catalogId={view.catalogId} focus={view.focus} />
     case 'practiceHistory':
       return <PracticeHistory catalogId={view.catalogId} />
     case 'guidedAdd':

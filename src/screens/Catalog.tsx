@@ -3,15 +3,16 @@ import { useApp, useCatalog } from '../context/AppContext'
 import { Hanzi } from '../components/Hanzi'
 import { Card, ScreenShell } from '../components/ui'
 import { LastResultCard, PracticeActions, useCatalogMenu } from './catalogChrome'
-import type { Catalog } from '../models/types'
+import type { Catalog, CatalogFocus } from '../models/types'
 
 const LessonScreen = lazy(() => import('./LessonScreen').then((module) => ({ default: module.LessonScreen })))
 
 type CatalogScreenProps = {
   catalogId: string
+  focus?: CatalogFocus
 }
 
-export function CatalogScreen({ catalogId }: CatalogScreenProps) {
+export function CatalogScreen({ catalogId, focus }: CatalogScreenProps) {
   const { setView } = useApp()
   const catalog = useCatalog(catalogId)
 
@@ -27,20 +28,24 @@ export function CatalogScreen({ catalogId }: CatalogScreenProps) {
     return (
       <Suspense
         fallback={
-          <ScreenShell title={catalog.name} onBack={() => setView({ name: 'home' })}>
+          <ScreenShell
+            title={catalog.name}
+            onBack={() => setView(focus ? { name: 'search' } : { name: 'home' })}
+            backLabel={focus ? 'Tra cứu' : 'Trang chủ'}
+          >
             <p className="text-teal-700">Đang mở bài…</p>
           </ScreenShell>
         }
       >
-        <LessonScreen catalogId={catalogId} />
+        <LessonScreen catalogId={catalogId} focus={focus} />
       </Suspense>
     )
   }
 
-  return <WordSetScreen catalog={catalog} />
+  return <WordSetScreen catalog={catalog} fromSearch={Boolean(focus)} />
 }
 
-function WordSetScreen({ catalog }: { catalog: Catalog }) {
+function WordSetScreen({ catalog, fromSearch }: { catalog: Catalog; fromSearch: boolean }) {
   const { goBack } = useApp()
   const { menuItems, folderDrawer } = useCatalogMenu(catalog)
 
@@ -48,8 +53,8 @@ function WordSetScreen({ catalog }: { catalog: Catalog }) {
     <ScreenShell
       title={catalog.name}
       subtitle={`${catalog.words.length} từ`}
-      onBack={() => goBack({ name: 'home' })}
-      backLabel="Trang chủ"
+      onBack={() => goBack(fromSearch ? { name: 'search' } : { name: 'home' })}
+      backLabel={fromSearch ? 'Tra cứu' : 'Trang chủ'}
       menuItems={menuItems}
     >
       <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:items-start lg:gap-6">

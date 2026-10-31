@@ -140,13 +140,16 @@ export const defaultAppState = (): AppState => ({
   settings: defaultSettings(),
 })
 
+export type CatalogFocus = { segmentId: string } | { wordId: string }
+
 export type View =
   | { name: 'home' }
+  | { name: 'search' }
   | { name: 'settings' }
   | { name: 'quickPractice' }
   | { name: 'combinePractice' }
   | { name: 'createCollection' }
-  | { name: 'catalog'; catalogId: string }
+  | { name: 'catalog'; catalogId: string; focus?: CatalogFocus }
   | { name: 'practiceHistory'; catalogId: string }
   | { name: 'guidedAdd'; catalogId: string }
   | { name: 'study'; catalogId: string; wordIndex?: number }

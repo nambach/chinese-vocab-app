@@ -15,6 +15,8 @@ type ScreenShellProps = {
   menuItems?: MenuItem[]
   /** Rendered in the right-side header slot, alongside the menu button if both are present. */
   headerAction?: ReactNode
+  /** Rendered inside the header, under the title row. */
+  headerExtra?: ReactNode
   children: ReactNode
   footer?: ReactNode
   /** Pin the shell to the visual viewport on touch devices (keyboard-safe layout). */
@@ -81,6 +83,7 @@ export function ScreenShell({
   backLabel = 'Quay lại',
   menuItems,
   headerAction,
+  headerExtra,
   children,
   footer,
   keyboardAvoiding = false,
@@ -88,6 +91,7 @@ export function ScreenShell({
 }: ScreenShellProps) {
   const hasMenu = Boolean(menuItems && menuItems.length > 0)
   const hasHeaderAction = Boolean(headerAction)
+  const hasHeaderExtra = Boolean(headerExtra)
   const hasRightSlot = hasMenu || hasHeaderAction
   const headerRef = useRef<HTMLElement>(null)
 
@@ -106,7 +110,7 @@ export function ScreenShell({
     const observer = new ResizeObserver(updateHeaderHeight)
     observer.observe(header)
     return () => observer.disconnect()
-  }, [subtitle, title, hasMenu, hasHeaderAction])
+  }, [subtitle, title, hasMenu, hasHeaderAction, hasHeaderExtra])
 
   const shell = (
     <div
@@ -161,6 +165,8 @@ export function ScreenShell({
             {subtitle}
           </p>
         ) : null}
+
+        {headerExtra ? <div className="mt-3">{headerExtra}</div> : null}
       </header>
 
       <main

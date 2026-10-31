@@ -43,6 +43,9 @@ export function useShadowingPlayer(
   const lastClock = useRef(0)
 
   const [ready, setReady] = useState(false)
+  const readyRef = useRef(false)
+  readyRef.current = ready
+  const pendingFocusRef = useRef<number | null>(null)
   const [error, setError] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -57,8 +60,10 @@ export function useShadowingPlayer(
   const audioSrc = lesson.audio.type === 'file' ? lesson.audio.src : null
 
   const publishTime = useCallback((time: number, forceClock: boolean) => {
-    const index = findSegmentIndexAt(segmentsRef.current, time)
-    setActiveIndex((current) => (current === index ? current : index))
+    if (pendingFocusRef.current == null) {
+      const index = findSegmentIndexAt(segmentsRef.current, time)
+      setActiveIndex((current) => (current === index ? current : index))
+    }
     const now = performance.now()
     if (forceClock || now - lastClock.current >= CLOCK_INTERVAL_MS) {
       lastClock.current = now
@@ -108,6 +113,16 @@ export function useShadowingPlayer(
     }
   }, [audioSrc, container, publishTime, waveHeight, timelineHeight])
 
+  useEffect(() => {
+    if (!ready || pendingFocusRef.current == null) return
+    const index = pendingFocusRef.current
+    const segment = segmentsRef.current[index]
+    pendingFocusRef.current = null
+    if (!segment) return
+    playerRef.current?.seek(segment.start)
+    setActiveIndex(index)
+  }, [ready])
+
   const editing = editor != null
   const editableSegmentId = editor?.editableSegmentId ?? null
 
@@ -137,8 +152,23 @@ export function useShadowingPlayer(
     const next = clampIndex(index, segments.length)
     const segment = segments[next]
     if (!segment) return
+    pendingFocusRef.current = null
     setActiveIndex(next)
     playerRef.current?.playRange(segment.start, segment.end)
+  }, [])
+
+  const focusSegment = useCallback((index: number) => {
+    const segments = segmentsRef.current
+    const next = clampIndex(index, segments.length)
+    const segment = segments[next]
+    if (!segment) return
+    setActiveIndex(next)
+    if (readyRef.current && playerRef.current) {
+      pendingFocusRef.current = null
+      playerRef.current.seek(segment.start)
+      return
+    }
+    pendingFocusRef.current = next
   }, [])
 
   playSegmentRef.current = playSegment
@@ -222,6 +252,7 @@ export function useShadowingPlayer(
     currentTime: clock,
     duration,
     playSegment,
+    focusSegment,
     playRange,
     replay,
     next,

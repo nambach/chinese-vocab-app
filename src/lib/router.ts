@@ -1,5 +1,14 @@
 import type { View } from '../models/types'
 
+function decodePart(value: string | undefined): string {
+  if (!value) return ''
+  try {
+    return decodeURIComponent(value)
+  } catch {
+    return value
+  }
+}
+
 // Hash-based routing so the app works on static hosting (GitHub Pages) and
 // survives refresh / browser back-forward without server rewrites.
 
@@ -7,6 +16,8 @@ export function serializeView(view: View): string {
   switch (view.name) {
     case 'home':
       return '#/'
+    case 'search':
+      return '#/search'
     case 'settings':
       return '#/settings'
     case 'quickPractice':
@@ -16,6 +27,12 @@ export function serializeView(view: View): string {
     case 'createCollection':
       return '#/create'
     case 'catalog':
+      if (view.focus && 'segmentId' in view.focus) {
+        return `#/c/${view.catalogId}/at/${encodeURIComponent(view.focus.segmentId)}`
+      }
+      if (view.focus && 'wordId' in view.focus) {
+        return `#/c/${view.catalogId}/word/${encodeURIComponent(view.focus.wordId)}`
+      }
       return `#/c/${view.catalogId}`
     case 'practiceHistory':
       return `#/c/${view.catalogId}/history`
@@ -49,6 +66,8 @@ export function parseHash(hash: string): View {
   if (parts.length === 0) return { name: 'home' }
 
   switch (parts[0]) {
+    case 'search':
+      return { name: 'search' }
     case 'settings':
       return { name: 'settings' }
     case 'quick':
@@ -86,6 +105,16 @@ export function parseHash(hash: string): View {
         return wordId
           ? { name: 'editWord', catalogId, wordId }
           : { name: 'manageWords', catalogId }
+      }
+      if (sub === 'word') {
+        const wordId = decodePart(parts[3])
+        return wordId ? { name: 'catalog', catalogId, focus: { wordId } } : { name: 'catalog', catalogId }
+      }
+      if (sub === 'at') {
+        const segmentId = decodePart(parts[3])
+        return segmentId
+          ? { name: 'catalog', catalogId, focus: { segmentId } }
+          : { name: 'catalog', catalogId }
       }
       if (sub === 'kewen') {
         const segmentId = parts[3]

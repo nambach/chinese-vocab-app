@@ -100,3 +100,24 @@ select {
 .animate-dialog-in {
   animation: dialog-in 120ms ease-out;
 }
+
+@keyframes focus-flash {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgb(251 191 36);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgb(251 191 36 / 0.2);
+  }
+}
+
+.focus-flash {
+  animation: focus-flash 0.75s ease-in-out 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-flash {
+    animation: none;
+    box-shadow: 0 0 0 2px rgb(251 191 36);
+  }
+}

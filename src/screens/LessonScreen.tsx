@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Hanzi } from '../components/Hanzi'
+import { HighlightedText } from '../components/HighlightedText'
 import { BigButton, BottomDrawer, Card, ScreenShell } from '../components/ui'
 import { useApp, useCatalog } from '../context/AppContext'
 import { useMediaQuery } from '../lib/device'
-import { useHanziVariant } from '../lib/traditional'
 import { speak } from '../lib/speech'
-import type { Catalog } from '../models/types'
-import { highlightIndices, savedWordsForLesson } from '../shadowing/savedWords'
+import type { Catalog, CatalogFocus } from '../models/types'
+import { savedWordsForLesson } from '../shadowing/savedWords'
 import { lessonFromKewen, positionsOf } from '../shadowing/lessonView'
 import { isPlaybackRate } from '../shadowing/segments'
 import { useShadowingPlayer } from '../shadowing/useShadowingPlayer'
@@ -29,7 +29,7 @@ const TABS: { id: LessonTab; label: string }[] = [
   { id: 'practice', label: 'Luyện tập' },
 ]
 
-export function LessonScreen({ catalogId }: { catalogId: string }) {
+export function LessonScreen({ catalogId, focus }: { catalogId: string; focus?: CatalogFocus }) {
   const { setView } = useApp()
   const catalog = useCatalog(catalogId)
 
@@ -41,16 +41,18 @@ export function LessonScreen({ catalogId }: { catalogId: string }) {
     )
   }
 
-  return <LessonBody catalog={catalog} />
+  return <LessonBody catalog={catalog} focus={focus} />
 }
 
-function LessonBody({ catalog }: { catalog: Catalog }) {
+function LessonBody({ catalog, focus }: { catalog: Catalog; focus?: CatalogFocus }) {
   const { state, goBack, patchSettings, setView } = useApp()
+  const segmentId = focus && 'segmentId' in focus ? focus.segmentId : undefined
+  const wordId = focus && 'wordId' in focus ? focus.wordId : undefined
   const lesson = useMemo(
     () => (catalog.kewen ? lessonFromKewen(catalog.kewen) : undefined),
     [catalog.kewen],
   )
-  const [tab, setTab] = useState<LessonTab>('kewen')
+  const [tab, setTab] = useState<LessonTab>(wordId ? 'words' : 'kewen')
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
   const savedRate = isPlaybackRate(state.settings.shadowPlaybackRate)
     ? state.settings.shadowPlaybackRate
@@ -72,6 +74,12 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
     },
   })
 
+  useLayoutEffect(() => {
+    if (!segmentId || !lesson) return
+    const index = lesson.segments.findIndex((segment) => segment.id === segmentId)
+    if (index >= 0) player.focusSegment(index)
+  }, [lesson, player.focusSegment, segmentId])
+
   function openSegment(index: number) {
     player.playSegment(index)
     setTab('kewen')
@@ -85,8 +93,8 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
           ? `${catalog.kewen.textTitle} · ${catalog.words.length} từ`
           : `${catalog.words.length} từ`
       }
-      onBack={() => goBack({ name: 'home' })}
-      backLabel="Trang chủ"
+      onBack={() => goBack(focus ? { name: 'search' } : { name: 'home' })}
+      backLabel={focus ? 'Tra cứu' : 'Trang chủ'}
       fillViewport
       menuItems={menuItems}
     >
@@ -135,6 +143,7 @@ function LessonBody({ catalog }: { catalog: Catalog }) {
           catalog={catalog}
           lesson={lesson}
           lessonId={lesson?.id ?? catalog.kewen?.lessonId ?? ''}
+          focusWordId={wordId}
           onPlay={(index) => player.playSegment(index)}
           onOpen={openSegment}
         />
@@ -166,12 +175,14 @@ function LessonVocab({
   catalog,
   lesson,
   lessonId,
+  focusWordId,
   onPlay,
   onOpen,
 }: {
   catalog: Catalog
   lesson: ShadowingLesson | undefined
   lessonId: string
+  focusWordId?: string
   onPlay: (index: number) => void
   onOpen: (index: number) => void
 }) {
@@ -179,7 +190,17 @@ function LessonVocab({
   const showPinyin = state.settings.shadowShowPinyin
   const showMeaning = state.settings.shadowShowMeaning
   const [sourcesWordId, setSourcesWordId] = useState<string | null>(null)
+  const [flashId, setFlashId] = useState<string | null>(null)
+  const itemRefs = useRef(new Map<string, HTMLLIElement>())
   const sourcesWord = catalog.words.find((word) => word.id === sourcesWordId)
+
+  useLayoutEffect(() => {
+    if (!focusWordId) return
+    itemRefs.current.get(focusWordId)?.scrollIntoView({ block: 'center' })
+    setFlashId(focusWordId)
+    const timer = window.setTimeout(() => setFlashId(null), 1500)
+    return () => window.clearTimeout(timer)
+  }, [focusWordId])
 
   function play(index: number) {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel()
@@ -214,7 +235,16 @@ function LessonVocab({
           const reading = positions.find((position) => position.section === 'shengci')
           const sentences = positions.filter((position) => position.section !== 'shengci')
           return (
-            <li key={word.id} className="rounded-2xl bg-white p-4 ring-1 ring-teal-100">
+            <li
+              key={word.id}
+              ref={(node) => {
+                if (node) itemRefs.current.set(word.id, node)
+                else itemRefs.current.delete(word.id)
+              }}
+              className={`rounded-2xl bg-white p-4 ring-1 ring-teal-100 ${
+                flashId === word.id ? 'focus-flash' : ''
+              }`}
+            >
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <div className="flex min-w-0 items-center gap-2">
                   <span className="text-2xl font-semibold text-teal-950">
@@ -250,7 +280,11 @@ function LessonVocab({
                       className="rounded-xl bg-teal-50 px-3 py-2 ring-1 ring-teal-100"
                     >
                       <div className="flex items-end gap-1">
-                        <HighlightedQuote text={position.text} word={word.hanzi} />
+                        <HighlightedText
+                          text={position.text}
+                          query={word.hanzi}
+                          className="min-w-0 flex-1 text-lg leading-relaxed text-teal-950"
+                        />
                         <AudioIconButton
                           label={`Nghe câu: ${position.text}`}
                           onClick={() => play(position.segmentIndex)}
@@ -484,21 +518,3 @@ function AudioIconButton({ label, onClick }: { label: string; onClick: () => voi
   )
 }
 
-function HighlightedQuote({ text, word }: { text: string; word: string }) {
-  const { state } = useApp()
-  const converted = useHanziVariant(state.settings.hanziVariant, text)
-  const simplified = Array.from(text)
-  const convertedChars = Array.from(converted)
-  const display = convertedChars.length === simplified.length ? convertedChars : simplified
-  const marks = highlightIndices(simplified, [word])
-
-  return (
-    <p className="min-w-0 flex-1 text-lg leading-relaxed text-teal-950" style={{ fontFamily: 'var(--hanzi-font, inherit)' }}>
-      {display.map((char, index) => (
-        <span key={index} className={marks.has(index) ? 'rounded-sm bg-amber-300' : undefined}>
-          {char}
-        </span>
-      ))}
-    </p>
-  )
-}

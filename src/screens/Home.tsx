@@ -371,6 +371,18 @@ export function Home() {
   return (
     <ScreenShell title="Học từ vựng tiếng Trung" menuItems={menuItems}>
       <div className="grid gap-3 md:grid-cols-2">
+        <button
+          type="button"
+          onClick={() => setView({ name: 'search' })}
+          className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-left text-base text-teal-500 ring-1 ring-teal-200 md:col-span-2"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+            <path d="M16.5 16.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          Tra từ trong các bài…
+        </button>
+
         <BigButton onClick={() => setView({ name: 'quickPractice' })} className="py-6 text-xl md:col-span-2">
           Luyện tập ngay
         </BigButton>
