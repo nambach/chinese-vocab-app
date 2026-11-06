@@ -61,8 +61,8 @@ function LessonBody({ catalog, focus }: { catalog: Catalog; focus?: CatalogFocus
   const player = useShadowingPlayer(lesson ?? EMPTY_LESSON, lesson ? container : null, {
     initialRate: savedRate,
     onRateChange: (rate) => patchSettings({ shadowPlaybackRate: rate }),
-    waveHeight: narrow ? 64 : undefined,
-    timelineHeight: narrow ? 16 : undefined,
+    waveHeight: narrow ? 44 : 60,
+    timelineHeight: narrow ? 14 : 16,
   })
   const saved = useMemo(
     () => (lesson ? savedWordsForLesson(state.catalogs, lesson) : []),

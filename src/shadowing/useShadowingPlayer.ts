@@ -231,6 +231,14 @@ export function useShadowingPlayer(
 
   const getCurrentTime = useCallback(() => playerRef.current?.getCurrentTime() ?? 0, [])
 
+  const seek = useCallback((time: number) => {
+    const player = playerRef.current
+    if (!player) return
+    const duration = player.getDuration()
+    const next = duration > 0 ? Math.min(Math.max(0, time), duration) : Math.max(0, time)
+    player.seek(next)
+  }, [])
+
   const setRate = useCallback((nextRate: number) => {
     setRateState(nextRate)
     playerRef.current?.setPlaybackRate(nextRate)
@@ -268,5 +276,6 @@ export function useShadowingPlayer(
     scrollIntoView,
     clearSelection,
     getCurrentTime,
+    seek,
   }
 }

@@ -34,6 +34,7 @@ export function ShadowingPlayerBody({
   const { state, patchSettings } = useApp()
   const showPinyin = state.settings.shadowShowPinyin
   const showMeaning = state.settings.shadowShowMeaning
+  const showWave = state.settings.shadowShowWaveform
   const desktop = useIsDesktop()
 
   const listRef = useRef<HTMLOListElement>(null)
@@ -193,6 +194,7 @@ export function ShadowingPlayerBody({
       if (target instanceof HTMLElement) {
         const tag = target.tagName
         if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable) return
+        if (target.getAttribute('role') === 'slider') return
       }
 
       const actions = actionsRef.current
@@ -253,25 +255,44 @@ export function ShadowingPlayerBody({
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <div className="shrink-0 border-b border-teal-100 bg-white px-4 py-2 md:px-8 md:py-3">
-        <div className="relative min-h-[80px] md:min-h-[106px]">
-          <div ref={setContainer} className="w-full" />
-          {!player.ready && !player.error ? (
-            <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-teal-600">
-              Đang tải audio…
-            </p>
-          ) : null}
-          {player.error ? (
-            <p className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm text-red-700">
-              Không tải được audio.
-            </p>
-          ) : null}
+        <div className={showWave ? 'relative min-h-[58px] md:min-h-[76px]' : 'relative h-0'}>
+          <div
+            className={showWave ? undefined : 'pointer-events-none invisible absolute inset-x-0 top-0'}
+            aria-hidden={showWave ? undefined : true}
+          >
+            <div ref={setContainer} className="w-full" />
+            {showWave && !player.ready && !player.error ? (
+              <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-teal-600">
+                Đang tải audio…
+              </p>
+            ) : null}
+            {showWave && player.error ? (
+              <p className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm text-red-700">
+                Không tải được audio.
+              </p>
+            ) : null}
+          </div>
         </div>
 
-        <div className="mt-2 flex flex-wrap items-center gap-2">
-          <p className="min-w-24 text-sm font-medium tabular-nums text-teal-800">
+        {!showWave ? (
+          player.error ? (
+            <p className="py-1 text-center text-sm text-red-700">Không tải được audio.</p>
+          ) : !player.ready ? (
+            <p className="py-1 text-center text-xs text-teal-600">Đang tải audio…</p>
+          ) : (
+            <PlaybackBar
+              current={player.currentTime}
+              duration={player.duration}
+              onSeek={player.seek}
+            />
+          )
+        ) : null}
+
+        <div className={`${showWave ? 'mt-2' : 'mt-1.5'} flex items-center gap-2`}>
+          <p className="min-w-0 text-sm font-medium tabular-nums text-teal-800">
             {player.timeLabel} / {formatClock(player.duration)}
           </p>
-          <label className="relative">
+          <label className="relative shrink-0">
             <span className="sr-only">Tốc độ phát</span>
             <select
               value={String(player.rate)}
@@ -295,17 +316,29 @@ export function ShadowingPlayerBody({
               <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </label>
-          <div className="ml-auto flex gap-1">
-            <ToggleChip
+          <div className="ml-auto flex shrink-0 gap-1">
+            <StripButton
               label="Pinyin"
               pressed={showPinyin}
               onClick={() => patchSettings({ shadowShowPinyin: !showPinyin })}
-            />
-            <ToggleChip
+            >
+              <PinyinIcon />
+            </StripButton>
+            <StripButton
               label="Nghĩa"
               pressed={showMeaning}
               onClick={() => patchSettings({ shadowShowMeaning: !showMeaning })}
-            />
+            >
+              <MeaningIcon />
+            </StripButton>
+            <StripButton
+              label={showWave ? 'Ẩn dải âm' : 'Hiện dải âm'}
+              pressed={showWave}
+              expanded={showWave}
+              onClick={() => patchSettings({ shadowShowWaveform: !showWave })}
+            >
+              <ChevronIcon direction={showWave ? 'up' : 'down'} />
+            </StripButton>
           </div>
         </div>
       </div>
@@ -435,25 +468,100 @@ function centeredScrollTop(list: HTMLElement, item: HTMLElement): number {
   return Math.max(0, Math.min(centered, list.scrollHeight - list.clientHeight))
 }
 
-function ToggleChip({
+function PlaybackBar({
+  current,
+  duration,
+  disabled,
+  onSeek,
+}: {
+  current: number
+  duration: number
+  disabled?: boolean
+  onSeek: (time: number) => void
+}) {
+  const barRef = useRef<HTMLDivElement>(null)
+  const ratio = duration > 0 ? Math.min(1, Math.max(0, current / duration)) : 0
+
+  function seekAt(clientX: number) {
+    const bar = barRef.current
+    if (!bar || duration <= 0) return
+    const rect = bar.getBoundingClientRect()
+    const next = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width))
+    onSeek(next * duration)
+  }
+
+  return (
+    <div
+      ref={barRef}
+      role="slider"
+      aria-label="Vị trí phát"
+      aria-valuemin={0}
+      aria-valuemax={Math.round(duration)}
+      aria-valuenow={Math.round(current)}
+      aria-valuetext={`${formatClock(current)} / ${formatClock(duration)}`}
+      aria-disabled={disabled || undefined}
+      tabIndex={disabled ? -1 : 0}
+      onPointerDown={(event) => {
+        if (disabled) return
+        event.currentTarget.setPointerCapture(event.pointerId)
+        seekAt(event.clientX)
+      }}
+      onPointerMove={(event) => {
+        if (!event.currentTarget.hasPointerCapture(event.pointerId)) return
+        seekAt(event.clientX)
+      }}
+      onKeyDown={(event) => {
+        if (disabled || duration <= 0) return
+        const step = event.shiftKey ? 10 : 5
+        if (event.key === 'ArrowRight') {
+          event.preventDefault()
+          event.stopPropagation()
+          onSeek(Math.min(duration, current + step))
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault()
+          event.stopPropagation()
+          onSeek(Math.max(0, current - step))
+        }
+      }}
+      className={`relative flex h-6 touch-none items-center ${disabled ? 'cursor-default' : 'cursor-pointer'}`}
+    >
+      <div className="h-1 w-full rounded-full bg-teal-100">
+        <div className="h-full rounded-full bg-teal-700" style={{ width: `${ratio * 100}%` }} />
+      </div>
+      <div
+        className="pointer-events-none absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-800"
+        style={{ left: `${ratio * 100}%` }}
+      />
+    </div>
+  )
+}
+
+function StripButton({
   label,
   pressed,
+  expanded,
   onClick,
+  children,
 }: {
   label: string
   pressed: boolean
+  expanded?: boolean
   onClick: () => void
+  children: ReactNode
 }) {
   return (
     <button
       type="button"
+      aria-label={label}
       aria-pressed={pressed}
+      aria-expanded={expanded}
+      title={label}
       onClick={onClick}
-      className={`rounded-full px-3 py-1 text-sm font-semibold ${
-        pressed ? 'bg-teal-700 text-white' : 'bg-teal-50 text-teal-500'
+      className={`flex h-7 w-7 items-center justify-center rounded-full [&_svg]:h-4 [&_svg]:w-4 ${
+        pressed ? 'bg-teal-700 text-white' : 'bg-teal-50 text-teal-800'
       }`}
     >
-      {label}
+      {children}
     </button>
   )
 }
@@ -489,6 +597,28 @@ function ControlButton({
       </span>
       <span className="hidden md:block">{label}</span>
     </button>
+  )
+}
+
+function PinyinIcon() {
+  return (
+    <span className="text-[15px] font-semibold leading-none" aria-hidden="true">
+      ā
+    </span>
+  )
+}
+
+function MeaningIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 6.5h14v8.5H9.5L6 18.5V15H5V6.5z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path d="M8 10h8M8 13h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
   )
 }
 

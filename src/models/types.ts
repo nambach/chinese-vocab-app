@@ -105,6 +105,8 @@ export type Settings = {
   shadowShowPinyin: boolean
   /** Show the Vietnamese meaning under each shadowing sentence. */
   shadowShowMeaning: boolean
+  /** Show the waveform strip in shadowing. Off leaves only the playback bar. */
+  shadowShowWaveform: boolean
   /** Last playback speed used in shadowing practice. */
   shadowPlaybackRate: number
   /** Last collection used when saving a word from shadowing. */
@@ -129,6 +131,7 @@ export const defaultSettings = (): Settings => ({
   hanziVariant: 'simplified',
   shadowShowPinyin: true,
   shadowShowMeaning: true,
+  shadowShowWaveform: false,
   shadowPlaybackRate: 1,
   shadowSaveCatalogId: null,
 })
