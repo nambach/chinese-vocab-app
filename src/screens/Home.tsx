@@ -4,6 +4,7 @@ import { resultPercent } from '../lib/results'
 import { isCatalogPinned } from '../data/store'
 import type { Catalog, Folder } from '../models/types'
 import { BigButton, BottomDrawer, Card, Dialog, ScreenShell, type MenuItem } from '../components/ui'
+import { COPYRIGHT_LINE } from './About'
 
 type SortKey = 'name' | 'updatedAt'
 type SortDir = 'asc' | 'desc'
@@ -271,6 +272,7 @@ export function Home() {
     { label: '+ Tạo bộ sưu tập', onClick: () => setView({ name: 'createCollection' }) },
     { label: '+ Tạo thư mục', onClick: () => setCreateFolderOpen(true) },
     { label: 'Cài đặt', onClick: () => setView({ name: 'settings' }) },
+    { label: 'Giới thiệu', onClick: () => setView({ name: 'about' }) },
   ]
 
   const pinnedCatalogs = useMemo(() => {
@@ -494,6 +496,17 @@ export function Home() {
           Dán một bộ từ vựng để luyện ngay, hoặc tạo bộ sưu tập từ menu để lưu lại.
         </p>
       )}
+
+      <footer className="mt-4 pb-2 text-center text-xs text-teal-600">
+        {COPYRIGHT_LINE} ·{' '}
+        <button
+          type="button"
+          onClick={() => setView({ name: 'about' })}
+          className="underline underline-offset-2 active:text-teal-800"
+        >
+          Giới thiệu
+        </button>
+      </footer>
 
       <BottomDrawer open={sheetOpen} onClose={() => setSheetOpen(false)} title="Sắp xếp">
         <div className="flex flex-col gap-2">

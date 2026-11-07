@@ -1,6 +1,7 @@
 import { AppProvider, useApp } from './context/AppContext'
 import { LessonSeedPrompt } from './components/LessonSeedPrompt'
 import { LessonUpdatePrompt } from './components/LessonUpdatePrompt'
+import { About } from './screens/About'
 import { CatalogScreen } from './screens/Catalog'
 import { CombinePractice } from './screens/CombinePractice'
 import { CreateCollection } from './screens/CreateCollection'
@@ -25,6 +26,8 @@ function Router() {
   switch (view.name) {
     case 'settings':
       return <Settings />
+    case 'about':
+      return <About />
     case 'quickPractice':
       return <QuickPractice />
     case 'combinePractice':

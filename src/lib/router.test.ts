@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { parseHash, serializeView } from './router'
 
+describe('about route', () => {
+  it('round-trips the about page', () => {
+    expect(serializeView({ name: 'about' })).toBe('#/about')
+    expect(parseHash('#/about')).toEqual({ name: 'about' })
+  })
+})
+
 describe('search routes', () => {
   it('round-trips the search page', () => {
     expect(serializeView({ name: 'search' })).toBe('#/search')

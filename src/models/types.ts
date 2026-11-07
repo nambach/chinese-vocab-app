@@ -149,6 +149,7 @@ export type View =
   | { name: 'home' }
   | { name: 'search' }
   | { name: 'settings' }
+  | { name: 'about' }
   | { name: 'quickPractice' }
   | { name: 'combinePractice' }
   | { name: 'createCollection' }

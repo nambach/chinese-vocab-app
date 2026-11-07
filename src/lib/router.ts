@@ -20,6 +20,8 @@ export function serializeView(view: View): string {
       return '#/search'
     case 'settings':
       return '#/settings'
+    case 'about':
+      return '#/about'
     case 'quickPractice':
       return '#/quick'
     case 'combinePractice':
@@ -70,6 +72,8 @@ export function parseHash(hash: string): View {
       return { name: 'search' }
     case 'settings':
       return { name: 'settings' }
+    case 'about':
+      return { name: 'about' }
     case 'quick':
       return { name: 'quickPractice' }
     case 'combine':
